@@ -37,80 +37,61 @@ siteskin_include( '_site_body_header.inc.php' );
 // ------------------------------- END OF SITE HEADER --------------------------------
 ?>
 
+<header id="main-header">
+   <div class="container">
+
+         <nav>
+
+         	<div class="col-sm-12 col-md-9 col-md-push-3">
+         		<ul class="nav nav-tabs evo_container evo_container__menu">
+         		<?php
+         			// ------------------------- "Menu" CONTAINER EMBEDDED HERE --------------------------
+         			// Display container and contents:
+         			// Note: this container is designed to be a single <ul> list
+         			skin_container( NT_('Menu'), array(
+         					// The following params will be used as defaults for widgets included in this container:
+         					'block_start'         => '',
+         					'block_end'           => '',
+         					'block_display_title' => false,
+         					'list_start'          => '',
+         					'list_end'            => '',
+         					'item_start'          => '<li class="evo_widget $wi_class$">',
+         					'item_end'            => '</li>',
+         					'item_selected_start' => '<li class="active evo_widget $wi_class$">',
+         					'item_selected_end'   => '</li>',
+         					'item_title_before'   => '',
+         					'item_title_after'    => '',
+         				) );
+         			// ----------------------------- END OF "Menu" CONTAINER -----------------------------
+         		?>
+         		</ul>
+         	</div><!-- .col -->
+
+         </nav><!-- .row -->
+
+         <div class="coll-xs-12 col-sm-12 col-md-3 col-md-pull-9">
+            <div class="evo_container evo_container__header">
+            <?php
+               // ------------------------- "Header" CONTAINER EMBEDDED HERE --------------------------
+               // Display container and contents:
+               skin_container( NT_('Header'), array(
+                     // The following params will be used as defaults for widgets included in this container:
+                     'block_start'       => '<div class="evo_widget $wi_class$">',
+                     'block_end'         => '</div>',
+                     'block_title_start' => '<h1>',
+                     'block_title_end'   => '</h1>',
+                  ) );
+               // ----------------------------- END OF "Header" CONTAINER -----------------------------
+            ?>
+            </div>
+         </div><!-- .col -->
+
+   </div><!-- .container -->
+   <div class="clearfix"></div>
+</header><!-- #main-header -->
+
 
 <div class="container">
-
-
-<header class="row">
-
-	<div class="coll-xs-12 coll-sm-12 col-md-4 col-md-push-8">
-		<div class="evo_container evo_container__page_top">
-		<?php
-			// ------------------------- "Page Top" CONTAINER EMBEDDED HERE --------------------------
-			// Display container and contents:
-			skin_container( NT_('Page Top'), array(
-					// The following params will be used as defaults for widgets included in this container:
-					'block_start'         => '<div class="evo_widget $wi_class$">',
-					'block_end'           => '</div>',
-					'block_display_title' => false,
-					'list_start'          => '<ul>',
-					'list_end'            => '</ul>',
-					'item_start'          => '<li>',
-					'item_end'            => '</li>',
-				) );
-			// ----------------------------- END OF "Page Top" CONTAINER -----------------------------
-		?>
-		</div>
-	</div><!-- .col -->
-
-	<div class="coll-xs-12 col-sm-12 col-md-8 col-md-pull-4">
-		<div class="evo_container evo_container__header">
-		<?php
-			// ------------------------- "Header" CONTAINER EMBEDDED HERE --------------------------
-			// Display container and contents:
-			skin_container( NT_('Header'), array(
-					// The following params will be used as defaults for widgets included in this container:
-					'block_start'       => '<div class="evo_widget $wi_class$">',
-					'block_end'         => '</div>',
-					'block_title_start' => '<h1>',
-					'block_title_end'   => '</h1>',
-				) );
-			// ----------------------------- END OF "Header" CONTAINER -----------------------------
-		?>
-		</div>
-	</div><!-- .col -->
-
-</header><!-- .row -->
-
-
-<nav class="row">
-
-	<div class="col-md-12">
-		<ul class="nav nav-tabs evo_container evo_container__menu">
-		<?php
-			// ------------------------- "Menu" CONTAINER EMBEDDED HERE --------------------------
-			// Display container and contents:
-			// Note: this container is designed to be a single <ul> list
-			skin_container( NT_('Menu'), array(
-					// The following params will be used as defaults for widgets included in this container:
-					'block_start'         => '',
-					'block_end'           => '',
-					'block_display_title' => false,
-					'list_start'          => '',
-					'list_end'            => '',
-					'item_start'          => '<li class="evo_widget $wi_class$">',
-					'item_end'            => '</li>',
-					'item_selected_start' => '<li class="active evo_widget $wi_class$">',
-					'item_selected_end'   => '</li>',
-					'item_title_before'   => '',
-					'item_title_after'    => '',
-				) );
-			// ----------------------------- END OF "Menu" CONTAINER -----------------------------
-		?>
-		</ul>
-	</div><!-- .col -->
-
-</nav><!-- .row -->
 
 
 <div class="row">
@@ -346,80 +327,106 @@ siteskin_include( '_site_body_header.inc.php' );
 
 </div><!-- .row -->
 
-
-<footer class="row">
-
-	<!-- =================================== START OF FOOTER =================================== -->
-	<div class="col-md-12 center">
-
-		<div class="evo_container evo_container__footer">
-		<?php
-			// Display container and contents:
-			skin_container( NT_("Footer"), array(
-					// The following params will be used as defaults for widgets included in this container:
-					'block_start'       => '<div class="evo_widget $wi_class$">',
-					'block_end'         => '</div>',
-				) );
-			// Note: Double quotes have been used around "Footer" only for test purposes.
-		?>
-		</div>
-
-		<p>
-			<?php
-				// Display footer text (text can be edited in Blog Settings):
-				$Blog->footer_text( array(
-						'before' => '',
-						'after'  => ' &bull; ',
-					) );
-			?>
-
-			<?php
-				// Display a link to contact the owner of this blog (if owner accepts messages):
-				$Blog->contact_link( array(
-						'before' => '',
-						'after'  => ' &bull; ',
-						'text'   => T_('Contact'),
-						'title'  => T_('Send a message to the owner of this blog...'),
-					) );
-				// Display a link to help page:
-				$Blog->help_link( array(
-						'before'      => ' ',
-						'after'       => ' ',
-						'text'        => T_('Help'),
-					) );
-			?>
-
-			<?php
-				// Display additional credits:
-				// If you can add your own credits without removing the defaults, you'll be very cool :))
-				// Please leave this at the bottom of the page to make sure your blog gets listed on b2evolution.net
-				credits( array(
-						'list_start'  => '&bull;',
-						'list_end'    => ' ',
-						'separator'   => '&bull;',
-						'item_start'  => ' ',
-						'item_end'    => ' ',
-					) );
-			?>
-		</p>
-
-		<?php
-			// Please help us promote b2evolution and leave this logo on your blog:
-			powered_by( array(
-					'block_start' => '<div class="powered_by">',
-					'block_end'   => '</div>',
-					// Check /rsc/img/ for other possible images -- Don't forget to change or remove width & height too
-					'img_url'     => '$rsc$img/powered-by-b2evolution-120t.gif',
-					'img_width'   => 120,
-					'img_height'  => 32,
-				) );
-		?>
-	</div><!-- .col -->
-	
-</footer><!-- .row -->
-
-
 </div><!-- .container -->
+
+<footer id="main-footer">
+
+   <!-- =================================== START OF FOOTER =================================== -->
+
+   <div class="container-fluid">
+
+      <!-- Social Media -->
+      <div class="coll-xs-12 coll-sm-12 col-md-12">
+   		<div class="evo_container evo_container__page_top">
+   		<?php
+   			// ------------------------- "Page Top" CONTAINER EMBEDDED HERE --------------------------
+   			// Display container and contents:
+   			skin_container( NT_('Page Top'), array(
+   					// The following params will be used as defaults for widgets included in this container:
+   					'block_start'         => '<div class="evo_widget $wi_class$">',
+   					'block_end'           => '</div>',
+   					'block_display_title' => false,
+   					'list_start'          => '<ul>',
+   					'list_end'            => '</ul>',
+   					'item_start'          => '<li>',
+   					'item_end'            => '</li>',
+   				) );
+   			// ----------------------------- END OF "Page Top" CONTAINER -----------------------------
+   		?>
+   		</div>
+   	</div><!-- .col -->
+      <!-- End Social Media -->
+
+
+   	<div class="col-md-12 center">
+
+   		<div class="evo_container evo_container__footer">
+   		<?php
+   			// Display container and contents:
+   			skin_container( NT_("Footer"), array(
+   					// The following params will be used as defaults for widgets included in this container:
+   					'block_start'       => '<div class="evo_widget $wi_class$">',
+   					'block_end'         => '</div>',
+   				) );
+   			// Note: Double quotes have been used around "Footer" only for test purposes.
+   		?>
+   		</div>
+
+   		<p>
+   			<?php
+   				// Display footer text (text can be edited in Blog Settings):
+   				$Blog->footer_text( array(
+   						'before' => '',
+   						'after'  => ' &bull; ',
+   					) );
+   			?>
+
+   			<?php
+   				// Display a link to contact the owner of this blog (if owner accepts messages):
+   				$Blog->contact_link( array(
+   						'before' => '',
+   						'after'  => ' &bull; ',
+   						'text'   => T_('Contact'),
+   						'title'  => T_('Send a message to the owner of this blog...'),
+   					) );
+   				// Display a link to help page:
+   				$Blog->help_link( array(
+   						'before'      => ' ',
+   						'after'       => ' ',
+   						'text'        => T_('Help'),
+   					) );
+   			?>
+
+   			<?php
+   				// Display additional credits:
+   				// If you can add your own credits without removing the defaults, you'll be very cool :))
+   				// Please leave this at the bottom of the page to make sure your blog gets listed on b2evolution.net
+   				credits( array(
+   						'list_start'  => '&bull;',
+   						'list_end'    => ' ',
+   						'separator'   => '&bull;',
+   						'item_start'  => ' ',
+   						'item_end'    => ' ',
+   					) );
+   			?>
+   		</p>
+
+   		<?php
+   			// Please help us promote b2evolution and leave this logo on your blog:
+   			powered_by( array(
+   					'block_start' => '<div class="powered_by">',
+   					'block_end'   => '</div>',
+   					// Check /rsc/img/ for other possible images -- Don't forget to change or remove width & height too
+   					'img_url'     => '$rsc$img/powered-by-b2evolution-120t.gif',
+   					'img_width'   => 120,
+   					'img_height'  => 32,
+   				) );
+   		?>
+   	</div><!-- .col -->
+
+   </div>
+
+</footer><!-- .row -->
 
 
 <?php

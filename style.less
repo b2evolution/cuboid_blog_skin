@@ -1,16 +1,104 @@
-// Header
-.evo_container__header {
-	margin-bottom: 20px;
+// ========================================================================
+// Variable
+// ======================================================================== /
+@font_body: "Oxygen", Verdana, Geneva, sans-serif;
+@font_title_site: "Montez", Verdana, Geneva, sans-serif;
+
+// ========================================================================
+// Google Font Inport
+// ======================================================================== /
+@import url(https://fonts.googleapis.com/css?family=Montez);
+@import url(https://fonts.googleapis.com/css?family=Oxygen:400,300,700);
+@import url(https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz:400,700);
+
+/* ----------------------------------------------------------------------------
+ * Global Style
+ * -------------------------------------------------------------------------- */
+html, body{
+   font-size: 10px;
 }
+
+
+body #skin_wrapper{
+   font: normal 15px/1.5 @font_body;
+   letter-spacing: 0.5px;
+}
+
+a{
+
+}
+
+/* ----------------------------------------------------------------------------
+ * Main Header Style
+ * -------------------------------------------------------------------------- */
+#main-header{
+   padding: 30px 0;
+   margin-bottom: 50px;
+   margin-top: -16px;
+}
+
+.evo_container__header {
+	margin-bottom: 15px;
+
+   .widget_core_coll_title{
+      h1{
+         margin-top: 0;
+         margin-bottom: 0;
+
+         a{
+            font-family: @font_title_site;
+            font-size: 5.5rem;
+            // font-weight: 700;
+            letter-spacing: 0px;
+
+            &:hover, &:active, &:focus{
+               text-decoration: none;
+            }
+         }
+      }
+   }
+
+   .widget_core_coll_tagline{
+      font-size: 1.4rem;
+      font-style: italic;
+   }
+
+}
+
 .evo_container__page_top {
 	margin-top: 20px;
 	.ufld_icon_links {
-		text-align: right;
+		text-align: center;
 	}
 }
+
+/* Navbar Style
+   ========================================================================== */
 .nav.nav-tabs {
-	margin-top: 0;
+	margin: 0;
+   float: right;
+   border-bottom: none;
+
+   li{
+
+      a{
+         font-size: 1.5rem;
+         text-transform: uppercase;
+         padding: 30px 15px;
+         // font-weight: 700;
+         color: #fff;
+         // letter-spacing: 0;
+
+         &:hover, &:active, &:focus{
+            background-color: transparent;
+            border-color: transparent;
+         }
+      }
+   }
+
 }
+
+
 
 // Intro post - Featured post background images sample
 // .well {

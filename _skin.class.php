@@ -15,7 +15,7 @@ if( !defined('EVO_MAIN_INIT') ) die( 'Please, do not access this page directly.'
  *
  * ATTENTION: if you make a new skin you have to change the class name below accordingly
  */
-class cuboid_Skin extends Skin
+class cuboid_blog_Skin extends Skin
 {
 	var $version = '1.0';
 	/**
@@ -31,7 +31,7 @@ class cuboid_Skin extends Skin
 	 */
 	function get_default_name()
 	{
-		return 'Cuboid';
+		return 'Cuboid Blog';
 	}
 
 
@@ -65,34 +65,96 @@ class cuboid_Skin extends Skin
 	function get_param_definitions( $params )
 	{
 		$r = array_merge( array(
-				'section_layout_start' => array(
-					'layout' => 'begin_fieldset',
-					'label'  => T_('Layout Settings')
-				),
-					'layout' => array(
-						'label' => T_('Layout'),
-						'note' => '',
-						'defaultvalue' => 'right_sidebar',
-						'options' => array(
-								'single_column'              => T_('Single Column Large'),
-								'single_column_normal'       => T_('Single Column'),
-								'single_column_narrow'       => T_('Single Column Narrow'),
-								'single_column_extra_narrow' => T_('Single Column Extra Narrow'),
-								'left_sidebar'               => T_('Left Sidebar'),
-								'right_sidebar'              => T_('Right Sidebar'),
-							),
-						'type' => 'select',
-					),
-					'max_image_height' => array(
-						'label' => T_('Max image height'),
-						'note' => 'px',
-						'defaultvalue' => '',
-						'type' => 'integer',
-						'allow_empty' => true,
-					),
-				'section_layout_end' => array(
-					'layout' => 'end_fieldset',
-				),
+            'general_settings_start' => array(
+               'layout' => 'begin_fieldset',
+               'label'  => T_('General settings')
+            ),
+               // Layout
+               'layout' => array(
+                  'label' => T_('Layout'),
+                  'note' => '',
+                  'defaultvalue' => 'right_sidebar',
+                  'options' => array(
+                        'single_column'              => T_('Single Column Large'),
+                        'single_column_normal'       => T_('Single Column'),
+                        'single_column_narrow'       => T_('Single Column Narrow'),
+                        'single_column_extra_narrow' => T_('Single Column Extra Narrow'),
+                        'left_sidebar'               => T_('Left Sidebar'),
+                        'right_sidebar'              => T_('Right Sidebar'),
+                     ),
+                  'type' => 'select',
+               ),
+               'max_image_height' => array(
+                  'label' => T_('Max image height'),
+                  'note' => 'px',
+                  'defaultvalue' => '',
+                  'type' => 'integer',
+                  'allow_empty' => true,
+               ),
+
+               'front_bg_image' => array(
+                  'label' => T_('Front page background image'),
+                  'defaultvalue' => '../skins/ark_skin/images/background-image.jpg',
+                  'type' => 'text',
+                  'size' => '50'
+               ),
+               'site_background_color' => array(
+                  'label' => T_('Site background color'),
+                  'note' => T_('Default value is #3333'),
+                  'defaultvalue' => '#333',
+                  'type' => 'color',
+               ),
+               'site_title_color' => array(
+                  'label' => T_('Site title color'),
+                  'note' => T_('Default value is #FFFFFF'),
+                  'defaultvalue' => '#FFFFFF',
+                  'type' => 'color',
+               ),
+               'site_tagline_color' => array(
+                  'label' => T_('Site tagline color'),
+                  'note' => T_('Default value is #FFFFFF'),
+                  'defaultvalue' => '#FFFFFF',
+                  'type' => 'color',
+               ),
+               'site_text_color' => array(
+                  'label' => T_('Site text color'),
+                  'note' => T_('Default value is #616161'),
+                  'defaultvalue' => '#616161',
+                  'type' => 'color',
+               ),
+               // General links color
+               'site_link_color' => array(
+                  'label' => T_('Site links color'),
+                  'note' => T_('Default value is #5CBDE0'),
+                  'defaultvalue' => '#5CBDE0',
+                  'type' => 'color',
+               ),
+               'site_link_color_hover' => array(
+                  'label' => T_('Site links color (hover)'),
+                  'note' => T_('Default value is #1abc9c'),
+                  'defaultvalue' => '#1abc9c',
+                  'type' => 'color',
+               ),
+            'general_settings_end' => array(
+               'layout' => 'end_fieldset',
+            ),
+
+            /* Header Settings
+               ========================================================================== */
+            'header_settings_start' => array(
+               'layout' => 'begin_fieldset',
+               'label'  => T_('Header settings')
+            ),
+               'header_bg_color' => array(
+                  'label' => T_('Header Background Color'),
+                  'note' => T_('Default value is #262626'),
+                  'defaultvalue' => '#262626',
+                  'type' => 'color',
+               ),
+            'header_settings_end' => array(
+               'layout' => 'end_fieldset',
+            ),
+            // End Header Settings
 
 				'section_colorbox_start' => array(
 					'layout' => 'begin_fieldset',
@@ -228,6 +290,58 @@ class cuboid_Skin extends Skin
 		{
 			add_css_headline( '.evo_image_block img { max-height: '.$max_image_height.'px; width: auto; }' );
 		}
+
+      // Skin specific initializations:
+		// Add custom CSS:
+		$custom_css = '';
+
+
+      /**
+       * ============================================================================
+       * General Settings Output
+       * ============================================================================
+       */
+		if( $color = $this->get_setting( 'site_title_color' ) ) {
+			$custom_css .= 'body #main-header .widget_core_coll_title h1 a { color: '.$color." }\n";
+		}
+
+      if( $color = $this->get_setting( 'site_tagline_color' ) ) {
+			$custom_css .= 'body .widget_core_coll_tagline { color: '.$color." }\n";
+		};
+
+      if( $color = $this->get_setting( 'site_text_color' ) ) {
+			$custom_css .= 'html, body { color: '.$color." }\n";
+		};
+
+      if( $color = $this->get_setting( 'site_link_color_hover' ) ) {
+			$custom_css .= 'html, body a, a:hover  { color: '.$color." }\n";
+		};
+
+
+      /**
+       * ============================================================================
+       * Header Settings Output
+       * ============================================================================
+       */
+		if( $color = $this->get_setting( 'header_bg_color' ) ) {
+			$custom_css .= 'body #main-header { background-color: '.$color." }\n";
+		}
+
+      /**
+       * ============================================================================
+       * Output CSS
+       * ============================================================================
+       */
+      if( ! empty( $custom_css ) )
+		{ // Function for custom_css:
+		$custom_css = '<style type="text/css">
+         <!--
+         '.$custom_css.'
+         -->
+		</style>';
+		add_headline( $custom_css );
+		}
+
 	}
 
 
