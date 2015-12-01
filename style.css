@@ -145,7 +145,7 @@ body #skin_wrapper {
 }
 #content .evo_intro_post {
   padding: 10px 30px 20px;
-  background: #FFFFFF;
+  background: #ffffff;
   border: 0;
   box-shadow: none;
 }
@@ -157,7 +157,11 @@ body #skin_wrapper {
 }
 #content .evo_post .evo_post_title h2 {
   font-size: 2.4rem;
-  letter-spacing: 0;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+#content .evo_post .evo_post_title h2 a {
+  color: #6B6B6B;
 }
 #content .evo_post .evo_post_title h2 a:hover {
   text-decoration: none;
@@ -178,8 +182,10 @@ body #skin_wrapper {
 }
 #main-sidebar .evo_widget .panel-heading .panel-title {
   font-family: "Montserrat", sans-serif;
-  font-size: 2rem;
-  color: #555;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #6B6B6B;
+  text-transform: uppercase;
   letter-spacing: 0;
 }
 .widget_core_user_login #login_form .form-group {
