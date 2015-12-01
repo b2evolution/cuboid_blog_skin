@@ -92,12 +92,14 @@ class cuboid_blog_Skin extends Skin
                   'allow_empty' => true,
                ),
 
-               'front_bg_image' => array(
-                  'label' => T_('Front page background image'),
-                  'defaultvalue' => '../skins/ark_skin/images/background-image.jpg',
+               'bg_image' => array(
+                  'label' => T_('Background Image Pattern'),
+                  'defaultvalue' => 'images/bg-5.png',
+                  'note' => T_('Item path starts from the root of the skin folder.'),
                   'type' => 'text',
                   'size' => '50'
                ),
+
                'site_background_color' => array(
                   'label' => T_('Site background color'),
                   'note' => T_('Default value is #3333'),
@@ -125,14 +127,39 @@ class cuboid_blog_Skin extends Skin
                // General links color
                'site_link_color' => array(
                   'label' => T_('Site links color'),
-                  'note' => T_('Default value is #5CBDE0'),
-                  'defaultvalue' => '#5CBDE0',
+                  'note' => T_('Default value is #1abc9c'),
+                  'defaultvalue' => '#1abc9c',
                   'type' => 'color',
                ),
                'site_link_color_hover' => array(
                   'label' => T_('Site links color (hover)'),
                   'note' => T_('Default value is #1abc9c'),
                   'defaultvalue' => '#1abc9c',
+                  'type' => 'color',
+               ),
+               // Pagination
+               'pagination_bg' => array(
+                  'label' => T_('Pagination Background Color'),
+                  'note' => T_('Default value is #333333'),
+                  'defaultvalue' => '#333333',
+                  'type' => 'color',
+               ),
+               'pagination_bg_hover' => array(
+                  'label' => T_('Pagination Background Color Hover'),
+                  'note' => T_('Default value is #1abc9c'),
+                  'defaultvalue' => '#1abc9c',
+                  'type' => 'color',
+               ),
+               'pagination_text_color' => array(
+                  'label' => T_('Pagination Text Color'),
+                  'note' => T_('Default value is #FFFFFF'),
+                  'defaultvalue' => '#FFFFFF',
+                  'type' => 'color',
+               ),
+               'pagination_text_color_hover' => array(
+                  'label' => T_('Pagination Text Color Hover'),
+                  'note' => T_('Default value is #FFFFFF'),
+                  'defaultvalue' => '#FFFFFF',
                   'type' => 'color',
                ),
             'general_settings_end' => array(
@@ -151,10 +178,70 @@ class cuboid_blog_Skin extends Skin
                   'defaultvalue' => '#262626',
                   'type' => 'color',
                ),
+               'head_tagline_bg_color' => array(
+                  'label' => T_('Header Tagline Background Color'),
+                  'note' => T_('Default value is #333333'),
+                  'defaultvalue' => '#333333',
+                  'type' => 'color',
+               ),
             'header_settings_end' => array(
                'layout' => 'end_fieldset',
             ),
             // End Header Settings
+
+
+            /* Content Settings
+               ========================================================================== */
+            'content_settings_start' => array(
+               'layout' => 'begin_fieldset',
+               'label'  => T_('Header settings')
+            ),
+               'content_bg_color' => array(
+                  'label' => T_('Content Background Color'),
+                  'note' => T_('Default value is #FFFFFF'),
+                  'defaultvalue' => '#FFFFFF',
+                  'type' => 'color',
+               ),
+               'content_title_color' => array(
+                  'label' => T_('Content Title Color'),
+                  'note' => T_('Default value is #555555'),
+                  'defaultvalue' => '#555555',
+                  'type' => 'color',
+               ),
+               'content_title_color_hover' => array(
+                  'label' => T_('Content Title Color Hover'),
+                  'note' => T_('Default value is #1abc9c'),
+                  'defaultvalue' => '#1abc9c',
+                  'type' => 'color',
+               ),
+               'content_text_color' => array(
+                  'label' => T_('Content Text Color'),
+                  'note' => T_('Default value is #808080'),
+                  'defaultvalue' => '#808080',
+                  'type' => 'color',
+               ),
+            'content_settings_end' => array(
+               'layout' => 'end_fieldset',
+            ),
+            // End Footer Settings
+
+
+            /* Footer Settings
+               ========================================================================== */
+            'footer_settings_start' => array(
+               'layout' => 'begin_fieldset',
+               'label'  => T_('Header settings')
+            ),
+               'footer_bg_color' => array(
+                  'label' => T_('Footer Background Color'),
+                  'note' => T_('Default value is #262626'),
+                  'defaultvalue' => '#262626',
+                  'type' => 'color',
+               ),
+            'footer_settings_end' => array(
+               'layout' => 'end_fieldset',
+            ),
+            // End Footer Settings
 
 				'section_colorbox_start' => array(
 					'layout' => 'begin_fieldset',
@@ -301,6 +388,11 @@ class cuboid_blog_Skin extends Skin
        * General Settings Output
        * ============================================================================
        */
+      $bg_image = $this->get_setting( 'bg_image' );
+      if( ! empty( $bg_image ) )
+      {
+         $custom_css = 'body { background-image: url('.$bg_image .") }\n";
+      }
 		if( $color = $this->get_setting( 'site_title_color' ) ) {
 			$custom_css .= 'body #main-header .widget_core_coll_title h1 a { color: '.$color." }\n";
 		}
@@ -313,10 +405,27 @@ class cuboid_blog_Skin extends Skin
 			$custom_css .= 'html, body { color: '.$color." }\n";
 		};
 
-      if( $color = $this->get_setting( 'site_link_color_hover' ) ) {
-			$custom_css .= 'html, body a, a:hover  { color: '.$color." }\n";
+      if( $color = $this->get_setting( 'site_link_color' ) ) {
+			$custom_css .= 'html a, body a, a  { color: '.$color." }\n";
 		};
 
+      if( $color = $this->get_setting( 'site_link_color_hover' ) ) {
+			$custom_css .= 'html a:hover, body a:hover, .nav.nav-tabs li a:hover, .nav.nav-tabs li a.selected  { color: '.$color." }\n";
+		};
+
+      // Pagination
+      if( $color = $this->get_setting( 'pagination_bg' ) ) {
+			$custom_css .= '.pagination > li > a { background-color: '.$color." }\n";
+		};
+      if( $color = $this->get_setting( 'pagination_bg_hover' ) ) {
+			$custom_css .= '.pagination > .active > span, .pagination > .active > span:hover, .pagination > li > a:hover { background-color: '.$color." }\n";
+		};
+      if( $color = $this->get_setting( 'pagination_text_color' ) ) {
+			$custom_css .= '.pagination > li > a, .pagination > li > .active span { color: '.$color." }\n";
+		};
+      if( $color = $this->get_setting( 'pagination_text_color_hover' ) ) {
+			$custom_css .= '.pagination > li > a:hover, .pagination > li > .active span:hover { color: '.$color." }\n";
+		};
 
       /**
        * ============================================================================
@@ -325,6 +434,41 @@ class cuboid_blog_Skin extends Skin
        */
 		if( $color = $this->get_setting( 'header_bg_color' ) ) {
 			$custom_css .= 'body #main-header { background-color: '.$color." }\n";
+		}
+
+      if( $color = $this->get_setting( 'head_tagline_bg_color' ) ) {
+			$custom_css .= 'body #head_tagline { background-color: '.$color." }\n";
+		}
+
+      /**
+      * ============================================================================
+      * Content Settings Output
+      * ============================================================================
+      */
+      if( $color = $this->get_setting( 'content_bg_color' ) ) {
+         $custom_css .= 'body #content .evo_content_block { background-color: '.$color." }\n";
+      }
+
+      if( $color = $this->get_setting( 'content_title_color' ) ) {
+         $custom_css .= 'body #content .evo_post_title h2 a { color: '.$color." }\n";
+      }
+
+      if( $color = $this->get_setting( 'content_title_color_hover' ) ) {
+         $custom_css .= 'body #content .evo_post_title h2 a:hover { color: '.$color." }\n";
+      }
+
+      if( $color = $this->get_setting( 'content_text_color' ) ) {
+         $custom_css .= 'body #content .evo_content_block .evo_post__full_text { color: '.$color." }\n";
+      }
+
+
+      /**
+       * ============================================================================
+       * Footer Settings Output
+       * ============================================================================
+       */
+		if( $color = $this->get_setting( 'footer_bg_color' ) ) {
+			$custom_css .= 'body #main-footer { background-color: '.$color." }\n";
 		}
 
       /**
@@ -712,12 +856,12 @@ class cuboid_blog_Skin extends Skin
 
 			case 'left_sidebar':
 				// Left Sidebar
-				return 'col-md-9 pull-right';
+				return 'col-md-8 pull-right';
 
 			case 'right_sidebar':
 				// Right Sidebar
 			default:
-				return 'col-md-9';
+				return 'col-md-8';
 		}
 	}
 }

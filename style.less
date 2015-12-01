@@ -1,15 +1,22 @@
 // ========================================================================
 // Variable
 // ======================================================================== /
-@font_body: "Oxygen", Verdana, Geneva, sans-serif;
 @font_title_site: "Montez", Verdana, Geneva, sans-serif;
+@font_body: "Source Sans Pro", Verdana, Geneva, sans-serif;
+@font_heading: "Montserrat", sans-serif;
+
+// color
+@w: #FFFFFF;
 
 // ========================================================================
 // Google Font Inport
 // ======================================================================== /
 @import url(https://fonts.googleapis.com/css?family=Montez);
-@import url(https://fonts.googleapis.com/css?family=Oxygen:400,300,700);
-@import url(https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz:400,700);
+@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300,400italic,600,700);
+@import url(https://fonts.googleapis.com/css?family=Montserrat:400,700);
+
+// @import url(https://fonts.googleapis.com/css?family=Oxygen:400,300,700);
+// @import url(https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz:400,700);
 
 /* ----------------------------------------------------------------------------
  * Global Style
@@ -22,6 +29,8 @@ html, body{
 body #skin_wrapper{
    font: normal 15px/1.5 @font_body;
    letter-spacing: 0.5px;
+   // background-image: url('images/background.jpg');
+   background-repeat: repeat;
 }
 
 a{
@@ -32,13 +41,12 @@ a{
  * Main Header Style
  * -------------------------------------------------------------------------- */
 #main-header{
-   padding: 30px 0;
-   margin-bottom: 50px;
+   padding: 35px 0;
    margin-top: -16px;
 }
 
 .evo_container__header {
-	margin-bottom: 15px;
+	// margin-bottom: 15px;
 
    .widget_core_coll_title{
       h1{
@@ -59,8 +67,11 @@ a{
    }
 
    .widget_core_coll_tagline{
-      font-size: 1.4rem;
+      font-size: 1.3rem;
       font-style: italic;
+      font-family: @font_heading;
+      font-weight: 400;
+      line-height: 1;
    }
 
 }
@@ -74,24 +85,144 @@ a{
 
 /* Navbar Style
    ========================================================================== */
-.nav.nav-tabs {
-	margin: 0;
-   float: right;
-   border-bottom: none;
+.navbar-header{
+   height: 60px;
+   .navbar-toggle{
+      margin-top: 15px;
+      border-color: @w;
+   }
+   .icon-bar{
+      background-color: @w;
+   }
+}
 
-   li{
+#hamburger-menu{
+   display: none;
+   @media screen and ( max-width: 768px ){
+      display: block;
+   }
+}
 
-      a{
-         font-size: 1.5rem;
-         text-transform: uppercase;
-         padding: 30px 15px;
-         // font-weight: 700;
-         color: #fff;
-         // letter-spacing: 0;
+.navbar-collapse{
 
-         &:hover, &:active, &:focus{
-            background-color: transparent;
-            border-color: transparent;
+   @media screen and ( max-width: 768px ) {
+      padding-left: 0;
+      padding-right: 0;
+      margin-top: 15px;
+   }
+
+   .nav.nav-tabs {
+   	margin: 0;
+      float: right;
+      border-bottom: none;
+
+      li{
+
+         a{
+            font-family: @font_heading;
+            font-size: 1.4rem;
+            color: #fff;
+            font-weight: 400;
+            text-transform: uppercase;
+            // letter-spacing: 1px;
+            padding: 20px 12px;
+            opacity: 0.95;
+
+            &:hover, &:active, &:focus{
+               background-color: transparent;
+               border-color: transparent;
+               opacity: 1;
+            }
+
+            &.selected{
+               background: transparent;
+               border: 0;
+               opacity: 1;
+            }
+         }
+      }
+
+      @media screen and ( max-width: 768px ) {
+         float: none;
+
+         & > li {
+            float: none;
+            margin: 0;
+            width: 100%;
+         }
+
+         li {
+            display: block;
+
+            a{
+               padding: 10px 0;
+            }
+         }
+      }
+
+   }
+
+   &.collapse.in {
+
+   }
+
+}
+
+
+/* ----------------------------------------------------------------------------
+ * Head Tagline Style
+ * -------------------------------------------------------------------------- */
+#head_tagline{
+   padding: 50px 0;
+   border-top: 1px solid #4C4C4C;
+
+   .widget_core_coll_tagline{
+      font-family: @font_body;
+      font-size: 3rem;
+      font-style: normal;
+      font-weight: 300;
+      letter-spacing: 0;
+      line-height: 1;
+   }
+}
+
+
+/* ----------------------------------------------------------------------------
+ * # Content Styling
+ * -------------------------------------------------------------------------- */
+#content{
+   margin-top: 50px;
+
+   /* Content Block Styling
+      ========================================================================== */
+   main > .evo_content_block{
+      margin-bottom: 30px;
+      box-shadow: 0 1px 3px rgba(185, 185, 185, 0.6);
+   }
+
+   .evo_intro_post{
+      padding: 10px 30px 20px;
+      background: #FFFFFF;
+      border: 0;
+      box-shadow: none;
+   }
+
+   .evo_post{
+      padding: 15px 30px;
+
+      .evo_post_title{
+         font-family: @font_heading;
+         // text-transform: uppercase;
+
+         h2{
+            font-size: 2.4rem;
+            letter-spacing: 0;
+
+            a{
+               &:hover{
+                  text-decoration: none;
+               }
+            }
          }
       }
    }
@@ -99,6 +230,33 @@ a{
 }
 
 
+/* ----------------------------------------------------------------------------
+ * Sidebar Styling
+ * -------------------------------------------------------------------------- */
+#main-sidebar{
+
+   .evo_widget{
+      padding: 15px;
+      box-shadow: 0 1px 3px rgba(185, 185, 185, 0.6);
+      border: none;
+      border-radius: 0;
+      margin-bottom: 30px;
+
+      .panel-heading{
+         background-color: transparent;
+         border: none;
+
+         .panel-title{
+            font-family: @font_heading;
+            font-size: 2rem;
+            color: #555;
+            // text-transform: uppercase;
+            letter-spacing: 0;
+         }
+      }
+   }
+
+}
 
 // Intro post - Featured post background images sample
 // .well {
@@ -394,9 +552,35 @@ div.bSideItem {
 	margin-top: 0;
 }
 
-// Pagination
+/* ----------------------------------------------------------------------------
+ * Pagination
+ * -------------------------------------------------------------------------- */
 .pagination {
-	margin: 0;
+	margin: 0 0 30px;
+   font-family: @font_heading;
+
+   li {
+      margin: 2px 0;
+
+      & > a, & > span {
+         display: inline-block;
+         border: 0;
+         border-radius: 0 !important;
+
+         // &:hover, &:active, &:focus {
+         //    color: @w;
+         // }
+      }
+
+      a, span{
+         padding: 10px 18px;
+         float: none;
+      }
+
+      &.active {
+         font-weight: 700;
+      }
+   }
 }
 
 // Messages
@@ -422,4 +606,13 @@ div.action_messages, div.log_container {
 // This skin needs this for disp=posts to separate from lower pagination
 footer.row {
 	margin-top: 20px;
+}
+
+
+/* ----------------------------------------------------------------------------
+ * Footer Styling
+ * -------------------------------------------------------------------------- */
+#main-footer{
+   padding: 50px 0;
+   margin-top: 50px;
 }
