@@ -221,10 +221,10 @@ siteskin_include( '_site_body_header.inc.php' );
       					),
       					// Form params for the forms below: login, register, lostpassword, activateinfo and msgform
       					'skin_form_before'      => '<div class="panel panel-default skin-form">'
-      																				.'<div class="panel-heading">'
-      																					.'<h3 class="panel-title">$form_title$</h3>'
-      																				.'</div>'
-      																				.'<div class="panel-body">',
+                           							.'<div class="panel-heading">'
+                           								.'<h3 class="panel-title">$form_title$</h3>'
+                           							.'</div>'
+                           							.'<div class="panel-body">',
       					'skin_form_after'       => '</div></div>',
       					// Login
       					'display_form_messages' => true,

@@ -1,5 +1,5 @@
 @import url(https://fonts.googleapis.com/css?family=Montez);
-@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300,400italic,600,700);
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,400italic);
 @import url(https://fonts.googleapis.com/css?family=Montserrat:400,700);
 /* ----------------------------------------------------------------------------
  * Global Style
@@ -9,9 +9,8 @@ body {
   font-size: 10px;
 }
 body #skin_wrapper {
-  font: normal 15px/1.5 "Source Sans Pro", Verdana, Geneva, sans-serif;
+  font: normal 15px/1.5 "Open Sans", sans-serif;
   letter-spacing: 0.5px;
-  background-repeat: repeat;
 }
 /* ----------------------------------------------------------------------------
  * Main Header Style
@@ -26,7 +25,7 @@ body #skin_wrapper {
 }
 .evo_container__header .widget_core_coll_title h1 a {
   font-family: "Montez", Verdana, Geneva, sans-serif;
-  font-size: 5.5rem;
+  font-size: 5.6rem;
   letter-spacing: 0px;
 }
 .evo_container__header .widget_core_coll_title h1 a:hover,
@@ -82,7 +81,7 @@ body #skin_wrapper {
 .navbar-collapse .nav.nav-tabs li a {
   font-family: "Montserrat", sans-serif;
   font-size: 1.4rem;
-  color: #fff;
+  color: #ffffff;
   font-weight: 400;
   text-transform: uppercase;
   padding: 20px 12px;
@@ -124,8 +123,8 @@ body #skin_wrapper {
   border-top: 1px solid #4C4C4C;
 }
 #head_tagline .widget_core_coll_tagline {
-  font-family: "Source Sans Pro", Verdana, Geneva, sans-serif;
-  font-size: 3rem;
+  font-family: "Open Sans", sans-serif;
+  font-size: 2.8rem;
   font-style: normal;
   font-weight: 300;
   letter-spacing: 0;
@@ -136,8 +135,6 @@ body #skin_wrapper {
  * -------------------------------------------------------------------------- */
 #content {
   margin-top: 50px;
-  /* Content Block Styling
-      ========================================================================== */
 }
 #content main > .evo_content_block {
   margin-bottom: 30px;
@@ -149,22 +146,99 @@ body #skin_wrapper {
   border: 0;
   box-shadow: none;
 }
+#content .evo_intro_post .evo_post_title h2 {
+  font-size: 2.6rem;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+}
 #content .evo_post {
-  padding: 15px 30px;
+  margin-bottom: 2em;
+  padding: 10px 30px 15px;
 }
 #content .evo_post .evo_post_title {
   font-family: "Montserrat", sans-serif;
 }
 #content .evo_post .evo_post_title h2 {
-  font-size: 2.4rem;
+  padding: 15px 0 5px;
+  font-size: 2.8rem;
   font-weight: 700;
   text-transform: uppercase;
 }
-#content .evo_post .evo_post_title h2 a {
-  color: #6B6B6B;
-}
 #content .evo_post .evo_post_title h2 a:hover {
   text-decoration: none;
+}
+#content .evo_post .small.text-muted {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  margin: 0 0 10px;
+}
+#content .evo_post .small.text-muted a,
+#content .evo_post .small.text-muted a .glyphicon {
+  color: inherit;
+}
+#content .evo_post .small.text-muted span,
+#content .evo_post .small.text-muted a {
+  color: #A9A9A9;
+  font-weight: 400;
+}
+#content .evo_post .evo_post__full .evo_post__full_text {
+  padding: 15px 0 10px;
+}
+#content .evo_post .evo_post__full .evo_post__full_text .evo_post_more_link {
+  display: inline-block;
+  margin-top: 15px;
+  margin-bottom: 5px;
+  background: #333;
+}
+#content .evo_post .evo_post__full .evo_post__full_text .evo_post_more_link a {
+  display: block;
+  font-size: 1.1rem;
+  font-family: "Montserrat", sans-serif;
+  text-transform: uppercase;
+  font-weight: 400;
+  padding: 10px 20px;
+  color: #ffffff;
+  -webkit-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+#content .evo_post .evo_post__full .evo_post__full_text .evo_post_more_link a:hover,
+#content .evo_post .evo_post__full .evo_post__full_text .evo_post_more_link a:active,
+#content .evo_post .evo_post__full .evo_post__full_text .evo_post_more_link a:focus {
+  text-decoration: none;
+  background: #1abc9c;
+}
+#content .evo_post .post_tags a {
+  font-family: "Montserrat", sans-serif;
+  text-transform: capitalize;
+  font-size: 1.1rem;
+  padding: 4px 8px;
+  background: #F1F1F1;
+  color: #AAAAAA;
+}
+#content .evo_post .post_tags a,
+#content .evo_post .post_tags a::before {
+  -webkit-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+#content .evo_post .post_tags a:hover,
+#content .evo_post .post_tags a:active,
+#content .evo_post .post_tags a:focus {
+  background: #1abc9c;
+  color: #ffffff;
+}
+#content .evo_post .post_tags a:hover::before,
+#content .evo_post .post_tags a:active::before,
+#content .evo_post .post_tags a:focus::before {
+  color: #ffffff;
+}
+#content .evo_post .post_comments_link a {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.4rem;
 }
 /* ----------------------------------------------------------------------------
  * Sidebar Styling
@@ -188,6 +262,9 @@ body #skin_wrapper {
   text-transform: uppercase;
   letter-spacing: 0;
 }
+/* ----------------------------------------------------------------------------
+ * Login widget form
+ * -------------------------------------------------------------------------- */
 .widget_core_user_login #login_form .form-group {
   margin: 0;
 }
@@ -224,6 +301,9 @@ body #skin_wrapper {
   display: block;
   padding-top: 10px;
 }
+/* ----------------------------------------------------------------------------
+ * Register widget form
+ * -------------------------------------------------------------------------- */
 .widget_core_user_register #register_form .form-group {
   margin: 0;
 }
@@ -256,6 +336,9 @@ body #skin_wrapper {
 .widget_core_user_register .field_register_btn .panel .panel-body #submit_login_form {
   margin-right: 10px;
 }
+/* ----------------------------------------------------------------------------
+ * // Profile tabs on ?disp=profile
+ * -------------------------------------------------------------------------- */
 ul.profile_tabs {
   margin: 0 2ex 2ex;
   position: relative;
@@ -269,6 +352,9 @@ ul.profile_tabs {
 .form-horizontal .controls textarea.form-control {
   width: 100%;
 }
+/* ----------------------------------------------------------------------------
+ * // A search button
+ * -------------------------------------------------------------------------- */
 input.search_field {
   margin-bottom: 0;
   display: inline-block;
@@ -312,22 +398,12 @@ textarea.message_text {
 .pull-right .evo_comment_type {
   color: #337ab7;
 }
-.evo_post {
-  margin-bottom: 2em;
-}
-.evo_post .small.text-muted {
-  margin: 4px 0 10px;
-}
-.evo_post .small.text-muted a,
-.evo_post .small.text-muted a .glyphicon {
-  color: inherit;
-}
 div.bSideItem {
   background: #F7F5FA;
   border-radius: 5px;
   padding: 10px;
   margin-bottom: 10px;
-  text-shadow: 0 1px 0 #FFFFFF;
+  text-shadow: 0 1px 0 #ffffff;
 }
 div.bSideItem h4 {
   margin-top: 0;

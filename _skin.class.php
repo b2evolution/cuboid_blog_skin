@@ -99,7 +99,6 @@ class cuboid_blog_Skin extends Skin
                   'type' => 'text',
                   'size' => '50'
                ),
-
                'site_background_color' => array(
                   'label' => T_('Site background color'),
                   'note' => T_('Default value is #3333'),
@@ -120,8 +119,8 @@ class cuboid_blog_Skin extends Skin
                ),
                'site_text_color' => array(
                   'label' => T_('Site text color'),
-                  'note' => T_('Default value is #616161'),
-                  'defaultvalue' => '#616161',
+                  'note' => T_('Default value is #555555'),
+                  'defaultvalue' => '#555555',
                   'type' => 'color',
                ),
                // General links color
@@ -194,7 +193,7 @@ class cuboid_blog_Skin extends Skin
                ========================================================================== */
             'content_settings_start' => array(
                'layout' => 'begin_fieldset',
-               'label'  => T_('Header settings')
+               'label'  => T_('Content settings')
             ),
                'content_bg_color' => array(
                   'label' => T_('Content Background Color'),
@@ -220,6 +219,12 @@ class cuboid_blog_Skin extends Skin
                   'defaultvalue' => '#808080',
                   'type' => 'color',
                ),
+               'content_text_info_post_color' => array(
+                  'label' => T_('Content Text Post Info Color'),
+                  'note' => T_('Default value is #808080'),
+                  'defaultvalue' => '#808080',
+                  'type' => 'color',
+               ),
             'content_settings_end' => array(
                'layout' => 'end_fieldset',
             ),
@@ -230,7 +235,7 @@ class cuboid_blog_Skin extends Skin
                ========================================================================== */
             'footer_settings_start' => array(
                'layout' => 'begin_fieldset',
-               'label'  => T_('Header settings')
+               'label'  => T_('Footer settings')
             ),
                'footer_bg_color' => array(
                   'label' => T_('Footer Background Color'),
@@ -410,7 +415,7 @@ class cuboid_blog_Skin extends Skin
 		};
 
       if( $color = $this->get_setting( 'site_link_color_hover' ) ) {
-			$custom_css .= 'html a:hover, body a:hover, .nav.nav-tabs li a:hover, .nav.nav-tabs li a.selected  { color: '.$color." }\n";
+			$custom_css .= 'html a:hover, body a:hover, .nav.nav-tabs li a:hover, .nav.nav-tabs li a.selected, #content .evo_post .small.text-muted a:hover  { color: '.$color." }\n";
 		};
 
       // Pagination
@@ -446,19 +451,23 @@ class cuboid_blog_Skin extends Skin
       * ============================================================================
       */
       if( $color = $this->get_setting( 'content_bg_color' ) ) {
-         $custom_css .= 'body #content .evo_content_block { background-color: '.$color." }\n";
+         $custom_css .= '#content .evo_content_block { background-color: '.$color." }\n";
       }
 
       if( $color = $this->get_setting( 'content_title_color' ) ) {
-         $custom_css .= 'body #content .evo_post_title h2 a { color: '.$color." }\n";
+         $custom_css .= '#content .evo_post_title h2 a { color: '.$color." }\n";
       }
 
       if( $color = $this->get_setting( 'content_title_color_hover' ) ) {
-         $custom_css .= 'body #content .evo_post_title h2 a:hover { color: '.$color." }\n";
+         $custom_css .= '#content .evo_post_title h2 a:hover { color: '.$color." }\n";
       }
 
       if( $color = $this->get_setting( 'content_text_color' ) ) {
-         $custom_css .= 'body #content .evo_content_block .evo_post__full_text { color: '.$color." }\n";
+         $custom_css .= '#content .evo_content_block .evo_post__full_text { color: '.$color." }\n";
+      }
+
+      if( $color = $this->get_setting( 'content_text_info_post_color' ) ) {
+         $custom_css .= '#content .evo_content_block .small.text-muted { color: '.$color." }\n";
       }
 
 
