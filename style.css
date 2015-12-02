@@ -262,6 +262,21 @@ body #skin_wrapper {
   text-transform: uppercase;
   letter-spacing: 0;
 }
+#main-sidebar .evo_widget ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+#main-sidebar .evo_widget ul li {
+  padding: 8px 0;
+  border-bottom: 1px solid #eee;
+}
+#main-sidebar .evo_widget ul > ul > li:last-child {
+  border-bottom: 1px solid #eee;
+}
+#main-sidebar .evo_widget ul > li:last-child {
+  border-bottom: 0;
+}
 /* ----------------------------------------------------------------------------
  * Login widget form
  * -------------------------------------------------------------------------- */
