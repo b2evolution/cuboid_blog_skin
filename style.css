@@ -254,11 +254,11 @@ body #skin_wrapper {
   background-color: transparent;
   border: none;
 }
-#main-sidebar .evo_widget .panel-heading .panel-title {
+#main-sidebar .evo_widget .panel-title {
   font-family: "Montserrat", sans-serif;
   font-size: 1.6rem;
   font-weight: 700;
-  color: #6B6B6B;
+  color: #555555;
   text-transform: uppercase;
   letter-spacing: 0;
 }
@@ -269,13 +269,19 @@ body #skin_wrapper {
 }
 #main-sidebar .evo_widget ul li {
   padding: 8px 0;
-  border-bottom: 1px solid #eee;
+  border-bottom: 1px solid #eeeeee;
 }
 #main-sidebar .evo_widget ul > ul > li:last-child {
-  border-bottom: 1px solid #eee;
+  border-bottom: 1px solid #eeeeee;
 }
 #main-sidebar .evo_widget ul > li:last-child {
   border-bottom: 0;
+}
+#main-sidebar .widget_core_coll_longdesc {
+  text-align: center;
+}
+#main-sidebar .widget_core_coll_longdesc .panel-title {
+  font-size: 2.6rem;
 }
 /* ----------------------------------------------------------------------------
  * Login widget form

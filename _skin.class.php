@@ -95,9 +95,16 @@ class cuboid_blog_Skin extends Skin
                'bg_image' => array(
                   'label' => T_('Background Image Pattern'),
                   'defaultvalue' => 'images/bg-5.png',
-                  'note' => T_('Item path starts from the root of the skin folder.'),
-                  'type' => 'text',
-                  'size' => '50'
+                  'note' => T_('Choose your favorite background image pattern'),
+                  'options' => array(
+                        'bg_1'       => T_('Pattern 1'),
+                        'bg_2'       => T_('Pattern 2'),
+                        'bg_3'       => T_('Pattern 3'),
+                        'bg_4'       => T_('Pattern 4'),
+                        'bg_5'       => T_('Pattern 5'),
+                        'bg_6'       => T_('Pattern 6'),
+                     ),
+                  'type' => 'select',
                ),
                'site_background_color' => array(
                   'label' => T_('Site background color'),
@@ -394,10 +401,32 @@ class cuboid_blog_Skin extends Skin
        * ============================================================================
        */
       $bg_image = $this->get_setting( 'bg_image' );
-      if( ! empty( $bg_image ) )
-      {
-         $custom_css = 'body { background-image: url('.$bg_image .") }\n";
+      switch( $bg_image ) {
+         case 'bg_1': // When regular layout is chosen, nothing happens, since regular is default
+            $custom_css = 'body { background-image: url("images/bg-1.png") }\n';
+         break;
+
+         case 'bg_2':
+            $custom_css = 'body { background-image: url("images/bg-2.png") }\n';
+         break;
+
+         case 'bg_3':
+            $custom_css = 'body { background-image: url("images/bg-3.png") }\n';
+         break;
+
+         case 'bg_4':
+            $custom_css = 'body { background-image: url("images/bg-4.png") }\n';
+         break;
+
+         case 'bg_5':
+            $custom_css = 'body { background-image: url("images/bg-5.png") }\n';
+         break;
+
+         case 'bg_6':
+            $custom_css = 'body { background-image: url("images/bg-6.png") }\n';
+         break;
       }
+
 		if( $color = $this->get_setting( 'site_title_color' ) ) {
 			$custom_css .= 'body #main-header .widget_core_coll_title h1 a { color: '.$color." }\n";
 		}

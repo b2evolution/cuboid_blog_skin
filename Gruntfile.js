@@ -11,10 +11,9 @@
 // - Make sure Ruby is installed on your system (should be preinstalled on MacOSX. On windows: http://rubyinstaller.org)
 // - Type: "sudo gem install sass"
 // Once this is done, you can:
-// - type 'grunt' (in this dir) and run the default tasks
+// - type 'grunt' (in this dir) and run the default tasks and run automatically
 // - type 'grunt xxx' where xxx is a specific task name
-// - type 'grunt watch' and grunt will start listening for file edits and run automatically 
-// Note for devs: when adding new plugins, use for example "npm install grunt-contrib-less --save-dev" 
+// Note for devs: when adding new plugins, use for example "npm install grunt-contrib-less --save-dev"
 // to update the package.json file with the new plugin reference.
 
 module.exports = function(grunt) {
@@ -60,7 +59,26 @@ module.exports = function(grunt) {
 					nospawn: true,
 				}
 			},
-		}
+		},
+
+      // Using the BrowserSync Proxy for your existing website url.
+      browserSync: {
+         dev: {
+           bsFiles: {
+             src: [
+               "images",
+               // "*.less",
+               "*.css",
+               "**/*.php",
+             ]
+           },
+           options: {
+             watchTask: true,
+            //  Change your url Deploy
+             proxy: "http://localhost/upwork/b2evolution/b2/index.php/a/",
+           }
+         }
+      },
 
 
 	});
@@ -69,8 +87,9 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-less');
 	grunt.loadNpmTasks('grunt-contrib-cssmin');
 	grunt.loadNpmTasks('grunt-contrib-watch');
+   grunt.loadNpmTasks('grunt-browser-sync');
 
 	// Default task(s):
-	grunt.registerTask('default', ['less','cssmin']);
+	grunt.registerTask( 'default', [ 'browserSync', 'less','cssmin', 'watch'] );
 
 };
