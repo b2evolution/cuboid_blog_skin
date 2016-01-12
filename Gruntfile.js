@@ -16,6 +16,16 @@
 // Note for devs: when adding new plugins, use for example "npm install grunt-contrib-less --save-dev"
 // to update the package.json file with the new plugin reference.
 
+// Install NPM for Linux
+// 1. sudo add-apt-repository ppa:chris-lea/node.js
+// 2. sudo apt-get update
+// 3. sudo apt-get install nodejs
+
+// After Finished Install NPM
+// 1. (sudo) npm install -g grunt-cli
+// 2. Change Proxy URL (proxy: "http://localhost/b2evo/business/index.php/a/")
+// 3. grunt
+
 module.exports = function(grunt) {
 
 	// Project configuration:
@@ -29,7 +39,9 @@ module.exports = function(grunt) {
 		less: {
 			style: {
 				options: {
+               expanded: true,
 					compress: false,
+               // paths: ["/"],
 					//yuicompress: true,
 					//optimization: 2
 				},
@@ -49,12 +61,26 @@ module.exports = function(grunt) {
 			},
 		},
 
+      // Autoprefixer CSS Browser Old Support
+      // https://toster.ru/q/119641
+      autoprefixer: {
+         options: {
+            browsers: ['last 2 versions', 'ie 8', 'ie 9', '> 1%'],
+            cascade: false
+         },
+         files: {
+            // Target-specific file lists and/or options go here.
+            src: '*.css'
+         },
+      },
+
+
 		// Configuration for the watch tasks:
 		watch: {
 			less: {
 				// Which files to watch (all .less files recursively in the whole blogs directory)
-				files: ['*.less'],
-				tasks: ['less','cssmin'],
+				files: ['assets/css/*.less', '*.less'],
+				tasks: ['less','cssmin', 'autoprefixer'],
 				options: {
 					nospawn: true,
 				}
@@ -67,7 +93,6 @@ module.exports = function(grunt) {
            bsFiles: {
              src: [
                "images",
-               // "*.less",
                "*.css",
                "**/*.php",
              ]
@@ -75,7 +100,7 @@ module.exports = function(grunt) {
            options: {
              watchTask: true,
             //  Change your url Deploy
-             proxy: "http://localhost/upwork/b2evolution/b2/index.php/a/",
+             proxy: "http://localhost/b2evo/cuboid/index.php/a/",
            }
          }
       },
@@ -85,11 +110,12 @@ module.exports = function(grunt) {
 
 	// Load the plugin that provides the tasks ( "uglify", "less", "sass", etc. ):
 	grunt.loadNpmTasks('grunt-contrib-less');
+   grunt.loadNpmTasks('grunt-autoprefixer');
 	grunt.loadNpmTasks('grunt-contrib-cssmin');
 	grunt.loadNpmTasks('grunt-contrib-watch');
    grunt.loadNpmTasks('grunt-browser-sync');
 
 	// Default task(s):
-	grunt.registerTask( 'default', [ 'browserSync', 'less','cssmin', 'watch'] );
+	grunt.registerTask( 'default', [ 'browserSync', 'less','cssmin', 'autoprefixer', 'watch'] );
 
 };

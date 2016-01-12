@@ -5,6 +5,7 @@
   "license": "GPL v2",
   "devDependencies": {
     "grunt": "^0.4.4",
+    "grunt-autoprefixer": "^3.0.3",
     "grunt-browser-sync": "^2.2.0",
     "grunt-contrib-cssmin": "^0.10.0",
     "grunt-contrib-less": "^0.10.0",
@@ -14,5 +15,5 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": ""
+  "author": "Ariflaw"
 }

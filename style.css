@@ -1,6 +1,6 @@
 @import url(https://fonts.googleapis.com/css?family=Montez);
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,400italic);
-@import url(https://fonts.googleapis.com/css?family=Montserrat:400,700);
+@import url(https://fonts.googleapis.com/css?family=Oswald:400,300,700);
 /* ----------------------------------------------------------------------------
  * Global Style
  * -------------------------------------------------------------------------- */
@@ -8,9 +8,8 @@ html,
 body {
   font-size: 10px;
 }
-body #skin_wrapper {
-  font: normal 15px/1.5 "Open Sans", sans-serif;
-  letter-spacing: 0.5px;
+body {
+  font: normal 1.4rem/1.6 "Open Sans", sans-serif;
 }
 /* ----------------------------------------------------------------------------
  * Main Header Style
@@ -27,6 +26,7 @@ body #skin_wrapper {
   font-family: "Montez", Verdana, Geneva, sans-serif;
   font-size: 5.6rem;
   letter-spacing: 0px;
+  color: #ffffff;
 }
 .evo_container__header .widget_core_coll_title h1 a:hover,
 .evo_container__header .widget_core_coll_title h1 a:active,
@@ -36,7 +36,7 @@ body #skin_wrapper {
 .evo_container__header .widget_core_coll_tagline {
   font-size: 1.3rem;
   font-style: italic;
-  font-family: "Montserrat", sans-serif;
+  font-family: "Oswald", sans-serif;
   font-weight: 400;
   line-height: 1;
 }
@@ -79,13 +79,14 @@ body #skin_wrapper {
   border-bottom: none;
 }
 .navbar-collapse .nav.nav-tabs li a {
-  font-family: "Montserrat", sans-serif;
+  font-family: "Oswald", sans-serif;
   font-size: 1.4rem;
-  color: #ffffff;
   font-weight: 400;
   text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: #ffffff;
   padding: 20px 12px;
-  opacity: 0.95;
+  opacity: 0.85;
 }
 .navbar-collapse .nav.nav-tabs li a:hover,
 .navbar-collapse .nav.nav-tabs li a:active,
@@ -98,6 +99,7 @@ body #skin_wrapper {
   background: transparent;
   border: 0;
   opacity: 1;
+  cursor: pointer;
 }
 @media screen and (max-width: 768px) {
   .navbar-collapse .nav.nav-tabs {
@@ -114,6 +116,13 @@ body #skin_wrapper {
   .navbar-collapse .nav.nav-tabs li a {
     padding: 10px 0;
   }
+}
+/* ----------------------------------------------------------------------------
+ * Footer Styling
+ * -------------------------------------------------------------------------- */
+#main-footer {
+  padding: 50px 0;
+  margin-top: 50px;
 }
 /* ----------------------------------------------------------------------------
  * Head Tagline Style
@@ -148,7 +157,7 @@ body #skin_wrapper {
 }
 #content .evo_intro_post .evo_post_title h2 {
   font-size: 2.6rem;
-  font-family: "Montserrat", sans-serif;
+  font-family: "Oswald", sans-serif;
   font-weight: 700;
   text-transform: uppercase;
 }
@@ -157,7 +166,7 @@ body #skin_wrapper {
   padding: 10px 30px 15px;
 }
 #content .evo_post .evo_post_title {
-  font-family: "Montserrat", sans-serif;
+  font-family: "Oswald", sans-serif;
 }
 #content .evo_post .evo_post_title h2 {
   padding: 15px 0 5px;
@@ -169,7 +178,7 @@ body #skin_wrapper {
   text-decoration: none;
 }
 #content .evo_post .small.text-muted {
-  font-family: "Montserrat", sans-serif;
+  font-family: "Oswald", sans-serif;
   font-weight: 700;
   font-size: 1.2rem;
   text-transform: uppercase;
@@ -196,13 +205,12 @@ body #skin_wrapper {
 #content .evo_post .evo_post__full .evo_post__full_text .evo_post_more_link a {
   display: block;
   font-size: 1.1rem;
-  font-family: "Montserrat", sans-serif;
+  font-family: "Oswald", sans-serif;
   text-transform: uppercase;
   font-weight: 400;
   padding: 10px 20px;
   color: #ffffff;
   -webkit-transition: all 0.3s ease;
-  -o-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }
 #content .evo_post .evo_post__full .evo_post__full_text .evo_post_more_link a:hover,
@@ -212,7 +220,7 @@ body #skin_wrapper {
   background: #1abc9c;
 }
 #content .evo_post .post_tags a {
-  font-family: "Montserrat", sans-serif;
+  font-family: "Oswald", sans-serif;
   text-transform: capitalize;
   font-size: 1.1rem;
   padding: 4px 8px;
@@ -222,7 +230,6 @@ body #skin_wrapper {
 #content .evo_post .post_tags a,
 #content .evo_post .post_tags a::before {
   -webkit-transition: all 0.3s ease;
-  -o-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }
 #content .evo_post .post_tags a:hover,
@@ -237,7 +244,7 @@ body #skin_wrapper {
   color: #ffffff;
 }
 #content .evo_post .post_comments_link a {
-  font-family: "Montserrat", sans-serif;
+  font-family: "Oswald", sans-serif;
   font-size: 1.4rem;
 }
 /* ----------------------------------------------------------------------------
@@ -255,7 +262,7 @@ body #skin_wrapper {
   border: none;
 }
 #main-sidebar .evo_widget .panel-title {
-  font-family: "Montserrat", sans-serif;
+  font-family: "Oswald", sans-serif;
   font-size: 1.6rem;
   font-weight: 700;
   color: #555555;
@@ -374,7 +381,7 @@ ul.profile_tabs {
   width: 100%;
 }
 /* ----------------------------------------------------------------------------
- * // A search button
+ * // A Search Button
  * -------------------------------------------------------------------------- */
 input.search_field {
   margin-bottom: 0;
@@ -533,7 +540,7 @@ div.bSideItem h4 {
  * -------------------------------------------------------------------------- */
 .pagination {
   margin: 0 0 30px;
-  font-family: "Montserrat", sans-serif;
+  font-family: "Oswald", sans-serif;
 }
 .pagination li {
   margin: 2px 0;
@@ -571,11 +578,4 @@ div.log_container {
 }
 footer.row {
   margin-top: 20px;
-}
-/* ----------------------------------------------------------------------------
- * Footer Styling
- * -------------------------------------------------------------------------- */
-#main-footer {
-  padding: 50px 0;
-  margin-top: 50px;
 }

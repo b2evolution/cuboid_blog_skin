@@ -33,94 +33,9 @@ skin_include( '_html_header.inc.php', array() );
 
 // ---------------------------- SITE HEADER INCLUDED HERE ----------------------------
 // If site headers are enabled, they will be included here:
-siteskin_include( '_site_body_header.inc.php' );
+skin_include( '_body_header.inc.php' );
 // ------------------------------- END OF SITE HEADER --------------------------------
 ?>
-
-<header id="main-header">
-   <div class="container">
-
-      <div class="col-xs-8 col-sm-6 col-md-3">
-         <div class="row">
-            <div class="evo_container evo_container__header">
-            <?php
-               // ------------------------- "Header" CONTAINER EMBEDDED HERE --------------------------
-               // Display container and contents:
-               skin_container( NT_('Header'), array(
-                     // The following params will be used as defaults for widgets included in this container:
-                     'block_start'       => '<div class="evo_widget $wi_class$">',
-                     'block_end'         => '</div>',
-                     'block_title_start' => '<h1>',
-                     'block_title_end'   => '</h1>',
-                  ) );
-               // ----------------------------- END OF "Header" CONTAINER -----------------------------
-            ?>
-            </div>
-         </div><!-- .row -->
-      </div><!-- .col -->
-
-      <div id="hamburger-menu" class="col-xs-4 col-sm-4">
-         <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-menu" aria-expanded="false">
-               <span class="sr-only">Toggle navigation</span>
-               <span class="icon-bar"></span>
-               <span class="icon-bar"></span>
-               <span class="icon-bar"></span>
-            </button>
-         </div>
-      </div>
-
-      <div class="col-xs-12 col-sm-12 col-md-9">
-         <nav class="row">
-
-            <div class="collapse navbar-collapse" id="main-menu">
-         		<ul class="nav nav-tabs evo_container evo_container__menu">
-         		<?php
-         			// ------------------------- "Menu" CONTAINER EMBEDDED HERE --------------------------
-         			// Display container and contents:
-         			// Note: this container is designed to be a single <ul> list
-         			skin_container( NT_('Menu'), array(
-         					// The following params will be used as defaults for widgets included in this container:
-         					'block_start'         => '',
-         					'block_end'           => '',
-         					'block_display_title' => false,
-         					'list_start'          => '',
-         					'list_end'            => '',
-         					'item_start'          => '<li class="evo_widget $wi_class$">',
-         					'item_end'            => '</li>',
-         					'item_selected_start' => '<li class="active evo_widget $wi_class$">',
-         					'item_selected_end'   => '</li>',
-         					'item_title_before'   => '',
-         					'item_title_after'    => '',
-         				) );
-         			// ----------------------------- END OF "Menu" CONTAINER -----------------------------
-         		?>
-         		</ul>
-            </div><!-- #main-menu -->
-         </nav><!-- .row -->
-      </div><!-- .col -->
-
-   </div><!-- .container -->
-</header><!-- #main-header -->
-
-<header id="head_tagline">
-   <div class="container">
-      <div class="evo_container evo_container__header">
-      <?php
-         // ------------------------- "Header" CONTAINER EMBEDDED HERE --------------------------
-         // Display container and contents:
-         skin_container( NT_('Header Tagline'), array(
-               // The following params will be used as defaults for widgets included in this container:
-               'block_start'       => '<div class="evo_widget $wi_class$">',
-               'block_end'         => '</div>',
-               'block_title_start' => '<h1>',
-               'block_title_end'   => '</h1>',
-            ) );
-         // ----------------------------- END OF "Header" CONTAINER -----------------------------
-      ?>
-      </div>
-   </div><!-- .container -->
-</header><!-- #head_tagline -->
 
 <div id="content">
    <div class="container">
@@ -270,90 +185,13 @@ siteskin_include( '_site_body_header.inc.php' );
 
       	</div><!-- .col -->
 
-
-      	<?php
-      	if( $Skin->is_visible_sidebar() )
-      	{ // Display sidebar:
-      	?>
-      	<aside id="main-sidebar" class="col-md-4<?php echo ( $Skin->get_setting( 'layout' ) == 'left_sidebar' ? ' pull-left' : '' ); ?>">
-      		<!-- =================================== START OF SIDEBAR =================================== -->
-      		<div class="evo_container evo_container__sidebar">
-      		<?php
-      			// ------------------------- "Sidebar" CONTAINER EMBEDDED HERE --------------------------
-      			// Display container contents:
-      			skin_container( NT_('Sidebar'), array(
-      					// The following (optional) params will be used as defaults for widgets included in this container:
-      					// This will enclose each widget in a block:
-      					'block_start' => '<div class="panel panel-default evo_widget $wi_class$">',
-      					'block_end' => '</div>',
-      					// This will enclose the title of each widget:
-      					'block_title_start' => '<div class="panel-heading"><h4 class="panel-title">',
-      					'block_title_end' => '</h4></div>',
-      					// This will enclose the body of each widget:
-      					'block_body_start' => '<div class="panel-body">',
-      					'block_body_end' => '</div>',
-      					// If a widget displays a list, this will enclose that list:
-      					'list_start' => '<ul>',
-      					'list_end' => '</ul>',
-      					// This will enclose each item in a list:
-      					'item_start' => '<li>',
-      					'item_end' => '</li>',
-      					// This will enclose sub-lists in a list:
-      					'group_start' => '<ul>',
-      					'group_end' => '</ul>',
-      					// This will enclose (foot)notes:
-      					'notes_start' => '<div class="notes">',
-      					'notes_end' => '</div>',
-      					// Widget 'Search form':
-      					'search_class'         => 'compact_search_form',
-      					'search_input_before'  => '<div class="input-group">',
-      					'search_input_after'   => '',
-      					'search_submit_before' => '<span class="input-group-btn">',
-      					'search_submit_after'  => '</span></div>',
-      				) );
-      			// ----------------------------- END OF "Sidebar" CONTAINER -----------------------------
-      		?>
-      		</div>
-
-      		<div class="evo_container evo_container__sidebar2">
-      		<?php
-      			// ------------------------- "Sidebar" CONTAINER EMBEDDED HERE --------------------------
-      			// Display container contents:
-      			skin_container( NT_('Sidebar 2'), array(
-      					// The following (optional) params will be used as defaults for widgets included in this container:
-      					// This will enclose each widget in a block:
-      					'block_start' => '<div class="panel panel-default evo_widget $wi_class$">',
-      					'block_end' => '</div>',
-      					// This will enclose the title of each widget:
-      					'block_title_start' => '<div class="panel-heading"><h4 class="panel-title">',
-      					'block_title_end' => '</h4></div>',
-      					// This will enclose the body of each widget:
-      					'block_body_start' => '<div class="panel-body">',
-      					'block_body_end' => '</div>',
-      					// If a widget displays a list, this will enclose that list:
-      					'list_start' => '<ul>',
-      					'list_end' => '</ul>',
-      					// This will enclose each item in a list:
-      					'item_start' => '<li>',
-      					'item_end' => '</li>',
-      					// This will enclose sub-lists in a list:
-      					'group_start' => '<ul>',
-      					'group_end' => '</ul>',
-      					// This will enclose (foot)notes:
-      					'notes_start' => '<div class="notes">',
-      					'notes_end' => '</div>',
-      					// Widget 'Search form':
-      					'search_class'         => 'compact_search_form',
-      					'search_input_before'  => '<div class="input-group">',
-      					'search_input_after'   => '',
-      					'search_submit_before' => '<span class="input-group-btn">',
-      					'search_submit_after'  => '</span></div>',
-      				) );
-      			// ----------------------------- END OF "Sidebar" CONTAINER -----------------------------
-      		?>
-      		</div>
-      	</aside><!-- .col -->
-      	<?php } ?>
+         <?php
+            // ------------------------- SIDEBAR INCLUDED HERE --------------------------
+            skin_include( '_sidebar.inc.php' );
+            // Note: You can customize the sidebar by copying the
+            // _sidebar.inc.php file into the current skin folder.
+            // ----------------------------- END OF SIDEBAR -----------------------------
+         ?>
 
       </div><!-- .row -->
 
@@ -361,99 +199,11 @@ siteskin_include( '_site_body_header.inc.php' );
 
 </div><!-- #content -->
 
-<footer id="main-footer">
-
-   <!-- =================================== START OF FOOTER =================================== -->
-
-   <div class="container-fluid">
-
-      <!-- Social Media -->
-      <div class="coll-xs-12 coll-sm-12 col-md-12">
-   		<div class="evo_container evo_container__page_top">
-   		<?php
-   			// ------------------------- "Page Top" CONTAINER EMBEDDED HERE --------------------------
-   			// Display container and contents:
-   			skin_container( NT_('Social Media'), array(
-   					// The following params will be used as defaults for widgets included in this container:
-   					'block_start'         => '<div class="evo_widget $wi_class$">',
-   					'block_end'           => '</div>',
-   					'block_display_title' => false,
-   					'list_start'          => '<ul>',
-   					'list_end'            => '</ul>',
-   					'item_start'          => '<li>',
-   					'item_end'            => '</li>',
-   				) );
-   			// ----------------------------- END OF "Page Top" CONTAINER -----------------------------
-   		?>
-   		</div>
-   	</div><!-- .col -->
-      <!-- End Social Media -->
-
-
-   	<div class="col-md-12 center">
-
-   		<div class="evo_container evo_container__footer">
-   		<?php
-   			// Display container and contents:
-   			skin_container( NT_("Footer"), array(
-   					// The following params will be used as defaults for widgets included in this container:
-   					'block_start'       => '<div class="evo_widget $wi_class$">',
-   					'block_end'         => '</div>',
-   				) );
-   			// Note: Double quotes have been used around "Footer" only for test purposes.
-   		?>
-   		</div>
-
-   		<p>
-   			<?php
-   				// Display footer text (text can be edited in Blog Settings):
-   				$Blog->footer_text( array(
-   						'before' => '',
-   						'after'  => ' &bull; ',
-   					) );
-   			?>
-
-   			<?php
-   				// Display a link to contact the owner of this blog (if owner accepts messages):
-   				$Blog->contact_link( array(
-   						'before' => '',
-   						'after'  => ' &bull; ',
-   						'text'   => T_('Contact'),
-   						'title'  => T_('Send a message to the owner of this blog...'),
-   					) );
-   				// Display a link to help page:
-   				$Blog->help_link( array(
-   						'before'      => ' ',
-   						'after'       => ' ',
-   						'text'        => T_('Help'),
-   					) );
-   			?>
-
-   			<?php
-   				// Display additional credits:
-   				// If you can add your own credits without removing the defaults, you'll be very cool :))
-   				// Please leave this at the bottom of the page to make sure your blog gets listed on b2evolution.net
-   				credits( array(
-   						'list_start'  => '&bull;',
-   						'list_end'    => ' ',
-   						'separator'   => '&bull;',
-   						'item_start'  => ' ',
-   						'item_end'    => ' ',
-   					) );
-   			?>
-   		</p>
-
-   	</div><!-- .col -->
-
-   </div>
-
-</footer><!-- .row -->
-
 
 <?php
 // ---------------------------- SITE FOOTER INCLUDED HERE ----------------------------
 // If site footers are enabled, they will be included here:
-siteskin_include( '_site_body_footer.inc.php' );
+skin_include( '_body_footer.inc.php' );
 // ------------------------------- END OF SITE FOOTER --------------------------------
 
 

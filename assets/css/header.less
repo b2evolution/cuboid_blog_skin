@@ -1,0 +1,133 @@
+/* ----------------------------------------------------------------------------
+ * Main Header Style
+ * -------------------------------------------------------------------------- */
+#main-header{
+   padding: 35px 0;
+   margin-top: -16px;
+}
+
+.evo_container__header {
+	// margin-bottom: 15px;
+
+   .widget_core_coll_title{
+      h1{
+         margin-top: 0;
+         margin-bottom: 0;
+
+         a{
+            font-family: @font_title_site;
+            font-size: 5.6rem;
+            // font-weight: 700;
+            letter-spacing: 0px;
+            color: @w;
+
+            &:hover, &:active, &:focus{
+               text-decoration: none;
+            }
+         }
+      }
+   }
+
+   .widget_core_coll_tagline{
+      font-size: 1.3rem;
+      font-style: italic;
+      font-family: @font_heading;
+      font-weight: 400;
+      line-height: 1;
+   }
+
+}
+
+.evo_container__page_top {
+	margin-top: 20px;
+
+   .ufld_icon_links {
+		text-align: center;
+	}
+
+}
+
+/* Navbar Style
+   ========================================================================== */
+.navbar-header{
+   height: 60px;
+
+   .navbar-toggle{
+      margin-top: 15px;
+      border-color: @w;
+   }
+
+   .icon-bar{
+      background-color: @w;
+   }
+
+}
+
+#hamburger-menu{
+   display: none;
+   @media screen and ( max-width: 768px ){
+      display: block;
+   }
+}
+
+.navbar-collapse{
+
+   @media screen and ( max-width: 768px ) {
+      padding-left: 0;
+      padding-right: 0;
+      margin-top: 15px;
+   }
+
+   .nav.nav-tabs {
+   	margin: 0;
+      float: right;
+      border-bottom: none;
+
+      li{
+
+         a{
+            font-family: @font_heading;
+            font-size: 1.4rem;
+            font-weight: 400;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: @w;
+            padding: 20px 12px;
+            opacity: 0.85;
+
+            &:hover, &:active, &:focus{
+               background-color: transparent;
+               border-color: transparent;
+               opacity: 1;
+            }
+
+            &.selected{
+               background: transparent;
+               border: 0;
+               opacity: 1;
+               cursor: pointer;
+            }
+         }
+      }
+
+      @media screen and ( max-width: 768px ) {
+         float: none;
+
+         & > li {
+            float: none;
+            margin: 0;
+            width: 100%;
+         }
+
+         li {
+            display: block;
+
+            a{
+               padding: 10px 0;
+            }
+         }
+      }
+
+   }
+
+}

@@ -71,102 +71,102 @@ class cuboid_blog_Skin extends Skin
             ),
                // Layout
                'layout' => array(
-                  'label' => T_('Layout'),
-                  'note' => '',
+                  'label'        => T_('Layout'),
+                  'note'         => '',
                   'defaultvalue' => 'right_sidebar',
-                  'options' => array(
-                        'single_column'              => T_('Single Column Large'),
-                        'single_column_normal'       => T_('Single Column'),
-                        'single_column_narrow'       => T_('Single Column Narrow'),
-                        'single_column_extra_narrow' => T_('Single Column Extra Narrow'),
-                        'left_sidebar'               => T_('Left Sidebar'),
-                        'right_sidebar'              => T_('Right Sidebar'),
-                     ),
-                  'type' => 'select',
+                  'type'         => 'select',
+                  'options'      => array(
+                     'single_column'              => T_('Single Column Large'),
+                     'single_column_normal'       => T_('Single Column'),
+                     'single_column_narrow'       => T_('Single Column Narrow'),
+                     'single_column_extra_narrow' => T_('Single Column Extra Narrow'),
+                     'left_sidebar'               => T_('Left Sidebar'),
+                     'right_sidebar'              => T_('Right Sidebar'),
+                  ),
                ),
                'max_image_height' => array(
-                  'label' => T_('Max image height'),
-                  'note' => 'px',
+                  'label'        => T_('Max image height'),
+                  'note'         => 'px',
                   'defaultvalue' => '',
-                  'type' => 'integer',
-                  'allow_empty' => true,
+                  'type'         => 'integer',
+                  'allow_empty'  => true,
                ),
 
                'bg_image' => array(
-                  'label' => T_('Background Image Pattern'),
-                  'defaultvalue' => 'images/bg-5.png',
-                  'note' => T_('Choose your favorite background image pattern'),
-                  'options' => array(
-                        'bg_1'       => T_('Pattern 1'),
-                        'bg_2'       => T_('Pattern 2'),
-                        'bg_3'       => T_('Pattern 3'),
-                        'bg_4'       => T_('Pattern 4'),
-                        'bg_5'       => T_('Pattern 5'),
-                        'bg_6'       => T_('Pattern 6'),
-                     ),
-                  'type' => 'select',
+                  'label'    => T_('Background Image Pattern'),
+                  'note'     => T_('Choose your favorite background image pattern'),
+                  'type'     => 'select',
+                  'options'  => array(
+                     'bg_1'     => T_('Pattern 1'),
+                     'bg_2'     => T_('Pattern 2'),
+                     'bg_3'     => T_('Pattern 3'),
+                     'bg_4'     => T_('Pattern 4'),
+                     'bg_5'     => T_('Pattern 5'),
+                     'bg_6'     => T_('Pattern 6'),
+                  ),
+                  'defaultvalue' => 'bg_1',
                ),
                'site_background_color' => array(
-                  'label' => T_('Site background color'),
-                  'note' => T_('Default value is #3333'),
-                  'defaultvalue' => '#333',
-                  'type' => 'color',
+                  'label'        => T_('Site background color'),
+                  'note'         => T_('Default value is #333333'),
+                  'defaultvalue' => '#333333',
+                  'type'         => 'color',
                ),
                'site_title_color' => array(
-                  'label' => T_('Site title color'),
-                  'note' => T_('Default value is #FFFFFF'),
+                  'label'        => T_('Site title color'),
+                  'note'         => T_('Default value is #FFFFFF'),
                   'defaultvalue' => '#FFFFFF',
-                  'type' => 'color',
+                  'type'         => 'color',
                ),
                'site_tagline_color' => array(
-                  'label' => T_('Site tagline color'),
-                  'note' => T_('Default value is #FFFFFF'),
+                  'label'        => T_('Site tagline color'),
+                  'note'         => T_('Default value is #FFFFFF'),
                   'defaultvalue' => '#FFFFFF',
-                  'type' => 'color',
+                  'type'         => 'color',
                ),
                'site_text_color' => array(
-                  'label' => T_('Site text color'),
-                  'note' => T_('Default value is #555555'),
+                  'label'        => T_('Site text color'),
+                  'note'         => T_('Default value is #555555'),
                   'defaultvalue' => '#555555',
-                  'type' => 'color',
+                  'type'         => 'color',
                ),
                // General links color
                'site_link_color' => array(
-                  'label' => T_('Site links color'),
-                  'note' => T_('Default value is #1abc9c'),
+                  'label'        => T_('Site links color'),
+                  'note'         => T_('Default value is #1abc9c'),
                   'defaultvalue' => '#1abc9c',
-                  'type' => 'color',
+                  'type'         => 'color',
                ),
                'site_link_color_hover' => array(
-                  'label' => T_('Site links color (hover)'),
-                  'note' => T_('Default value is #1abc9c'),
+                  'label'        => T_('Site links color (hover)'),
+                  'note'         => T_('Default value is #1abc9c'),
                   'defaultvalue' => '#1abc9c',
-                  'type' => 'color',
+                  'type'         => 'color',
                ),
                // Pagination
                'pagination_bg' => array(
-                  'label' => T_('Pagination Background Color'),
-                  'note' => T_('Default value is #333333'),
+                  'label'        => T_('Pagination Background Color'),
+                  'note'         => T_('Default value is #333333'),
                   'defaultvalue' => '#333333',
-                  'type' => 'color',
+                  'type'         => 'color',
                ),
                'pagination_bg_hover' => array(
-                  'label' => T_('Pagination Background Color Hover'),
-                  'note' => T_('Default value is #1abc9c'),
+                  'label'        => T_('Pagination Background Color Hover'),
+                  'note'         => T_('Default value is #1abc9c'),
                   'defaultvalue' => '#1abc9c',
-                  'type' => 'color',
+                  'type'         => 'color',
                ),
                'pagination_text_color' => array(
-                  'label' => T_('Pagination Text Color'),
-                  'note' => T_('Default value is #FFFFFF'),
+                  'label'        => T_('Pagination Text Color'),
+                  'note'         => T_('Default value is #FFFFFF'),
                   'defaultvalue' => '#FFFFFF',
-                  'type' => 'color',
+                  'type'         => 'color',
                ),
                'pagination_text_color_hover' => array(
-                  'label' => T_('Pagination Text Color Hover'),
-                  'note' => T_('Default value is #FFFFFF'),
+                  'label'        => T_('Pagination Text Color Hover'),
+                  'note'         => T_('Default value is #FFFFFF'),
                   'defaultvalue' => '#FFFFFF',
-                  'type' => 'color',
+                  'type'         => 'color',
                ),
             'general_settings_end' => array(
                'layout' => 'end_fieldset',
@@ -179,16 +179,16 @@ class cuboid_blog_Skin extends Skin
                'label'  => T_('Header settings')
             ),
                'header_bg_color' => array(
-                  'label' => T_('Header Background Color'),
-                  'note' => T_('Default value is #262626'),
+                  'label'        => T_('Header Background Color'),
+                  'note'         => T_('Default value is #262626'),
                   'defaultvalue' => '#262626',
-                  'type' => 'color',
+                  'type'         => 'color',
                ),
                'head_tagline_bg_color' => array(
-                  'label' => T_('Header Tagline Background Color'),
-                  'note' => T_('Default value is #333333'),
+                  'label'        => T_('Header Tagline Background Color'),
+                  'note'         => T_('Default value is #333333'),
                   'defaultvalue' => '#333333',
-                  'type' => 'color',
+                  'type'         => 'color',
                ),
             'header_settings_end' => array(
                'layout' => 'end_fieldset',
@@ -203,34 +203,34 @@ class cuboid_blog_Skin extends Skin
                'label'  => T_('Content settings')
             ),
                'content_bg_color' => array(
-                  'label' => T_('Content Background Color'),
-                  'note' => T_('Default value is #FFFFFF'),
+                  'label'        => T_('Content Background Color'),
+                  'note'         => T_('Default value is #FFFFFF'),
                   'defaultvalue' => '#FFFFFF',
-                  'type' => 'color',
+                  'type'         => 'color',
                ),
                'content_title_color' => array(
-                  'label' => T_('Content Title Color'),
-                  'note' => T_('Default value is #555555'),
+                  'label'        => T_('Content Title Color'),
+                  'note'         => T_('Default value is #555555'),
                   'defaultvalue' => '#555555',
-                  'type' => 'color',
+                  'type'         => 'color',
                ),
                'content_title_color_hover' => array(
-                  'label' => T_('Content Title Color Hover'),
-                  'note' => T_('Default value is #1abc9c'),
+                  'label'        => T_('Content Title Color Hover'),
+                  'note'         => T_('Default value is #1abc9c'),
                   'defaultvalue' => '#1abc9c',
-                  'type' => 'color',
+                  'type'         => 'color',
                ),
                'content_text_color' => array(
-                  'label' => T_('Content Text Color'),
-                  'note' => T_('Default value is #808080'),
+                  'label'        => T_('Content Text Color'),
+                  'note'         => T_('Default value is #808080'),
                   'defaultvalue' => '#808080',
-                  'type' => 'color',
+                  'type'         => 'color',
                ),
                'content_text_info_post_color' => array(
-                  'label' => T_('Content Text Post Info Color'),
-                  'note' => T_('Default value is #808080'),
+                  'label'        => T_('Content Text Post Info Color'),
+                  'note'         => T_('Default value is #808080'),
                   'defaultvalue' => '#808080',
-                  'type' => 'color',
+                  'type'         => 'color',
                ),
             'content_settings_end' => array(
                'layout' => 'end_fieldset',
@@ -245,10 +245,10 @@ class cuboid_blog_Skin extends Skin
                'label'  => T_('Footer settings')
             ),
                'footer_bg_color' => array(
-                  'label' => T_('Footer Background Color'),
-                  'note' => T_('Default value is #262626'),
+                  'label'        => T_('Footer Background Color'),
+                  'note'         => T_('Default value is #262626'),
                   'defaultvalue' => '#262626',
-                  'type' => 'color',
+                  'type'         => 'color',
                ),
             'footer_settings_end' => array(
                'layout' => 'end_fieldset',
@@ -260,46 +260,46 @@ class cuboid_blog_Skin extends Skin
 					'label'  => T_('Colorbox Image Zoom')
 				),
 					'colorbox' => array(
-						'label' => T_('Colorbox Image Zoom'),
-						'note' => T_('Check to enable javascript zooming on images (using the colorbox script)'),
+						'label'        => T_('Colorbox Image Zoom'),
+						'note'         => T_('Check to enable javascript zooming on images (using the colorbox script)'),
 						'defaultvalue' => 1,
-						'type' => 'checkbox',
+						'type'         => 'checkbox',
 					),
 					'colorbox_vote_post' => array(
-						'label' => T_('Voting on Post Images'),
-						'note' => T_('Check this to enable AJAX voting buttons in the colorbox zoom view'),
+						'label'        => T_('Voting on Post Images'),
+						'note'         => T_('Check this to enable AJAX voting buttons in the colorbox zoom view'),
 						'defaultvalue' => 1,
-						'type' => 'checkbox',
+						'type'         => 'checkbox',
 					),
 					'colorbox_vote_post_numbers' => array(
-						'label' => T_('Display Votes'),
-						'note' => T_('Check to display number of likes and dislikes'),
+						'label'        => T_('Display Votes'),
+						'note'         => T_('Check to display number of likes and dislikes'),
 						'defaultvalue' => 1,
-						'type' => 'checkbox',
+						'type'         => 'checkbox',
 					),
 					'colorbox_vote_comment' => array(
-						'label' => T_('Voting on Comment Images'),
-						'note' => T_('Check this to enable AJAX voting buttons in the colorbox zoom view'),
+						'label'        => T_('Voting on Comment Images'),
+						'note'         => T_('Check this to enable AJAX voting buttons in the colorbox zoom view'),
 						'defaultvalue' => 1,
-						'type' => 'checkbox',
+						'type'         => 'checkbox',
 					),
 					'colorbox_vote_comment_numbers' => array(
-						'label' => T_('Display Votes'),
-						'note' => T_('Check to display number of likes and dislikes'),
+						'label'        => T_('Display Votes'),
+						'note'         => T_('Check to display number of likes and dislikes'),
 						'defaultvalue' => 1,
-						'type' => 'checkbox',
+						'type'         => 'checkbox',
 					),
 					'colorbox_vote_user' => array(
-						'label' => T_('Voting on User Images'),
-						'note' => T_('Check this to enable AJAX voting buttons in the colorbox zoom view'),
+						'label'        => T_('Voting on User Images'),
+						'note'         => T_('Check this to enable AJAX voting buttons in the colorbox zoom view'),
 						'defaultvalue' => 1,
-						'type' => 'checkbox',
+						'type'         => 'checkbox',
 					),
 					'colorbox_vote_user_numbers' => array(
-						'label' => T_('Display Votes'),
-						'note' => T_('Check to display number of likes and dislikes'),
+						'label'        => T_('Display Votes'),
+						'note'         => T_('Check to display number of likes and dislikes'),
 						'defaultvalue' => 1,
-						'type' => 'checkbox',
+						'type'         => 'checkbox',
 					),
 				'section_colorbox_end' => array(
 					'layout' => 'end_fieldset',
@@ -311,22 +311,22 @@ class cuboid_blog_Skin extends Skin
 					'label'  => T_('Username options')
 				),
 					'gender_colored' => array(
-						'label' => T_('Display gender'),
-						'note' => T_('Use colored usernames to differentiate men & women.'),
+						'label'        => T_('Display gender'),
+						'note'         => T_('Use colored usernames to differentiate men & women.'),
 						'defaultvalue' => 0,
-						'type' => 'checkbox',
+						'type'         => 'checkbox',
 					),
 					'bubbletip' => array(
-						'label' => T_('Username bubble tips'),
-						'note' => T_('Check to enable bubble tips on usernames'),
+						'label'        => T_('Username bubble tips'),
+						'note'         => T_('Check to enable bubble tips on usernames'),
 						'defaultvalue' => 0,
-						'type' => 'checkbox',
+						'type'         => 'checkbox',
 					),
 					'autocomplete_usernames' => array(
-						'label' => T_('Autocomplete usernames'),
-						'note' => T_('Check to enable auto-completion of usernames entered after a "@" sign in the comment forms'),
+						'label'        => T_('Autocomplete usernames'),
+						'note'         => T_('Check to enable auto-completion of usernames entered after a "@" sign in the comment forms'),
 						'defaultvalue' => 1,
-						'type' => 'checkbox',
+						'type'         => 'checkbox',
 					),
 				'section_username_end' => array(
 					'layout' => 'end_fieldset',
@@ -338,9 +338,9 @@ class cuboid_blog_Skin extends Skin
 					'label'  => T_('When access is denied or requires login...')
 				),
 					'access_login_containers' => array(
-						'label' => T_('Display on login screen'),
-						'note' => '',
-						'type' => 'checklist',
+						'label'   => T_('Display on login screen'),
+						'note'    => '',
+						'type'    => 'checklist',
 						'options' => array(
 							array( 'header',   sprintf( T_('"%s" container'), NT_('Header') ),    1 ),
 							array( 'page_top', sprintf( T_('"%s" container'), NT_('Page Top') ),  1 ),
@@ -403,30 +403,35 @@ class cuboid_blog_Skin extends Skin
       $bg_image = $this->get_setting( 'bg_image' );
       switch( $bg_image ) {
          case 'bg_1': // When regular layout is chosen, nothing happens, since regular is default
-            $custom_css = 'body { background-image: url("images/bg-1.png") }\n';
+            $custom_css = 'body { background-image: url("assets/images/bg-1.png") }\n';
          break;
 
          case 'bg_2':
-            $custom_css = 'body { background-image: url("images/bg-2.png") }\n';
+            $custom_css = 'body { background-image: url("assets/images/bg-2.png") }\n';
          break;
 
          case 'bg_3':
-            $custom_css = 'body { background-image: url("images/bg-3.png") }\n';
+            $custom_css = 'body { background-image: url("assets/images/bg-3.png") }\n';
          break;
 
          case 'bg_4':
-            $custom_css = 'body { background-image: url("images/bg-4.png") }\n';
+            $custom_css = 'body { background-image: url("assets/images/bg-4.png") }\n';
          break;
 
          case 'bg_5':
-            $custom_css = 'body { background-image: url("images/bg-5.png") }\n';
+            $custom_css = 'body { background-image: url("assets/images/bg-5.png") }\n';
          break;
 
          case 'bg_6':
-            $custom_css = 'body { background-image: url("images/bg-6.png") }\n';
+            $custom_css = 'body { background-image: url("assets/images/bg-6.png") }\n';
          break;
       }
 
+      /**
+       * ============================================================================
+       * Color
+       * ============================================================================
+       */
 		if( $color = $this->get_setting( 'site_title_color' ) ) {
 			$custom_css .= 'body #main-header .widget_core_coll_title h1 a { color: '.$color." }\n";
 		}
@@ -469,7 +474,6 @@ class cuboid_blog_Skin extends Skin
 		if( $color = $this->get_setting( 'header_bg_color' ) ) {
 			$custom_css .= 'body #main-header { background-color: '.$color." }\n";
 		}
-
       if( $color = $this->get_setting( 'head_tagline_bg_color' ) ) {
 			$custom_css .= 'body #head_tagline { background-color: '.$color." }\n";
 		}
@@ -482,19 +486,15 @@ class cuboid_blog_Skin extends Skin
       if( $color = $this->get_setting( 'content_bg_color' ) ) {
          $custom_css .= '#content .evo_content_block { background-color: '.$color." }\n";
       }
-
       if( $color = $this->get_setting( 'content_title_color' ) ) {
          $custom_css .= '#content .evo_post_title h2 a { color: '.$color." }\n";
       }
-
       if( $color = $this->get_setting( 'content_title_color_hover' ) ) {
          $custom_css .= '#content .evo_post_title h2 a:hover { color: '.$color." }\n";
       }
-
       if( $color = $this->get_setting( 'content_text_color' ) ) {
          $custom_css .= '#content .evo_content_block .evo_post__full_text { color: '.$color." }\n";
       }
-
       if( $color = $this->get_setting( 'content_text_info_post_color' ) ) {
          $custom_css .= '#content .evo_content_block .small.text-muted { color: '.$color." }\n";
       }
@@ -537,98 +537,98 @@ class cuboid_blog_Skin extends Skin
 			case 'Results':
 				// Results list (Used to view the lists of the users, messages, contacts and etc.):
 				return array(
-					'page_url' => '', // All generated links will refer to the current page
-					'before' => '<div class="results panel panel-default">',
-					'content_start' => '<div id="$prefix$ajax_content">',
-					'header_start' => '',
-						'header_text' => '<div class="center"><ul class="pagination">'
-								.'$prev$$first$$list_prev$$list$$list_next$$last$$next$'
-							.'</ul></div>',
-						'header_text_single' => '',
-					'header_end' => '',
-					'head_title' => '<div class="panel-heading fieldset_title"><span class="pull-right">$global_icons$</span><h3 class="panel-title">$title$</h3></div>'."\n",
-					'global_icons_class' => 'btn btn-default btn-sm',
-					'filters_start'        => '<div class="filters panel-body">',
-					'filters_end'          => '</div>',
-					'filter_button_class'  => 'btn-sm btn-info',
-					'filter_button_before' => '<div class="form-group pull-right">',
-					'filter_button_after'  => '</div>',
-					'messages_start' => '<div class="messages form-inline">',
-					'messages_end' => '</div>',
-					'messages_separator' => '<br />',
-					'list_start' => '<div class="table_scroll">'."\n"
-					               .'<table class="table table-striped table-bordered table-hover table-condensed" cellspacing="0">'."\n",
-						'head_start' => "<thead>\n",
-							'line_start_head' => '<tr>',  // TODO: fusionner avec colhead_start_first; mettre a jour admin_UI_general; utiliser colspan="$headspan$"
-							'colhead_start' => '<th $class_attrib$>',
-							'colhead_start_first' => '<th class="firstcol $class$">',
-							'colhead_start_last' => '<th class="lastcol $class$">',
-							'colhead_end' => "</th>\n",
-							'sort_asc_off' => get_icon( 'sort_asc_off' ),
-							'sort_asc_on' => get_icon( 'sort_asc_on' ),
-							'sort_desc_off' => get_icon( 'sort_desc_off' ),
-							'sort_desc_on' => get_icon( 'sort_desc_on' ),
-							'basic_sort_off' => '',
-							'basic_sort_asc' => get_icon( 'ascending' ),
-							'basic_sort_desc' => get_icon( 'descending' ),
-						'head_end' => "</thead>\n\n",
-						'tfoot_start' => "<tfoot>\n",
-						'tfoot_end' => "</tfoot>\n\n",
-						'body_start' => "<tbody>\n",
-							'line_start' => '<tr class="even">'."\n",
-							'line_start_odd' => '<tr class="odd">'."\n",
-							'line_start_last' => '<tr class="even lastline">'."\n",
-							'line_start_odd_last' => '<tr class="odd lastline">'."\n",
-								'col_start' => '<td $class_attrib$>',
-								'col_start_first' => '<td class="firstcol $class$">',
-								'col_start_last' => '<td class="lastcol $class$">',
-								'col_end' => "</td>\n",
-							'line_end' => "</tr>\n\n",
-							'grp_line_start' => '<tr class="group">'."\n",
-							'grp_line_start_odd' => '<tr class="odd">'."\n",
-							'grp_line_start_last' => '<tr class="lastline">'."\n",
-							'grp_line_start_odd_last' => '<tr class="odd lastline">'."\n",
-										'grp_col_start' => '<td $class_attrib$ $colspan_attrib$>',
-										'grp_col_start_first' => '<td class="firstcol $class$" $colspan_attrib$>',
-										'grp_col_start_last' => '<td class="lastcol $class$" $colspan_attrib$>',
-								'grp_col_end' => "</td>\n",
-							'grp_line_end' => "</tr>\n\n",
-						'body_end' => "</tbody>\n\n",
-						'total_line_start' => '<tr class="total">'."\n",
-							'total_col_start' => '<td $class_attrib$>',
-							'total_col_start_first' => '<td class="firstcol $class$">',
-							'total_col_start_last' => '<td class="lastcol $class$">',
-							'total_col_end' => "</td>\n",
-						'total_line_end' => "</tr>\n\n",
-					'list_end' => "</table></div>\n\n",
-					'footer_start' => '',
-					'footer_text' => '<div class="center"><ul class="pagination">'
-							.'$prev$$first$$list_prev$$list$$list_next$$last$$next$'
-						.'</ul></div><div class="center">$page_size$</div>'
+					'page_url'                => '', // All generated links will refer to the current page
+					'before'                  => '<div class="results panel panel-default">',
+					'content_start'           => '<div id="$prefix$ajax_content">',
+					'header_start'            => '',
+					'header_text'             => '<div class="center"><ul class="pagination">'
+                     						   .'$prev$$first$$list_prev$$list$$list_next$$last$$next$'
+            						            .'</ul></div>',
+					'header_text_single'      => '',
+					'header_end'              => '',
+					'head_title'              => '<div class="panel-heading fieldset_title"><span class="pull-right">$global_icons$</span><h3 class="panel-title">$title$</h3></div>'."\n",
+					'global_icons_class'      => 'btn btn-default btn-sm',
+					'filters_start'           => '<div class="filters panel-body">',
+					'filters_end'             => '</div>',
+					'filter_button_class'     => 'btn-sm btn-info',
+					'filter_button_before'    => '<div class="form-group pull-right">',
+					'filter_button_after'     => '</div>',
+					'messages_start'          => '<div class="messages form-inline">',
+					'messages_end'            => '</div>',
+					'messages_separator'      => '<br />',
+					'list_start'              => '<div class="table_scroll">'."\n"
+					                            .'<table class="table table-striped table-bordered table-hover table-condensed" cellspacing="0">'."\n",
+					'head_start'              => "<thead>\n",
+					'line_start_head'         => '<tr>',  // TODO: fusionner avec colhead_start_first; mettre a jour admin_UI_general; utiliser colspan="$headspan$"
+					'colhead_start'           => '<th $class_attrib$>',
+					'colhead_start_first'     => '<th class="firstcol $class$">',
+					'colhead_start_last'      => '<th class="lastcol $class$">',
+					'colhead_end'             => "</th>\n",
+					'sort_asc_off'            => get_icon( 'sort_asc_off' ),
+					'sort_asc_on'             => get_icon( 'sort_asc_on' ),
+					'sort_desc_off'           => get_icon( 'sort_desc_off' ),
+					'sort_desc_on'            => get_icon( 'sort_desc_on' ),
+					'basic_sort_off'          => '',
+					'basic_sort_asc'          => get_icon( 'ascending' ),
+					'basic_sort_desc'         => get_icon( 'descending' ),
+					'head_end'                => "</thead>\n\n",
+					'tfoot_start'             => "<tfoot>\n",
+					'tfoot_end'               => "</tfoot>\n\n",
+					'body_start'              => "<tbody>\n",
+					'line_start'              => '<tr class="even">'."\n",
+					'line_start_odd'          => '<tr class="odd">'."\n",
+					'line_start_last'         => '<tr class="even lastline">'."\n",
+					'line_start_odd_last'     => '<tr class="odd lastline">'."\n",
+					'col_start'               => '<td $class_attrib$>',
+					'col_start_first'         => '<td class="firstcol $class$">',
+					'col_start_last'          => '<td class="lastcol $class$">',
+					'col_end'                 => "</td>\n",
+					'line_end'                => "</tr>\n\n",
+					'grp_line_start'          => '<tr class="group">'."\n",
+					'grp_line_start_odd'      => '<tr class="odd">'."\n",
+					'grp_line_start_last'     => '<tr class="lastline">'."\n",
+					'grp_line_start_odd_last' => '<tr class="odd lastline">'."\n",
+					'grp_col_start'           => '<td $class_attrib$ $colspan_attrib$>',
+					'grp_col_start_first'     => '<td class="firstcol $class$" $colspan_attrib$>',
+					'grp_col_start_last'      => '<td class="lastcol $class$" $colspan_attrib$>',
+					'grp_col_end'             => "</td>\n",
+					'grp_line_end'            => "</tr>\n\n",
+   				'body_end'                => "</tbody>\n\n",
+   				'total_line_start'        => '<tr class="total">'."\n",
+					'total_col_start'         => '<td $class_attrib$>',
+					'total_col_start_first'   => '<td class="firstcol $class$">',
+					'total_col_start_last'    => '<td class="lastcol $class$">',
+					'total_col_end'           => "</td>\n",
+   				'total_line_end'          => "</tr>\n\n",
+					'list_end'                => "</table></div>\n\n",
+					'footer_start'            => '',
+					'footer_text'             => '<div class="center"><ul class="pagination">'
+							                       .'$prev$$first$$list_prev$$list$$list_next$$last$$next$'
+						                          .'</ul></div><div class="center">$page_size$</div>'
 					                  /* T_('Page $scroll_list$ out of $total_pages$   $prev$ | $next$<br />'. */
 					                  /* '<strong>$total_pages$ Pages</strong> : $prev$ $list$ $next$' */
 					                  /* .' <br />$first$  $list_prev$  $list$  $list_next$  $last$ :: $prev$ | $next$') */,
-					'footer_text_single' => '<div class="center">$page_size$</div>',
-					'footer_text_no_limit' => '', // Text if theres no LIMIT and therefor only one page anyway
-						'page_current_template' => '<span>$page_num$</span>',
-						'page_item_before' => '<li>',
-						'page_item_after' => '</li>',
-						'page_item_current_before' => '<li class="active">',
-						'page_item_current_after'  => '</li>',
-						'prev_text' => T_('Previous'),
-						'next_text' => T_('Next'),
-						'no_prev_text' => '',
-						'no_next_text' => '',
-						'list_prev_text' => T_('...'),
-						'list_next_text' => T_('...'),
-						'list_span' => 11,
-						'scroll_list_range' => 5,
-					'footer_end' => "\n\n",
-					'no_results_start' => '<div class="panel-footer">'."\n",
-					'no_results_end'   => '$no_results$</div>'."\n\n",
-					'content_end' => '</div>',
-					'after' => '</div>',
-					'sort_type' => 'basic'
+					'footer_text_single'       => '<div class="center">$page_size$</div>',
+					'footer_text_no_limit'     => '', // Text if theres no LIMIT and therefor only one page anyway
+					'page_current_template'    => '<span>$page_num$</span>',
+					'page_item_before'         => '<li>',
+					'page_item_after'          => '</li>',
+					'page_item_current_before' => '<li class="active">',
+					'page_item_current_after'  => '</li>',
+					'prev_text'                => T_('Previous'),
+					'next_text'                => T_('Next'),
+					'no_prev_text'             => '',
+					'no_next_text'             => '',
+					'list_prev_text'           => T_('...'),
+					'list_next_text'           => T_('...'),
+					'list_span'                => 11,
+					'scroll_list_range'        => 5,
+					'footer_end'               => "\n\n",
+					'no_results_start'         => '<div class="panel-footer">'."\n",
+					'no_results_end'           => '$no_results$</div>'."\n\n",
+					'content_end'              => '</div>',
+					'after'                    => '</div>',
+					'sort_type'                => 'basic'
 				);
 				break;
 
@@ -732,8 +732,7 @@ class cuboid_blog_Skin extends Skin
 					'formend'        => '',
 					'title_fmt'      => '<span style="float:right">$global_icons$</span><h2>$title$</h2>'."\n",
 					'no_title_fmt'   => '<span style="float:right">$global_icons$</span>'."\n",
-					'fieldset_begin' => '<div class="fieldset_wrapper $class$" id="fieldset_wrapper_$id$"><fieldset $fieldset_attribs$><div class="panel panel-default">'."\n"
-															.'<legend class="panel-heading" $title_attribs$>$fieldset_title$</legend><div class="panel-body $class$">'."\n",
+					'fieldset_begin' => '<div class="fieldset_wrapper $class$" id="fieldset_wrapper_$id$"><fieldset $fieldset_attribs$><div class="panel panel-default">'."\n".'<legend class="panel-heading" $title_attribs$>$fieldset_title$</legend><div class="panel-body $class$">'."\n",
 					'fieldset_end'   => '</div></div></fieldset></div>'."\n",
 					'fieldstart'     => '<div class="form-group fixedform-group" $ID$>'."\n",
 					'fieldend'       => "</div>\n\n",
@@ -902,6 +901,7 @@ class cuboid_blog_Skin extends Skin
 				return 'col-md-8';
 		}
 	}
+
 }
 
 ?>
