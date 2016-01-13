@@ -1,0 +1,64 @@
+/* ----------------------------------------------------------------------------
+ * Sidebar Styling
+ * -------------------------------------------------------------------------- */
+#main-sidebar{
+
+   .evo_widget{
+      padding: 15px;
+      // box-shadow: 0 1px 3px rgba(185, 185, 185, 0.6);
+      box-shadow: @box-shadow;
+      border: none;
+      border-radius: 0;
+      margin-bottom: 30px;
+
+      .panel-heading{
+         background-color: transparent;
+         border: none;
+      }
+
+      .panel-title{
+         font-family: @font_heading;
+         font-size: 1.6rem;
+         font-weight: 700;
+         color: #555555;
+         text-transform: uppercase;
+         letter-spacing: 0;
+      }
+
+      // List Style
+      // ======================================================================== /
+      ul{
+         list-style-type: none;
+         padding: 0;
+         margin: 0;
+
+         li{
+            padding: 8px 0;
+            border-bottom: 1px solid @color_border;
+         }
+
+         & > ul > li:last-child {
+            border-bottom: 1px solid @color_border;
+         }
+
+         & > li:last-child{
+            border-bottom: 0;
+         }
+
+      }
+
+
+   }
+
+   // Widget Long Description
+   // ======================================================================== /
+   .widget_core_coll_longdesc {
+      text-align: center;
+
+
+      .panel-title {
+         font-size: 2.6rem;
+      }
+   }
+
+}

@@ -222,8 +222,8 @@ class cuboid_blog_Skin extends Skin
                ),
                'content_text_color' => array(
                   'label'        => T_('Content Text Color'),
-                  'note'         => T_('Default value is #808080'),
-                  'defaultvalue' => '#808080',
+                  'note'         => T_('Default value is #6F6F6F'),
+                  'defaultvalue' => '#6F6F6F',
                   'type'         => 'color',
                ),
                'content_text_info_post_color' => array(

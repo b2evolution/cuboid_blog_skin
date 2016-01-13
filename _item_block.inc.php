@@ -25,16 +25,29 @@ $params = array_merge( array(
 		// Controlling the title:
 		'disp_title'                 => true,
 		'item_title_line_before'     => '<div class="evo_post_title">',	// Note: we use an extra class because it facilitates styling
-			'item_title_before'          => '<h2>',
-			'item_title_after'           => '</h2>',
-			'item_title_single_before'   => '<h1>',	// This replaces the above in case of disp=single or disp=page
-			'item_title_single_after'    => '</h1>',
+		'item_title_before'          => '<h2>',
+		'item_title_after'           => '</h2>',
+		'item_title_single_before'   => '<h1>',	// This replaces the above in case of disp=single or disp=page
+		'item_title_single_after'    => '</h1>',
 		'item_title_line_after'      => '</div>',
+
 		// Controlling the content:
+      'before_content_teaser'      => '',
+      'after_content_teaser'       => '',
 		'content_mode'               => 'auto',		// excerpt|full|normal|auto -- auto will auto select depending on $disp-detail
 		'image_class'                => 'img-responsive',
 		'image_size'                 => 'fit-1280x720',
+      'image_limit'                =>  1000,
+      'image_link_to'              => 'original', // Can be 'original', 'single' or empty
 		'author_link_text'           => 'preferredname',
+
+      'before_images'              => '<div class="evo_post_images">',
+      'before_image'               => '<figure class="evo_image_block">',
+      'before_image_legend'        => '<figcaption class="evo_image_legend">',
+      'after_image_legend'         => '</figcaption>',
+      'after_image'                => '</figure>',
+      'after_images'               => '</div>',
+
 	), $params );
 
 
@@ -42,6 +55,26 @@ echo '<div class="evo_content_block">'; // Beginning of post display
 ?>
 
 <article id="<?php $Item->anchor_id() ?>" class="<?php $Item->div_classes( $params ) ?>" lang="<?php $Item->lang() ?>">
+
+   <?php
+   if ( $disp == 'posts' ) {
+   // Display images that are linked to this post:
+      $Item->images( array(
+         // Optionally restrict to files/images linked to specific position: 'teaser'|'teaserperm'|'teaserlink'|'aftermore'|'inline'|'cover'
+         'restrict_to_image_position' => 'teaser',
+         'before'                     => $params['before_images'],
+         'before_image'               => $params['before_image'],
+         'before_image_legend'        => $params['before_image_legend'],
+         'after_image_legend'         => $params['after_image_legend'],
+         'after_image'                => $params['after_image'],
+         'after'                      => $params['after_images'],
+         'image_class'                => $params['image_class'],
+         'image_size'                 => $params['image_size'],
+         'limit'                      => $params['image_limit'],
+         'image_link_to'              => $params['image_link_to'],
+      ) );
+   }
+   ?>
 
 	<header>
 	<?php
@@ -74,11 +107,11 @@ echo '<div class="evo_content_block">'; // Beginning of post display
 			if( $Item->is_intro() )
 			{ // Display edit link only for intro posts, because for all other posts the link is displayed on the info line.
 				$Item->edit_link( array(
-							'before' => '<div class="'.button_class( 'group' ).'">',
-							'after'  => '</div>',
-							'text'   => $Item->is_intro() ? get_icon( 'edit' ).' '.T_('Edit Intro') : '#',
-							'class'  => button_class( 'text' ),
-						) );
+					'before' => '<div class="'.button_class( 'group' ).'">',
+					'after'  => '</div>',
+					'text'   => $Item->is_intro() ? get_icon( 'edit' ).' '.T_('Edit Intro') : '#',
+					'class'  => button_class( 'text' ),
+				) );
 			}
 
 			echo $params['item_title_line_after'];
@@ -94,20 +127,20 @@ echo '<div class="evo_content_block">'; // Beginning of post display
 		if( $Item->status != 'published' )
 		{
 			$Item->format_status( array(
-					'template' => '<div class="evo_status evo_status__$status$ badge pull-right">$status_title$</div>',
-				) );
+				'template' => '<div class="evo_status evo_status__$status$ badge pull-right">$status_title$</div>',
+			) );
 		}
 		// Permalink:
 		$Item->permanent_link( array(
-				'text' => '',
-			) );
+			'text' => '',
+		) );
 
 		// We want to display the post time:
 		$Item->issue_time( array(
-				'before'      => ' '.T_( 'Posted on <span>' ).' ',
-				'after'       => '</span>',
-				'time_format' => 'M j, Y',
-			) );
+			'before'      => ' '.T_( 'Posted on <span>' ).' ',
+			'after'       => '</span>',
+			'time_format' => 'M j, Y',
+		) );
 
 		// Author
 		$Item->author( array(
@@ -165,27 +198,27 @@ echo '<div class="evo_content_block">'; // Beginning of post display
 		<?php
 			// Link to comments, trackbacks, etc.:
 			$Item->feedback_link( array(
-							'type' => 'comments',
-							'link_before' => '',
-							'link_after' => '',
-							'link_text_zero' => '#',
-							'link_text_one' => '#',
-							'link_text_more' => '#',
-							'link_title' => '#',
-							// fp> WARNING: creates problem on home page: 'link_class' => 'btn btn-default btn-sm',
-							// But why do we even have a comment link on the home page ? (only when logged in)
-						) );
+				'type' => 'comments',
+				'link_before' => '',
+				'link_after' => '',
+				'link_text_zero' => '#',
+				'link_text_one' => '#',
+				'link_text_more' => '#',
+				'link_title' => '#',
+				// fp> WARNING: creates problem on home page: 'link_class' => 'btn btn-default btn-sm',
+				// But why do we even have a comment link on the home page ? (only when logged in)
+			) );
 
 			// Link to comments, trackbacks, etc.:
 			$Item->feedback_link( array(
-							'type' => 'trackbacks',
-							'link_before' => ' &bull; ',
-							'link_after' => '',
-							'link_text_zero' => '#',
-							'link_text_one' => '#',
-							'link_text_more' => '#',
-							'link_title' => '#',
-						) );
+				'type'           => 'trackbacks',
+				'link_before'    => ' &bull; ',
+				'link_after'     => '',
+				'link_text_zero' => '#',
+				'link_text_one'  => '#',
+				'link_text_more' => '#',
+				'link_title'     => '#',
+			) );
 		?>
 		</nav>
 	</footer>
@@ -193,9 +226,9 @@ echo '<div class="evo_content_block">'; // Beginning of post display
 	<?php
 		// ------------------ FEEDBACK (COMMENTS/TRACKBACKS) INCLUDED HERE ------------------
 		skin_include( '_item_feedback.inc.php', array_merge( array(
-				'before_section_title' => '<div class="clearfix"></div><h3 class="evo_comment__list_title">',
-				'after_section_title'  => '</h3>',
-			), $params ) );
+			'before_section_title' => '<div class="clearfix"></div><h3 class="evo_comment__list_title">',
+			'after_section_title'  => '</h3>',
+		), $params ) );
 		// Note: You can customize the default item feedback by copying the generic
 		// /skins/_item_feedback.inc.php file into the current skin folder.
 		// ---------------------- END OF FEEDBACK (COMMENTS/TRACKBACKS) ---------------------

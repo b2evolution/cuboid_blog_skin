@@ -20,7 +20,7 @@ siteskin_include( '_site_body_header.inc.php' );
 <header id="main-header">
    <div class="container">
 
-      <div class="col-xs-8 col-sm-6 col-md-3">
+      <div class="col-xs-9 col-sm-12 col-md-3">
          <div class="row">
             <div class="evo_container evo_container__header">
             <?php
@@ -39,7 +39,7 @@ siteskin_include( '_site_body_header.inc.php' );
          </div><!-- .row -->
       </div><!-- .col -->
 
-      <div id="hamburger-menu" class="col-xs-4 col-sm-4">
+      <div id="hamburger-menu" class="col-xs-3 col-sm-4">
          <div class="navbar-header">
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-menu" aria-expanded="false">
                <span class="sr-only">Toggle navigation</span>
@@ -51,9 +51,8 @@ siteskin_include( '_site_body_header.inc.php' );
       </div>
 
       <div class="col-xs-12 col-sm-12 col-md-9">
-         <nav class="row">
-
-            <div class="collapse navbar-collapse" id="main-menu">
+         <div class="row">
+            <nav class="collapse navbar-collapse" id="main-menu">
          		<ul class="nav nav-tabs evo_container evo_container__menu">
          		<?php
          			// ------------------------- "Menu" CONTAINER EMBEDDED HERE --------------------------
@@ -75,15 +74,15 @@ siteskin_include( '_site_body_header.inc.php' );
       				) );
          			// ----------------------------- END OF "Menu" CONTAINER -----------------------------
          		?>
-         		</ul>
-            </div><!-- #main-menu -->
-         </nav><!-- .row -->
+               </ul>
+            </nav><!-- #main-menu -->
+         </div><!-- .row -->
       </div><!-- .col -->
 
    </div><!-- .container -->
 </header><!-- #main-header -->
 
-<header id="head_tagline">
+<header id="head_tagline" style="display:none">
    <div class="container">
       <div class="evo_container evo_container__header">
       <?php

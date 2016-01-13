@@ -336,7 +336,7 @@ if( $Skin->is_visible_container( 'menu' ) )
 				) );
 		?>
 	</div><!-- .col -->
-	
+
 </footer><!-- .row -->
 
 

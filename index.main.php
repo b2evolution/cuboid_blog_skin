@@ -44,7 +44,6 @@ skin_include( '_body_header.inc.php' );
       	<div class="<?php echo $Skin->get_column_class(); ?>">
 
       		<main><!-- This is were a link like "Jump to main content" would land -->
-
       		<!-- ================================= START OF MAIN AREA ================================== -->
 
       		<?php
@@ -52,9 +51,9 @@ skin_include( '_body_header.inc.php' );
       		{ // Don't display the messages here because they are displayed inside wrapper to have the same width as form
       			// ------------------------- MESSAGES GENERATED FROM ACTIONS -------------------------
       			messages( array(
-      					'block_start' => '<div class="action_messages">',
-      					'block_end'   => '</div>',
-      				) );
+   					'block_start' => '<div class="action_messages">',
+   					'block_end'   => '</div>',
+   				) );
       			// --------------------------------- END OF MESSAGES ---------------------------------
       		}
       		?>
@@ -62,35 +61,35 @@ skin_include( '_body_header.inc.php' );
       		<?php
       			// ------------------- PREV/NEXT POST LINKS (SINGLE POST MODE) -------------------
       			item_prevnext_links( array(
-      					'block_start' => '<nav><ul class="pager">',
-      						'prev_start'  => '<li class="previous">',
-      						'prev_end'    => '</li>',
-      						'next_start'  => '<li class="next">',
-      						'next_end'    => '</li>',
-      					'block_end'   => '</ul></nav>',
-      				) );
+   					'block_start' => '<nav><ul class="pager">',
+   						'prev_start'  => '<li class="previous">',
+   						'prev_end'    => '</li>',
+   						'next_start'  => '<li class="next">',
+   						'next_end'    => '</li>',
+   					'block_end'   => '</ul></nav>',
+   				) );
       			// ------------------------- END OF PREV/NEXT POST LINKS -------------------------
       		?>
 
       		<?php
       			// ------------------------ TITLE FOR THE CURRENT REQUEST ------------------------
       			request_title( array(
-      					'title_before'      => '<h2>',
-      					'title_after'       => '</h2>',
-      					'title_none'        => '',
-      					'glue'              => ' - ',
-      					'title_single_disp' => false,
-      					'title_page_disp'   => false,
-      					'format'            => 'htmlbody',
-      					'register_text'     => '',
-      					'login_text'        => '',
-      					'lostpassword_text' => '',
-      					'account_activation' => '',
-      					'msgform_text'      => '',
-      					'user_text'         => '',
-      					'users_text'        => '',
-      					'display_edit_links'=> false,
-      				) );
+   					'title_before'      => '<h2>',
+   					'title_after'       => '</h2>',
+   					'title_none'        => '',
+   					'glue'              => ' - ',
+   					'title_single_disp' => false,
+   					'title_page_disp'   => false,
+   					'format'            => 'htmlbody',
+   					'register_text'     => '',
+   					'login_text'        => '',
+   					'lostpassword_text' => '',
+   					'account_activation' => '',
+   					'msgform_text'      => '',
+   					'user_text'         => '',
+   					'users_text'        => '',
+   					'display_edit_links'=> false,
+   				) );
       			// ----------------------------- END OF REQUEST TITLE ----------------------------
       		?>
 
@@ -100,11 +99,11 @@ skin_include( '_body_header.inc.php' );
       		{ // We have a featured/intro post to display:
       			// ---------------------- ITEM BLOCK INCLUDED HERE ------------------------
       			skin_include( '_item_block.inc.php', array(
-      					'feature_block' => true,
-      					'content_mode' => 'full', // We want regular "full" content, even in category browsing: i-e no excerpt or thumbnail
-      					'intro_mode'   => 'normal',	// Intro posts will be displayed in normal mode
-      					'item_class'   => ($Item->is_intro() ? 'well evo_intro_post' : 'well evo_featured_post'),
-      				) );
+   					'feature_block' => true,
+   					'content_mode' => 'full', // We want regular "full" content, even in category browsing: i-e no excerpt or thumbnail
+   					'intro_mode'   => 'normal',	// Intro posts will be displayed in normal mode
+   					'item_class'   => ($Item->is_intro() ? 'well evo_intro_post' : 'well evo_featured_post'),
+   				) );
       			// ----------------------------END ITEM BLOCK  ----------------------------
       		}
       		?>
@@ -194,9 +193,7 @@ skin_include( '_body_header.inc.php' );
          ?>
 
       </div><!-- .row -->
-
    </div><!-- .container -->
-
 </div><!-- #content -->
 
 
