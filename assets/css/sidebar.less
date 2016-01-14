@@ -14,26 +14,35 @@
       .panel-heading{
          background-color: transparent;
          border: none;
+         padding: 10px 15px 15px;
       }
 
       .panel-title{
+         position: relative;
+         display: inline-block;
          font-family: @font_heading;
-         font-size: 1.6rem;
+         font-size: 1.5rem;
          font-weight: 700;
-         color: #555555;
+         color: @c5;
          text-transform: uppercase;
          letter-spacing: 0;
+
+         &::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 50%;
+            height: 2px;
+            background-color: @c5;
+         }
       }
 
       // List Style
       // ======================================================================== /
       ul{
-         list-style-type: none;
-         padding: 0;
-         margin: 0;
 
          li{
-            padding: 8px 0;
             border-bottom: 1px solid @color_border;
          }
 
@@ -55,10 +64,50 @@
    .widget_core_coll_longdesc {
       text-align: center;
 
-
       .panel-title {
          font-size: 2.6rem;
+
+         &:after {
+            display: none;
+         }
       }
    }
+
+
+   // Widget Search Form
+   // ======================================================================== /
+   .widget_core_coll_search_form {
+
+      .search {
+
+         .search_field, .search_submit {
+            padding: 10px 20px;
+            height: 40px;
+            border-radius: 0;
+            box-shadow: none;
+            outline: 0;
+         }
+
+         .search_field {
+            padding-left: 15px;
+            padding-right: 15px;
+
+            &:focus {
+               border-color: @primary;
+            }
+         }
+
+         .search_submit {
+            font-family: @font_heading;
+            background-color: @primary;
+            border-color: @primary;
+            margin-left: -1px;
+            outline-offset: 0;
+         }
+
+      }
+
+   }
+
 
 }

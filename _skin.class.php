@@ -143,7 +143,9 @@ class cuboid_blog_Skin extends Skin
                   'defaultvalue' => '#1abc9c',
                   'type'         => 'color',
                ),
-               // Pagination
+
+               /* Pagination
+                  ========================================================================== */
                'pagination_bg' => array(
                   'label'        => T_('Pagination Background Color'),
                   'note'         => T_('Default value is #333333'),
@@ -235,7 +237,7 @@ class cuboid_blog_Skin extends Skin
             'content_settings_end' => array(
                'layout' => 'end_fieldset',
             ),
-            // End Footer Settings
+            // End Content Settings
 
 
             /* Footer Settings
@@ -244,12 +246,30 @@ class cuboid_blog_Skin extends Skin
                'layout' => 'begin_fieldset',
                'label'  => T_('Footer settings')
             ),
-               'footer_bg_color' => array(
-                  'label'        => T_('Footer Background Color'),
-                  'note'         => T_('Default value is #262626'),
-                  'defaultvalue' => '#262626',
-                  'type'         => 'color',
+               'footer_widget' => array(
+                  'label'        => T_('Display Footer Widget'),
+                  'note'         => T_('Check to enable footer widget.'),
+                  'defaultvalue' => 1,
+                  'type'         => 'checkbox',
                ),
+               'footer_user_link' => array(
+                  'label'        => T_('Display Footer User Links'),
+                  'note'         => T_('Check to enable widget user links.'),
+                  'defaultvalue' => 1,
+                  'type'         => 'checkbox',
+               ),
+               'footer_copyright' => array(
+                  'label'        => T_('Display Footer Copyright'),
+                  'note'         => T_('Check to display footer copyright.'),
+                  'defaultvalue' => 1,
+                  'type'         => 'checkbox',
+               ),
+               // 'footer_bg_color' => array(
+               //    'label'        => T_('Footer Background Color'),
+               //    'note'         => T_('Default value is #262626'),
+               //    'defaultvalue' => '#262626',
+               //    'type'         => 'color',
+               // ),
             'footer_settings_end' => array(
                'layout' => 'end_fieldset',
             ),
@@ -492,9 +512,9 @@ class cuboid_blog_Skin extends Skin
       if( $color = $this->get_setting( 'content_title_color_hover' ) ) {
          $custom_css .= '#content .evo_post_title h2 a:hover { color: '.$color." }\n";
       }
-      if( $color = $this->get_setting( 'content_text_color' ) ) {
-         $custom_css .= '#content .evo_content_block .evo_post__full_text { color: '.$color." }\n";
-      }
+      // if( $color = $this->get_setting( 'content_text_color' ) ) {
+      //    $custom_css .= '#content .evo_content_block .evo_post__full_text { color: '.$color." }\n";
+      // }
       if( $color = $this->get_setting( 'content_text_info_post_color' ) ) {
          $custom_css .= '#content .evo_content_block .small.text-muted { color: '.$color." }\n";
       }

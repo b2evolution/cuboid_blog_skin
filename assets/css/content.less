@@ -38,9 +38,10 @@
 
    // Evo Post Global Style
    // ======================================================================== /
-   .evo_post__full_text {
+   .evo_post__full_text, .evo_post__excerpt_text {
       font-size: 1.4rem;
       letter-spacing: 0.5px;
+      color: @color_content;
    }
 
    // Intro Post Style
@@ -96,73 +97,173 @@
    	margin-bottom: 3rem;
       padding: 2.5rem 3rem 2rem;
 
-      // Evo Post Image
+      // Evo Post Image and Gallery Before Title
       // ======================================================================== /
-      .evo_post_images{
-         img {
-            border-radius: 0;
+      .evo_image_block, .evo_post_gallery__image {
+            position: relative;
+            overflow: hidden;
+
+         a {
+
+            &::before, &::after {
+               position: absolute;
+               transition: all 0.32s ease-in-out;
+
+               visibility: hidden;
+               opacity: 0;
+            }
+
+            &::before {
+               content: '';
+               left: 0;
+               top: 0;
+               width: 100%;
+               height: 100%;
+               background-color: rgba(0, 0, 0, 0.5);
+            }
+
+            &::after {
+               content: "\f0b2";
+               position: absolute;
+               margin: 0 auto;
+               text-align: center;
+               left: 0;
+               right: 0;
+               top: 45%;
+               width: 45px;
+               height: 45px;
+               line-height: 46px;
+               color: @c3;
+               background-color: @w;
+               border-radius: 100%;
+
+               display: inline-block;
+               font-family: FontAwesome;
+               font-size: 1.7rem;
+               text-rendering: auto;
+               -webkit-font-smoothing: antialiased;
+               -moz-osx-font-smoothing: grayscale;
+            }
          }
 
-         .evo_image_block {
-            position: relative;
-
+         &:hover {
             a {
 
                &::before, &::after {
-                  position: absolute;
-                  transition: all 0.32s ease-in-out;
-
-                  visibility: hidden;
-                  opacity: 0;
-               }
-
-               &::before {
-                  content: '';
-                  left: 0;
-                  top: 0;
-                  width: 100%;
-                  height: 100%;
-                  background-color: rgba(0, 0, 0, 0.5);
-               }
-
-               &::after {
-                  content: "\f0b2";
-                  position: absolute;
-                  margin: 0 auto;
-                  text-align: center;
-                  left: 0;
-                  right: 0;
-                  top: 45%;
-                  width: 45px;
-                  height: 45px;
-                  line-height: 46px;
-                  color: @c3;
-                  background-color: @w;
-                  border-radius: 100%;
-
-                  display: inline-block;
-                  font-family: FontAwesome;
-                  font-size: 1.8rem;
-                  text-rendering: auto;
-                  -webkit-font-smoothing: antialiased;
-                  -moz-osx-font-smoothing: grayscale;
-               }
-            }
-
-            &:hover {
-
-               a, a::before, a::after {
                   visibility: visible;
                   opacity: 1;
                }
 
-            }
+               &::after {
 
+               }
+
+            }
          }
 
       }
 
+      // Custom evo Post Images style
+      // ======================================================================== /
+      .evo_post_images{
+         display: block;
+         text-align: center;
+
+         img {
+            border-radius: 0;
+         }
+
+      }
+
+      // Evo Image Block Global Style
+      // ======================================================================== /
       .evo_image_block {
+         display: table;
+         margin-left: auto;
+         margin-right: auto;
+
+         img {
+            border-radius: 0;
+         }
+
+         a {
+
+            &::after {
+               border-radius: 100%;
+
+               transform: scale(0) rotateZ(180deg);
+            }
+         }
+
+         // Image Captain Style
+         // ======================================================================== /
+         .evo_image_legend {
+            position: absolute;
+            bottom: 0;
+            left: -100%;
+            color: @w;
+            background-color: rgba(0, 0, 0, 0.35);
+            padding: 10px 15px;
+            transition: all 0.32s ease-in-out;
+         }
+
+         &:hover {
+            a {
+
+               &::after {
+                  transform: scale(1) rotateZ(0deg);
+               }
+
+            }
+
+            .evo_image_legend {
+               left: 0;
+            }
+         }
+
+      }
+
+      // Gallery STyle Hover
+      // ======================================================================== /
+      .bGallery{
+         margin-top: -13px;
+      }
+
+      .bGallery, .evo_post_gallery {
+
+         .evo_post_gallery__image {
+            margin: 0 12px 12px 0;
+
+            a {
+
+               &::before {
+                  border-radius: 3px;
+               }
+
+               &::after {
+                  top: 35%;
+                  width: 30px;
+                  height: 30px;
+                  line-height: 30px;
+                  font-size: 1.5rem;
+                  color: @w;
+                  background-color: transparent;
+                  // color: @c3;
+                  transform: rotateZ(120deg);
+               }
+
+            }
+
+            &:hover {
+               a {
+                  &::after {
+                     transform: rotateZ(0deg);
+                  }
+               }
+            }
+
+         }
+
          img {
             border-radius: 3px;
          }
@@ -190,14 +291,19 @@
 
       // Evo Post Full
       // ======================================================================== /
-      .evo_post__full, .evo_post_excerpt {
+      .evo_post__full, .evo_post__excerpt {
+
+         .evo_post__full_text{
+            padding: 1.5rem 0 1rem;
+         }
 
          // Typograpy
          // ======================================================================== /
          h1, h2, h3, h4, h5, h6 {
-            display: block;
             font-family: @font_heading;
             font-weight: 700;
+            letter-spacing: 0;
+            padding-top: 5px;
             margin-bottom: 5px;
          }
 
@@ -225,15 +331,26 @@
 
          pre {
             border-radius: 3px;
-            margin-bottom: 1.5rem;
+            padding: 1.5rem;
+            margin-top: 2rem;
+            margin-bottom: 2rem;
             background-color: @cf7;
             border-color: @cd;
          }
 
-         .evo_post__full_text{
-            padding: 1.5rem 0 1rem;
+         blockquote {
+            margin: 1.5rem 0;
+            font-size: 1.8rem;
+            line-height: 1.3;
+            font-style: italic;
+
+            p {
+               margin-bottom: 0;
+            }
          }
 
+         // Video Blog Style
+         // ======================================================================== /
          .videoblock {
 
             iframe {
@@ -243,48 +360,54 @@
 
          }
 
-      }
+         // More Link Style
+         // ======================================================================== /
+         .evo_post_more_link, .evo_post__excerpt_more_link{
+            background: @c3;
+            display: inline-block;
+            margin: 1rem 0 2rem;
 
-      // More Link Style
-      // ======================================================================== /
-      .evo_post_more_link{
-         background: @c3;
-         display: inline-block;
-         margin-top: 1.5rem;
-         margin-bottom: 0.5rem;
-
-         a {
-            display: block;
-            color: @w;
-            font-size: 1.4rem;
-            font-family: @font_heading;
-            font-weight: 400;
-            text-transform: uppercase;
-            padding: 1rem 2rem 1rem 1.5rem;
-            transition: all 0.2s ease-in-out;
-
-            .fa {
-               position: relative;
-               left: 0;
+            a {
+               display: block;
+               color: @w;
+               font-size: 1.4rem;
+               font-family: @font_heading;
+               font-weight: 400;
+               text-transform: capitalize;
+               padding: 1rem 2rem 1rem 1.5rem;
                transition: all 0.2s ease-in-out;
-            }
-
-            &:hover, &:active, &:focus{
-               text-decoration: none;
-               background: @primary;
 
                .fa {
-                  left: 8px;
+                  position: relative;
+                  left: 0;
+                  transition: all 0.2s ease-in-out;
                }
+
+               &:hover, &:active, &:focus{
+                  text-decoration: none;
+                  background: @primary;
+
+                  .fa {
+                     left: 8px;
+                  }
+               }
+
             }
 
          }
+
+         .evo_post__excerpt_more_link  {
+            display: table;
+            margin: 2rem 0 2.5rem;
+         }
+
 
       }
 
       // Post Tags
       // ======================================================================== /
       .post_tags{
+          margin-top: 0;
 
          a{
             font-family: @font_heading;
@@ -353,6 +476,12 @@
          padding: 1rem 1.8rem;
          float: none;
          transition: all 0.2s ease-in-out;
+         box-shadow: @box-shadow;
+
+         &:hover, &:active, &:focus {
+            background-color: @primary;
+            color: @w;
+         }
       }
 
       &.active {

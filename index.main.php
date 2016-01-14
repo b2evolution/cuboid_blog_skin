@@ -62,10 +62,10 @@ skin_include( '_body_header.inc.php' );
       			// ------------------- PREV/NEXT POST LINKS (SINGLE POST MODE) -------------------
       			item_prevnext_links( array(
    					'block_start' => '<nav><ul class="pager">',
-   						'prev_start'  => '<li class="previous">',
-   						'prev_end'    => '</li>',
-   						'next_start'  => '<li class="next">',
-   						'next_end'    => '</li>',
+						'prev_start'  => '<li class="previous">',
+						'prev_end'    => '</li>',
+						'next_start'  => '<li class="next">',
+						'next_end'    => '</li>',
    					'block_end'   => '</ul></nav>',
    				) );
       			// ------------------------- END OF PREV/NEXT POST LINKS -------------------------
@@ -74,21 +74,21 @@ skin_include( '_body_header.inc.php' );
       		<?php
       			// ------------------------ TITLE FOR THE CURRENT REQUEST ------------------------
       			request_title( array(
-   					'title_before'      => '<h2>',
-   					'title_after'       => '</h2>',
-   					'title_none'        => '',
-   					'glue'              => ' - ',
-   					'title_single_disp' => false,
-   					'title_page_disp'   => false,
-   					'format'            => 'htmlbody',
-   					'register_text'     => '',
-   					'login_text'        => '',
-   					'lostpassword_text' => '',
+   					'title_before'       => '<h2 class="title_head_post">',
+   					'title_after'        => '</h2>',
+   					'title_none'         => '',
+   					'glue'               => ' - ',
+   					'title_single_disp'  => false,
+   					'title_page_disp'    => false,
+   					'format'             => 'htmlbody',
+   					'register_text'      => '',
+   					'login_text'         => '',
+   					'lostpassword_text'  => '',
    					'account_activation' => '',
-   					'msgform_text'      => '',
-   					'user_text'         => '',
-   					'users_text'        => '',
-   					'display_edit_links'=> false,
+   					'msgform_text'       => '',
+   					'user_text'          => '',
+   					'users_text'         => '',
+   					'display_edit_links' => false,
    				) );
       			// ----------------------------- END OF REQUEST TITLE ----------------------------
       		?>
@@ -100,9 +100,9 @@ skin_include( '_body_header.inc.php' );
       			// ---------------------- ITEM BLOCK INCLUDED HERE ------------------------
       			skin_include( '_item_block.inc.php', array(
    					'feature_block' => true,
-   					'content_mode' => 'full', // We want regular "full" content, even in category browsing: i-e no excerpt or thumbnail
-   					'intro_mode'   => 'normal',	// Intro posts will be displayed in normal mode
-   					'item_class'   => ($Item->is_intro() ? 'well evo_intro_post' : 'well evo_featured_post'),
+   					'content_mode'  => 'full', // We want regular "full" content, even in category browsing: i-e no excerpt or thumbnail
+   					'intro_mode'    => 'normal',	// Intro posts will be displayed in normal mode
+   					'item_class'    => ( $Item->is_intro() ? 'well evo_intro_post' : 'well evo_featured_post' ),
    				) );
       			// ----------------------------END ITEM BLOCK  ----------------------------
       		}
@@ -123,15 +123,15 @@ skin_include( '_body_header.inc.php' );
       					),
       					// Pagination
       					'pagination' => array(
-      						'block_start'           => '<div class="center"><ul class="pagination">',
-      						'block_end'             => '</ul></div>',
-      						'page_current_template' => '<span>$page_num$</span>',
-      						'page_item_before'      => '<li>',
-      						'page_item_after'       => '</li>',
+      						'block_start'              => '<div class="center"><ul class="pagination">',
+      						'block_end'                => '</ul></div>',
+      						'page_current_template'    => '<span>$page_num$</span>',
+      						'page_item_before'         => '<li>',
+      						'page_item_after'          => '</li>',
       						'page_item_current_before' => '<li class="active">',
       						'page_item_current_after'  => '</li>',
-      						'prev_text'             => '<i class="fa fa-angle-double-left"></i>',
-      						'next_text'             => '<i class="fa fa-angle-double-right"></i>',
+      						'prev_text'                => '<i class="fa fa-angle-double-left"></i>',
+      						'next_text'                => '<i class="fa fa-angle-double-right"></i>',
       					),
       					// Form params for the forms below: login, register, lostpassword, activateinfo and msgform
       					'skin_form_before'      => '<div class="panel panel-default skin-form">'
@@ -153,28 +153,28 @@ skin_include( '_body_header.inc.php' );
       					'abort_link_position'   => 'form_title',
       					'abort_link_text'       => '<button type="button" class="close" aria-label="Close"><span aria-hidden="true">&times;</span></button>',
       					// Register
-      					'register_page_before'      => '<div class="evo_panel__register">',
-      					'register_page_after'       => '</div>',
-      					'register_form_title'       => T_('Register'),
-      					'register_links_attrs'      => '',
-      					'register_use_placeholders' => true,
-      					'register_field_width'      => 252,
+      					'register_page_before'          => '<div class="evo_panel__register">',
+      					'register_page_after'           => '</div>',
+      					'register_form_title'           => T_('Register'),
+      					'register_links_attrs'          => '',
+      					'register_use_placeholders'     => true,
+      					'register_field_width'          => 252,
       					'register_disabled_page_before' => '<div class="evo_panel__register register-disabled">',
       					'register_disabled_page_after'  => '</div>',
       					// Activate form
-      					'activate_form_title'  => T_('Account activation'),
-      					'activate_page_before' => '<div class="evo_panel__activation">',
-      					'activate_page_after'  => '</div>',
+      					'activate_form_title'   => T_('Account activation'),
+      					'activate_page_before'  => '<div class="evo_panel__activation">',
+      					'activate_page_after'   => '</div>',
       					// Search
-      					'search_input_before'  => '<div class="input-group">',
-      					'search_input_after'   => '',
-      					'search_submit_before' => '<span class="input-group-btn">',
-      					'search_submit_after'  => '</span></div>',
+      					'search_input_before'   => '<div class="input-group">',
+      					'search_input_after'    => '',
+      					'search_submit_before'  => '<span class="input-group-btn">',
+      					'search_submit_after'   => '</span></div>',
       					// Front page
       					'featured_intro_before' => '<div class="jumbotron"><div class="intro_background_image"></div>',
       					'featured_intro_after'  => '</div>',
       					// Form "Sending a message"
-      					'msgform_form_title' => T_('Sending a message'),
+      					'msgform_form_title'    => T_('Sending a message'),
       				) );
       			// Note: you can customize any of the sub templates included here by
       			// copying the matching php file into your skin directory.

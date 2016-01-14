@@ -37,7 +37,7 @@ $params = array_merge( array(
 
 		'excerpt_before_more'      => ' <span class="evo_post__excerpt_more_link">',
 		'excerpt_after_more'       => '</span>',
-		'excerpt_more_text'        => T_('more').' &raquo;',
+		'excerpt_more_text'        => T_('Read More ').'<i class="fa fa-long-arrow-right"></i>',
 
 		// In case we display a full version of the post:
 		'content_start_full_text'  => '<div class="evo_post__full_text">',
@@ -89,7 +89,7 @@ $params = array_merge( array(
 
 		'before_more_link'         => '<p class="evo_post_more_link">',
 		'after_more_link'          => '</p>',
-		'more_link_text'           => 'Read More <i class="fa fa-long-arrow-right"></i>',
+		'more_link_text'           => T_('Read More ').'<i class="fa fa-long-arrow-right"></i>',
 		'more_link_to'             => 'single#anchor', // Can be 'single' or 'single#anchor' which is permalink + "#more55" where 55 is item ID
 		'anchor_text'              => '<p class="evo_post_more_anchor">...</p>', // Text to display as the more anchor (once the more link has been clicked, '#' defaults to "Follow up:")
 
