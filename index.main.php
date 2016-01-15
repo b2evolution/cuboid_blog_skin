@@ -121,6 +121,7 @@ skin_include( '_body_header.inc.php' );
       						'item_selected_end'   => '</li>',
       						'block_end'           => '</ul></nav>',
       					),
+
       					// Pagination
       					'pagination' => array(
       						'block_start'              => '<div class="center"><ul class="pagination">',
@@ -133,6 +134,7 @@ skin_include( '_body_header.inc.php' );
       						'prev_text'                => '<i class="fa fa-angle-double-left"></i>',
       						'next_text'                => '<i class="fa fa-angle-double-right"></i>',
       					),
+
       					// Form params for the forms below: login, register, lostpassword, activateinfo and msgform
       					'skin_form_before'      => '<div class="panel panel-default skin-form">'
                            							.'<div class="panel-heading">'
@@ -161,18 +163,22 @@ skin_include( '_body_header.inc.php' );
       					'register_field_width'          => 252,
       					'register_disabled_page_before' => '<div class="evo_panel__register register-disabled">',
       					'register_disabled_page_after'  => '</div>',
+
       					// Activate form
       					'activate_form_title'   => T_('Account activation'),
       					'activate_page_before'  => '<div class="evo_panel__activation">',
       					'activate_page_after'   => '</div>',
+
       					// Search
       					'search_input_before'   => '<div class="input-group">',
       					'search_input_after'    => '',
       					'search_submit_before'  => '<span class="input-group-btn">',
       					'search_submit_after'   => '</span></div>',
+
       					// Front page
       					'featured_intro_before' => '<div class="jumbotron"><div class="intro_background_image"></div>',
       					'featured_intro_after'  => '</div>',
+                     
       					// Form "Sending a message"
       					'msgform_form_title'    => T_('Sending a message'),
       				) );

@@ -23,9 +23,9 @@
          font-family: @font_heading;
          font-size: 1.5rem;
          font-weight: 700;
-         color: @c5;
          text-transform: uppercase;
-         letter-spacing: 0;
+         letter-spacing: 1px;
+         color: @c5;
 
          &::after {
             content: '';
@@ -59,6 +59,13 @@
 
    }
 
+   // Padding 30px
+   // ======================================================================== /
+   .widget_core_breadcrumb_path,
+   .widget_core_image {
+      padding: 3rem;
+   }
+
    // Widget Long Description
    // ======================================================================== /
    .widget_core_coll_longdesc {
@@ -73,41 +80,35 @@
       }
    }
 
-
-   // Widget Search Form
+   // List Public and List Owner
    // ======================================================================== /
-   .widget_core_coll_search_form {
+   .widget_core_colls_list_public, .widget_core_colls_list_owner {
 
-      .search {
+      & > ul {
+         padding-left: 15px;
+         padding-right: 15px;
+         margin-top: 10px;
+      }
 
-         .search_field, .search_submit {
-            padding: 10px 20px;
-            height: 40px;
-            border-radius: 0;
-            box-shadow: none;
-            outline: 0;
-         }
-
-         .search_field {
-            padding-left: 15px;
-            padding-right: 15px;
-
-            &:focus {
-               border-color: @primary;
-            }
-         }
-
-         .search_submit {
-            font-family: @font_heading;
-            background-color: @primary;
-            border-color: @primary;
-            margin-left: -1px;
-            outline-offset: 0;
-         }
-
+      a {
+         font-weight: 400;
       }
 
    }
 
+   // Custom Icon Link for sidebar
+   // ======================================================================== /
+   .ufld_icon_links {
+
+      a{
+         color: @c7;
+
+         &:hover, &:active, &:focus {
+            color: @w;
+            text-decoration: none;
+         }
+      }
+
+   }
 
 }
