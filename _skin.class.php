@@ -240,6 +240,33 @@ class cuboid_blog_Skin extends Skin
             // End Content Settings
 
 
+            /* Single Disp
+               ========================================================================== */
+            'single_settings_start' => array(
+               'layout' => 'begin_fieldset',
+               'label'  => T_('Single Disp')
+            ),
+               // Single Layout
+               'single_layout' => array(
+                  'label'        => T_('Single Layout'),
+                  'note'         => '',
+                  'defaultvalue' => 'single_column',
+                  'type'         => 'select',
+                  'options'      => array(
+                     'single_column'              => T_('Single Column Large'),
+                     'single_column_normal'       => T_('Single Column'),
+                     'single_column_narrow'       => T_('Single Column Narrow'),
+                     'single_column_extra_narrow' => T_('Single Column Extra Narrow'),
+                     'left_sidebar'               => T_('Left Sidebar'),
+                     'right_sidebar'              => T_('Right Sidebar'),
+                  ),
+               ),
+            'single_settings_end' => array(
+               'layout' => 'end_fieldset',
+            ),
+            // End Single Disp
+
+
             /* Footer Settings
                ========================================================================== */
             'footer_settings_start' => array(
@@ -390,16 +417,16 @@ class cuboid_blog_Skin extends Skin
 
 		// Request some common features that the parent function (Skin::display_init()) knows how to provide:
 		parent::display_init( array(
-				'jquery',                  // Load jQuery
-				'font_awesome',            // Load Font Awesome (and use its icons as a priority over the Bootstrap glyphicons)
-				'bootstrap',               // Load Bootstrap (without 'bootstrap_theme_css')
-				'bootstrap_evo_css',       // Load the b2evo_base styles for Bootstrap (instead of the old b2evo_base styles)
-				'bootstrap_messages',      // Initialize $Messages Class to use Bootstrap styles
-				'style_css',               // Load the style.css file of the current skin
-				'colorbox',                // Load Colorbox (a lightweight Lightbox alternative + customizations for b2evo)
-				'bootstrap_init_tooltips', // Inline JS to init Bootstrap tooltips (E.g. on comment form for allowed file extensions)
-				'disp_auto',               // Automatically include additional CSS and/or JS required by certain disps (replace with 'disp_off' to disable this)
-			) );
+			'jquery',                  // Load jQuery
+			'font_awesome',            // Load Font Awesome (and use its icons as a priority over the Bootstrap glyphicons)
+			'bootstrap',               // Load Bootstrap (without 'bootstrap_theme_css')
+			'bootstrap_evo_css',       // Load the b2evo_base styles for Bootstrap (instead of the old b2evo_base styles)
+			'bootstrap_messages',      // Initialize $Messages Class to use Bootstrap styles
+			'style_css',               // Load the style.css file of the current skin
+			'colorbox',                // Load Colorbox (a lightweight Lightbox alternative + customizations for b2evo)
+			'bootstrap_init_tooltips', // Inline JS to init Bootstrap tooltips (E.g. on comment form for allowed file extensions)
+			'disp_auto',               // Automatically include additional CSS and/or JS required by certain disps (replace with 'disp_off' to disable this)
+		) );
 
 		// Skin specific initializations:
 
@@ -525,9 +552,9 @@ class cuboid_blog_Skin extends Skin
        * Footer Settings Output
        * ============================================================================
        */
-		if( $color = $this->get_setting( 'footer_bg_color' ) ) {
-			$custom_css .= 'body #main-footer { background-color: '.$color." }\n";
-		}
+		// if( $color = $this->get_setting( 'footer_bg_color' ) ) {
+		// 	$custom_css .= 'body #main-footer { background-color: '.$color." }\n";
+		// }
 
       /**
        * ============================================================================
@@ -625,9 +652,9 @@ class cuboid_blog_Skin extends Skin
 					'footer_text'             => '<div class="center"><ul class="pagination">'
 							                       .'$prev$$first$$list_prev$$list$$list_next$$last$$next$'
 						                          .'</ul></div><div class="center">$page_size$</div>'
-					                  /* T_('Page $scroll_list$ out of $total_pages$   $prev$ | $next$<br />'. */
-					                  /* '<strong>$total_pages$ Pages</strong> : $prev$ $list$ $next$' */
-					                  /* .' <br />$first$  $list_prev$  $list$  $list_next$  $last$ :: $prev$ | $next$') */,
+            					                  /* T_('Page $scroll_list$ out of $total_pages$   $prev$ | $next$<br />'. */
+            					                  /* '<strong>$total_pages$ Pages</strong> : $prev$ $list$ $next$' */
+            					                  /* .' <br />$first$  $list_prev$  $list$  $list_next$  $last$ :: $prev$ | $next$') */,
 					'footer_text_single'       => '<div class="center">$page_size$</div>',
 					'footer_text_no_limit'     => '', // Text if theres no LIMIT and therefor only one page anyway
 					'page_current_template'    => '<span>$page_num$</span>',
@@ -662,7 +689,7 @@ class cuboid_blog_Skin extends Skin
 					'title_fmt'      => '$title$'."\n",
 					'no_title_fmt'   => '',
 					'fieldset_begin' => '<fieldset $fieldset_attribs$>'."\n"
-																.'<legend $title_attribs$>$fieldset_title$</legend>'."\n",
+												.'<legend $title_attribs$>$fieldset_title$</legend>'."\n",
 					'fieldset_end'   => '</fieldset>'."\n",
 					'fieldstart'     => '<div class="form-group form-group-sm" $ID$>'."\n",
 					'fieldend'       => "</div>\n\n",
@@ -708,7 +735,7 @@ class cuboid_blog_Skin extends Skin
 					'title_fmt'      => '<span style="float:right">$global_icons$</span><h2>$title$</h2>'."\n",
 					'no_title_fmt'   => '<span style="float:right">$global_icons$</span>'."\n",
 					'fieldset_begin' => '<div class="fieldset_wrapper $class$" id="fieldset_wrapper_$id$"><fieldset $fieldset_attribs$><div class="panel panel-default">'."\n"
-															.'<legend class="panel-heading" $title_attribs$>$fieldset_title$</legend><div class="panel-body $class$">'."\n",
+												.'<legend class="panel-heading" $title_attribs$>$fieldset_title$</legend><div class="panel-body $class$">'."\n",
 					'fieldset_end'   => '</div></div></fieldset></div>'."\n",
 					'fieldstart'     => '<div class="form-group" $ID$>'."\n",
 					'fieldend'       => "</div>\n\n",
@@ -822,15 +849,15 @@ class cuboid_blog_Skin extends Skin
 			case 'plugin_template':
 				// Template for plugins:
 				return array(
-						// This template is used to build a plugin toolbar with action buttons above edit item/comment area:
-						'toolbar_before'       => '<div class="btn-toolbar $toolbar_class$" role="toolbar">',
-						'toolbar_after'        => '</div>',
-						'toolbar_title_before' => '<div class="btn-toolbar-title">',
-						'toolbar_title_after'  => '</div>',
-						'toolbar_group_before' => '<div class="btn-group btn-group-xs" role="group">',
-						'toolbar_group_after'  => '</div>',
-						'toolbar_button_class' => 'btn btn-default',
-					);
+					// This template is used to build a plugin toolbar with action buttons above edit item/comment area:
+					'toolbar_before'       => '<div class="btn-toolbar $toolbar_class$" role="toolbar">',
+					'toolbar_after'        => '</div>',
+					'toolbar_title_before' => '<div class="btn-toolbar-title">',
+					'toolbar_title_after'  => '</div>',
+					'toolbar_group_before' => '<div class="btn-group btn-group-xs" role="group">',
+					'toolbar_group_after'  => '</div>',
+					'toolbar_button_class' => 'btn btn-default',
+				);
 
 			case 'modal_window_js_func':
 				// JavaScript function to initialize Modal windows, @see echo_user_ajaxwindow_js()
@@ -865,9 +892,9 @@ class cuboid_blog_Skin extends Skin
 	 * @param boolean TRUE to check if at least one sidebar container is visible
 	 * @return boolean TRUE to display a sidebar
 	 */
-	function is_visible_sidebar( $check_containers = false )
+	function is_visible_sidebar( $layout, $check_containers = false )
 	{
-		$layout = $this->get_setting( 'layout' );
+		$layout = $this->get_setting( $layout );
 
 		if( $layout != 'left_sidebar' && $layout != 'right_sidebar' )
 		{ // Sidebar is not displayed for selected skin layout
@@ -891,9 +918,11 @@ class cuboid_blog_Skin extends Skin
 	 *
 	 * @return string
 	 */
-	function get_column_class()
+	function get_column_class( $settings )
 	{
-		switch( $this->get_setting( 'layout' ) )
+      $settings = $this->get_setting( $settings );
+
+		switch( $settings )
 		{
 			case 'single_column':
 				// Single Column Large

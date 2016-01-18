@@ -20,7 +20,7 @@ siteskin_include( '_site_body_header.inc.php' );
 <header id="main-header">
    <div class="container">
 
-      <div class="col-xs-9 col-sm-12 col-md-3">
+      <div class="col-xs-9 col-sm-12 col-md-4">
          <div class="row">
             <div class="evo_container evo_container__header">
             <?php
@@ -50,7 +50,7 @@ siteskin_include( '_site_body_header.inc.php' );
          </div>
       </div>
 
-      <div class="col-xs-12 col-sm-12 col-md-9">
+      <div class="col-xs-12 col-sm-12 col-md-8">
          <div class="row">
             <nav class="collapse navbar-collapse" id="main-menu">
          		<ul class="nav nav-tabs evo_container evo_container__menu">

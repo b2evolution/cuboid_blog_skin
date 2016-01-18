@@ -73,6 +73,24 @@ echo '<div class="evo_content_block">'; // Beginning of post display
          'image_link_to'              => $params['image_link_to'],
       ) );
    }
+
+   if ( $disp == 'single' ) {
+   // Display images that are linked to this post:
+      $Item->images( array(
+         // Optionally restrict to files/images linked to specific position: 'teaser'|'teaserperm'|'teaserlink'|'aftermore'|'inline'|'cover'
+         'restrict_to_image_position' => 'cover',
+         'before'                     => '<div class="evo_post_images cover_image">',
+         'before_image'               => $params['before_image'],
+         'before_image_legend'        => $params['before_image_legend'],
+         'after_image_legend'         => $params['after_image_legend'],
+         'after_image'                => $params['after_image'],
+         'after'                      => $params['after_images'],
+         'image_class'                => $params['image_class'],
+         'image_size'                 => 'original',
+         'limit'                      => 1,
+         'image_link_to'              => $params['image_link_to'],
+      ) );
+   }
    ?>
 
 	<header>

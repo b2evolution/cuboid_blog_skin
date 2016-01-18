@@ -16,6 +16,22 @@
 
    #content {
 
+      // Evo Featured Post
+      // ======================================================================== /
+      .evo_featured_post {
+         background-color: @w;
+         border-radius: 0;
+         border: 0;
+         box-shadow: none;
+         border-left: 10px solid @primary;
+
+         .evo_image_block {
+            margin-top: -30px;
+            margin-left: -40px !important;
+            margin-right: -30px;
+         }
+      }
+
       // Evo Post Style
       // ======================================================================== /
       .evo_post {
@@ -36,6 +52,20 @@
                margin-right: -30px;
             }
 
+         }
+
+
+         // Evo Post Full
+         // ======================================================================== /
+         .evo_post__full {
+
+            .evo_post_images {
+               margin-bottom: 0;
+            }
+
+            .evo_image_block {
+               margin: 0 auto;
+            }
          }
 
       }

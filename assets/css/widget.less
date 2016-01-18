@@ -62,7 +62,8 @@
 // ======================================================================== /
 // User Links
 // ======================================================================== /
-.widget_core_user_links {
+.widget_core_user_links,
+.widget_core_org_members {
 
    a {
       color: @w;
@@ -91,82 +92,104 @@
        background-color: @skype;
    }
 
-   .ufld_twitter.ufld__hovertextcolor:hover,.ufld_twitter.ufld__textcolor {
+   .ufld_twitter.ufld__hovertextcolor:hover,
+   .ufld_twitter.ufld__textcolor {
        color: @twitter;
    }
-   .ufld_twitter.ufld__bgcolor,.ufld_twitter.ufld__hoverbgcolor:hover {
+   .ufld_twitter.ufld__bgcolor,
+   .ufld_twitter.ufld__hoverbgcolor:hover {
        background-color: @twitter !important;
    }
 
-   .ufld_facebook.ufld__hovertextcolor:hover,.ufld_facebook.ufld__textcolor {
+   .ufld_facebook.ufld__hovertextcolor:hover,
+   .ufld_facebook.ufld__textcolor {
        color: @facebook;
    }
-   .ufld_facebook.ufld__bgcolor,.ufld_facebook.ufld__hoverbgcolor:hover {
+   .ufld_facebook.ufld__bgcolor,
+   .ufld_facebook.ufld__hoverbgcolor:hover {
        background-color: @facebook !important;
    }
 
-   .ufld_googleplus.ufld__hovertextcolor:hover,.ufld_googleplus.ufld__textcolor {
+   .ufld_googleplus.ufld__hovertextcolor:hover,
+   .ufld_googleplus.ufld__textcolor {
        color: @google;
    }
-   .ufld_googleplus.ufld__bgcolor,.ufld_googleplus.ufld__hoverbgcolor:hover {
+   .ufld_googleplus.ufld__bgcolor,
+   .ufld_googleplus.ufld__hoverbgcolor:hover {
        background-color: @google !important;
    }
 
-   .ufld_linkedin.ufld__hovertextcolor:hover,.ufld_linkedin.ufld__textcolor {
+   .ufld_linkedin.ufld__hovertextcolor:hover,
+   .ufld_linkedin.ufld__textcolor {
        color: @linkedin;
    }
-   .ufld_linkedin.ufld__bgcolor,.ufld_linkedin.ufld__hoverbgcolor:hover {
+   .ufld_linkedin.ufld__bgcolor,
+   .ufld_linkedin.ufld__hoverbgcolor:hover {
        background-color: @linkedin !important;
    }
 
-   .ufld_github.ufld__hovertextcolor:hover,.ufld_github.ufld__textcolor {
+   .ufld_github.ufld__hovertextcolor:hover,
+   .ufld_github.ufld__textcolor {
        color: @github;
    }
-   .ufld_github.ufld__bgcolor,.ufld_github.ufld__hoverbgcolor:hover {
+   .ufld_github.ufld__bgcolor,
+   .ufld_github.ufld__hoverbgcolor:hover {
        background-color: @github !important;
    }
 
-   .ufld_flickr.ufld__hovertextcolor:hover,.ufld_flickr.ufld__textcolor {
+   .ufld_flickr.ufld__hovertextcolor:hover,
+   .ufld_flickr.ufld__textcolor {
        color: @flickr;
    }
-   .ufld_flickr.ufld__bgcolor,.ufld_flickr.ufld__hoverbgcolor:hover {
+   .ufld_flickr.ufld__bgcolor,
+   .ufld_flickr.ufld__hoverbgcolor:hover {
        background-color: @flickr !important;
    }
 
-   .ufld_youtube.ufld__hovertextcolor:hover,.ufld_youtube.ufld__textcolor {
+   .ufld_youtube.ufld__hovertextcolor:hover,
+   .ufld_youtube.ufld__textcolor {
        color: @youtube;
    }
-   .ufld_youtube.ufld__bgcolor,.ufld_youtube.ufld__hoverbgcolor:hover {
+   .ufld_youtube.ufld__bgcolor,
+   .ufld_youtube.ufld__hoverbgcolor:hover {
        background-color: @youtube !important;
    }
 
-   .ufld_digg.ufld__hovertextcolor:hover,.ufld_digg.ufld__textcolor {
+   .ufld_digg.ufld__hovertextcolor:hover,
+   .ufld_digg.ufld__textcolor {
        color: @dig;
    }
-   .ufld_digg.ufld__bgcolor,.ufld_digg.ufld__hoverbgcolor:hover {
+   .ufld_digg.ufld__bgcolor,
+   .ufld_digg.ufld__hoverbgcolor:hover {
        background-color: @dig !important;
    }
 
-   .ufld_stumbleupon.ufld__hovertextcolor:hover,.ufld_stumbleupon.ufld__textcolor {
+   .ufld_stumbleupon.ufld__hovertextcolor:hover,
+   .ufld_stumbleupon.ufld__textcolor {
        color: @stumbleupon;
    }
-   .ufld_stumbleupon.ufld__bgcolor,.ufld_stumbleupon.ufld__hoverbgcolor:hover {
+   .ufld_stumbleupon.ufld__bgcolor,
+   .ufld_stumbleupon.ufld__hoverbgcolor:hover {
        background-color: @stumbleupon !important;
    }
 
-   .ufld_pinterest.ufld__hovertextcolor:hover,.ufld_pinterest.ufld__textcolor {
+   .ufld_pinterest.ufld__hovertextcolor:hover,
+   .ufld_pinterest.ufld__textcolor {
        color: @pinterest;
    }
-   .ufld_pinterest.ufld__bgcolor,.ufld_pinterest.ufld__hoverbgcolor:hover {
+   .ufld_pinterest.ufld__bgcolor,
+   .ufld_pinterest.ufld__hoverbgcolor:hover {
        background-color: @pinterest !important;
    }
 }
 
 
 // ======================================================================== /
-// Image Profile Hover
+// Hover Style
 // ======================================================================== /
-.widget_core_user_avatars, .widget_core_coll_avatar {
+.widget_core_user_avatars,
+.widget_core_coll_avatar,
+.widget_flow_blocks > div {
 
    img {
       border-radius: 2px;
@@ -192,6 +215,7 @@
          left: 0;
          width: 100%;
          height: 100%;
+         border-radius: 2px;
          background-color: rgba(0, 0, 0, 0.65);;
       }
 
@@ -245,13 +269,18 @@
    .widget_flow_blocks {
       div {
          margin: 0 3px;
+
+         a {
+            &::after {
+               font-size: 1.8rem;
+               top: 35%;
+            }
+         }
       }
    }
 
-   a {
-      &::after {
-         font-size: 1.8rem;
-      }
+   .popover {
+      display: none !important;
    }
 
 }
@@ -283,6 +312,161 @@
       }
    }
 
+}
+
+
+// ======================================================================== /
+// Widget Plugin Calendar
+// ======================================================================== /
+.widget_plugin_evo_Calr {
+
+   .bCalendarTable {
+      font-size: 95%;
+      margin-bottom: 0;
+      margin-top: 0;
+
+      .bCalendarRow, thead, tfoot, tbody {
+         background-color: @bg_footer;
+         color: @w;
+      }
+
+      caption {
+         background-color: @bg_sm;
+         font-family: @font_heading;
+         text-transform: uppercase;
+         padding: 10px;
+         border: 1px solid @border_footer;
+         border-bottom: 0;
+
+         a {
+            color: @w;
+         }
+      }
+
+      th, td {
+         width: 8ex;
+         padding: 6px;
+         text-align: center;
+         font-family: @font_heading;
+         border-left: 1px solid @border_footer;
+         border-top: 1px solid @border_footer;
+
+         &:last-child {
+            border-right: 1px solid @border_footer;
+         }
+      }
+
+      thead {
+         th {
+            font-size: 85%;
+            color: @w;
+            text-transform: uppercase;
+            padding: 8px 6px;
+         }
+      }
+
+      tbody {
+         tr:nth-child( odd ) {
+            background-color: @bg_sm;
+         }
+      }
+
+      tfoot {
+
+         tr {
+            background-color: @bg_sm;
+         }
+
+         td {
+            border-top: 1px solid @border_footer;
+            border-bottom: 1px solid @border_footer;
+         }
+      }
+
+      #bCalendarToday {
+         background-color: @primary;
+         color: @w;
+         border: 0;
+         border-radius: 0;
+
+         a {
+            color: @w;
+         }
+      }
+
+      tfoot {
+         a {
+            color: @w;
+
+            &:hover {
+               color: @primary;
+            }
+         }
+      }
+
+   }
+
+}
+
+
+// ======================================================================== /
+// Title
+// ======================================================================== /
+.widget_core_user_login,
+.widget_core_user_register {
+
+   .fieldset {
+      .panel.panel-default {
+         background-color: transparent;
+      }
+   }
+
+   .submit {
+
+      &:hover {
+         background-color: @primary;
+         color: @w;
+         border-color: @primary;
+         box-shadow: none;
+         outline: 0;
+      }
+   }
+
+}
+
+
+// ======================================================================== /
+// WIdget XML Feeds
+// ======================================================================== /
+.widget_core_coll_xml_feeds {
+   .notes {
+      border-top: 1px solid @color_border;
+      padding-top: 10px;
+   }
+}
+
+
+// ======================================================================== /
+// Widget User Login
+// ======================================================================== /
+.widget_core_user_login {
+   .avatar {
+      border-radius: 100%;
+   }
+}
+
+
+// ======================================================================== /
+// Title
+// ======================================================================== /
+.widget_core_coll_comment_list {
+   li {
+      a {
+         &:hover {
+            background-color: transparent !important;
+         }
+      }
+   }
 }
 
 
@@ -491,11 +675,43 @@ textarea.message_text {
 
 
 // ======================================================================== /
+// Widget Media Index
+// ======================================================================== /
+.widget_core_coll_media_index {
+
+   .widget_flow_blocks {
+
+      & > div{
+
+         a {
+
+            &::before {
+               background-color: rgba(0, 0, 0, 0.75);
+            }
+
+            &::after {
+               content: "\f1d8";
+               top: 35%;
+               font-size: 1.7rem;
+            }
+
+         }
+
+      }
+
+   }
+
+}
+
+
+// ======================================================================== /
 // Orgainze Member
 // ======================================================================== /
 .widget_core_org_members {
    .col-lg-4 {
+      display: block;
       width: 100%;
+      float: 0;
 
       img {
          width: 120px;
@@ -508,6 +724,7 @@ textarea.message_text {
 
       h3 {
          font-family: @font_heading;
+            font-size: 1.8rem;
          font-weight: 700;
       }
 

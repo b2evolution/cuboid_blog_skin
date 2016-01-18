@@ -3,14 +3,13 @@
  * -------------------------------------------------------------------------- */
 #main-footer{
    margin-top: 50px;
+   background-color: @bg_footer;
 
    .main_widget {
       padding: 3rem 0 4rem;
-      background-color: @bg_footer;
       color: @w;
 
       font-size: 1.3rem;
-      font-weight: 300;
       letter-spacing: 0.3px;
 
       a {
@@ -46,12 +45,16 @@
 
       ul{
 
+         & > ul > li:last-child {
+            border-bottom: 1px solid @border_footer;
+         }
+
          li {
             border-bottom: 1px solid @border_footer;
          }
 
-         & > ul > li:last-child {
-            border-bottom: 1px solid @border_footer;
+         & > li:last-child {
+            border-bottom: 0;
          }
 
       }
@@ -76,6 +79,66 @@
             }
          }
 
+      }
+
+      // Widget Orgainse Member
+      // ======================================================================== /
+      .widget_core_org_members {
+
+         .user_field {
+            display: inline-table;
+            margin-bottom: 2rem;
+         }
+
+         .ufld_icon_links {
+
+            a {
+               background-color: @c3;
+               opacity: 0.6;
+
+               &:hover, &:active, &:focus {
+                  text-decoration: none;
+                  color: @w;
+                  opacity: 1;
+               }
+            }
+
+         }
+
+      }
+
+      // Widget Tag Cloud
+      // ======================================================================== /
+      .widget_core_coll_tag_cloud {
+
+         .tag_cloud {
+            a {
+               &:hover, &:active, &:focus {
+                  color: @w;
+               }
+            }
+         }
+
+      }
+
+      // WIdget XML Feeds
+      // ======================================================================== /
+      .widget_core_coll_xml_feeds {
+         .notes {
+            border-top: 1px solid @c3;
+            padding-top: 10px;
+         }
+      }
+
+      // Widget Search Form
+      // ======================================================================== /
+      .widget_core_coll_search_form {
+         .search {
+            .search_field {
+               font-weight: 400;
+               border-color: transparent;
+            }
+         }
       }
 
    }
@@ -115,7 +178,7 @@
    // Copyrught
    // ======================================================================== /
    .copyright {
-      padding: 4rem 0;
+      padding: 4rem 1.5rem;
       font-family: @font_heading;
       font-size: 1.3rem;
       color: @w;

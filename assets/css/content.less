@@ -93,7 +93,8 @@
 
    // Post Styling
    // ======================================================================== /
-   .evo_post{
+   .evo_post,
+   .evo_featured_post {
    	margin-bottom: 3rem;
       padding: 2.5rem 3rem 2rem;
 
@@ -404,39 +405,6 @@
 
       }
 
-      // Post Tags
-      // ======================================================================== /
-      .post_tags{
-          margin-top: 0;
-
-         a{
-            font-family: @font_heading;
-            text-transform: capitalize;
-            font-size: 1.1rem;
-            padding: 4px 8px;
-            background: #F1F1F1;
-            color: #AAAAAA;
-
-            &, &::before{
-               -webkit-transition: all 0.3s ease;
-               -o-transition: all 0.3s ease;
-               transition: all 0.3s ease;
-            }
-
-            &:hover, &:active, &:focus {
-               background: @primary;
-               color: @w;
-
-               &::before{
-                  color: @w;
-               }
-
-            }
-
-         }
-
-      }
-
       // Post Comments Link
       // ======================================================================== /
       .post_comments_link{
@@ -450,12 +418,54 @@
 
    }
 
+   // Post Tags
+   // ======================================================================== /
+   .post_tags{
+       margin-top: 0;
+
+      a{
+         font-family: @font_heading;
+         text-transform: capitalize;
+         font-size: 1.1rem;
+         padding: 4px 8px;
+         background: #F1F1F1;
+         color: #AAAAAA;
+
+         &, &::before{
+            -webkit-transition: all 0.3s ease;
+            -o-transition: all 0.3s ease;
+            transition: all 0.3s ease;
+         }
+
+         &:hover, &:active, &:focus {
+            background: @primary;
+            color: @w;
+
+            &::before{
+               color: @w;
+            }
+
+         }
+
+      }
+
+   }
+
+}
+
+// ======================================================================== /
+// Message Nothing
+// ======================================================================== /
+.msg_nothing {
+   padding: 30px;
+   background-color: @w;
+   box-shadow: @box-shadow;
 }
 
 
-/* ----------------------------------------------------------------------------
- * Pagination
- * -------------------------------------------------------------------------- */
+// ======================================================================== /
+// Pagination
+// ======================================================================== /
 .pagination {
 	margin: 0 0 2.5rem;
    font-size: 1.3rem;

@@ -41,7 +41,7 @@ skin_include( '_body_header.inc.php' );
    <div class="container">
       <div class="row">
 
-      	<div class="<?php echo $Skin->get_column_class( 'layout' ); ?>">
+      	<div class="<?php echo $Skin->get_column_class( 'single_layout' ); ?>">
 
       		<main><!-- This is were a link like "Jump to main content" would land -->
       		<!-- ================================= START OF MAIN AREA ================================== -->
