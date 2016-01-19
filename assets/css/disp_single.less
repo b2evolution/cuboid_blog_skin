@@ -1,13 +1,21 @@
-.disp_single {
+.disp_single, .disp_page {
 
    #content {
 
       // Cover Image
       // ======================================================================== /
       .cover_image {
-         margin-top: -30px;
-         margin-left: -30px;
-         margin-right: -30px;
+         margin-top: -2.5rem;
+         margin-left: -3rem;
+         margin-right: -3rem;
+         margin-bottom: 2rem;
+
+         @media screen and ( max-width: @MX ) {
+            margin-top: -1.5rem;
+            margin-left: -2rem;
+            margin-right: -2rem;
+            margin-bottom: 1.5rem;
+         }
 
          .evo_image_block {
             margin: 0;
@@ -16,8 +24,341 @@
                width: 100%;
             }
          }
+
       }
 
-   }
+      // Iframer size If layout use single column
+      // ======================================================================== /
+      .col-md-12 .videoblock {
+         iframe {
+            min-width: 80%;
+            margin: 0 auto;
+            height: 420px;
+         }
+      }
+
+      // Evo Post
+      // ======================================================================== /
+      .evo_post {
+
+         // Evo Post Title
+         // ======================================================================== /
+         .evo_post_title {
+            h1 {
+               margin-top: 5px;
+            }
+         }
+
+      }
+
+      // Pagination
+      // ======================================================================== /
+      .pager {
+         margin-top: 0;
+         margin-bottom: 3rem;
+
+         @media screen and ( max-width: @S ) {
+            margin-bottom: 2rem;
+         }
+
+         .previous, .next {
+
+            a {
+               position: relative;
+               font-family: @font_heading;
+               text-transform: capitalize;
+               letter-spacing: 0;
+               border-radius: 0;
+               padding: 8px 20px;
+               color: @c5;
+               background-color: @w;
+               z-index: 0;
+               box-shadow: @box-shadow;
+               transition: all 0.32s ease-in-out;
+
+               // Responsive
+               @media screen and ( max-width: @MX ) {
+                  float: none;
+                  width: 100%;
+               }
+
+               &::before {
+                  content: '';
+                  position: absolute;
+                  bottom: 0;
+                  width: 0;
+                  height: 100%;
+                  background-color: @primary;
+                  z-index: -1;
+                  transition: all 0.32s ease-in-out;
+               }
+
+               &:hover{
+                  color: @w;
+                  border-color: @primary;
+
+                  &::before {
+                     width: 100%;
+                  }
+               }
+            }
+         }
+
+         .previous {
+            a {
+               @media screen and ( max-width: @S ) {
+                  margin-bottom: 10px;
+               }
+
+               &::before {
+                  right: 0;
+               }
+            }
+         }
+
+         .next {
+            a {
+               &::before {
+                  left: 0;
+               }
+            }
+         }
+
+      }
+
+
+      // FeedBacks Style
+      // ======================================================================== /
+      #feedbacks {
+         border-top: 1px solid @color_border;
+         margin-top: 3rem;
+         padding-top: 2rem;
+
+         // Title Feedbacks
+         // ======================================================================== /
+         .evo_comment__list_title {
+            font-family: @font_heading;
+            font-size: 2rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            color: @c5;
+         }
+
+         // Comment Meta Info
+         // ======================================================================== /
+         .evo_comment__meta_info {
+            padding: 18px 0 20px;
+
+            a {
+               font-family: @font_heading;
+               font-size: 1.1rem;
+               transition: all 0.2s ease-in-out;
+
+               &:hover {
+                  background-color: @primary;
+                  border-color: @primary;
+                  color: @w;
+               }
+            }
+         }
+      }
+
+
+      // Evo Comment
+      // ======================================================================== /
+      .evo_comment,
+      .evo_comment__preview {
+         position: relative;
+         margin-bottom: 2.5rem;
+         padding: 2rem;
+         border: 1px solid @color_border;
+         min-height: 145px;
+
+
+         .evo_comment_title,
+         .evo_comment_info,
+         .evo_comment_footer,
+         .evo_comment_rating,
+         .evo_comment_text {
+            @media screen and ( min-width: @MX ) {
+               margin-left: 140px;
+            }
+         }
+
+         .evo_comment_rating,
+         .evo_comment_text {
+            @media screen and ( max-width:  @MX ) {
+               margin-left: 95px;
+            }
+
+            @media screen and ( max-width: @S ) {
+               margin-left: 0;
+            }
+         }
+
+         // Title Comment List
+         // ======================================================================== /
+         .evo_comment_title {
+            font-family: @font_heading;
+            font-size: 1.8rem;
+            font-weight: 700;
+            letter-spacing: 0;
+
+            a, span {
+               &:hover {
+                  cursor: pointer;
+               }
+            }
+
+            a {
+               color: @c5;
+
+               &:hover {
+                  color: @primary;
+                  background-color: transparent;
+               }
+            }
+
+            // Hide User Member Status
+            .bUser-member-tag {
+               display: none;
+            }
+         }
+
+         // Comment Info
+         // ======================================================================== /
+         .evo_comment_info {
+            font-family: @font_heading;
+            font-size: 1.4rem;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+
+            .delete_link, .edit_link {
+               font-size: 1.1rem;
+               color: @ca9;
+               font-weight: 700;
+
+               &:hover, &:active, &:focus {
+                  color: @primary;
+               }
+
+               span.fa {
+                  font-size: 1.2rem;
+               }
+            }
+         }
+
+         // Image Avatar Style
+         // ======================================================================== /
+         .evo_comment_avatar {
+            position: absolute;
+            top: 22px;
+
+            @media screen and ( max-width: @MX ) {
+               position: relative;
+               float: none;
+            }
+
+            img {
+               max-width: 100px;
+               max-height: 100px;
+               width: 100%;
+               height: 100%;
+               border-radius: 0;
+               padding: 4px;
+               margin: 0;
+               border: 1px solid @color_border;
+
+               @media screen and ( max-width: @MX ) {
+                  margin-top: 4px;
+                  max-width: 80px;
+                  min-height: 80px;
+               }
+
+               @media screen and ( max-width: @S ) {
+                  display: none;
+               }
+            }
+
+            &::after {
+               content: '';
+               position: absolute;
+               right: -20px;
+               width: 1px;
+               height: 100%;
+               background-color: @color_border;
+
+            }
+
+         }
+
+         // Rating Post
+         // ======================================================================== /
+         .evo_comment_rating {
+            margin-bottom: 5px;
+            margin-top: 0;
+         }
+
+         // Evo Commnet Text
+         // ======================================================================== /
+         .evo_comment_text {
+            font-size: 1.4rem;
+            line-height: 1.4;
+
+            p {
+               margin-bottom: 8px;
+
+               &::last-child {
+                  margin-bottom: 0;
+               }
+            }
+         }
+
+      }
+
+
+      // Comment Form
+      // ======================================================================== /
+      #comment_form {
+         border-radius: 0;
+         border-color: @color_border;
+         margin-top: 5px;
+
+         .panel-heading {
+            border-color: @color_border;
+         }
+
+         .panel-title {
+            color: @c5;
+            text-transform: uppercase;
+         }
+
+         .panel-body {
+            padding-top: 3rem;
+         }
+
+         .evo_form {
+
+            label {
+               font-family: @font_heading;
+               color: @c5;
+            }
+
+            .form_text_input, .form_textarea_input {
+               border-radius: 0;
+               border-color: @cd;
+               box-shadow: none;
+
+               &:focus {
+                  border-color: @primary;
+               }
+            }
+
+         }
+
+      }
+
+
+   } // End #Content
 
 }

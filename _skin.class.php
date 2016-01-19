@@ -479,25 +479,25 @@ class cuboid_blog_Skin extends Skin
        * Color
        * ============================================================================
        */
-		if( $color = $this->get_setting( 'site_title_color' ) ) {
-			$custom_css .= 'body #main-header .widget_core_coll_title h1 a { color: '.$color." }\n";
-		}
-
-      if( $color = $this->get_setting( 'site_tagline_color' ) ) {
-			$custom_css .= 'body .widget_core_coll_tagline { color: '.$color." }\n";
-		};
-
-      if( $color = $this->get_setting( 'site_text_color' ) ) {
-			$custom_css .= 'html, body { color: '.$color." }\n";
-		};
-
-      if( $color = $this->get_setting( 'site_link_color' ) ) {
-			$custom_css .= 'html a, body a, a  { color: '.$color." }\n";
-		};
-
-      if( $color = $this->get_setting( 'site_link_color_hover' ) ) {
-			$custom_css .= 'html a:hover, body a:hover, .nav.nav-tabs li a:hover, .nav.nav-tabs li a.selected, #content .evo_post .small.text-muted a:hover  { color: '.$color." }\n";
-		};
+		// if( $color = $this->get_setting( 'site_title_color' ) ) {
+		// 	$custom_css .= 'body #main-header .widget_core_coll_title h1 a { color: '.$color." }\n";
+		// }
+      //
+      // if( $color = $this->get_setting( 'site_tagline_color' ) ) {
+		// 	$custom_css .= 'body .widget_core_coll_tagline { color: '.$color." }\n";
+		// };
+      //
+      // if( $color = $this->get_setting( 'site_text_color' ) ) {
+		// 	$custom_css .= 'html, body { color: '.$color." }\n";
+		// };
+      //
+      // if( $color = $this->get_setting( 'site_link_color' ) ) {
+		// 	$custom_css .= 'html a, body a, a  { color: '.$color." }\n";
+		// };
+      //
+      // if( $color = $this->get_setting( 'site_link_color_hover' ) ) {
+		// 	$custom_css .= 'html a:hover, body a:hover, .nav.nav-tabs li a:hover, .nav.nav-tabs li a.selected, #content .evo_post .small.text-muted a:hover  { color: '.$color." }\n";
+		// };
 
       // Pagination
       if( $color = $this->get_setting( 'pagination_bg' ) ) {

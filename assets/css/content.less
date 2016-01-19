@@ -4,11 +4,19 @@
 #content{
    margin-top: 5rem;
 
+   @media screen and ( max-width: @MX ) {
+      margin-top: 3rem;
+   }
+
    // Content Block Styling
    // ======================================================================== /
    main > .evo_content_block{
       box-shadow: @box-shadow;
       margin-bottom: 3rem;
+
+      @media screen and ( max-width: @MX ) {
+         margin-bottom: 2rem;
+      }
    }
 
    // Evo Post Title
@@ -17,7 +25,7 @@
       display: block;
 
       h1, h2, h3{
-         display: block;
+         display: inline-block;
          font-family: @font_heading;
          font-size: 3rem;
          font-weight: 700;
@@ -27,7 +35,6 @@
          margin-bottom: 5px;
 
          a{
-
             &:hover{
                text-decoration: none;
             }
@@ -97,6 +104,12 @@
    .evo_featured_post {
    	margin-bottom: 3rem;
       padding: 2.5rem 3rem 2rem;
+
+      @media screen and ( max-width: @MX ) {
+         padding: 1.5rem 2rem 1rem;
+         margin-right: -15px;
+         margin-left: -15px;
+      }
 
       // Evo Post Image and Gallery Before Title
       // ======================================================================== /
@@ -288,6 +301,11 @@
             // font-weight: 400;
          }
 
+         a {
+            &:hover {
+               color: @primary;
+            }
+         }
       }
 
       // Evo Post Full
@@ -487,6 +505,7 @@
          float: none;
          transition: all 0.2s ease-in-out;
          box-shadow: @box-shadow;
+         background-color: @c3;
 
          &:hover, &:active, &:focus {
             background-color: @primary;

@@ -2,8 +2,12 @@
  * Footer Styling
  * -------------------------------------------------------------------------- */
 #main-footer{
-   margin-top: 50px;
+   margin-top: 5rem;
    background-color: @bg_footer;
+
+   @media screen and ( max-width: @MX ) {
+      margin-top: 3rem;
+   }
 
    .main_widget {
       padding: 3rem 0 4rem;
@@ -178,7 +182,7 @@
    // Copyrught
    // ======================================================================== /
    .copyright {
-      padding: 4rem 1.5rem;
+      padding: 4rem 0;
       font-family: @font_heading;
       font-size: 1.3rem;
       color: @w;
