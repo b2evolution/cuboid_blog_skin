@@ -1,5 +1,6 @@
 .disp_single, .disp_page {
 
+
    #content {
 
       // Cover Image
@@ -39,6 +40,16 @@
 
       // Evo Post
       // ======================================================================== /
+      .evo_post,
+      .evo_featured_post {
+         @media screen and ( max-width: @MX ) {
+            padding: 1.5rem 2rem 1rem;
+            margin-right: -15px;
+            margin-left: -15px;
+         }
+      }
+
+
       .evo_post {
 
          // Evo Post Title
@@ -192,8 +203,13 @@
             }
 
             @media screen and ( max-width: @S ) {
+               margin-left: 80px;
+            }
+
+            @media screen and ( max-width: @XS ) {
                margin-left: 0;
             }
+
          }
 
          // Title Comment List
@@ -276,6 +292,11 @@
                }
 
                @media screen and ( max-width: @S ) {
+                  max-width: 65px;
+                  min-height: 65px;
+               }
+
+               @media screen and ( max-width: @XS ) {
                   display: none;
                }
             }
@@ -354,10 +375,64 @@
                }
             }
 
+            // Button Style
+            // ======================================================================== /
+            .preview, .submit {
+               border-radius: 2px;
+               font-family: @font_heading;
+               font-size: 1.3rem;
+               box-shadow: none;
+               padding: 10px 12px;
+               transition: all 0.2s ease-in-out;
+            }
+
+            .preview {
+               background-color: #5BDCC3;
+               border-color: #5BDCC3;
+
+               &:hover, &:focus, &:active {
+                  background-color: @primary;
+                  border-color: @primary;
+               }
+            }
+
+            .submit {
+               background-color: @primary;
+               border-color: @primary;
+
+               &:hover, &:focus, &:active {
+                  background-color: @c3;
+                  border-color: @c3;
+               }
+            }
+
          }
 
+      } // End .comment form
+
+
+      // Comment Notif
+      // ======================================================================== /
+      .evo_post_comment_notification {
+         .btn {
+            font-size: 1.2rem;
+            transition: all 0.2s ease-in-out;
+
+            &:hover, &:active, &:focus {
+               background-color: @primary;
+               border-color: @primary;
+               color: @w;
+               box-shadow: none;
+            }
+
+         }
       }
 
+      .evo_post_feedback_feed_msg {
+         a {
+            font-size: 1.3rem;
+         }
+      }
 
    } // End #Content
 

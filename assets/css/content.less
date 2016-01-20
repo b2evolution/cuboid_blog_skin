@@ -34,6 +34,10 @@
          padding: 0;
          margin-bottom: 5px;
 
+         @media screen and ( max-width: @XS ) {
+            font-size: 2.6rem;
+         }
+
          a{
             &:hover{
                text-decoration: none;
@@ -105,10 +109,8 @@
    	margin-bottom: 3rem;
       padding: 2.5rem 3rem 2rem;
 
-      @media screen and ( max-width: @MX ) {
-         padding: 1.5rem 2rem 1rem;
-         margin-right: -15px;
-         margin-left: -15px;
+      @media screen and ( max-width: @S ) {
+         padding: 2rem 2rem 1.5rem;
       }
 
       // Evo Post Image and Gallery Before Title
@@ -204,7 +206,6 @@
 
             &::after {
                border-radius: 100%;
-
                transform: scale(0) rotateZ(180deg);
             }
          }
