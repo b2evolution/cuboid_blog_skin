@@ -9,12 +9,20 @@
       box-shadow: @box-shadow;
       border: none;
       border-radius: 0;
-      margin-bottom: 30px;
+      margin-bottom: 3rem;
+
+      @media screen and ( max-width: @S ) {
+         padding: 1.5rem 1rem;
+      }
+
+      @media screen and ( max-width: @XS ) {
+         padding: 1.5rem 0.5rem;
+      }
 
       .panel-heading{
          background-color: transparent;
          border: none;
-         padding: 10px 15px 15px;
+         padding: 1rem 1.5rem 1.5rem;
       }
 
       .panel-title{

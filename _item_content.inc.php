@@ -64,7 +64,7 @@ $params = array_merge( array(
 		'excerpt_image_link_to'    => 'single',
 		'include_cover_images'     => false, // Set to true if you want cover images to appear with teaser images.
 
-		'before_gallery'           => '<div class="evo_post_gallery">',
+		'before_gallery'           => '<div class="evo_post_gallery clearfix">',
 		'after_gallery'            => '</div>',
 		'gallery_table_start'      => '',
 		'gallery_table_end'        => '',

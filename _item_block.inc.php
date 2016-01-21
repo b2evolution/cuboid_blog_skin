@@ -17,35 +17,38 @@ global $Item, $Skin;
 
 // Default params:
 $params = array_merge( array(
-		'feature_block'              => false,			// fp>yura: what is this for??
+		'feature_block'             => false,			// fp>yura: what is this for??
 		// Classes for the <article> tag:
-		'item_class'                 => 'evo_post evo_content_block',
-		'item_type_class'            => 'evo_post__ptyp_',
-		'item_status_class'          => 'evo_post__',
+		'item_class'                => 'evo_post evo_content_block',
+		'item_type_class'           => 'evo_post__ptyp_',
+		'item_status_class'         => 'evo_post__',
 		// Controlling the title:
-		'disp_title'                 => true,
-		'item_title_line_before'     => '<div class="evo_post_title">',	// Note: we use an extra class because it facilitates styling
-		'item_title_before'          => '<h2>',
-		'item_title_after'           => '</h2>',
-		'item_title_single_before'   => '<h1>',	// This replaces the above in case of disp=single or disp=page
-		'item_title_single_after'    => '</h1>',
-		'item_title_line_after'      => '</div>',
+		'disp_title'                => true,
+		'item_title_line_before'    => '<div class="evo_post_title">',	// Note: we use an extra class because it facilitates styling
+		'item_title_before'         => '<h2>',
+		'item_title_after'          => '</h2>',
+		'item_title_single_before'  => '<h1>',	// This replaces the above in case of disp=single or disp=page
+		'item_title_single_after'   => '</h1>',
+		'item_title_line_after'     => '</div>',
 
 		// Controlling the content:
-      'before_content_teaser'      => '',
-      'after_content_teaser'       => '',
-		'content_mode'               => 'auto',		// excerpt|full|normal|auto -- auto will auto select depending on $disp-detail
-		'image_class'                => 'img-responsive',
-		'image_size'                 => 'fit-1280x720',
-      'image_link_to'              => 'original', // Can be 'original', 'single' or empty
-		'author_link_text'           => 'preferredname',
+      'before_content_teaser'     => '',
+      'after_content_teaser'      => '',
+		'content_mode'              => 'auto',		// excerpt|full|normal|auto -- auto will auto select depending on $disp-detail
+		'image_class'               => 'img-responsive',
+		'image_size'                => 'fit-1280x720',
+      'image_link_to'             => 'original', // Can be 'original', 'single' or empty
+		'author_link_text'          => 'preferredname',
 
-      'before_images'              => '<div class="evo_post_images">',
-      'before_image'               => '<figure class="evo_image_block">',
-      'before_image_legend'        => '<figcaption class="evo_image_legend">',
-      'after_image_legend'         => '</figcaption>',
-      'after_image'                => '</figure>',
-      'after_images'               => '</div>',
+      'before_images'             => '<div class="evo_post_images">',
+      'before_image'              => '<figure class="evo_image_block">',
+      'before_image_legend'       => '<figcaption class="evo_image_legend">',
+      'after_image_legend'        => '</figcaption>',
+      'after_image'               => '</figure>',
+      'after_images'              => '</div>',
+
+      'before_gallery'            => '<div class="evo_post_gallery clearfix">',
+      'after_gallery'             => '</div>',
 
 	), $params );
 
@@ -71,6 +74,9 @@ echo '<div class="evo_content_block">'; // Beginning of post display
          'image_size'                 => $params['image_size'],
          'limit'                      => 2,
          'image_link_to'              => $params['image_link_to'],
+
+         'before_gallery'             => $params['before_gallery'],
+         'after_gallery'              => $params['after_gallery'],
       ) );
    }
 

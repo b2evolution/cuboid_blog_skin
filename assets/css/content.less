@@ -247,6 +247,7 @@
       .bGallery, .evo_post_gallery {
 
          .evo_post_gallery__image {
+            float: left;
             margin: 0 12px 12px 0;
 
             a {
@@ -375,7 +376,12 @@
 
             iframe {
                min-width: 100%;
+               width: 100%;
                height: 300px;
+
+               @media screen and ( max-width: @S ) {
+                  height: 280px;
+               }
             }
 
          }
@@ -486,14 +492,14 @@
 // Pagination
 // ======================================================================== /
 .pagination {
-	margin: 0 0 2.5rem;
+	margin: -0.5rem 0 2rem;
    font-size: 1.3rem;
    font-family: @font_heading;
    font-weight: 700;
 
    li {
       float: left;
-      margin: 2px;
+      margin: 0 2px;
 
       & > a, & > span {
          display: inline-block;

@@ -3,7 +3,7 @@
 global $disp;
 
 $disp_status = 'layout';
-if ( $disp == 'single' ) {
+if ( $disp == 'single' || $disp == 'page' ) {
    $disp_status = 'single_layout';
 }
 

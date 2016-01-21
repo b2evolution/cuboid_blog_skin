@@ -180,6 +180,12 @@ img {
 .navbar-collapse .nav.nav-tabs li {
   padding: 0;
 }
+@media screen and (max-width: 991px) {
+  .navbar-collapse .nav.nav-tabs li {
+    display: inline-block;
+    float: none;
+  }
+}
 .navbar-collapse .nav.nav-tabs li a {
   position: relative;
   font-family: "Lato", sans-serif;
@@ -466,6 +472,7 @@ img {
 #content .evo_featured_post .bGallery .evo_post_gallery__image,
 #content .evo_post .evo_post_gallery .evo_post_gallery__image,
 #content .evo_featured_post .evo_post_gallery .evo_post_gallery__image {
+  float: left;
   margin: 0 12px 12px 0;
 }
 #content .evo_post .bGallery .evo_post_gallery__image a::before,
@@ -638,7 +645,16 @@ img {
 #content .evo_post .evo_post__excerpt .videoblock iframe,
 #content .evo_featured_post .evo_post__excerpt .videoblock iframe {
   min-width: 100%;
+  width: 100%;
   height: 300px;
+}
+@media screen and (max-width: 480px) {
+  #content .evo_post .evo_post__full .videoblock iframe,
+  #content .evo_featured_post .evo_post__full .videoblock iframe,
+  #content .evo_post .evo_post__excerpt .videoblock iframe,
+  #content .evo_featured_post .evo_post__excerpt .videoblock iframe {
+    height: 280px;
+  }
 }
 #content .evo_post .evo_post__full .evo_post_more_link,
 #content .evo_featured_post .evo_post__full .evo_post_more_link,
@@ -781,14 +797,14 @@ img {
   box-shadow: 1px 2px 4px rgba(35, 35, 35, 0.12);
 }
 .pagination {
-  margin: 0 0 2.5rem;
+  margin: -0.5rem 0 2rem;
   font-size: 1.3rem;
   font-family: "Montserrat", sans-serif;
   font-weight: 700;
 }
 .pagination li {
   float: left;
-  margin: 2px;
+  margin: 0 2px;
 }
 .pagination li > a,
 .pagination li > span {
@@ -834,25 +850,55 @@ img {
   border-left: 10px solid #1abc9c;
 }
 .disp_posts #content .evo_featured_post .evo_image_block {
-  margin-top: -30px;
-  margin-left: -40px !important;
-  margin-right: -30px;
+  margin-top: -2.5rem;
+  margin-left: -3rem;
+  margin-right: -3rem;
+}
+@media screen and (max-width: 480px) {
+  .disp_posts #content .evo_featured_post .evo_image_block {
+    margin-top: -2rem;
+    margin-left: -2rem;
+    margin-right: -2rem;
+  }
 }
 .disp_posts #content .evo_post .evo_post_images {
   display: block;
-  margin-bottom: 25px;
+  margin-bottom: 2rem;
 }
 .disp_posts #content .evo_post .evo_post_images img {
   border-radius: 0;
 }
 .disp_posts #content .evo_post .evo_post_images .evo_image_block {
   margin-top: -2.5rem;
-  margin-left: -2.5rem;
-  margin-right: -2.5rem;
+  margin-left: -3rem;
+  margin-right: -3rem;
+}
+@media screen and (max-width: 480px) {
+  .disp_posts #content .evo_post .evo_post_images .evo_image_block {
+    margin: -2rem -2rem 1rem;
+  }
 }
 @media screen and (max-width: 320px) {
   .disp_posts #content .evo_post .evo_post_images .evo_image_block {
     margin: -2rem -2rem 1rem;
+  }
+}
+.disp_posts #content .evo_post .evo_post_gallery {
+  margin-top: -1rem;
+}
+@media screen and (max-width: 480px) {
+  .disp_posts #content .evo_post .evo_post_gallery {
+    margin-top: -0.5rem;
+  }
+}
+@media screen and (max-width: 320px) {
+  .disp_posts #content .evo_post .evo_post_gallery {
+    margin-bottom: 1rem;
+  }
+}
+@media screen and (max-width: 320px) {
+  .disp_posts #content .evo_post .evo_post_gallery .evo_post_gallery__image {
+    margin: 0 4px 4px 0;
   }
 }
 .disp_posts #content .evo_post .evo_post__full .evo_post_images {
@@ -890,6 +936,18 @@ img {
   min-width: 80%;
   margin: 0 auto;
   height: 420px;
+}
+@media screen and (max-width: 480px) {
+  .disp_single #content .col-md-12 .videoblock iframe,
+  .disp_page #content .col-md-12 .videoblock iframe {
+    height: 260px;
+  }
+}
+@media screen and (max-width: 320px) {
+  .disp_single #content .col-md-12 .videoblock iframe,
+  .disp_page #content .col-md-12 .videoblock iframe {
+    height: 176px;
+  }
 }
 @media screen and (max-width: 600px) {
   .disp_single #content .evo_post,
@@ -997,9 +1055,25 @@ img {
   text-transform: uppercase;
   color: #555555;
 }
+@media screen and (max-width: 320px) {
+  .disp_single #content #feedbacks .evo_comment__list_title,
+  .disp_page #content #feedbacks .evo_comment__list_title {
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+  }
+}
 .disp_single #content #feedbacks .evo_comment__meta_info,
 .disp_page #content #feedbacks .evo_comment__meta_info {
   padding: 18px 0 20px;
+}
+@media screen and (max-width: 320px) {
+  .disp_single #content #feedbacks .evo_comment__meta_info,
+  .disp_page #content #feedbacks .evo_comment__meta_info {
+    float: none;
+    text-align: center;
+    margin: 1.5rem auto 0;
+  }
 }
 .disp_single #content #feedbacks .evo_comment__meta_info a,
 .disp_page #content #feedbacks .evo_comment__meta_info a {
@@ -1350,6 +1424,10 @@ img {
   background-color: #333333;
   border-color: #333333;
 }
+.disp_single #content .evo_post_comment_notification,
+.disp_page #content .evo_post_comment_notification {
+  font-size: 1.3rem;
+}
 .disp_single #content .evo_post_comment_notification .btn,
 .disp_page #content .evo_post_comment_notification .btn {
   font-size: 1.2rem;
@@ -1371,6 +1449,15 @@ img {
 .disp_page #content .evo_post_feedback_feed_msg a {
   font-size: 1.3rem;
 }
+.disp_front #content .widget_core_coll_featured_intro .jumbotron {
+  background-color: #ffffff;
+}
+.disp_front #content .widget_core_coll_featured_intro .jumbotron .featurepost .evo_post_title {
+  margin-bottom: 10px;
+}
+.disp_front #content .widget_core_coll_featured_intro .jumbotron .featurepost .evo_post_title h2 {
+  display: table-cell;
+}
 /* ----------------------------------------------------------------------------
  * Sidebar Styling
  * -------------------------------------------------------------------------- */
@@ -1379,12 +1466,22 @@ img {
   box-shadow: 1px 2px 4px rgba(35, 35, 35, 0.12);
   border: none;
   border-radius: 0;
-  margin-bottom: 30px;
+  margin-bottom: 3rem;
+}
+@media screen and (max-width: 480px) {
+  #main-sidebar .evo_widget {
+    padding: 1.5rem 1rem;
+  }
+}
+@media screen and (max-width: 320px) {
+  #main-sidebar .evo_widget {
+    padding: 1.5rem 0.5rem;
+  }
 }
 #main-sidebar .evo_widget .panel-heading {
   background-color: transparent;
   border: none;
-  padding: 10px 15px 15px;
+  padding: 1rem 1.5rem 1.5rem;
 }
 #main-sidebar .evo_widget .panel-title {
   position: relative;
@@ -1757,6 +1854,11 @@ img {
   margin-bottom: 0;
   margin-top: 0;
 }
+@media screen and (max-width: 320px) {
+  .widget_plugin_evo_Calr .bCalendarTable {
+    font-size: 88%;
+  }
+}
 .widget_plugin_evo_Calr .bCalendarTable .bCalendarRow,
 .widget_plugin_evo_Calr .bCalendarTable thead,
 .widget_plugin_evo_Calr .bCalendarTable tfoot,
@@ -1778,11 +1880,17 @@ img {
 .widget_plugin_evo_Calr .bCalendarTable th,
 .widget_plugin_evo_Calr .bCalendarTable td {
   width: 8ex;
-  padding: 6px;
+  padding: 4px 6px;
   text-align: center;
   font-family: "Montserrat", sans-serif;
   border-left: 1px solid #3c3c3c;
   border-top: 1px solid #3c3c3c;
+}
+@media screen and (max-width: 320px) {
+  .widget_plugin_evo_Calr .bCalendarTable th,
+  .widget_plugin_evo_Calr .bCalendarTable td {
+    padding: 3px 6px;
+  }
 }
 .widget_plugin_evo_Calr .bCalendarTable th:last-child,
 .widget_plugin_evo_Calr .bCalendarTable td:last-child {
@@ -1793,6 +1901,11 @@ img {
   color: #ffffff;
   text-transform: uppercase;
   padding: 8px 6px;
+}
+@media screen and (max-width: 320px) {
+  .widget_plugin_evo_Calr .bCalendarTable thead th {
+    font-size: 80%;
+  }
 }
 .widget_plugin_evo_Calr .bCalendarTable tbody tr:nth-child( odd ) {
   background-color: #212121;
@@ -1967,6 +2080,10 @@ label.control-label[for=post_title] {
 }
 textarea.message_text {
   width: 95%;
+}
+.widget_core_coll_media_index .widget_flow_blocks > div {
+  margin-bottom: 0;
+  margin-top: 0;
 }
 .widget_core_coll_media_index .widget_flow_blocks > div a::before {
   background-color: rgba(0, 0, 0, 0.75);

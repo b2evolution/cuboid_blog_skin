@@ -35,13 +35,19 @@ skin_include( '_html_header.inc.php', array() );
 // If site headers are enabled, they will be included here:
 skin_include( '_body_header.inc.php' );
 // ------------------------------- END OF SITE HEADER --------------------------------
+
+$column = 'layout';
+if ( $disp == 'page' ) {
+   $column = 'single_layout';
+}
+
 ?>
 
 <div id="content">
    <div class="container">
       <div class="row">
 
-      	<div class="<?php echo $Skin->get_column_class( 'layout' ); ?>">
+      	<div class="<?php echo $Skin->get_column_class( $column ); ?>">
 
       		<main><!-- This is were a link like "Jump to main content" would land -->
       		<!-- ================================= START OF MAIN AREA ================================== -->

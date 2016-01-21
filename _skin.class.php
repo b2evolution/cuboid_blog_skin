@@ -244,11 +244,11 @@ class cuboid_blog_Skin extends Skin
                ========================================================================== */
             'single_settings_start' => array(
                'layout' => 'begin_fieldset',
-               'label'  => T_('Single Disp')
+               'label'  => T_('Single and Page Disp')
             ),
                // Single Layout
                'single_layout' => array(
-                  'label'        => T_('Single Layout'),
+                  'label'        => T_('Single and Page Layout'),
                   'note'         => '',
                   'defaultvalue' => 'single_column',
                   'type'         => 'select',

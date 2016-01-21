@@ -268,7 +268,7 @@
 
    .widget_flow_blocks {
       padding-bottom: 15px;
-      
+
       div {
          display: inline-flex;
          // margin: 3px;
@@ -328,6 +328,10 @@
       margin-bottom: 0;
       margin-top: 0;
 
+      @media screen and ( max-width: @XS ) {
+         font-size: 88%;
+      }
+
       .bCalendarRow, thead, tfoot, tbody {
          background-color: @bg_footer;
          color: @w;
@@ -348,11 +352,15 @@
 
       th, td {
          width: 8ex;
-         padding: 6px;
+         padding: 4px 6px;
          text-align: center;
          font-family: @font_heading;
          border-left: 1px solid @border_footer;
          border-top: 1px solid @border_footer;
+
+         @media screen and ( max-width: @XS ) {
+            padding: 3px 6px;
+         }
 
          &:last-child {
             border-right: 1px solid @border_footer;
@@ -365,6 +373,10 @@
             color: @w;
             text-transform: uppercase;
             padding: 8px 6px;
+
+            @media screen and ( max-width: @XS ) {
+               font-size: 80%;
+            }
          }
       }
 
@@ -685,6 +697,8 @@ textarea.message_text {
    .widget_flow_blocks {
 
       & > div{
+         margin-bottom: 0;
+         margin-top: 0;
 
          a {
 

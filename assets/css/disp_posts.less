@@ -26,9 +26,15 @@
          border-left: 10px solid @primary;
 
          .evo_image_block {
-            margin-top: -30px;
-            margin-left: -40px !important;
-            margin-right: -30px;
+            margin-top: -2.5rem;
+            margin-left: -3rem;
+            margin-right: -3rem;
+
+            @media screen and ( max-width: @S ) {
+               margin-top: -2rem;
+               margin-left: -2rem;
+               margin-right: -2rem;
+            }
          }
       }
 
@@ -40,7 +46,7 @@
          // ======================================================================== /
          .evo_post_images {
             display: block;
-            margin-bottom: 25px;
+            margin-bottom: 2rem;
 
             img {
                border-radius: 0;
@@ -48,14 +54,36 @@
 
             .evo_image_block {
                margin-top: -2.5rem;
-               margin-left: -2.5rem;
-               margin-right: -2.5rem;
+               margin-left: -3rem;
+               margin-right: -3rem;
+
+               @media screen and ( max-width: @S ) {
+                  margin: -2rem -2rem 1rem;
+               }
 
                @media screen and ( max-width: @XS ) {
                   margin: -2rem -2rem 1rem;
                }
             }
 
+         }
+
+         .evo_post_gallery {
+            margin-top: -1rem;
+
+            @media screen and ( max-width: @S ) {
+               margin-top: -0.5rem;
+            }
+
+            @media screen and ( max-width: @XS ) {
+               margin-bottom: 1rem;
+            }
+
+            .evo_post_gallery__image {
+               @media screen and ( max-width: @XS ) {
+                  margin: 0 4px 4px 0;
+               }
+            }
          }
 
 

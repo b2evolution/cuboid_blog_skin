@@ -35,6 +35,14 @@
             min-width: 80%;
             margin: 0 auto;
             height: 420px;
+
+            @media screen and ( max-width: @S ) {
+               height: 260px;
+            }
+
+            @media screen and ( max-width: @XS ) {
+               height: 176px;
+            }
          }
       }
 
@@ -153,12 +161,24 @@
             font-weight: 700;
             text-transform: uppercase;
             color: @c5;
+
+            @media screen and ( max-width: @XS ) {
+               width: 100%;
+               margin: 0 auto;
+               text-align: center;
+            }
          }
 
          // Comment Meta Info
          // ======================================================================== /
          .evo_comment__meta_info {
             padding: 18px 0 20px;
+
+            @media screen and ( max-width: @XS ) {
+               float: none;
+               text-align: center;
+               margin: 1.5rem auto 0;
+            }
 
             a {
                font-family: @font_heading;
@@ -414,6 +434,7 @@
       // Comment Notif
       // ======================================================================== /
       .evo_post_comment_notification {
+         font-size: 1.3rem;
          .btn {
             font-size: 1.2rem;
             transition: all 0.2s ease-in-out;
