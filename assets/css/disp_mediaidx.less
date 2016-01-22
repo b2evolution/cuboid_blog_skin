@@ -1,0 +1,134 @@
+.disp_mediaidx {
+
+   #main-content {
+
+      .evo_widget {
+         padding: 0;
+         background-color: transparent;
+         box-shadow: none;
+      }
+
+      .evo_image_index {
+         margin-left: -15px;
+         margin-right: -15px;
+
+         li {
+            padding: 0 15px 30px;
+            border: none;
+
+            @media screen and ( min-width: @MM ) {
+               &:nth-child(4n) {
+                  clear: both;
+               }
+            }
+         }
+
+         .item {
+            position: relative;
+            padding: 0;
+            margin: 0;
+            border: 5px solid @w;
+            border-radius: 0;
+            box-shadow: @box-shadow;
+
+            a {
+               position: relative;
+               display: block;
+               overflow: hidden;
+
+               img {
+                  transition: all 0.3s ease;
+               }
+
+               &::before {
+                  content: '';
+                  position: absolute;
+                  left: 0;
+                  bottom: 0;
+                  width: 100%;
+                  height: 100%;
+                  z-index: 1;
+                  background-color: rgba(0, 0, 0, 0.6);
+
+                  transform: scale(0.5);
+                  opacity: 0;
+                  transition: all 0.3s ease;
+               }
+
+               &::after {
+                  content: "\f105";
+                  position: absolute;
+                  left: 0;
+                  right: 0;
+                  top: 45%;
+                  margin: 0 auto;
+                  width: 40px;
+                  height: 40px;
+                  line-height: 40px;
+                  text-align: center;
+                  background-color: @w;
+                  border-radius: 100%;
+                  z-index: 2;
+
+                  // display: inline-block;
+                  font-family: FontAwesome;
+                  font-size: 2rem;
+                  color: @c5;
+                  text-rendering: auto;
+                  -webkit-font-smoothing: antialiased;
+                  -moz-osx-font-smoothing: grayscale;
+
+                  opacity: 0;
+                  transform: rotateY(180deg);
+                  transition: all 0.3s ease;
+               }
+            }
+
+            &:hover {
+
+               a {
+
+                  img {
+                     transition: all 3.5s ease;
+                     transform: scale(1.2);
+                  }
+
+                  &::before {
+                     transition: all 0.3s ease;
+                     opacity: 1;
+                     transform: scale(1);
+                  }
+
+                  &::after {
+                     transition: all 0.5s ease;
+                     opacity: 1;
+                     transform: rotateY(0deg);
+                  }
+
+               }
+            }
+
+         }
+
+         img {
+            height: auto;
+         }
+
+         .note {
+            width: 100%;
+            display: block;
+            font-family: @font_heading;
+            text-transform: capitalize;
+            font-size: 1.5rem;
+            font-size: 100%;
+            font-weight: 700;
+            color: @c5;
+            background-color: @w;
+            padding: 10px 10px 15px;
+         }
+
+      }
+
+   }
+
+}

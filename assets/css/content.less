@@ -1,22 +1,67 @@
 /* ----------------------------------------------------------------------------
  * # Content Styling
  * -------------------------------------------------------------------------- */
-#content{
+#content {
    margin-top: 5rem;
 
    @media screen and ( max-width: @MX ) {
       margin-top: 3rem;
    }
 
+   // Global Widget Main Content
+   // ======================================================================== /
+   .evo_widget {
+      padding: 3rem;
+      color: @color_content;
+      background-color: @w;
+      box-shadow: @box-shadow;
+
+      // List Style
+      // ======================================================================== /
+      ul{
+
+         li{
+            border-bottom: 1px solid @color_border;
+         }
+
+         & > ul > li:last-child {
+            border-bottom: 1px solid @color_border;
+         }
+
+         & > li:last-child{
+            border-bottom: 0;
+         }
+
+      }
+
+   }
+   // End .evo_widget
+
+}
+
+
+#main-content{
+
    // Content Block Styling
    // ======================================================================== /
-   main > .evo_content_block{
-      box-shadow: @box-shadow;
+   .evo_content_block{
       margin-bottom: 3rem;
 
       @media screen and ( max-width: @MX ) {
          margin-bottom: 2rem;
       }
+   }
+
+   // Title Head Post
+   // ======================================================================== /
+   .title_head_post {
+      font-family: @font_heading;
+      font-weight: 700;
+      background-color: @w;
+      margin-top: 0;
+      margin-bottom: 3rem;
+      padding: 2.5rem 3rem;
+      box-shadow: @box-shadow;
    }
 
    // Evo Post Title
@@ -26,10 +71,7 @@
 
       h1, h2, h3{
          display: inline-block;
-         font-family: @font_heading;
          font-size: 3rem;
-         font-weight: 700;
-         letter-spacing: 0;
          text-transform: capitalize;
          padding: 0;
          margin-bottom: 5px;
@@ -47,17 +89,9 @@
 
    }
 
-   // Evo Post Global Style
-   // ======================================================================== /
-   .evo_post__full_text, .evo_post__excerpt_text {
-      font-size: 1.5rem;
-      letter-spacing: 0.2px;
-      color: @color_content;
-   }
-
    // Intro Post Style
    // ======================================================================== /
-   .evo_intro_post{
+   .evo_intro_post, .featurepost{
       padding: 2rem 3rem 1.5rem;
       background: @primary;
       color: @w;
@@ -67,11 +101,12 @@
 
       .evo_post_title {
          display: table;
-         margin-bottom: 1.5rem;
+         margin-bottom: 2.5rem;
 
          h2 {
             position: relative;
             display: inline-block;
+            color: @w;
 
             &:after {
                content: '';
@@ -88,6 +123,7 @@
             font-size: 1.1rem;
             border-color: @w;
             border-radius: 2px;
+            color: @c3;
 
             &:hover, &:active, &:focus {
                background-color: @w;
@@ -96,11 +132,21 @@
          }
       }
 
-      .evo_post__full .evo_post__full_text, .post_comments_link a {
+      a, .evo_post__full .evo_post__full_text, .post_comments_link a {
          color: @w;
       }
 
    }
+
+
+   // Evo Post Global Style
+   // ======================================================================== /
+   .evo_post__full_text, .evo_post__excerpt_text {
+      font-size: 1.5rem;
+      letter-spacing: 0.2px;
+      color: @color_content;
+   }
+
 
    // Post Styling
    // ======================================================================== /
@@ -108,6 +154,7 @@
    .evo_featured_post {
    	margin-bottom: 3rem;
       padding: 2.5rem 3rem 2rem;
+      box-shadow: @box-shadow;
 
       @media screen and ( max-width: @S ) {
          padding: 2rem 2rem 1.5rem;

@@ -1,26 +1,180 @@
 .disp_front {
 
-   #content {
+   #main-content {
 
-      .widget_core_coll_featured_intro {
+      // Evo Widget
+      // ======================================================================== /
+      .evo_widget {
+         background-color: @w;
+         padding: 3rem;
+         margin-bottom: 3rem;
+         box-shadow: @box-shadow;
 
-         .jumbotron {
-            background-color: @w;
+         @media screen and ( max-width: @S ) {
+            padding: 2.5rem 2rem;
+         }
 
-            .featurepost {
+         .title_widget {
+            display: table;
+            position: relative;
+            font-size: 2rem;
+            text-transform: uppercase;
+            margin-top: -0.5rem;
+            margin-bottom: 2.5rem;
+            color: @c5;
 
-               .evo_post_title {
-                  margin-bottom: 10px;
-                  h2 {
-                     display: table-cell;
-                  }
-               }
+            @media screen and ( max-width: @S ) {
+               font-size: 1.8rem;
+            }
 
+            &::after {
+               content: '';
+               position: absolute;
+               left: 0;
+               bottom: -1rem;
+               height: 2px;
+               width: 50%;
+               background-color: @c5;
             }
          }
 
+         ul {
+
+            li {
+               border-bottom: 1px solid @color_border;
+            }
+
+            & > ul > li:last-child {
+               border-bottom: 1px solid @color_border;
+            }
+
+            & > li:last-child {
+               border-bottom: 0;
+            }
+
+         }
+
+      }
+      // End .evo_widget
+
+      // Featured Post
+      // ======================================================================== /
+      .widget_core_coll_featured_intro {
+         padding: 0;
+         background-color: transparent;
+
+         .jumbotron {
+            padding: 0 2rem 1rem;
+            background-color: @primary;
+            border-radius: 0;
+            box-shadow: @box-shadow;
+
+            @media screen and ( max-width: @S ) {
+               padding: 0;
+            }
+
+            .featurepost {
+
+               .evo_post__full_text, p {
+                  font-size: 1.8rem !important;
+                  line-height: 1.3;
+                  font-weight: 400;
+               }
+
+               ul {
+
+                  li {
+                     border-bottom: 0 !important;
+                  }
+
+               }
+
+            }
+            // End .featurepost
+         }
+         // End .jumotron
+      }
+      // End .widget_core_coll_featured_intro
+
+
+      // User Link
+      // ======================================================================== /
+      .widget_core_user_links {
+         .ufld_icon_links {
+            a {
+               background-color: @ca9;
+            }
+         }
       }
 
-   }
+      // Profile Menu Link
+      // ======================================================================== /
+      .widget_core_profile_menu_link {
+         img {
+            border-radius: 100%;
+            margin-right: 5px;
+         }
+      }
 
+      // Search Form
+      // ======================================================================== /
+      .widget_core_coll_search_form {
+         .search {
+            width: 100%;
+
+            .search_field{
+               width: 75%;
+
+               @media screen and ( max-width: @S ) {
+                  width: 65%;
+               }
+            }
+
+            .search_submit {
+               width: 20%;
+               margin-top: -3px;
+
+               @media screen and ( max-width: @S ) {
+                  width: 35%;
+               }
+            }
+         }
+      }
+
+      // Tag Cloud
+      // ======================================================================== /
+      .widget_core_coll_tag_cloud {
+         .tag_cloud {
+            display: inline-block;
+            margin-bottom: 0;
+         }
+      }
+
+      // Tag Title
+      // ======================================================================== /
+      .widget_core_coll_logo, .widget_core_coll_title {
+         .title_widget {
+            margin-bottom: 0;
+
+            &::after {
+               display: none;
+            }
+         }
+      }
+
+      // Organize Member
+      // ======================================================================== /
+      .widget_core_org_members {
+         .col-lg-4 {
+            @media screen and ( min-width: @M ) {
+               width: 50%;
+               float: left;
+            }
+         }
+      }
+
+
+   }
+   // End .evo_container__front_page_primary
 }
+// End .disp_front
