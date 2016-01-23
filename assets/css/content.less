@@ -12,6 +12,7 @@
    // ======================================================================== /
    .evo_widget {
       padding: 3rem;
+      margin-bottom: 3rem;
       color: @color_content;
       background-color: @w;
       box-shadow: @box-shadow;
@@ -523,6 +524,267 @@
 
    }
 
+}
+
+
+// Evo Comment
+// ======================================================================== /
+.evo_comment,
+.evo_comment__preview {
+   position: relative;
+   margin-bottom: 2.5rem;
+   padding: 2rem;
+   border: 1px solid @color_border;
+   min-height: 145px;
+
+
+   .evo_comment_title,
+   .evo_comment_info,
+   .evo_comment_footer,
+   .evo_comment_rating,
+   .evo_comment_text {
+      @media screen and ( min-width: @MX ) {
+         margin-left: 140px;
+      }
+   }
+
+   .evo_comment_rating,
+   .evo_comment_text {
+      @media screen and ( max-width:  @MX ) {
+         margin-left: 95px;
+      }
+
+      @media screen and ( max-width: @S ) {
+         margin-left: 80px;
+      }
+
+      @media screen and ( max-width: @XS ) {
+         margin-left: 0;
+      }
+
+   }
+
+   // Title Comment List
+   // ======================================================================== /
+   .evo_comment_title {
+      font-family: @font_heading;
+      font-size: 1.8rem;
+      font-weight: 700;
+      letter-spacing: 0;
+
+      a, span {
+         &:hover {
+            cursor: pointer;
+         }
+      }
+
+      a {
+         color: @c5;
+
+         &:hover {
+            color: @primary;
+            background-color: transparent;
+         }
+      }
+
+      // Hide User Member Status
+      .bUser-member-tag {
+         display: none;
+      }
+   }
+
+   // Comment Info
+   // ======================================================================== /
+   .evo_comment_info {
+      font-family: @font_heading;
+      font-size: 1.4rem;
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+
+      .delete_link, .edit_link {
+         font-size: 1.1rem;
+         color: @ca9;
+         font-weight: 700;
+
+         &:hover, &:active, &:focus {
+            color: @primary;
+         }
+
+         span.fa {
+            font-size: 1.2rem;
+         }
+      }
+   }
+
+   // Image Avatar Style
+   // ======================================================================== /
+   .evo_comment_avatar {
+      position: absolute;
+      top: 22px;
+
+      @media screen and ( max-width: @MX ) {
+         position: relative;
+         float: none;
+      }
+
+      img {
+         max-width: 100px;
+         max-height: 100px;
+         width: 100%;
+         height: 100%;
+         border-radius: 0;
+         padding: 4px;
+         margin: 0;
+         border: 1px solid @color_border;
+
+         @media screen and ( max-width: @MX ) {
+            margin-top: 4px;
+            max-width: 80px;
+            min-height: 80px;
+         }
+
+         @media screen and ( max-width: @S ) {
+            max-width: 65px;
+            min-height: 65px;
+         }
+
+         @media screen and ( max-width: @XS ) {
+            display: none;
+         }
+      }
+
+      &::after {
+         content: '';
+         position: absolute;
+         right: -20px;
+         width: 1px;
+         height: 100%;
+         background-color: @color_border;
+
+      }
+
+   }
+
+   // Rating Post
+   // ======================================================================== /
+   .evo_comment_rating {
+      margin-bottom: 5px;
+      margin-top: 0;
+   }
+
+   // Evo Commnet Text
+   // ======================================================================== /
+   .evo_comment_text {
+      font-size: 1.4rem;
+      line-height: 1.4;
+
+      p {
+         margin-bottom: 8px;
+
+         &::last-child {
+            margin-bottom: 0;
+         }
+      }
+   }
+
+}
+
+
+// Comment Form
+// ======================================================================== /
+#comment_form {
+   border-radius: 0;
+   border-color: @color_border;
+   margin-top: 5px;
+
+   .panel-heading {
+      border-color: @color_border;
+   }
+
+   .panel-title {
+      color: @c5;
+      text-transform: uppercase;
+   }
+
+   .panel-body {
+      padding-top: 3rem;
+   }
+
+   .evo_form {
+
+      label {
+         font-family: @font_heading;
+         color: @c5;
+      }
+
+      .form_text_input, .form_textarea_input {
+         border-radius: 0;
+         border-color: @cd;
+         box-shadow: none;
+
+         &:focus {
+            border-color: @primary;
+         }
+      }
+
+      // Button Style
+      // ======================================================================== /
+      .preview, .submit {
+         border-radius: 2px;
+         font-family: @font_heading;
+         font-size: 1.3rem;
+         box-shadow: none;
+         padding: 10px 12px;
+         transition: all 0.2s ease-in-out;
+      }
+
+      .preview {
+         background-color: #5BDCC3;
+         border-color: #5BDCC3;
+
+         &:hover, &:focus, &:active {
+            background-color: @primary;
+            border-color: @primary;
+         }
+      }
+
+      .submit {
+         background-color: @primary;
+         border-color: @primary;
+
+         &:hover, &:focus, &:active {
+            background-color: @c3;
+            border-color: @c3;
+         }
+      }
+
+   }
+
+} // End .comment form
+
+
+// Comment Notif
+// ======================================================================== /
+.evo_post_comment_notification {
+   font-size: 1.3rem;
+   .btn {
+      font-size: 1.2rem;
+      transition: all 0.2s ease-in-out;
+
+      &:hover, &:active, &:focus {
+         background-color: @primary;
+         border-color: @primary;
+         color: @w;
+         box-shadow: none;
+      }
+
+   }
+}
+
+.evo_post_feedback_feed_msg {
+   a {
+      font-size: 1.3rem;
+   }
 }
 
 // ======================================================================== /

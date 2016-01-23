@@ -942,12 +942,12 @@ class cuboid_blog_Skin extends Skin
 
 			case 'left_sidebar':
 				// Left Sidebar
-				return 'col-md-8 pull-right';
+				return 'col-xs-12 col-sm-12 col-md-8 pull-right';
 
 			case 'right_sidebar':
 				// Right Sidebar
 			default:
-				return 'col-md-8';
+				return 'col-xs-12 col-sm-12 col-md-8';
 		}
 	}
 

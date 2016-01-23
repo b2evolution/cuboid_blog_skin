@@ -1,0 +1,56 @@
+// ======================================================================== /
+// Disp Comments
+// ======================================================================== /
+.disp_comments {
+
+   #main-content {
+
+      // Evo Comment
+      // ======================================================================== /
+      .evo_comment {
+         padding: 3rem;
+         border-radius: 0;
+         border: 0;
+         box-shadow: @box-shadow;
+
+         .evo_comment_title{
+            margin-bottom: 0;
+
+            &.first {
+               border-bottom: 1px solid @color_border;
+               text-transform: capitalize;
+               margin: 0 0 1.5rem;
+               padding-bottom: 1rem;
+
+
+               a {
+                  color: @primary;
+               }
+            }
+
+         }
+
+         .evo_comment_avatar {
+            top: 78px;
+         }
+
+         .evo_comment_text {
+            color: @color_content;
+
+            a {
+               text-decoration: none;
+               &:hover {
+                  background-color: transparent;
+                  text-decoration: underline;
+               }
+            }
+            
+         }
+
+      }
+
+   }
+   // End #main-content
+
+}
+// End .disp_comments

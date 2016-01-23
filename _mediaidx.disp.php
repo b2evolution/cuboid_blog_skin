@@ -50,12 +50,6 @@ skin_widget( array(
    'item_end'            => '</div></li>',
    'disp_image_title'    => true,
 
-	// 'grid_nb_cols'        => 8,
-	// 'grid_colstart'       => '',
-	// 'grid_colend'         => '',
-	// 'grid_cellstart'      => '<div><span'.$photocell_styles.'>',
-	// 'grid_cellend'        => '</span></div>',
-
 	'order_by'            => $Blog->get_setting('orderby'),
 	'order_dir'           => $Blog->get_setting('orderdir'),
 	'limit'               => 1000,

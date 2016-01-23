@@ -35,7 +35,7 @@ $params = array_merge( array(
 		'disp_section_title'     => true,
 		'disp_meta_comment_info' => true,
 		'disp_rating_summary'    => true,
-		'before_section_title'   => '<div class="clearfix"></div><h3 class="evo_comment__list_title"><i class="fa fa-comments-o"></i> ',
+		'before_section_title'   => '<div class="clearfix"></div><h3 class="evo_comment__list_title"><i class="fa fa-comments"></i> ',
 		'after_section_title'    => '</h3>',
 		'comments_title_text'    => '',
 		'comment_list_start'     => "\n\n",

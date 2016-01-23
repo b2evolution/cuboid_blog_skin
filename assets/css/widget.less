@@ -294,27 +294,27 @@
 // ======================================================================== /
 .widget_core_coll_tag_cloud {
 
-   .tag_cloud {
-      a {
-         display: inline-block;
-         float: left;
-         padding: 6px 15px;
-         margin: 2px;
-         // font-family: @font_heading;
-         font-size: 1.3rem !important;
-         font-weight: 400;
-         text-transform: capitalize;
-         color: @w;
-         background-color: @c3;
+}
 
-         &:hover, &:active, &:focus {
-            text-decoration: none;
-            color: @w;
-            background-color: @primary;
-         }
+.tag_cloud {
+   a {
+      display: inline-block;
+      float: left;
+      padding: 6px 15px;
+      margin: 2px;
+      // font-family: @font_heading;
+      font-size: 1.3rem !important;
+      font-weight: 400;
+      text-transform: capitalize;
+      color: @w;
+      background-color: @c3;
+
+      &:hover, &:active, &:focus {
+         text-decoration: none;
+         color: @w;
+         background-color: @primary;
       }
    }
-
 }
 
 
@@ -327,6 +327,11 @@
       font-size: 95%;
       margin-bottom: 0;
       margin-top: 0;
+
+      @media screen and ( max-width: @L )
+      and ( min-width: @MM ) {
+         font-size: 78%;
+      }
 
       @media screen and ( max-width: @XS ) {
          font-size: 88%;
