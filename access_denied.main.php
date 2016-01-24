@@ -40,7 +40,7 @@ siteskin_include( '_site_body_header.inc.php' );
 
 <header class="row">
 
-	<div class="coll-xs-12 coll-sm-12 col-md-4 col-md-push-8">
+	<div class="col-xs-12 coll-sm-12 col-md-4 col-md-push-8">
 		<?php
 		if( $Skin->is_visible_container( 'page_top' ) )
 		{ // Display 'Page Top' widget container
@@ -50,22 +50,22 @@ siteskin_include( '_site_body_header.inc.php' );
 			// ------------------------- "Page Top" CONTAINER EMBEDDED HERE --------------------------
 			// Display container and contents:
 			skin_container( NT_('Page Top'), array(
-					// The following params will be used as defaults for widgets included in this container:
-					'block_start'         => '<div class="evo_widget $wi_class$">',
-					'block_end'           => '</div>',
-					'block_display_title' => false,
-					'list_start'          => '<ul>',
-					'list_end'            => '</ul>',
-					'item_start'          => '<li>',
-					'item_end'            => '</li>',
-				) );
+				// The following params will be used as defaults for widgets included in this container:
+				'block_start'         => '<div class="evo_widget $wi_class$">',
+				'block_end'           => '</div>',
+				'block_display_title' => false,
+				'list_start'          => '<ul>',
+				'list_end'            => '</ul>',
+				'item_start'          => '<li>',
+				'item_end'            => '</li>',
+			) );
 			// ----------------------------- END OF "Page Top" CONTAINER -----------------------------
 		?>
 		</div>
 		<?php } ?>
 	</div><!-- .col -->
 
-	<div class="coll-xs-12 col-sm-12 col-md-8 col-md-pull-4">
+	<div class="col-xs-12 col-sm-12 col-md-8 col-md-pull-4">
 		<?php
 		if( $Skin->is_visible_container( 'header' ) )
 		{ // Display 'Header' widget container
@@ -75,12 +75,12 @@ siteskin_include( '_site_body_header.inc.php' );
 			// ------------------------- "Header" CONTAINER EMBEDDED HERE --------------------------
 			// Display container and contents:
 			skin_container( NT_('Header'), array(
-					// The following params will be used as defaults for widgets included in this container:
-					'block_start'       => '<div class="evo_widget $wi_class$">',
-					'block_end'         => '</div>',
-					'block_title_start' => '<h1>',
-					'block_title_end'   => '</h1>',
-				) );
+				// The following params will be used as defaults for widgets included in this container:
+				'block_start'       => '<div class="evo_widget $wi_class$">',
+				'block_end'         => '</div>',
+				'block_title_start' => '<h1>',
+				'block_title_end'   => '</h1>',
+			) );
 			// ----------------------------- END OF "Header" CONTAINER -----------------------------
 		?>
 		</div>
@@ -103,19 +103,19 @@ if( $Skin->is_visible_container( 'menu' ) )
 			// Display container and contents:
 			// Note: this container is designed to be a single <ul> list
 			skin_container( NT_('Menu'), array(
-					// The following params will be used as defaults for widgets included in this container:
-					'block_start'         => '',
-					'block_end'           => '',
-					'block_display_title' => false,
-					'list_start'          => '',
-					'list_end'            => '',
-					'item_start'          => '<li class="evo_widget $wi_class$">',
-					'item_end'            => '</li>',
-					'item_selected_start' => '<li class="active evo_widget $wi_class$">',
-					'item_selected_end'   => '</li>',
-					'item_title_before'   => '',
-					'item_title_after'    => '',
-				) );
+				// The following params will be used as defaults for widgets included in this container:
+				'block_start'         => '',
+				'block_end'           => '',
+				'block_display_title' => false,
+				'list_start'          => '',
+				'list_end'            => '',
+				'item_start'          => '<li class="evo_widget $wi_class$">',
+				'item_end'            => '</li>',
+				'item_selected_start' => '<li class="active evo_widget $wi_class$">',
+				'item_selected_end'   => '</li>',
+				'item_title_before'   => '',
+				'item_title_after'    => '',
+			) );
 			// ----------------------------- END OF "Menu" CONTAINER -----------------------------
 		?>
 		</ul>
@@ -134,20 +134,20 @@ if( $Skin->is_visible_container( 'menu' ) )
 		<?php
 			// ------------------------- MESSAGES GENERATED FROM ACTIONS -------------------------
 			messages( array(
-					'block_start' => '<div class="action_messages">',
-					'block_end'   => '</div>',
-				) );
+				'block_start' => '<div class="action_messages">',
+				'block_end'   => '</div>',
+			) );
 			// --------------------------------- END OF MESSAGES ---------------------------------
 		?>
 
 		<?php
 			// ------------------------ TITLE FOR THE CURRENT REQUEST ------------------------
 			request_title( array(
-					'title_before'      => '<h2 class="page_title">',
-					'title_after'       => '</h2>',
-					'title_none'        => '',
-					'glue'              => ' - ',
-				) );
+				'title_before'      => '<h2 class="page_title">',
+				'title_after'       => '</h2>',
+				'title_none'        => '',
+				'glue'              => ' - ',
+			) );
 			// ----------------------------- END OF REQUEST TITLE ----------------------------
 		?>
 
@@ -167,7 +167,7 @@ if( $Skin->is_visible_container( 'menu' ) )
 	if( $Skin->is_visible_sidebar( true ) )
 	{ // Display sidebar:
 	?>
-	<aside class="col-md-3<?php echo ( $Skin->get_setting( 'layout' ) == 'left_sidebar' ? ' pull-left' : '' ); ?>">
+	<aside class="col-xs-12 col-sm-12 col-md-3<?php echo ( $Skin->get_setting( 'layout' ) == 'left_sidebar' ? ' pull-left' : '' ); ?>">
 		<?php
 		if( $Skin->is_visible_container( 'sidebar' ) )
 		{ // Display 'Sidebar' widget container

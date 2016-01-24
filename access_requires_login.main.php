@@ -40,7 +40,7 @@ siteskin_include( '_site_body_header.inc.php' );
 
 <header class="row">
 
-	<div class="coll-xs-12 coll-sm-12 col-md-4 col-md-push-8">
+	<div class="col-xs-12 col-sm-12 col-md-4 col-md-push-8">
 		<?php
 		if( $Skin->is_visible_container( 'page_top' ) )
 		{ // Display 'Page Top' widget container
@@ -50,22 +50,22 @@ siteskin_include( '_site_body_header.inc.php' );
 			// ------------------------- "Page Top" CONTAINER EMBEDDED HERE --------------------------
 			// Display container and contents:
 			skin_container( NT_('Page Top'), array(
-					// The following params will be used as defaults for widgets included in this container:
-					'block_start'         => '<div class="evo_widget $wi_class$">',
-					'block_end'           => '</div>',
-					'block_display_title' => false,
-					'list_start'          => '<ul>',
-					'list_end'            => '</ul>',
-					'item_start'          => '<li>',
-					'item_end'            => '</li>',
-				) );
+				// The following params will be used as defaults for widgets included in this container:
+				'block_start'         => '<div class="evo_widget $wi_class$">',
+				'block_end'           => '</div>',
+				'block_display_title' => false,
+				'list_start'          => '<ul>',
+				'list_end'            => '</ul>',
+				'item_start'          => '<li>',
+				'item_end'            => '</li>',
+			) );
 			// ----------------------------- END OF "Page Top" CONTAINER -----------------------------
 		?>
 		</div>
 		<?php } ?>
 	</div><!-- .col -->
 
-	<div class="coll-xs-12 col-sm-12 col-md-8 col-md-pull-4">
+	<div class="col-xs-12 col-sm-12 col-md-8 col-md-pull-4">
 		<?php
 		if( $Skin->is_visible_container( 'header' ) )
 		{ // Display 'Header' widget container
@@ -75,12 +75,12 @@ siteskin_include( '_site_body_header.inc.php' );
 			// ------------------------- "Header" CONTAINER EMBEDDED HERE --------------------------
 			// Display container and contents:
 			skin_container( NT_('Header'), array(
-					// The following params will be used as defaults for widgets included in this container:
-					'block_start'       => '<div class="evo_widget $wi_class$">',
-					'block_end'         => '</div>',
-					'block_title_start' => '<h1>',
-					'block_title_end'   => '</h1>',
-				) );
+				// The following params will be used as defaults for widgets included in this container:
+				'block_start'       => '<div class="evo_widget $wi_class$">',
+				'block_end'         => '</div>',
+				'block_title_start' => '<h1>',
+				'block_title_end'   => '</h1>',
+			) );
 			// ----------------------------- END OF "Header" CONTAINER -----------------------------
 		?>
 		</div>
@@ -103,19 +103,19 @@ if( $Skin->is_visible_container( 'menu' ) )
 			// Display container and contents:
 			// Note: this container is designed to be a single <ul> list
 			skin_container( NT_('Menu'), array(
-					// The following params will be used as defaults for widgets included in this container:
-					'block_start'         => '',
-					'block_end'           => '',
-					'block_display_title' => false,
-					'list_start'          => '',
-					'list_end'            => '',
-					'item_start'          => '<li class="evo_widget $wi_class$">',
-					'item_end'            => '</li>',
-					'item_selected_start' => '<li class="active evo_widget $wi_class$">',
-					'item_selected_end'   => '</li>',
-					'item_title_before'   => '',
-					'item_title_after'    => '',
-				) );
+				// The following params will be used as defaults for widgets included in this container:
+				'block_start'         => '',
+				'block_end'           => '',
+				'block_display_title' => false,
+				'list_start'          => '',
+				'list_end'            => '',
+				'item_start'          => '<li class="evo_widget $wi_class$">',
+				'item_end'            => '</li>',
+				'item_selected_start' => '<li class="active evo_widget $wi_class$">',
+				'item_selected_end'   => '</li>',
+				'item_title_before'   => '',
+				'item_title_after'    => '',
+			) );
 			// ----------------------------- END OF "Menu" CONTAINER -----------------------------
 		?>
 		</ul>
@@ -136,10 +136,10 @@ if( $Skin->is_visible_container( 'menu' ) )
 			skin_include( '$disp$', array(
 					// Form params for the forms below: login, register, lostpassword, activateinfo and msgform
 					'skin_form_before'      => '<div class="panel panel-default skin-form">'
-																				.'<div class="panel-heading">'
-																					.'<h3 class="panel-title">$form_title$</h3>'
-																				.'</div>'
-																				.'<div class="panel-body">',
+														.'<div class="panel-heading">'
+															.'<h3 class="panel-title">$form_title$</h3>'
+														.'</div>'
+														.'<div class="panel-body">',
 					'skin_form_after'       => '</div></div>',
 					// Login
 					'display_form_messages' => true,
@@ -166,7 +166,7 @@ if( $Skin->is_visible_container( 'menu' ) )
 	if( $Skin->is_visible_sidebar( true ) )
 	{ // Display sidebar:
 	?>
-	<aside class="col-md-3<?php echo ( $Skin->get_setting( 'layout' ) == 'left_sidebar' ? ' pull-left' : '' ); ?>">
+	<aside class="col-xs-12 col-sm-12 col-md-3<?php echo ( $Skin->get_setting( 'layout' ) == 'left_sidebar' ? ' pull-left' : '' ); ?>">
 		<?php
 		if( $Skin->is_visible_container( 'sidebar' ) )
 		{ // Display 'Sidebar' widget container
@@ -179,26 +179,26 @@ if( $Skin->is_visible_container( 'menu' ) )
 			skin_container( NT_('Sidebar'), array(
 					// The following (optional) params will be used as defaults for widgets included in this container:
 					// This will enclose each widget in a block:
-					'block_start' => '<div class="panel panel-default evo_widget $wi_class$">',
-					'block_end' => '</div>',
+					'block_start'          => '<div class="panel panel-default evo_widget $wi_class$">',
+					'block_end'            => '</div>',
 					// This will enclose the title of each widget:
-					'block_title_start' => '<div class="panel-heading"><h4 class="panel-title">',
-					'block_title_end' => '</h4></div>',
+					'block_title_start'    => '<div class="panel-heading"><h4 class="panel-title">',
+					'block_title_end'      => '</h4></div>',
 					// This will enclose the body of each widget:
-					'block_body_start' => '<div class="panel-body">',
-					'block_body_end' => '</div>',
+					'block_body_start'     => '<div class="panel-body">',
+					'block_body_end'       => '</div>',
 					// If a widget displays a list, this will enclose that list:
-					'list_start' => '<ul>',
-					'list_end' => '</ul>',
+					'list_start'           => '<ul>',
+					'list_end'             => '</ul>',
 					// This will enclose each item in a list:
-					'item_start' => '<li>',
-					'item_end' => '</li>',
+					'item_start'           => '<li>',
+					'item_end'             => '</li>',
 					// This will enclose sub-lists in a list:
-					'group_start' => '<ul>',
-					'group_end' => '</ul>',
+					'group_start'          => '<ul>',
+					'group_end'            => '</ul>',
 					// This will enclose (foot)notes:
-					'notes_start' => '<div class="notes">',
-					'notes_end' => '</div>',
+					'notes_start'          => '<div class="notes">',
+					'notes_end'            => '</div>',
 					// Widget 'Search form':
 					'search_class'         => 'compact_search_form',
 					'search_input_before'  => '<div class="input-group">',
