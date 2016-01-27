@@ -1290,6 +1290,118 @@ img {
   padding: 3rem 3rem 0;
   margin-bottom: -2rem;
 }
+.disp_threads #main-content {
+  padding: 25px;
+  background-color: #ffffff;
+  box-shadow: 1px 2px 4px rgba(35, 35, 35, 0.12);
+}
+.disp_threads #main-content .title_head_post {
+  padding: 0 0 30px;
+  margin-bottom: 0;
+  box-shadow: none;
+}
+.disp_threads #main-content .results {
+  border-radius: 0;
+  background-color: #ffffff;
+  margin-bottom: 0;
+  box-shadow: none;
+}
+.disp_threads #main-content .results .fieldset_title {
+  padding: 15px 10px;
+  background-color: #f7f7f7;
+}
+.disp_threads #main-content .results input {
+  box-shadow: none;
+  border-radius: 2px;
+}
+.disp_threads #main-content .results .action_icon {
+  font-size: 1.2rem;
+  font-weight: 600;
+  border-radius: 2px;
+  margin: -11px 0 0 8px;
+}
+.disp_threads #main-content .results .action_icon.btn-primary {
+  background-color: #1abc9c;
+  border-color: #1abc9c;
+}
+.disp_threads #main-content .results .action_icon .fa {
+  padding-right: 3px;
+}
+.disp_threads #main-content .results .table_scroll th {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.3rem;
+}
+.disp_threads #main-content .results .table_scroll th span {
+  color: #555555;
+}
+.disp_threads #main-content .results .table_scroll th,
+.disp_threads #main-content .results .table_scroll td {
+  padding: 8px;
+}
+.disp_threads #main-content .results .table_scroll .firstcol img {
+  border-radius: 100%;
+}
+.disp_threads #main-content .results .table_scroll .firstcol .nowrap {
+  white-space: normal;
+}
+.disp_threads #main-content .evo_form__thread {
+  padding: 20px;
+  background-color: #ffffff;
+  box-shadow: none;
+  border: 1px solid #eeeeee;
+}
+.disp_threads #main-content .evo_form__thread label {
+  font-family: "Montserrat", sans-serif;
+  color: #555555;
+}
+.disp_threads #main-content .evo_form__thread input,
+.disp_threads #main-content .evo_form__thread textarea {
+  border-radius: 0;
+  box-shadow: none;
+  font-family: "Lato", sans-serif;
+  border-color: #eeeeee;
+}
+.disp_threads #main-content .evo_form__thread input:focus,
+.disp_threads #main-content .evo_form__thread textarea:focus {
+  border-color: #1abc9c;
+}
+.disp_threads #main-content .evo_form__thread .token-input-list-facebook {
+  box-shadow: none;
+  border-radius: 0;
+  border-color: #eeeeee;
+}
+.disp_threads #main-content .evo_form__thread .token-input-list-facebook input:active,
+.disp_threads #main-content .evo_form__thread .token-input-list-facebook input:active,
+.disp_threads #main-content .evo_form__thread .token-input-list-facebook input:focus {
+  border-color: #1abc9c;
+}
+.disp_threads #main-content .evo_form__thread .SaveButton {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.2rem;
+  border-radius: 2px;
+  padding: 10px 15px;
+}
+.disp_threads #main-content .evo_form__thread .SaveButton.btn-primary {
+  background-color: #1abc9c;
+  border: 1px solid #1abc9c;
+}
+.disp_threads #main-content .evo_form__thread .SaveButton.btn-info {
+  background-color: #777777;
+  border-color: #777777;
+}
+.disp_threads #main-content .evo_form__thread .SaveButton:focus,
+.disp_threads #main-content .evo_form__thread .SaveButton:active {
+  outline: none;
+}
+.disp_messages #main-content {
+  background-color: #ffffff;
+  padding: 30px;
+}
+.disp_messages #main-content .messages_navigation {
+  margin-bottom: 2rem;
+  border: 1px solid #eeeeee;
+  padding: 10px 15px;
+}
 .disp_posts #content .evo_featured_post {
   background-color: #ffffff;
   border-radius: 0;
