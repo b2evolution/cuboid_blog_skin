@@ -223,19 +223,29 @@
 // ======================================================================== /
 // Disp Thread
 // ======================================================================== /
-.disp_threads {
+.disp_threads,
+.disp_messages,
+.disp_contacts {
 
    #main-content {
-      padding: 25px;
+      padding: 30px;
       background-color: @w;
       box-shadow: @box-shadow;
 
+      @media screen and ( max-width: @S ) {
+         padding: 20px;
+      }
+
+      // Title Head Post
+      // ======================================================================== /
       .title_head_post {
-         padding: 0 0 30px;
+         padding: 0 0 20px;
          margin-bottom: 0;
          box-shadow: none;
       }
 
+      // Results
+      // ======================================================================== /
       .results {
          // padding: 0 20px 20px;
          border-radius: 0;
@@ -251,6 +261,11 @@
          input {
             box-shadow: none;
             border-radius: 2px;
+            font-size: 1.4rem;
+
+            &:focus {
+               border-color: @primary;
+            }
          }
 
          .action_icon {
@@ -269,6 +284,9 @@
             }
          }
 
+
+         // Table Content
+         // ======================================================================== /
          .table_scroll {
 
             th {
@@ -294,15 +312,33 @@
                   white-space: normal;
                }
             }
+
+            .thread_subject {
+               .fa {
+                  padding-right: 5px;
+               }
+            }
+
+            .shrinkwrap {
+               font-family: @font_heading;
+               color: @c5;
+            }
+
          }
 
       }
 
+      // Form Thread
+      // ======================================================================== /
       .evo_form__thread {
-         padding: 20px;
+         padding: 30px;
          background-color: @w;
          box-shadow: none;
-         border: 1px solid @color_border;
+         border: 1px solid @cd;
+
+         @media screen and ( max-width: @S ) {
+            padding: 10px;
+         }
 
          label {
             font-family: @font_heading;
@@ -313,7 +349,7 @@
             border-radius: 0;
             box-shadow: none;
             font-family: @font_body;
-            border-color: @color_border;
+            border-color: @cd;
 
             &:focus {
                border-color: @primary;
@@ -323,7 +359,11 @@
          .token-input-list-facebook {
             box-shadow: none;
             border-radius: 0;
-            border-color: @color_border;
+            border-color: @cd;
+
+            li {
+               font-family: @font_body;
+            }
 
             input {
                &:active, &:active, &:focus {
@@ -333,26 +373,26 @@
 
          }
 
-         .SaveButton{
-            font-family: @font_heading;
-            font-size: 1.2rem;
-            border-radius: 2px;
-            padding: 10px 15px;
+      }
 
-            &.btn-primary {
-               background-color: @primary;
-               border: 1px solid @primary;
-            }
+      .SaveButton{
+         font-family: @font_heading !important;
+         font-size: 1.2rem;
+         border-radius: 2px;
+         padding: 10px 15px;
 
-            &.btn-info {
-               background-color: @c7;
-               border-color: @c7;
-            }
+         &.btn-primary {
+            background-color: @primary;
+            border: 1px solid @primary;
+         }
 
-            &:focus, &:active {
-               outline: none;
-            }
+         &.btn-info {
+            background-color: @c7;
+            border-color: @c7;
+         }
 
+         &:focus, &:active {
+            outline: none;
          }
 
       }
@@ -362,21 +402,131 @@
 }
 
 
+// Filter
+// ======================================================================== /
+.filters {
+
+   input {
+      font-size: 1.4rem;
+   }
+
+   button.btn {
+
+      &:focus, &:hover, &:active {
+         outline: none;
+         // box-shadow: none;
+      }
+   }
+
+   .btn-info {
+      background-color: @primary;
+      border-color: @primary;
+
+      &:hover {
+         background-color: @c5;
+         border-color: @c5;
+      }
+   }
+
+}
+
 // ======================================================================== /
 // Disp Message
 // ======================================================================== /
 .disp_messages {
 
    #main-content {
-      background-color: @w;
-      padding: 30px;
 
       .messages_navigation {
+         font-size: 1.4rem;
          margin-bottom: 2rem;
          border: 1px solid @color_border;
          padding: 10px 15px;
       }
 
+      .evo_private_messages_list {
+
+         & > h2 {
+            font-size: 2.6rem;
+            margin-bottom: 20px;
+         }
+      }
+
+      .panel {
+         border-radius: 0;
+         border-color: @cd;
+
+         .panel-heading {
+            img {
+               border-radius: 100%;
+            }
+         }
+
+         .panel-body{
+
+            label {
+               font-family: @font_heading;
+               color: @c5;
+            }
+
+            input, textarea {
+               border-radius: 2px;
+               box-shadow: none;
+
+               &:focus, &:active {
+                  border-color: @primary;
+
+               }
+            }
+         }
+      }
+
+      .avatar_rounded {
+         background-color: transparent;
+         border: 0;
+         width: 70px;
+      }
+
+      // Messages List Actions
+      // ======================================================================== /
+      .messages_list_actions {
+         margin-bottom: 20px;
+         a {
+
+            &:hover, &:active, &:focus {
+               color: @w;
+               background-color: @primary;
+               border-color: @primary;
+            }
+         }
+      }
+
+   }
+
+}
+
+
+// ======================================================================== /
+// Disp Contacts
+// ======================================================================== /
+.disp_contacts {
+
+   .form_send_contacts {
+      margin-top: 20px;
+
+      .btn-default {
+
+         &:hover, &:active, &:focus {
+            color: @w;
+            background-color: @primary;
+            border-color: @primary;
+         }
+      }
+   }
+
+
+   input.SaveButton {
+      padding: 5px 10px !important;
    }
 
 }

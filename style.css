@@ -11,18 +11,6 @@ html,
 body {
   font-size: 10px;
 }
-@media screen and (max-width: 768px) {
-  html,
-  body {
-    font-size: 9.5px;
-  }
-}
-@media screen and (max-width: 480px) {
-  html,
-  body {
-    font-size: 9px;
-  }
-}
 body {
   font: normal 1.5rem/1.5 "Lato", sans-serif;
 }
@@ -252,6 +240,7 @@ img {
   }
   .navbar-collapse .nav.nav-tabs li a {
     padding: 10px 0;
+    text-align: center;
   }
 }
 /* ----------------------------------------------------------------------------
@@ -1290,117 +1279,278 @@ img {
   padding: 3rem 3rem 0;
   margin-bottom: -2rem;
 }
-.disp_threads #main-content {
-  padding: 25px;
+.disp_threads #main-content,
+.disp_messages #main-content,
+.disp_contacts #main-content {
+  padding: 30px;
   background-color: #ffffff;
   box-shadow: 1px 2px 4px rgba(35, 35, 35, 0.12);
 }
-.disp_threads #main-content .title_head_post {
-  padding: 0 0 30px;
+@media screen and (max-width: 480px) {
+  .disp_threads #main-content,
+  .disp_messages #main-content,
+  .disp_contacts #main-content {
+    padding: 20px;
+  }
+}
+.disp_threads #main-content .title_head_post,
+.disp_messages #main-content .title_head_post,
+.disp_contacts #main-content .title_head_post {
+  padding: 0 0 20px;
   margin-bottom: 0;
   box-shadow: none;
 }
-.disp_threads #main-content .results {
+.disp_threads #main-content .results,
+.disp_messages #main-content .results,
+.disp_contacts #main-content .results {
   border-radius: 0;
   background-color: #ffffff;
   margin-bottom: 0;
   box-shadow: none;
 }
-.disp_threads #main-content .results .fieldset_title {
+.disp_threads #main-content .results .fieldset_title,
+.disp_messages #main-content .results .fieldset_title,
+.disp_contacts #main-content .results .fieldset_title {
   padding: 15px 10px;
   background-color: #f7f7f7;
 }
-.disp_threads #main-content .results input {
+.disp_threads #main-content .results input,
+.disp_messages #main-content .results input,
+.disp_contacts #main-content .results input {
   box-shadow: none;
   border-radius: 2px;
+  font-size: 1.4rem;
 }
-.disp_threads #main-content .results .action_icon {
+.disp_threads #main-content .results input:focus,
+.disp_messages #main-content .results input:focus,
+.disp_contacts #main-content .results input:focus {
+  border-color: #1abc9c;
+}
+.disp_threads #main-content .results .action_icon,
+.disp_messages #main-content .results .action_icon,
+.disp_contacts #main-content .results .action_icon {
   font-size: 1.2rem;
   font-weight: 600;
   border-radius: 2px;
   margin: -11px 0 0 8px;
 }
-.disp_threads #main-content .results .action_icon.btn-primary {
+.disp_threads #main-content .results .action_icon.btn-primary,
+.disp_messages #main-content .results .action_icon.btn-primary,
+.disp_contacts #main-content .results .action_icon.btn-primary {
   background-color: #1abc9c;
   border-color: #1abc9c;
 }
-.disp_threads #main-content .results .action_icon .fa {
+.disp_threads #main-content .results .action_icon .fa,
+.disp_messages #main-content .results .action_icon .fa,
+.disp_contacts #main-content .results .action_icon .fa {
   padding-right: 3px;
 }
-.disp_threads #main-content .results .table_scroll th {
+.disp_threads #main-content .results .table_scroll th,
+.disp_messages #main-content .results .table_scroll th,
+.disp_contacts #main-content .results .table_scroll th {
   font-family: "Montserrat", sans-serif;
   font-size: 1.3rem;
 }
-.disp_threads #main-content .results .table_scroll th span {
+.disp_threads #main-content .results .table_scroll th span,
+.disp_messages #main-content .results .table_scroll th span,
+.disp_contacts #main-content .results .table_scroll th span {
   color: #555555;
 }
 .disp_threads #main-content .results .table_scroll th,
-.disp_threads #main-content .results .table_scroll td {
+.disp_messages #main-content .results .table_scroll th,
+.disp_contacts #main-content .results .table_scroll th,
+.disp_threads #main-content .results .table_scroll td,
+.disp_messages #main-content .results .table_scroll td,
+.disp_contacts #main-content .results .table_scroll td {
   padding: 8px;
 }
-.disp_threads #main-content .results .table_scroll .firstcol img {
+.disp_threads #main-content .results .table_scroll .firstcol img,
+.disp_messages #main-content .results .table_scroll .firstcol img,
+.disp_contacts #main-content .results .table_scroll .firstcol img {
   border-radius: 100%;
 }
-.disp_threads #main-content .results .table_scroll .firstcol .nowrap {
+.disp_threads #main-content .results .table_scroll .firstcol .nowrap,
+.disp_messages #main-content .results .table_scroll .firstcol .nowrap,
+.disp_contacts #main-content .results .table_scroll .firstcol .nowrap {
   white-space: normal;
 }
-.disp_threads #main-content .evo_form__thread {
-  padding: 20px;
+.disp_threads #main-content .results .table_scroll .thread_subject .fa,
+.disp_messages #main-content .results .table_scroll .thread_subject .fa,
+.disp_contacts #main-content .results .table_scroll .thread_subject .fa {
+  padding-right: 5px;
+}
+.disp_threads #main-content .results .table_scroll .shrinkwrap,
+.disp_messages #main-content .results .table_scroll .shrinkwrap,
+.disp_contacts #main-content .results .table_scroll .shrinkwrap {
+  font-family: "Montserrat", sans-serif;
+  color: #555555;
+}
+.disp_threads #main-content .evo_form__thread,
+.disp_messages #main-content .evo_form__thread,
+.disp_contacts #main-content .evo_form__thread {
+  padding: 30px;
   background-color: #ffffff;
   box-shadow: none;
-  border: 1px solid #eeeeee;
+  border: 1px solid #dddddd;
 }
-.disp_threads #main-content .evo_form__thread label {
+@media screen and (max-width: 480px) {
+  .disp_threads #main-content .evo_form__thread,
+  .disp_messages #main-content .evo_form__thread,
+  .disp_contacts #main-content .evo_form__thread {
+    padding: 10px;
+  }
+}
+.disp_threads #main-content .evo_form__thread label,
+.disp_messages #main-content .evo_form__thread label,
+.disp_contacts #main-content .evo_form__thread label {
   font-family: "Montserrat", sans-serif;
   color: #555555;
 }
 .disp_threads #main-content .evo_form__thread input,
-.disp_threads #main-content .evo_form__thread textarea {
+.disp_messages #main-content .evo_form__thread input,
+.disp_contacts #main-content .evo_form__thread input,
+.disp_threads #main-content .evo_form__thread textarea,
+.disp_messages #main-content .evo_form__thread textarea,
+.disp_contacts #main-content .evo_form__thread textarea {
   border-radius: 0;
   box-shadow: none;
   font-family: "Lato", sans-serif;
-  border-color: #eeeeee;
+  border-color: #dddddd;
 }
 .disp_threads #main-content .evo_form__thread input:focus,
-.disp_threads #main-content .evo_form__thread textarea:focus {
+.disp_messages #main-content .evo_form__thread input:focus,
+.disp_contacts #main-content .evo_form__thread input:focus,
+.disp_threads #main-content .evo_form__thread textarea:focus,
+.disp_messages #main-content .evo_form__thread textarea:focus,
+.disp_contacts #main-content .evo_form__thread textarea:focus {
   border-color: #1abc9c;
 }
-.disp_threads #main-content .evo_form__thread .token-input-list-facebook {
+.disp_threads #main-content .evo_form__thread .token-input-list-facebook,
+.disp_messages #main-content .evo_form__thread .token-input-list-facebook,
+.disp_contacts #main-content .evo_form__thread .token-input-list-facebook {
   box-shadow: none;
   border-radius: 0;
-  border-color: #eeeeee;
+  border-color: #dddddd;
+}
+.disp_threads #main-content .evo_form__thread .token-input-list-facebook li,
+.disp_messages #main-content .evo_form__thread .token-input-list-facebook li,
+.disp_contacts #main-content .evo_form__thread .token-input-list-facebook li {
+  font-family: "Lato", sans-serif;
 }
 .disp_threads #main-content .evo_form__thread .token-input-list-facebook input:active,
+.disp_messages #main-content .evo_form__thread .token-input-list-facebook input:active,
+.disp_contacts #main-content .evo_form__thread .token-input-list-facebook input:active,
 .disp_threads #main-content .evo_form__thread .token-input-list-facebook input:active,
-.disp_threads #main-content .evo_form__thread .token-input-list-facebook input:focus {
+.disp_messages #main-content .evo_form__thread .token-input-list-facebook input:active,
+.disp_contacts #main-content .evo_form__thread .token-input-list-facebook input:active,
+.disp_threads #main-content .evo_form__thread .token-input-list-facebook input:focus,
+.disp_messages #main-content .evo_form__thread .token-input-list-facebook input:focus,
+.disp_contacts #main-content .evo_form__thread .token-input-list-facebook input:focus {
   border-color: #1abc9c;
 }
-.disp_threads #main-content .evo_form__thread .SaveButton {
-  font-family: "Montserrat", sans-serif;
+.disp_threads #main-content .SaveButton,
+.disp_messages #main-content .SaveButton,
+.disp_contacts #main-content .SaveButton {
+  font-family: "Montserrat", sans-serif !important;
   font-size: 1.2rem;
   border-radius: 2px;
   padding: 10px 15px;
 }
-.disp_threads #main-content .evo_form__thread .SaveButton.btn-primary {
+.disp_threads #main-content .SaveButton.btn-primary,
+.disp_messages #main-content .SaveButton.btn-primary,
+.disp_contacts #main-content .SaveButton.btn-primary {
   background-color: #1abc9c;
   border: 1px solid #1abc9c;
 }
-.disp_threads #main-content .evo_form__thread .SaveButton.btn-info {
+.disp_threads #main-content .SaveButton.btn-info,
+.disp_messages #main-content .SaveButton.btn-info,
+.disp_contacts #main-content .SaveButton.btn-info {
   background-color: #777777;
   border-color: #777777;
 }
-.disp_threads #main-content .evo_form__thread .SaveButton:focus,
-.disp_threads #main-content .evo_form__thread .SaveButton:active {
+.disp_threads #main-content .SaveButton:focus,
+.disp_messages #main-content .SaveButton:focus,
+.disp_contacts #main-content .SaveButton:focus,
+.disp_threads #main-content .SaveButton:active,
+.disp_messages #main-content .SaveButton:active,
+.disp_contacts #main-content .SaveButton:active {
   outline: none;
 }
-.disp_messages #main-content {
-  background-color: #ffffff;
-  padding: 30px;
+.filters input {
+  font-size: 1.4rem;
+}
+.filters button.btn:focus,
+.filters button.btn:hover,
+.filters button.btn:active {
+  outline: none;
+}
+.filters .btn-info {
+  background-color: #1abc9c;
+  border-color: #1abc9c;
+}
+.filters .btn-info:hover {
+  background-color: #555555;
+  border-color: #555555;
 }
 .disp_messages #main-content .messages_navigation {
+  font-size: 1.4rem;
   margin-bottom: 2rem;
   border: 1px solid #eeeeee;
   padding: 10px 15px;
+}
+.disp_messages #main-content .evo_private_messages_list > h2 {
+  font-size: 2.6rem;
+  margin-bottom: 20px;
+}
+.disp_messages #main-content .panel {
+  border-radius: 0;
+  border-color: #dddddd;
+}
+.disp_messages #main-content .panel .panel-heading img {
+  border-radius: 100%;
+}
+.disp_messages #main-content .panel .panel-body label {
+  font-family: "Montserrat", sans-serif;
+  color: #555555;
+}
+.disp_messages #main-content .panel .panel-body input,
+.disp_messages #main-content .panel .panel-body textarea {
+  border-radius: 2px;
+  box-shadow: none;
+}
+.disp_messages #main-content .panel .panel-body input:focus,
+.disp_messages #main-content .panel .panel-body textarea:focus,
+.disp_messages #main-content .panel .panel-body input:active,
+.disp_messages #main-content .panel .panel-body textarea:active {
+  border-color: #1abc9c;
+}
+.disp_messages #main-content .avatar_rounded {
+  background-color: transparent;
+  border: 0;
+  width: 70px;
+}
+.disp_messages #main-content .messages_list_actions {
+  margin-bottom: 20px;
+}
+.disp_messages #main-content .messages_list_actions a:hover,
+.disp_messages #main-content .messages_list_actions a:active,
+.disp_messages #main-content .messages_list_actions a:focus {
+  color: #ffffff;
+  background-color: #1abc9c;
+  border-color: #1abc9c;
+}
+.disp_contacts .form_send_contacts {
+  margin-top: 20px;
+}
+.disp_contacts .form_send_contacts .btn-default:hover,
+.disp_contacts .form_send_contacts .btn-default:active,
+.disp_contacts .form_send_contacts .btn-default:focus {
+  color: #ffffff;
+  background-color: #1abc9c;
+  border-color: #1abc9c;
+}
+.disp_contacts input.SaveButton {
+  padding: 5px 10px !important;
 }
 .disp_posts #content .evo_featured_post {
   background-color: #ffffff;
