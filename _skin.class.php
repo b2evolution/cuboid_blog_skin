@@ -64,6 +64,10 @@ class cuboid_blog_Skin extends Skin
 	 */
 	function get_param_definitions( $params )
 	{
+
+      // Load to use function get_available_thumb_sizes()
+      load_funcs( 'files/model/_image.funcs.php' );
+
 		$r = array_merge( array(
             'general_settings_start' => array(
                'layout' => 'begin_fieldset',
@@ -91,7 +95,22 @@ class cuboid_blog_Skin extends Skin
                   'type'         => 'integer',
                   'allow_empty'  => true,
                ),
-
+               'color_schemes' => array(
+                  'label'        => T_('Color Schemes'),
+                  'note'         => T_('Default value is #1ABC9C'),
+                  'defaultvalue' => '#1ABC9C',
+                  'type'         => 'color',
+               ),
+               'background_type' => array(
+                  'label'    => T_('Site Background Style'),
+                  'note'     => '',
+                  'type'     => 'radio',
+                  'options'  => array(
+                     array( 'color', T_('Background Color') ),
+                     array( 'images', T_('Image Pattern') ),
+                  ),
+                  'defaultvalue' => 'images',
+               ),
                'bg_image' => array(
                   'label'    => T_('Background Image Pattern'),
                   'note'     => T_('Choose your favorite background image pattern'),
@@ -108,8 +127,8 @@ class cuboid_blog_Skin extends Skin
                ),
                'site_background_color' => array(
                   'label'        => T_('Site background color'),
-                  'note'         => T_('Default value is #333333'),
-                  'defaultvalue' => '#333333',
+                  'note'         => T_('Default value is #F5F7F9'),
+                  'defaultvalue' => '#F5F7F9',
                   'type'         => 'color',
                ),
                'site_title_color' => array(
@@ -170,6 +189,14 @@ class cuboid_blog_Skin extends Skin
                   'defaultvalue' => '#FFFFFF',
                   'type'         => 'color',
                ),
+
+               // Back To Top
+               'bt_top' => array(
+                  'label'        => T_('Display Button Back To Top'),
+                  'note'         => T_('Check to enable button back to top.'),
+                  'defaultvalue' => 1,
+                  'type'         => 'checkbox',
+               ),
             'general_settings_end' => array(
                'layout' => 'end_fieldset',
             ),
@@ -184,12 +211,6 @@ class cuboid_blog_Skin extends Skin
                   'label'        => T_('Header Background Color'),
                   'note'         => T_('Default value is #262626'),
                   'defaultvalue' => '#262626',
-                  'type'         => 'color',
-               ),
-               'head_tagline_bg_color' => array(
-                  'label'        => T_('Header Tagline Background Color'),
-                  'note'         => T_('Default value is #333333'),
-                  'defaultvalue' => '#333333',
                   'type'         => 'color',
                ),
             'header_settings_end' => array(
@@ -273,11 +294,23 @@ class cuboid_blog_Skin extends Skin
                'layout' => 'begin_fieldset',
                'label'  => T_('Footer settings')
             ),
+               'footer_bg_color' => array(
+                  'label'        => T_('Footer Main Background Color'),
+                  'note'         => T_('Default value is #262626'),
+                  'defaultvalue' => '#262626',
+                  'type'         => 'color',
+               ),
                'footer_widget' => array(
                   'label'        => T_('Display Footer Widget'),
                   'note'         => T_('Check to enable footer widget.'),
                   'defaultvalue' => 1,
                   'type'         => 'checkbox',
+               ),
+               'footer_border_color' => array(
+                  'label'        => T_('Footer Border Color'),
+                  'note'         => T_('Default value is #3c3c3c'),
+                  'defaultvalue' => '#3c3c3c',
+                  'type'         => 'color',
                ),
                'footer_user_link' => array(
                   'label'        => T_('Display Footer User Links'),
@@ -291,17 +324,75 @@ class cuboid_blog_Skin extends Skin
                   'defaultvalue' => 1,
                   'type'         => 'checkbox',
                ),
-               // 'footer_bg_color' => array(
-               //    'label'        => T_('Footer Background Color'),
-               //    'note'         => T_('Default value is #262626'),
-               //    'defaultvalue' => '#262626',
-               //    'type'         => 'color',
-               // ),
+               'footer_sm_bgcolor' => array(
+                  'label'        => T_('Social Media Background Color'),
+                  'note'         => T_('Default value is #212121'),
+                  'defaultvalue' => '#212121',
+                  'type'         => 'color',
+               ),
             'footer_settings_end' => array(
                'layout' => 'end_fieldset',
             ),
             // End Footer Settings
 
+            /**
+             * ============================================================================
+             * Mediaidx Posts
+             * ============================================================================
+             */
+            'section_media_start' => array(
+               'layout'   => 'begin_fieldset',
+               'label'    => T_( 'Media Posts' )
+            ),
+               // Single Layout
+               'mediaidx_layout' => array(
+                  'label'        => T_('Media Posts Layout'),
+                  'note'         => '',
+                  'defaultvalue' => 'single_column',
+                  'type'         => 'select',
+                  'options'      => array(
+                     'single_column'              => T_('Single Column Large'),
+                     'single_column_normal'       => T_('Single Column'),
+                     'single_column_narrow'       => T_('Single Column Narrow'),
+                     'single_column_extra_narrow' => T_('Single Column Extra Narrow'),
+                     'left_sidebar'               => T_('Left Sidebar'),
+                     'right_sidebar'              => T_('Right Sidebar'),
+                  ),
+               ),
+               'mediaidx_thumb_size' => array(
+                  'label'        => T_('Thumbnail size for media index'),
+                  'note'         => '',
+                  'defaultvalue' => 'crop-480x320',
+                  'options'      => get_available_thumb_sizes(),
+                  'type'         => 'select',
+               ),
+               'mediaidx_grid' => array(
+						'label'          => T_('Column'),
+						'note'           => '',
+						'defaultvalue'   => 'three_column',
+                  'type'           => 'select',
+						'options'        => array(
+                        'one_column'     => T_('1 Column'),
+								'two_column'     => T_('2 Column'),
+								'three_column'   => T_('3 Column'),
+							),
+					),
+               'padding_column' => array(
+                  'label'          => T_('Padding Image Column'),
+                  'note'           => T_('px ( default padding 15px )'),
+                  'defaultvalue'   => '15',
+                  'type'           => 'integer',
+                  'allow_empty'    => true,
+               ),
+            'section_media_end'   => array(
+               'layout'   => 'end_fieldset',
+            ),
+
+            /**
+             * ============================================================================
+             * Colorbox Image Zoom
+             * ============================================================================
+             */
 				'section_colorbox_start' => array(
 					'layout' => 'begin_fieldset',
 					'label'  => T_('Colorbox Image Zoom')
@@ -379,7 +470,6 @@ class cuboid_blog_Skin extends Skin
 					'layout' => 'end_fieldset',
 				),
 
-
 				'section_access_start' => array(
 					'layout' => 'begin_fieldset',
 					'label'  => T_('When access is denied or requires login...')
@@ -413,7 +503,7 @@ class cuboid_blog_Skin extends Skin
 	 */
 	function display_init()
 	{
-		global $Messages, $debug;
+		global $Messages, $debug, $disp;
 
 		// Request some common features that the parent function (Skin::display_init()) knows how to provide:
 		parent::display_init( array(
@@ -427,6 +517,25 @@ class cuboid_blog_Skin extends Skin
 			'bootstrap_init_tooltips', // Inline JS to init Bootstrap tooltips (E.g. on comment form for allowed file extensions)
 			'disp_auto',               // Automatically include additional CSS and/or JS required by certain disps (replace with 'disp_off' to disable this)
 		) );
+
+      // Include Masonry Grind for MediaIdx
+      if ( $disp == 'mediaidx' ) {
+         require_js( $this->get_url() . 'assets/js/masonry.pkgd.min.js' );
+         require_js( $this->get_url() . 'assets/js/imagesloaded.pkgd.min.js' );
+         add_js_headline("
+				jQuery( document ).ready( function($) {
+               $('.evo_image_index').imagesLoaded().done( function( instance ) {
+                  $('.evo_image_index').masonry({
+                   // options
+                    itemSelector: '.grid-item',
+                 });
+               });
+
+				});
+			");
+      }
+
+      require_js( $this->get_url().'assets/js/script.js' );
 
 		// Skin specific initializations:
 
@@ -448,30 +557,35 @@ class cuboid_blog_Skin extends Skin
        * ============================================================================
        */
       $bg_image = $this->get_setting( 'bg_image' );
-      switch( $bg_image ) {
+      switch( $this->get_setting( 'background_type' ) == 'images' && $bg_image ) {
          case 'bg_1': // When regular layout is chosen, nothing happens, since regular is default
-            $custom_css = 'body { background-image: url("assets/images/bg-1.png") }\n';
+            $custom_css .= 'body { background-image: url("assets/images/bg-1.png") }\n';
          break;
 
          case 'bg_2':
-            $custom_css = 'body { background-image: url("assets/images/bg-2.png") }\n';
+            $custom_css .= 'body { background-image: url("assets/images/bg-2.png") }\n';
          break;
 
          case 'bg_3':
-            $custom_css = 'body { background-image: url("assets/images/bg-3.png") }\n';
+            $custom_css .= 'body { background-image: url("assets/images/bg-3.png") }\n';
          break;
 
          case 'bg_4':
-            $custom_css = 'body { background-image: url("assets/images/bg-4.png") }\n';
+            $custom_css .= 'body { background-image: url("assets/images/bg-4.png") }\n';
          break;
 
          case 'bg_5':
-            $custom_css = 'body { background-image: url("assets/images/bg-5.png") }\n';
+            $custom_css .= 'body { background-image: url("assets/images/bg-5.png") }\n';
          break;
 
          case 'bg_6':
-            $custom_css = 'body { background-image: url("assets/images/bg-6.png") }\n';
+            $custom_css .= 'body { background-image: url("assets/images/bg-6.png") }\n';
          break;
+      }
+
+      if ( $this->get_setting( 'background_type' ) == 'color' ) {
+         $color = $this->get_setting( 'site_background_color' );
+            $custom_css .= 'body {background-color: '.$color.';}';
       }
 
       /**
@@ -546,15 +660,33 @@ class cuboid_blog_Skin extends Skin
          $custom_css .= '#content .evo_content_block .small.text-muted { color: '.$color." }\n";
       }
 
-
       /**
        * ============================================================================
        * Footer Settings Output
        * ============================================================================
        */
-		// if( $color = $this->get_setting( 'footer_bg_color' ) ) {
-		// 	$custom_css .= 'body #main-footer { background-color: '.$color." }\n";
-		// }
+		if ( $bg_color = $this->get_setting( 'footer_bg_color' ) ) {
+			$custom_css .= 'body #main-footer { background-color: '.$bg_color." }\n";
+		}
+
+      if ( $bg_color = $this->get_setting( 'footer_sm_bgcolor' ) ) {
+         $custom_css .= '#main-footer .footer_social_media{ background-color: '.$bg_color.'; }';
+      }
+
+      if ( $border_color = $this->get_setting( 'footer_border_color' ) ) {
+         $custom_css .= '#main-footer .main_widget ul li, #main-footer .main_widget ul > ul > li:last-child { border-color: '.$border_color.'; }';
+         $custom_css .= '#main-footer .footer_social_media, #main-footer .copyright { border-top-color: '.$border_color.'; }';
+      }
+
+      /**
+       * ============================================================================
+       * Mediaidx Custom Style
+       * ============================================================================
+       */
+      if ( $padding = $this->get_setting( 'padding_column' ) ) {
+         $custom_css .= '.disp_mediaidx #main-content .evo_image_index .grid-item { padding: '.$padding.'px; }';
+         $custom_css .= '.disp_mediaidx #main-content .evo_image_index { margin-left: -'.$padding.'px; margin-right: -'.$padding.'px; }';
+      }
 
       /**
        * ============================================================================

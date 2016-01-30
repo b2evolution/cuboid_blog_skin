@@ -1,13 +1,10 @@
 # Cuboid Skin b2evolution CMS Blog v6
 
-Cuboid Skin Blog b2evolution V6
+**Cuboid** is a Personal Blogging skin tailored to be exceptional on B2evolution CMS. Not only its modern design is pleasing to the eyes, it packs in robust yet easy-to-use backend system all managed through skin options on b2evolution. Perfect choice for your personal blog, niche blog, corporate blog, marketing blog, authority blog or any type of creative blog or simple magazine.
 
-## Some tips:
+Get Cuboid today and impress your readers!
 
-- Create a 720x570 pixels `skinshot.png` file for use within b2evolution to visually identify your skin.
-- Add some `skinshot_disp.jpg` images to demo the different "disps" of your skin(change the `_disp` part. See included `skinshot_posts.jpg` for example.
-- You can also add additional images by numbering them, e-g: `skinshot_single_02.jpg`
-- When you publish your skin, update this readme.md file (it uses Markdown syntax), remove the instructions and include your skinshots like this:
+====
 
 ### Front Page
 
@@ -20,3 +17,43 @@ Cuboid Skin Blog b2evolution V6
 ### Single Post Page
 
 ![disp=single](skinshot_single.jpg)
+
+====
+
+### Some of the Features:
+
+- Fully Responsive Design
+- Unlimited Color Schemes
+- Unlimited Background Color
+- 5 Background Pattern
+- Styling All Disp Skin
+- Use Animation CSS
+- Responsive Mobile Menu
+- Full Width Elements
+- Unlimited Sidebars Layout
+- Full Post, Sidebar, and Grid
+- Photo Index Style Grid
+- One Column
+- Right Sidebar
+- Left Sidebar
+- Footer Widget
+- Social Icon
+- Back to top button
+- Crossbrowser Compatible
+- Free Updates and new features.
+- Long-term Support
+
+====
+
+### Need Assistance? Get In Touch!
+
+If you ever get stuck with setting up Business with your B2evolution installation, you can get in touch with our friendly and dedicated support via our [Support Forum](http://forums.b2evolution.net/).
+
+===
+
+### Changes & Updates
+
+```
+Version 0.1
+– Initial Version – 01 February, 2016
+```

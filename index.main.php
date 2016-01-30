@@ -39,6 +39,8 @@ skin_include( '_body_header.inc.php' );
 $column = 'layout';
 if ( $disp == 'page' ) {
    $column = 'single_layout';
+} else if ( $disp == 'mediaidx' ) {
+   $column = 'mediaidx_layout';
 }
 
 ?>

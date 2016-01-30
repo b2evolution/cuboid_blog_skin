@@ -5,6 +5,8 @@ global $disp;
 $disp_status = 'layout';
 if ( $disp == 'single' || $disp == 'page' ) {
    $disp_status = 'single_layout';
+} else if ( $disp == 'mediaidx' ) {
+   $disp_status = 'mediaidx_layout';
 }
 
 

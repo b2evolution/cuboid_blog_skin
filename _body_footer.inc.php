@@ -118,6 +118,10 @@ if( !defined('EVO_MAIN_INIT') ) die( 'Please, do not access this page directly.'
 
 </footer><!-- #main-footer -->
 
+<?php if ($Skin->get_setting( 'bt_top' ) == 1 ) { ?>
+<a href="#0" class="bt-top"><i class="fa fa-angle-up"></i></a>
+<?php } ?>
+
 
 <?php
 // ---------------------------- SITE FOOTER INCLUDED HERE ----------------------------

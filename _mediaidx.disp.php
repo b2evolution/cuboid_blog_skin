@@ -15,7 +15,7 @@
  */
 if( !defined('EVO_MAIN_INIT') ) die( 'Please, do not access this page directly.' );
 
-global $thumbnail_sizes;
+global $Skins;
 
 if( empty( $params ) )
 { // Initialize array with params
@@ -27,11 +27,13 @@ $params = array_merge( array(
 	'mediaidx_thumb_size' => 'crop-480x320'
 ), $params );
 
-$photocell_styles = '';
-if( isset( $thumbnail_sizes[ $params['mediaidx_thumb_size'] ] ) )
-{
-	$photocell_styles = ' style="width:'.$thumbnail_sizes[ $params['mediaidx_thumb_size'] ][1].'px;'
-		.'height:'.$thumbnail_sizes[ $params['mediaidx_thumb_size'] ][2].'px"';
+$thumb_size_mediaidx = $Skin->get_setting( 'mediaidx_thumb_size' );
+
+$column = '';
+if ( $Skin->get_setting( 'mediaidx_grid' ) == 'one_column' ) {
+   $column = 'one_column';
+} else if ( $Skin->get_setting( 'mediaidx_grid' ) == 'two_column' ) {
+   $column = 'two_column';
 }
 
 // --------------------------------- START OF MEDIA INDEX --------------------------------
@@ -42,11 +44,11 @@ skin_widget( array(
 	'block_start'         => '<div class="evo_widget $wi_class$">',
 	'block_end'           => '</div>',
 	'block_display_title' => false,
-	'thumb_size'          => $params['mediaidx_thumb_size'],
+	'thumb_size'          => $thumb_size_mediaidx,
 	'thumb_layout'        => 'list',
 	'list_start'          => '<ul class="evo_image_index clearfix row-height">',
 	'list_end'            => '</ul>',
-   'item_start'          => '<li class="col-sm-6 col-md-4"><div class="item">',
+   'item_start'          => '<li class="grid-item '.$column.'"><div class="item">',
    'item_end'            => '</div></li>',
    'disp_image_title'    => true,
 
