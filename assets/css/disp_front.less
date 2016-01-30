@@ -103,6 +103,10 @@
          .ufld_icon_links {
             a {
                background-color: @ca9;
+
+               &:hover, &:active, &:focus {
+                  color: @w;
+               }
             }
          }
       }
@@ -147,6 +151,12 @@
          .tag_cloud {
             display: inline-block;
             margin-bottom: 0;
+
+            a {
+               &:hover {
+                  color: @w;
+               }
+            }
          }
       }
 
@@ -170,9 +180,33 @@
                width: 50%;
                float: left;
             }
+
+            &:nth-child( 3n+1 ) {
+               clear: both;
+            }
+
+         }
+
+         .ufld_icon_links {
+            a {
+               &:hover {
+                  color: @w;
+               }
+            }
          }
       }
 
+      // Polling
+      // ======================================================================== /
+      .widget_core_poll {
+         .btn-default.active, .btn-default.focus, .btn-default:active,
+         .btn-default:focus, .btn-default:hover, .open>.dropdown-toggle.btn-default {
+            color: @w;
+            background-color: @primary;
+            border-color: @primary;
+            outline: 0;
+         }
+      }
 
    }
    // End .evo_container__front_page_primary

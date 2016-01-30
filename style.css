@@ -271,6 +271,7 @@ img {
   border-bottom: 0;
 }
 #main-content .evo_content_block {
+  background-color: #ffffff;
   margin-bottom: 3rem;
 }
 @media screen and (max-width: 600px) {
@@ -304,6 +305,11 @@ img {
   #main-content .evo_post_title h3 {
     font-size: 2.6rem;
   }
+}
+#main-content .evo_post_title h1 a,
+#main-content .evo_post_title h2 a,
+#main-content .evo_post_title h3 a {
+  color: #555555;
 }
 #main-content .evo_post_title h1 a:hover,
 #main-content .evo_post_title h2 a:hover,
@@ -804,6 +810,8 @@ img {
   padding: 4px 8px;
   background: #F1F1F1;
   color: #AAAAAA;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
 }
 #main-content .post_tags a,
 #main-content .post_tags a::before {
@@ -1107,6 +1115,7 @@ img {
 .pagination li span {
   padding: 1rem 1.8rem;
   float: none;
+  color: #ffffff;
   -webkit-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
   box-shadow: 1px 2px 4px rgba(35, 35, 35, 0.12);
@@ -1577,6 +1586,10 @@ img {
     margin-right: -2rem;
   }
 }
+.disp_posts #content .evo_featured_post .evo_post__full .evo_image_block {
+  margin-right: auto;
+  margin-left: auto;
+}
 .disp_posts #content .evo_post .evo_post_images {
   display: block;
   margin-bottom: 2rem;
@@ -1876,6 +1889,11 @@ img {
 .disp_front #main-content .widget_core_user_links .ufld_icon_links a {
   background-color: #a9a9a9;
 }
+.disp_front #main-content .widget_core_user_links .ufld_icon_links a:hover,
+.disp_front #main-content .widget_core_user_links .ufld_icon_links a:active,
+.disp_front #main-content .widget_core_user_links .ufld_icon_links a:focus {
+  color: #ffffff;
+}
 .disp_front #main-content .widget_core_profile_menu_link img {
   border-radius: 100%;
   margin-right: 5px;
@@ -1904,6 +1922,9 @@ img {
   display: inline-block;
   margin-bottom: 0;
 }
+.disp_front #main-content .widget_core_coll_tag_cloud .tag_cloud a:hover {
+  color: #ffffff;
+}
 .disp_front #main-content .widget_core_coll_logo .title_widget,
 .disp_front #main-content .widget_core_coll_title .title_widget {
   margin-bottom: 0;
@@ -1917,6 +1938,23 @@ img {
     width: 50%;
     float: left;
   }
+}
+.disp_front #main-content .widget_core_org_members .col-lg-4:nth-child( 3n+1 ) {
+  clear: both;
+}
+.disp_front #main-content .widget_core_org_members .ufld_icon_links a:hover {
+  color: #ffffff;
+}
+.disp_front #main-content .widget_core_poll .btn-default.active,
+.disp_front #main-content .widget_core_poll .btn-default.focus,
+.disp_front #main-content .widget_core_poll .btn-default:active,
+.disp_front #main-content .widget_core_poll .btn-default:focus,
+.disp_front #main-content .widget_core_poll .btn-default:hover,
+.disp_front #main-content .widget_core_poll .open > .dropdown-toggle.btn-default {
+  color: #ffffff;
+  background-color: #1abc9c;
+  border-color: #1abc9c;
+  outline: 0;
 }
 .disp_mediaidx #main-content .title_head_post {
   margin-bottom: 30px;
@@ -2147,6 +2185,9 @@ img {
 #main-sidebar .widget_core_colls_list_public a,
 #main-sidebar .widget_core_colls_list_owner a {
   font-weight: 400;
+}
+#main-sidebar .widget_core_coll_tag_cloud .tag_cloud a:hover {
+  color: #ffffff;
 }
 #main-sidebar .widget_core_coll_title .panel-title::after,
 #main-sidebar .widget_core_coll_logo .panel-title::after {
@@ -2924,7 +2965,7 @@ textarea.message_text {
   right: 30px;
   width: 40px;
   height: 40px;
-  line-height: 40px;
+  line-height: 36px;
   text-align: center;
   color: #ffffff !important;
   background-color: #262626;

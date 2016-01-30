@@ -46,6 +46,7 @@
    // Content Block Styling
    // ======================================================================== /
    .evo_content_block{
+      background-color: @w;
       margin-bottom: 3rem;
 
       @media screen and ( max-width: @MX ) {
@@ -82,6 +83,8 @@
          }
 
          a{
+            color: @c5;
+
             &:hover{
                text-decoration: none;
             }
@@ -503,6 +506,7 @@
          padding: 4px 8px;
          background: #F1F1F1;
          color: #AAAAAA;
+         transition: all 0.2s ease;
 
          &, &::before{
             -webkit-transition: all 0.3s ease;
@@ -831,6 +835,7 @@
       a, span{
          padding: 1rem 1.8rem;
          float: none;
+         color: @w;
          transition: all 0.2s ease-in-out;
          box-shadow: @box-shadow;
          background-color: @c3;
