@@ -1,8 +1,8 @@
 # Cuboid Skin b2evolution CMS Blog v6
 
-**Cuboid** is a Personal Blogging skin tailored to be exceptional on B2evolution CMS. Not only its modern design is pleasing to the eyes, it packs in robust yet easy-to-use backend system all managed through skin options on b2evolution. Perfect choice for your personal blog, niche blog, corporate blog, marketing blog, authority blog or any type of creative blog or simple magazine.
+**Cuboid** is a personal blogging skin tailored to be exceptional on B2evolution CMS. Not only its modern design is pleasing to the eyes, it packs in robust yet easy-to-use backend system all managed through skin options on b2evolution. Perfect choice for your personal blog, niche blog, corporate blog, marketing blog, authority blog or any type of creative blog or simple magazine.
 
-Get Cuboid today and impress your readers!
+*Get Cuboid today and impress your readers!*
 
 ====
 
@@ -47,7 +47,7 @@ Get Cuboid today and impress your readers!
 
 ### Need Assistance? Get In Touch!
 
-If you ever get stuck with setting up Business with your B2evolution installation, you can get in touch with our friendly and dedicated support via our [Support Forum](http://forums.b2evolution.net/).
+If you ever get stuck with setting up Cuboid with your B2evolution installation, you can get in touch with our friendly and dedicated support via our [Support Forum](http://forums.b2evolution.net/).
 
 ===
 
@@ -55,5 +55,5 @@ If you ever get stuck with setting up Business with your B2evolution installatio
 
 ```
 Version 0.1
-– Initial Version – 01 February, 2016
+– Initial Version – February, 2016
 ```
