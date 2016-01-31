@@ -266,6 +266,14 @@
    opacity: 0;
    transition: all 0.32s ease-in-out;
 
+   @media screen and ( max-width: @S ) {
+      width: 35px;
+      height: 35px;
+      line-height: 30px;
+      right: 15px;
+      bottom: 15px;
+   }
+
    &:hover, &:focus, &:active {
       background-color: @primary;
       border-color: @primary;

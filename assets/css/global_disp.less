@@ -28,6 +28,7 @@
 
    #main-content {
       padding: 3rem;
+      margin-bottom: 30px;
       background-color: @w;
       box-shadow: @box-shadow;
 
@@ -126,7 +127,7 @@
          &:hover {
 
             .search_result_score {
-               color: @w;
+               color: @w !important;
                transition: all 0.6s ease-in-out;
                box-shadow: @box-shadow;
 
@@ -323,6 +324,10 @@
             .shrinkwrap {
                font-family: @font_heading;
                color: @c5;
+
+               img {
+                  border-radius: 100%;
+               }
             }
 
          }

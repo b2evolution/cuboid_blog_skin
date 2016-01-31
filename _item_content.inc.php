@@ -81,7 +81,7 @@ $params = array_merge( array(
 		'after_url_link'           => '</p>',
 		'url_link_text_template'   => '$url$', // If evaluates to empty, nothing will be displayed (except player if podcast)
 		'url_link_url_template'    => '$url$', // $url$ will be replaced with saved URL address
-		'url_link_target'          => '', // Link target attribute e.g. '_blank'
+		'url_link_target'          => '_blank', // Link target attribute e.g. '_blank'
 
 		'parent_link_before'       => '<p class="evo_post_parent">'.T_('Parent').': ',
 		'parent_link_after'        => '</p>',
@@ -90,7 +90,7 @@ $params = array_merge( array(
 		'before_more_link'         => '<p class="evo_post_more_link">',
 		'after_more_link'          => '</p>',
 		'more_link_text'           => T_('Read More ').'<i class="fa fa-long-arrow-right"></i>',
-		'more_link_to'             => 'single#anchor', // Can be 'single' or 'single#anchor' which is permalink + "#more55" where 55 is item ID
+		'more_link_to'             => 'single', // Can be 'single' or 'single#anchor' which is permalink + "#more55" where 55 is item ID
 		'anchor_text'              => '<p class="evo_post_more_anchor">...</p>', // Text to display as the more anchor (once the more link has been clicked, '#' defaults to "Follow up:")
 
 		'limit_attach'             => 1000,
