@@ -5,18 +5,13 @@
 *Get Cuboid today and impress your readers!*
 
 ====
-
-### Front Page
-
-![disp=front](skinshot_front.jpg)
-
 ### Posts Page
 
-![disp=posts](skinshot_posts.jpg)
+![disp=posts](skinshot_posts.png)
 
 ### Single Post Page
 
-![disp=single](skinshot_single.jpg)
+![disp=single](skinshot_single.png)
 
 ====
 
