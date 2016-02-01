@@ -23,17 +23,29 @@ if( !defined('EVO_MAIN_INIT') ) die( 'Please, do not access this page directly.'
       			// Display container and contents:
       			skin_container( NT_("Footer"), array(
    					// The following params will be used as defaults for widgets included in this container:
-   					'block_start'           => '<div class="evo_widget $wi_class$ col-xs-12 col-sm-6 col-md-3 clearfix">',
-   					'block_end'             => '</div>',
+   					'block_start'          => '<div class="evo_widget $wi_class$ col-xs-12 col-sm-6 col-md-3 clearfix">',
+   					'block_end'            => '</div>',
                   // This will enclose the title of each widget:
-                  'block_title_start'     => '<h3 class="title_widget">',
-                  'block_title_end'       => '</h3>',
-
+                  'block_title_start'    => '<h3 class="title_widget">',
+                  'block_title_end'      => '</h3>',
+                  // If a widget displays a list, this will enclose that list:
+                  'list_start'           => '<ul>',
+                  'list_end'             => '</ul>',
+                  // This will enclose each item in a list:
+                  'item_start'           => '<li>',
+                  'item_end'             => '</li>',
+                  // This will enclose sub-lists in a list:
+                  'group_start'          => '<ul>',
+                  'group_end'            => '</ul>',
+                  // This will enclose (foot)notes:
+                  'notes_start'          => '<div class="notes">',
+                  'notes_end'            => '</div>',
                   // Search
-                  'search_input_before'   => '<div class="input-group">',
-                  'search_input_after'    => '',
-                  'search_submit_before'  => '<span class="input-group-btn">',
-                  'search_submit_after'   => '</span></div>',
+                  'search_class'         => 'compact_search_form',
+                  'search_input_before'  => '<div class="input-group">',
+                  'search_input_after'   => '',
+                  'search_submit_before' => '<span class="input-group-btn">',
+                  'search_submit_after'  => '</span></div>',
    				) );
       			// Note: Double quotes have been used around "Footer" only for test purposes.
       		?>

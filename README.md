@@ -1,6 +1,6 @@
 # Cuboid Skin b2evolution CMS Blog v6
 
-**Cuboid** is a personal blogging skin tailored to be exceptional on B2evolution CMS. Not only its modern design is pleasing to the eyes, it packs in robust yet easy-to-use backend system all managed through skin options on b2evolution. Perfect choice for your personal blog, niche blog, corporate blog, marketing blog, authority blog or any type of creative blog or simple magazine.
+**Cuboid** is a clean, unique and minimal content focus Blogging Skin perfect for bloggers. It is responsive means it will fit in various device of different size. It packs in robust yet easy-to-use backend system all managed through skin options on b2evolution. Perfect choice for your personal blog, niche blog, corporate blog, marketing blog, authority blog or any type of creative blog or simple magazine.
 
 *Get Cuboid today and impress your readers!*
 
@@ -22,26 +22,28 @@
 
 ### Some of the Features:
 
-- Fully Responsive Design
+- 100% Responsive Design
 - Unlimited Color Schemes
 - Unlimited Background Color
 - 5 Background Pattern
 - Styling All Disp Skin
-- Use Animation CSS
 - Responsive Mobile Menu
 - Full Width Elements
 - Unlimited Sidebars Layout
 - Full Post, Sidebar, and Grid
-- Photo Index Style Grid
 - One Column
 - Right Sidebar
 - Left Sidebar
+- Photo Index Style Grid
+- Masonry gallery with fullscreen popup
+- Use Animation CSS
 - Footer Widget
 - Social Icon
 - Back to top button
 - Crossbrowser Compatible
 - Free Updates and new features.
 - Long-term Support
+- And many more!
 
 ====
 

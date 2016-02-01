@@ -466,7 +466,6 @@ class cuboid_blog_Skin extends Skin
                     itemSelector: '.grid-item',
                  });
                });
-
 				});
 			");
       }
@@ -574,30 +573,32 @@ class cuboid_blog_Skin extends Skin
 
       // Site Background
       $bg_image = $this->get_setting( 'bg_image' );
-      switch( $this->get_setting( 'background_type' ) == 'images' && $bg_image ) {
-         case 'bg_1': // When regular layout is chosen, nothing happens, since regular is default
-            $custom_css .= 'body { background-image: url("assets/images/bg-1.png"); }';
-         break;
+      if ( $this->get_setting( 'background_type' ) == 'images' && $bg_image ) {
+         switch( $bg_image ) {
+            case 'bg_1': // When regular layout is chosen, nothing happens, since regular is default
+               $custom_css .= 'body { background-image: url("assets/images/bg-1.png"); }';
+            break;
 
-         case 'bg_2':
-            $custom_css .= 'body { background-image: url("assets/images/bg-2.png"); }';
-         break;
+            case 'bg_2':
+               $custom_css .= 'body { background-image: url("assets/images/bg-2.png"); }';
+            break;
 
-         case 'bg_3':
-            $custom_css .= 'body { background-image: url("assets/images/bg-3.png"); }';
-         break;
+            case 'bg_3':
+               $custom_css .= 'body { background-image: url("assets/images/bg-3.png"); }';
+            break;
 
-         case 'bg_4':
-            $custom_css .= 'body { background-image: url("assets/images/bg-4.png"); }';
-         break;
+            case 'bg_4':
+               $custom_css .= 'body { background-image: url("assets/images/bg-4.png"); }';
+            break;
 
-         case 'bg_5':
-            $custom_css .= 'body { background-image: url("assets/images/bg-5.png"); }';
-         break;
+            case 'bg_5':
+               $custom_css .= 'body { background-image: url("assets/images/bg-5.png"); }';
+            break;
 
-         case 'bg_6':
-            $custom_css .= 'body { background-image: url("assets/images/bg-6.png"); }';
-         break;
+            case 'bg_6':
+               $custom_css .= 'body { background-image: url("assets/images/bg-6.png"); }';
+            break;
+         }
       }
 
       if ( $this->get_setting( 'background_type' ) == 'color' ) {
@@ -632,7 +633,9 @@ class cuboid_blog_Skin extends Skin
 
       if ( $border_color = $this->get_setting( 'footer_border_color' ) ) {
          $custom_css .= '#main-footer .main_widget ul li, #main-footer .main_widget ul > ul > li:last-child { border-color: '.$border_color.'; }';
-         $custom_css .= '#main-footer .footer_social_media, #main-footer .copyright { border-top-color: '.$border_color.'; }';
+         $custom_css .= '#main-footer .footer_social_media, #main-footer .copyright,
+         #main-footer .main_widget .widget_core_coll_xml_feeds .notes
+         { border-top-color: '.$border_color.'; }';
       }
 
       if ( $bg_color = $this->get_setting( 'footer_tags_bg' ) ) {

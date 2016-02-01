@@ -3,74 +3,6 @@
 
    #main-content {
 
-      // Cover Image
-      // ======================================================================== /
-      .cover_image {
-         margin-top: -2.5rem;
-         margin-left: -3rem;
-         margin-right: -3rem;
-         margin-bottom: 2rem;
-
-         @media screen and ( max-width: @MX ) {
-            margin-top: -1.5rem;
-            margin-left: -2rem;
-            margin-right: -2rem;
-            margin-bottom: 1.5rem;
-         }
-
-         .evo_image_block {
-            margin: 0;
-
-            img {
-               width: 100%;
-            }
-         }
-
-      }
-
-      // Iframer size If layout use single column
-      // ======================================================================== /
-      .col-md-12 .videoblock {
-         iframe {
-            min-width: 80%;
-            margin: 0 auto;
-            height: 420px;
-
-            @media screen and ( max-width: @S ) {
-               height: 260px;
-            }
-
-            @media screen and ( max-width: @XS ) {
-               height: 176px;
-            }
-         }
-      }
-
-      // Evo Post
-      // ======================================================================== /
-      .evo_post,
-      .evo_featured_post {
-         @media screen and ( max-width: @MX ) {
-            padding: 1.5rem 2rem 1rem;
-            margin-right: -15px;
-            margin-left: -15px;
-         }
-      }
-
-
-      .evo_post {
-
-         // Evo Post Title
-         // ======================================================================== /
-         .evo_post_title {
-            h1 {
-               margin-top: 5px;
-               margin-bottom: 0;
-            }
-         }
-
-      }
-
       // Pagination
       // ======================================================================== /
       .pager {
@@ -141,6 +73,74 @@
                &::before {
                   left: 0;
                }
+            }
+         }
+
+      }
+
+      // Cover Image
+      // ======================================================================== /
+      .cover_image {
+         margin-top: -2.5rem;
+         margin-left: -3rem;
+         margin-right: -3rem;
+         margin-bottom: 2rem;
+
+         @media screen and ( max-width: @MX ) {
+            margin-top: -1.5rem;
+            margin-left: -2rem;
+            margin-right: -2rem;
+            margin-bottom: 1.5rem;
+         }
+
+         .evo_image_block {
+            margin: 0;
+
+            img {
+               width: 100%;
+            }
+         }
+
+      }
+
+      // Iframer size If layout use single column
+      // ======================================================================== /
+      .col-md-12 .videoblock {
+         iframe {
+            min-width: 80%;
+            margin: 0 auto;
+            height: 420px;
+
+            @media screen and ( max-width: @S ) {
+               height: 260px;
+            }
+
+            @media screen and ( max-width: @XS ) {
+               height: 176px;
+            }
+         }
+      }
+
+      // Evo Post
+      // ======================================================================== /
+      .evo_post,
+      .evo_featured_post {
+         @media screen and ( max-width: @MX ) {
+            padding: 1.5rem 2rem 1rem;
+            margin-right: -15px;
+            margin-left: -15px;
+         }
+      }
+
+
+      .evo_post {
+
+         // Evo Post Title
+         // ======================================================================== /
+         .evo_post_title {
+            h1 {
+               margin-top: 5px;
+               margin-bottom: 0;
             }
          }
 
