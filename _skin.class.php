@@ -172,18 +172,65 @@ class cuboid_blog_Skin extends Skin
             ),
             // End Header Settings
 
-
-            /* Content Settings
-               ========================================================================== */
-            // 'content_settings_start' => array(
-            //    'layout' => 'begin_fieldset',
-            //    'label'  => T_('Content settings')
-            // ),
-            // 'content_settings_end' => array(
-            //    'layout' => 'end_fieldset',
-            // ),
-            // End Content Settings
-
+            /**
+             * ============================================================================
+             * Posts Disp
+             * ============================================================================
+             */
+            'posts_settings_start' => array(
+               'layout' => 'begin_fieldset',
+               'label'  => T_('Post Settings')
+            ),
+               'posts_layout' => array(
+                  'label'        => T_('Posts Layout'),
+                  'note'         => T_('Select Single Layout for post 3 column'),
+                  'type'         => 'select',
+                  'options'      => array(
+                     'single_column'              => T_('Single Column Large'),
+                     'single_column_normal'       => T_('Single Column'),
+                     'single_column_narrow'       => T_('Single Column Narrow'),
+                     'single_column_extra_narrow' => T_('Single Column Extra Narrow'),
+                     'left_sidebar'               => T_('Left Sidebar'),
+                     'right_sidebar'              => T_('Right Sidebar'),
+                  ),
+                  'defaultvalue' => 'right_sidebar',
+               ),
+               'posts_column' => array(
+                  'label'    => T_('Posts Content Masonry'),
+                  'note'     => '',
+                  'type'     => 'radio',
+                  'options'  => array(
+                     array( 'one', T_('1 Column') ),
+                     array( 'two', T_('2 Column') ),
+                     array( 'three', T_('3 Column') ),
+                  ),
+                  'defaultvalue' => 'one',
+               ),
+               'posts_content_mode' => array(
+                  'label'    => T_('Posts Content Mode'),
+                  'note'     => '',
+                  'type'     => 'radio',
+                  'options'  => array(
+                     array( 'auto', T_('Auto') ),
+                     array( 'excerpt', T_('Excerpt') ),
+                  ),
+                  'defaultvalue' => 'excerpt',
+               ),
+               'pagination_layout' => array(
+                  'label'        => T_('Pagination Layout'),
+                  'note'         => T_('Select Layout for Pagination'),
+                  'type'         => 'select',
+                  'options'      => array(
+                     'left'   => T_('Left'),
+                     'center' => T_('Centers'),
+                     'right'  => T_('Right'),
+                  ),
+                  'defaultvalue' => 'center',
+               ),
+            'posts_settings_end' => array(
+               'layout' => 'end_fieldset',
+            ),
+            // End Single Disp
 
             /**
              * ============================================================================
@@ -214,7 +261,6 @@ class cuboid_blog_Skin extends Skin
             ),
             // End Single Disp
 
-
             /**
              * ============================================================================
              * Footer Settings
@@ -222,7 +268,7 @@ class cuboid_blog_Skin extends Skin
              */
             'footer_settings_start' => array(
                'layout' => 'begin_fieldset',
-               'label'  => T_('Footer settings')
+               'label'  => T_('Footer Settings')
             ),
                'footer_bg_color' => array(
                   'label'        => T_('Footer Main Background Color'),
@@ -455,9 +501,25 @@ class cuboid_blog_Skin extends Skin
 		) );
 
       // Include Masonry Grind for MediaIdx
-      if ( $disp == 'mediaidx' ) {
+      if ( $disp == 'mediaidx' || $disp == 'posts' ) {
          require_js( $this->get_url() . 'assets/js/masonry.pkgd.min.js' );
          require_js( $this->get_url() . 'assets/js/imagesloaded.pkgd.min.js' );
+      }
+
+      if( $disp == 'posts' ) {
+         add_js_headline("
+				jQuery( document ).ready( function($) {
+               $('.main_item_posts').imagesLoaded().done( function( instance ) {
+                  $('.main_item_posts').masonry({
+                   // options
+                    itemSelector: '.item_posts',
+                 });
+               });
+				});
+			");
+      }
+
+      if ( $disp == 'mediaidx' ) {
          add_js_headline("
 				jQuery( document ).ready( function($) {
                $('.evo_image_index').imagesLoaded().done( function( instance ) {
@@ -495,7 +557,8 @@ class cuboid_blog_Skin extends Skin
          // General
          $custom_css .= '
          a, a:hover, a:active, a:focus,
-         .disp_search #main-content .search_result .search_content_wrap .search_title a:hover, .disp_search #main-content .search_result .search_content_wrap .search_title a:active, .disp_search #main-content .search_result .search_content_wrap .search_title a:focus
+         .disp_search #main-content .search_result .search_content_wrap .search_title a:hover, .disp_search #main-content .search_result .search_content_wrap .search_title a:active, .disp_search #main-content .search_result .search_content_wrap .search_title a:focus,
+         .widget_plugin_evo_Calr .bCalendarTable tfoot a:hover
          { color: '.$color.'; }
 
          /* Header */

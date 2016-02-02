@@ -7,6 +7,8 @@ if ( $disp == 'single' || $disp == 'page' ) {
    $disp_status = 'single_layout';
 } else if ( $disp == 'mediaidx' ) {
    $disp_status = 'mediaidx_layout';
+} else if ( $disp == 'posts' ) {
+   $disp_status = 'posts_layout';
 }
 
 

@@ -720,11 +720,11 @@ img {
 #main-content .evo_featured_post .evo_post__excerpt .evo_post__excerpt_more_link a {
   display: block;
   color: #ffffff;
-  font-size: 1.4rem;
-  font-family: "Montserrat", sans-serif;
-  font-weight: 400;
-  text-transform: capitalize;
-  padding: 1rem 2rem 1rem 1.5rem;
+  font-size: 1.1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  padding: 1rem 1.5rem 1rem 1.5rem;
   -webkit-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
 }
@@ -1593,77 +1593,152 @@ img {
 .disp_contacts input.SaveButton {
   padding: 5px 10px !important;
 }
-.disp_posts #content .evo_featured_post {
+.disp_posts #main-content .well.evo_intro_post {
+  margin-bottom: 30px;
+}
+.disp_posts #main-content .evo_featured_post {
   background-color: #ffffff;
   border-radius: 0;
   border: 0;
   box-shadow: 1px 2px 4px rgba(35, 35, 35, 0.12);
   border-left: 10px solid #1abc9c;
 }
-.disp_posts #content .evo_featured_post .evo_image_block {
+.disp_posts #main-content .evo_featured_post .evo_image_block {
   margin-top: -2.5rem;
   margin-left: -3rem;
   margin-right: -3rem;
 }
 @media screen and (max-width: 480px) {
-  .disp_posts #content .evo_featured_post .evo_image_block {
+  .disp_posts #main-content .evo_featured_post .evo_image_block {
     margin-top: -2rem;
     margin-left: -2rem;
     margin-right: -2rem;
   }
 }
-.disp_posts #content .evo_post .evo_post__full .evo_post_images .evo_image_block,
-.disp_posts #content .evo_featured_post .evo_post__full .evo_post_images .evo_image_block,
-.disp_posts #content .evo_post .evo_post__excerpt .evo_post_images .evo_image_block,
-.disp_posts #content .evo_featured_post .evo_post__excerpt .evo_post_images .evo_image_block {
+.disp_posts #main-content .evo_post .evo_post__full .evo_post_images .evo_image_block,
+.disp_posts #main-content .evo_featured_post .evo_post__full .evo_post_images .evo_image_block,
+.disp_posts #main-content .evo_post .evo_post__excerpt .evo_post_images .evo_image_block,
+.disp_posts #main-content .evo_featured_post .evo_post__excerpt .evo_post_images .evo_image_block {
   margin-right: auto;
   margin-left: auto;
 }
-.disp_posts #content .evo_post .evo_post_images {
+.disp_posts #main-content .evo_post .evo_post_images {
   display: block;
   margin-bottom: 2rem;
 }
-.disp_posts #content .evo_post .evo_post_images img {
+.disp_posts #main-content .evo_post .evo_post_images img {
   border-radius: 0;
 }
-.disp_posts #content .evo_post .evo_post_images .evo_image_block {
+.disp_posts #main-content .evo_post .evo_post_images .evo_image_block {
   margin-top: -2.5rem;
   margin-left: -3rem;
   margin-right: -3rem;
 }
 @media screen and (max-width: 480px) {
-  .disp_posts #content .evo_post .evo_post_images .evo_image_block {
+  .disp_posts #main-content .evo_post .evo_post_images .evo_image_block {
     margin: -2rem -2rem 1rem;
   }
 }
 @media screen and (max-width: 320px) {
-  .disp_posts #content .evo_post .evo_post_images .evo_image_block {
+  .disp_posts #main-content .evo_post .evo_post_images .evo_image_block {
     margin: -2rem -2rem 1rem;
   }
 }
-.disp_posts #content .evo_post .evo_post_gallery {
+.disp_posts #main-content .evo_post .evo_post_gallery {
   margin-top: -1rem;
 }
 @media screen and (max-width: 480px) {
-  .disp_posts #content .evo_post .evo_post_gallery {
+  .disp_posts #main-content .evo_post .evo_post_gallery {
     margin-top: -0.5rem;
   }
 }
 @media screen and (max-width: 320px) {
-  .disp_posts #content .evo_post .evo_post_gallery {
+  .disp_posts #main-content .evo_post .evo_post_gallery {
     margin-bottom: 1rem;
   }
 }
 @media screen and (max-width: 320px) {
-  .disp_posts #content .evo_post .evo_post_gallery .evo_post_gallery__image {
+  .disp_posts #main-content .evo_post .evo_post_gallery .evo_post_gallery__image {
     margin: 0 4px 4px 0;
   }
 }
-.disp_posts #content .evo_post .evo_post__full .evo_post_images {
+.disp_posts #main-content .evo_post .evo_post__full .evo_post_images {
   margin-bottom: 0;
 }
-.disp_posts #content .evo_post .evo_post__full .evo_image_block {
+.disp_posts #main-content .evo_post .evo_post__full .evo_image_block {
   margin: 0 auto;
+}
+.disp_posts #main-content .main_item_posts {
+  margin-right: -15px;
+  margin-left: -15px;
+}
+.disp_posts #main-content .main_item_posts .item_posts {
+  width: 100%;
+  float: left;
+  padding: 0 15px;
+}
+.disp_posts #main-content .main_item_posts .item_posts.two_column .evo_intro_post,
+.disp_posts #main-content .main_item_posts .item_posts.three_column .evo_intro_post,
+.disp_posts #main-content .main_item_posts .item_posts.two_column .featurepost,
+.disp_posts #main-content .main_item_posts .item_posts.three_column .featurepost {
+  padding-left: 2.5rem;
+  padding-right: 2.5rem;
+}
+.disp_posts #main-content .main_item_posts .item_posts.two_column .evo_post,
+.disp_posts #main-content .main_item_posts .item_posts.three_column .evo_post {
+  padding-left: 2.5rem;
+  padding-right: 2.5rem;
+  padding-bottom: 1.5rem;
+}
+.disp_posts #main-content .main_item_posts .item_posts.two_column .evo_post .evo_post_images .evo_image_block,
+.disp_posts #main-content .main_item_posts .item_posts.three_column .evo_post .evo_post_images .evo_image_block {
+  margin-right: -2.5rem;
+  margin-left: -2.5rem;
+}
+.disp_posts #main-content .main_item_posts .item_posts.two_column .evo_post .evo_post_title h2,
+.disp_posts #main-content .main_item_posts .item_posts.three_column .evo_post .evo_post_title h2 {
+  font-size: 2.7rem;
+  line-height: 1;
+  margin-bottom: 8px;
+}
+.disp_posts #main-content .main_item_posts .item_posts.two_column .evo_post .small.text-muted,
+.disp_posts #main-content .main_item_posts .item_posts.three_column .evo_post .small.text-muted {
+  line-height: 1.2;
+}
+.disp_posts #main-content .main_item_posts .item_posts.two_column .evo_post .evo_post__full_text,
+.disp_posts #main-content .main_item_posts .item_posts.three_column .evo_post .evo_post__full_text,
+.disp_posts #main-content .main_item_posts .item_posts.two_column .evo_post .evo_post__excerpt_text,
+.disp_posts #main-content .main_item_posts .item_posts.three_column .evo_post .evo_post__excerpt_text {
+  font-size: 1.4rem;
+}
+.disp_posts #main-content .main_item_posts .item_posts.two_column .evo_post .post_tags a,
+.disp_posts #main-content .main_item_posts .item_posts.three_column .evo_post .post_tags a {
+  font-size: 1rem;
+}
+.disp_posts #main-content .main_item_posts .item_posts.two_column .evo_post .post_comments_link a,
+.disp_posts #main-content .main_item_posts .item_posts.three_column .evo_post .post_comments_link a {
+  font-size: 1.3rem;
+}
+.disp_posts #main-content .main_item_posts .item_posts.two_column {
+  width: 50%;
+}
+@media screen and (max-width: 767px) {
+  .disp_posts #main-content .main_item_posts .item_posts.two_column {
+    width: 100%;
+  }
+}
+.disp_posts #main-content .main_item_posts .item_posts.three_column {
+  width: 33.333%;
+}
+@media screen and (max-width: 768px) {
+  .disp_posts #main-content .main_item_posts .item_posts.three_column {
+    width: 50%;
+  }
+}
+@media screen and (max-width: 767px) {
+  .disp_posts #main-content .main_item_posts .item_posts.three_column {
+    width: 100%;
+  }
 }
 .disp_single #main-content .pager,
 .disp_page #main-content .pager {
@@ -1685,7 +1760,9 @@ img {
   text-transform: capitalize;
   letter-spacing: 0;
   border-radius: 0;
+  border: 0;
   padding: 8px 20px;
+  margin-bottom: 0;
   color: #555555;
   background-color: #ffffff;
   z-index: 0;

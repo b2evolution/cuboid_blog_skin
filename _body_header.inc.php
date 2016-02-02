@@ -81,22 +81,3 @@ siteskin_include( '_site_body_header.inc.php' );
 
    </div><!-- .container -->
 </header><!-- #main-header -->
-
-<header id="head_tagline" style="display:none">
-   <div class="container">
-      <div class="evo_container evo_container__header">
-      <?php
-         // ------------------------- "Header" CONTAINER EMBEDDED HERE --------------------------
-         // Display container and contents:
-         skin_container( NT_('Header Tagline'), array(
-            // The following params will be used as defaults for widgets included in this container:
-            'block_start'       => '<div class="evo_widget $wi_class$">',
-            'block_end'         => '</div>',
-            'block_title_start' => '<h1>',
-            'block_title_end'   => '</h1>',
-         ) );
-         // ----------------------------- END OF "Header" CONTAINER -----------------------------
-      ?>
-      </div>
-   </div><!-- .container -->
-</header><!-- #head_tagline -->

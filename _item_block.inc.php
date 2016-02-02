@@ -53,7 +53,21 @@ $params = array_merge( array(
 	), $params );
 
 
-echo '<div class="evo_content_block">'; // Beginning of post display
+// Post Column
+$column = '';
+if ( $disp == 'posts' && ($Skin->get_setting( 'posts_column' ) == 'two') ) {
+   $column = 'two_column';
+} else if ( $disp == 'posts' && ($Skin->get_setting( 'posts_column' ) == 'three') ) {
+   $column = 'three_column';
+}
+
+// Content Block
+$content_block = 'evo_content_block';
+if ( $disp === 'posts' ) {
+   $content_block = "item_posts $column";
+}
+
+echo '<div class="'.$content_block.'">'; // Beginning of post display
 ?>
 
 <article id="<?php $Item->anchor_id() ?>" class="<?php $Item->div_classes( $params ) ?>" lang="<?php $Item->lang() ?>">

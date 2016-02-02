@@ -2,7 +2,11 @@
 // ======================================================================== /
 .disp_posts {
 
-   #content {
+   #main-content {
+
+      .well.evo_intro_post {
+         margin-bottom: 30px;
+      }
 
       // Evo Featured Post
       // ======================================================================== /
@@ -88,7 +92,6 @@
             }
          }
 
-
          // Evo Post Full
          // ======================================================================== /
          .evo_post__full {
@@ -104,6 +107,106 @@
 
       }
 
-   }
+      // ======================================================================== /
+      // Posts Masonry Style
+      // ======================================================================== /
+      .main_item_posts {
+         margin-right: -15px;
+         margin-left: -15px;
+
+         .item_posts {
+            width: 100%;
+            float: left;
+            padding: 0 15px;
+
+            &.two_column, &.three_column {
+
+               .evo_intro_post, .featurepost {
+                  padding-left: 2.5rem;
+                  padding-right: 2.5rem;
+               }
+
+               .evo_post {
+                  padding-left: 2.5rem;
+                  padding-right: 2.5rem;
+                  padding-bottom: 1.5rem;
+
+                  // Post Image
+                  // ======================================================================== /
+                  .evo_post_images {
+
+                     .evo_image_block {
+                        margin-right: -2.5rem;
+                        margin-left: -2.5rem;
+                     }
+
+                  }
+
+                  // Posts Title
+                  // ======================================================================== /
+                  .evo_post_title {
+                     h2 {
+                        font-size: 2.7rem;
+                        line-height: 1;
+                        margin-bottom: 8px;
+                     }
+                  }
+
+                  .small.text-muted {
+                     line-height: 1.2;
+                  }
+
+                  // Content Posts
+                  // ======================================================================== /
+                  .evo_post__full_text, .evo_post__excerpt_text {
+                     font-size: 1.4rem;
+                  }
+
+                  // Tags Posts
+                  // ======================================================================== /
+                  .post_tags a {
+                     font-size: 1rem;
+                  }
+
+                  // Readmore
+                  // ======================================================================== /
+                  .post_comments_link a {
+                     font-size: 1.3rem;
+                  }
+
+               }
+
+            }
+
+            // Two Column
+            // ======================================================================== /
+            &.two_column {
+               width: 50%;
+
+               @media screen and ( max-width: @MF ) {
+                  width: 100%;
+               }
+
+            }
+
+            // Three Column
+            // ======================================================================== /
+            &.three_column {
+               width: 33.333%;
+
+               @media screen and ( max-width: @M ) {
+                  width: 50%;
+               }
+
+               @media screen and ( max-width: @MF ) {
+                  width: 100%;
+               }
+            }
+
+         }
+
+      } // End .main_item_posts
+
+   } // End #main-content
 
 }
