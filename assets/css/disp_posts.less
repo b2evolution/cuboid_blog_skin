@@ -36,8 +36,9 @@
          .evo_post__full, .evo_post__excerpt {
 
             .evo_post_images .evo_image_block {
-               margin-right: auto;
-               margin-left: auto;
+               margin-top: 0;
+               margin-right: auto !important;
+               margin-left: auto !important;
             }
 
          }
@@ -121,15 +122,9 @@
 
             &.two_column, &.three_column {
 
-               .evo_intro_post, .featurepost {
+               .evo_post, .evo_intro_post, .evo_featured_post {
                   padding-left: 2.5rem;
                   padding-right: 2.5rem;
-               }
-
-               .evo_post {
-                  padding-left: 2.5rem;
-                  padding-right: 2.5rem;
-                  padding-bottom: 1.5rem;
 
                   // Post Image
                   // ======================================================================== /
@@ -141,6 +136,10 @@
                      }
 
                   }
+               }
+
+               .evo_post {
+                  padding-bottom: 1.5rem;
 
                   // Posts Title
                   // ======================================================================== /
@@ -194,7 +193,7 @@
             &.three_column {
                width: 33.333%;
 
-               @media screen and ( max-width: @M ) {
+               @media screen and ( max-width: @MM ) {
                   width: 50%;
                }
 

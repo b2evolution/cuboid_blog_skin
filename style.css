@@ -1619,8 +1619,9 @@ img {
 .disp_posts #main-content .evo_featured_post .evo_post__full .evo_post_images .evo_image_block,
 .disp_posts #main-content .evo_post .evo_post__excerpt .evo_post_images .evo_image_block,
 .disp_posts #main-content .evo_featured_post .evo_post__excerpt .evo_post_images .evo_image_block {
-  margin-right: auto;
-  margin-left: auto;
+  margin-top: 0;
+  margin-right: auto !important;
+  margin-left: auto !important;
 }
 .disp_posts #main-content .evo_post .evo_post_images {
   display: block;
@@ -1677,23 +1678,27 @@ img {
   float: left;
   padding: 0 15px;
 }
+.disp_posts #main-content .main_item_posts .item_posts.two_column .evo_post,
+.disp_posts #main-content .main_item_posts .item_posts.three_column .evo_post,
 .disp_posts #main-content .main_item_posts .item_posts.two_column .evo_intro_post,
 .disp_posts #main-content .main_item_posts .item_posts.three_column .evo_intro_post,
-.disp_posts #main-content .main_item_posts .item_posts.two_column .featurepost,
-.disp_posts #main-content .main_item_posts .item_posts.three_column .featurepost {
+.disp_posts #main-content .main_item_posts .item_posts.two_column .evo_featured_post,
+.disp_posts #main-content .main_item_posts .item_posts.three_column .evo_featured_post {
   padding-left: 2.5rem;
   padding-right: 2.5rem;
+}
+.disp_posts #main-content .main_item_posts .item_posts.two_column .evo_post .evo_post_images .evo_image_block,
+.disp_posts #main-content .main_item_posts .item_posts.three_column .evo_post .evo_post_images .evo_image_block,
+.disp_posts #main-content .main_item_posts .item_posts.two_column .evo_intro_post .evo_post_images .evo_image_block,
+.disp_posts #main-content .main_item_posts .item_posts.three_column .evo_intro_post .evo_post_images .evo_image_block,
+.disp_posts #main-content .main_item_posts .item_posts.two_column .evo_featured_post .evo_post_images .evo_image_block,
+.disp_posts #main-content .main_item_posts .item_posts.three_column .evo_featured_post .evo_post_images .evo_image_block {
+  margin-right: -2.5rem;
+  margin-left: -2.5rem;
 }
 .disp_posts #main-content .main_item_posts .item_posts.two_column .evo_post,
 .disp_posts #main-content .main_item_posts .item_posts.three_column .evo_post {
-  padding-left: 2.5rem;
-  padding-right: 2.5rem;
   padding-bottom: 1.5rem;
-}
-.disp_posts #main-content .main_item_posts .item_posts.two_column .evo_post .evo_post_images .evo_image_block,
-.disp_posts #main-content .main_item_posts .item_posts.three_column .evo_post .evo_post_images .evo_image_block {
-  margin-right: -2.5rem;
-  margin-left: -2.5rem;
 }
 .disp_posts #main-content .main_item_posts .item_posts.two_column .evo_post .evo_post_title h2,
 .disp_posts #main-content .main_item_posts .item_posts.three_column .evo_post .evo_post_title h2 {
@@ -1730,7 +1735,7 @@ img {
 .disp_posts #main-content .main_item_posts .item_posts.three_column {
   width: 33.333%;
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 991px) {
   .disp_posts #main-content .main_item_posts .item_posts.three_column {
     width: 50%;
   }
