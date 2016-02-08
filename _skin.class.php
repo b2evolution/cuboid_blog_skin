@@ -161,10 +161,38 @@ class cuboid_blog_Skin extends Skin
                'layout' => 'begin_fieldset',
                'label'  => T_('Header settings')
             ),
+               'head_center_mode' => array(
+                  'label'        => T_('Max Width Header Center Mode'),
+                  'note'         => T_('px - Set Max Width for Header Center Mode, default ( 992px )'),
+                  'defaultvalue' => '992',
+                  'size'         => '5',
+                  'type'         => 'integer',
+                  'allow_empty'  => true,
+               ),
+               // 'header_hum_menu' => array(
+               //    'label'        => T_('Menu Hamburger Layout:'),
+               //    'note'         => T_('px - Set Max Width for activated Humberger Menu, default ( 768px )'),
+               //    'defaultvalue' => '768',
+               //    'size'         => '5',
+               //    'type'         => 'integer',
+               //    'allow_empty'  => true,
+               // ),
                'header_bg_color' => array(
                   'label'        => T_('Header Background Color'),
                   'note'         => T_('Default value is #262626'),
                   'defaultvalue' => '#262626',
+                  'type'         => 'color',
+               ),
+               'nav_color_link' => array(
+                  'label'        => T_('Navigation Link Color'),
+                  'note'         => T_('Default value is #FFFFFF'),
+                  'defaultvalue' => '#FFFFFF',
+                  'type'         => 'color',
+               ),
+               'nav_color_hovlink' => array(
+                  'label'        => T_('Navigation Hover Link Color'),
+                  'note'         => T_('Default value is #FFFFFF'),
+                  'defaultvalue' => '#FFFFFF',
                   'type'         => 'color',
                ),
             'header_settings_end' => array(
@@ -284,8 +312,8 @@ class cuboid_blog_Skin extends Skin
                ),
                'footer_border_color' => array(
                   'label'        => T_('Footer Border Color'),
-                  'note'         => T_('Default value is #3c3c3c'),
-                  'defaultvalue' => '#3c3c3c',
+                  'note'         => T_('Default value is #3C3C3C'),
+                  'defaultvalue' => '#3C3C3C',
                   'type'         => 'color',
                ),
                'footer_tags_bg' => array(
@@ -386,9 +414,9 @@ class cuboid_blog_Skin extends Skin
                   'defaultvalue' => 'single_column_normal',
                   'type'         => 'select',
                   'options'      => array(
-                     'single_column_normal'       => T_('Single Column'),
-                     'left_sidebar'               => T_('Left Sidebar'),
-                     'right_sidebar'              => T_('Right Sidebar'),
+                     'single_column_normal'  => T_('Single Column'),
+                     'left_sidebar'          => T_('Left Sidebar'),
+                     'right_sidebar'         => T_('Right Sidebar'),
                   ),
                ),
             'user_settings_end' => array(
@@ -706,10 +734,48 @@ class cuboid_blog_Skin extends Skin
        * Header Settings Output
        * ============================================================================
        */
-		if( $color = $this->get_setting( 'header_bg_color' ) ) {
-			$custom_css .= 'body #main-header { background-color: '.$color." }\n";
+      if ( $width = $this->get_setting( 'head_center_mode' ) ) {
+         $custom_css .= '
+         @media only screen and ( max-width: '.$width.'px )
+         and ( min-width: 768px ) {
+            #main-header .col-md-4,
+            #main-header .col-md-8 {
+               width: 100%;
+               text-align: center;
+               margin: 0 auto;
+            }
+
+            #main-header {
+               padding-bottom: 2rem;
+            }
+
+            #main-header .col-md-4{
+               margin-bottom: 15px;
+            }
+
+            .navbar-collapse .nav.nav-tabs {
+               display: inline-block;
+               text-align: center;
+               margin: 0 auto;
+               float: none;
+            }
+         }
+         ';
+      }
+
+		if ( $color = $this->get_setting( 'header_bg_color' ) ) {
+			$custom_css .= 'body #main-header { background-color: '.$color.' }';
 		}
-      if( $color = $this->get_setting( 'head_tagline_bg_color' ) ) {
+
+      if ( $color = $this->get_setting( 'nav_color_link' ) ) {
+         $custom_css .= '.navbar-collapse .nav.nav-tabs li a{ color: '.$color.' }';
+      }
+
+      if ( $color = $this->get_setting( 'nav_color_hovlink' ) ) {
+         $custom_css .= '.navbar-collapse .nav.nav-tabs li a:hover { color: '.$color.' }';
+      }
+
+      if ( $color = $this->get_setting( 'head_tagline_bg_color' ) ) {
 			$custom_css .= 'body #head_tagline { background-color: '.$color." }\n";
 		}
 

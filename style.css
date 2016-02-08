@@ -87,6 +87,11 @@ img {
     padding: 25px 0 20px;
   }
 }
+@media screen and (max-width: 480px) {
+  #main-header {
+    padding: 20px 0 25px ;
+  }
+}
 .evo_container__header .widget_core_coll_title h1 {
   margin-top: 0;
   margin-bottom: 0;
