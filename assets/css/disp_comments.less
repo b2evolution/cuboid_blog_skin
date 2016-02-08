@@ -13,13 +13,17 @@
          border: 0;
          box-shadow: @box-shadow;
 
+         @media screen and ( max-width: @S ) {
+            padding: 2rem 2rem 1.5rem;
+         }
+
          .evo_comment_title{
             margin-bottom: 0;
 
             &.first {
                border-bottom: 1px solid @color_border;
                text-transform: capitalize;
-               margin: 0 0 1.5rem;
+               margin-top: 0;
                padding-bottom: 1rem;
 
 
@@ -31,11 +35,28 @@
          }
 
          .evo_comment_avatar {
-            top: 78px;
+            top: 30px;
+
+            @media screen and ( max-width: @S ) {
+               display: none;
+            }
+
+         }
+
+         .evo_comment_rating {
+
+            @media screen and ( max-width: @S ) {
+               margin-left: 0;
+            }
+
          }
 
          .evo_comment_text {
             color: @color_content;
+
+            @media screen and ( max-width: @S ) {
+               margin-left: 0;
+            }
 
             a {
                text-decoration: none;
@@ -44,7 +65,7 @@
                   text-decoration: underline;
                }
             }
-            
+
          }
 
       }

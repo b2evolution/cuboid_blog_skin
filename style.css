@@ -102,6 +102,9 @@ img {
 .evo_container__header .widget_core_coll_title h1 a:focus {
   text-decoration: none;
 }
+.evo_container__header .widget_core_coll_logo h1 {
+  margin: 0;
+}
 .evo_container__header .widget_core_coll_tagline {
   margin-top: 8px;
   font-size: 1.5rem;
@@ -1219,15 +1222,8 @@ img {
 }
 @media screen and (max-width: 480px) {
   .disp_search #main-content .search_result .search_result_score.dimmed {
-    width: 45px;
-    height: 45px;
-    line-height: 45px;
-    font-size: 90%;
-  }
-}
-@media screen and (max-width: 320px) {
-  .disp_search #main-content .search_result .search_result_score.dimmed {
-    width: 100%;
+    float: none;
+    width: 60%;
     margin: 0 auto 2rem;
   }
 }
@@ -1243,7 +1239,7 @@ img {
   -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
 }
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 480px) {
   .disp_search #main-content .search_result .search_result_score.dimmed::after {
     width: 0;
     height: 100%;
@@ -1260,7 +1256,7 @@ img {
   -webkit-transition: all 0.6s ease-in-out;
   transition: all 0.6s ease-in-out;
 }
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 480px) {
   .disp_search #main-content .search_result:hover .search_result_score::after {
     width: 100%;
   }
@@ -1269,11 +1265,6 @@ img {
   margin-left: 80px;
 }
 @media screen and (max-width: 480px) {
-  .disp_search #main-content .search_result .search_content_wrap {
-    margin-left: 65px;
-  }
-}
-@media screen and (max-width: 320px) {
   .disp_search #main-content .search_result .search_content_wrap {
     margin-left: 0;
   }
@@ -1302,6 +1293,11 @@ img {
 .disp_search #main-content .search_result .search_content_wrap .search_info {
   font-family: "Montserrat", sans-serif;
 }
+.disp_search #main-content .search_result .search_content_wrap .search_info a:hover,
+.disp_search #main-content .search_result .search_content_wrap .search_info a:active,
+.disp_search #main-content .search_result .search_content_wrap .search_info a:focus {
+  background-color: transparent;
+}
 .disp_search #main-content .search_result .search_content_wrap .search_info img {
   border-radius: 100%;
 }
@@ -1316,7 +1312,8 @@ img {
 }
 .disp_threads #main-content,
 .disp_messages #main-content,
-.disp_contacts #main-content {
+.disp_contacts #main-content,
+.disp_msgform #main-content {
   padding: 30px;
   background-color: #ffffff;
   box-shadow: 1px 2px 4px rgba(35, 35, 35, 0.12);
@@ -1325,20 +1322,23 @@ img {
 @media screen and (max-width: 480px) {
   .disp_threads #main-content,
   .disp_messages #main-content,
-  .disp_contacts #main-content {
+  .disp_contacts #main-content,
+  .disp_msgform #main-content {
     padding: 20px;
   }
 }
 .disp_threads #main-content .title_head_post,
 .disp_messages #main-content .title_head_post,
-.disp_contacts #main-content .title_head_post {
+.disp_contacts #main-content .title_head_post,
+.disp_msgform #main-content .title_head_post {
   padding: 0 0 20px;
   margin-bottom: 0;
   box-shadow: none;
 }
 .disp_threads #main-content .results,
 .disp_messages #main-content .results,
-.disp_contacts #main-content .results {
+.disp_contacts #main-content .results,
+.disp_msgform #main-content .results {
   border-radius: 0;
   background-color: #ffffff;
   margin-bottom: 0;
@@ -1346,25 +1346,29 @@ img {
 }
 .disp_threads #main-content .results .fieldset_title,
 .disp_messages #main-content .results .fieldset_title,
-.disp_contacts #main-content .results .fieldset_title {
+.disp_contacts #main-content .results .fieldset_title,
+.disp_msgform #main-content .results .fieldset_title {
   padding: 15px 10px;
   background-color: #f7f7f7;
 }
 .disp_threads #main-content .results input,
 .disp_messages #main-content .results input,
-.disp_contacts #main-content .results input {
+.disp_contacts #main-content .results input,
+.disp_msgform #main-content .results input {
   box-shadow: none;
   border-radius: 2px;
   font-size: 1.4rem;
 }
 .disp_threads #main-content .results input:focus,
 .disp_messages #main-content .results input:focus,
-.disp_contacts #main-content .results input:focus {
+.disp_contacts #main-content .results input:focus,
+.disp_msgform #main-content .results input:focus {
   border-color: #1abc9c;
 }
 .disp_threads #main-content .results .action_icon,
 .disp_messages #main-content .results .action_icon,
-.disp_contacts #main-content .results .action_icon {
+.disp_contacts #main-content .results .action_icon,
+.disp_msgform #main-content .results .action_icon {
   font-size: 1.2rem;
   font-weight: 600;
   border-radius: 2px;
@@ -1372,63 +1376,75 @@ img {
 }
 .disp_threads #main-content .results .action_icon.btn-primary,
 .disp_messages #main-content .results .action_icon.btn-primary,
-.disp_contacts #main-content .results .action_icon.btn-primary {
+.disp_contacts #main-content .results .action_icon.btn-primary,
+.disp_msgform #main-content .results .action_icon.btn-primary {
   background-color: #1abc9c;
   border-color: #1abc9c;
 }
 .disp_threads #main-content .results .action_icon .fa,
 .disp_messages #main-content .results .action_icon .fa,
-.disp_contacts #main-content .results .action_icon .fa {
+.disp_contacts #main-content .results .action_icon .fa,
+.disp_msgform #main-content .results .action_icon .fa {
   padding-right: 3px;
 }
 .disp_threads #main-content .results .table_scroll th,
 .disp_messages #main-content .results .table_scroll th,
-.disp_contacts #main-content .results .table_scroll th {
+.disp_contacts #main-content .results .table_scroll th,
+.disp_msgform #main-content .results .table_scroll th {
   font-family: "Montserrat", sans-serif;
   font-size: 1.3rem;
 }
 .disp_threads #main-content .results .table_scroll th span,
 .disp_messages #main-content .results .table_scroll th span,
-.disp_contacts #main-content .results .table_scroll th span {
+.disp_contacts #main-content .results .table_scroll th span,
+.disp_msgform #main-content .results .table_scroll th span {
   color: #555555;
 }
 .disp_threads #main-content .results .table_scroll th,
 .disp_messages #main-content .results .table_scroll th,
 .disp_contacts #main-content .results .table_scroll th,
+.disp_msgform #main-content .results .table_scroll th,
 .disp_threads #main-content .results .table_scroll td,
 .disp_messages #main-content .results .table_scroll td,
-.disp_contacts #main-content .results .table_scroll td {
+.disp_contacts #main-content .results .table_scroll td,
+.disp_msgform #main-content .results .table_scroll td {
   padding: 8px;
 }
 .disp_threads #main-content .results .table_scroll .firstcol img,
 .disp_messages #main-content .results .table_scroll .firstcol img,
-.disp_contacts #main-content .results .table_scroll .firstcol img {
+.disp_contacts #main-content .results .table_scroll .firstcol img,
+.disp_msgform #main-content .results .table_scroll .firstcol img {
   border-radius: 100%;
 }
 .disp_threads #main-content .results .table_scroll .firstcol .nowrap,
 .disp_messages #main-content .results .table_scroll .firstcol .nowrap,
-.disp_contacts #main-content .results .table_scroll .firstcol .nowrap {
+.disp_contacts #main-content .results .table_scroll .firstcol .nowrap,
+.disp_msgform #main-content .results .table_scroll .firstcol .nowrap {
   white-space: normal;
 }
 .disp_threads #main-content .results .table_scroll .thread_subject .fa,
 .disp_messages #main-content .results .table_scroll .thread_subject .fa,
-.disp_contacts #main-content .results .table_scroll .thread_subject .fa {
+.disp_contacts #main-content .results .table_scroll .thread_subject .fa,
+.disp_msgform #main-content .results .table_scroll .thread_subject .fa {
   padding-right: 5px;
 }
 .disp_threads #main-content .results .table_scroll .shrinkwrap,
 .disp_messages #main-content .results .table_scroll .shrinkwrap,
-.disp_contacts #main-content .results .table_scroll .shrinkwrap {
+.disp_contacts #main-content .results .table_scroll .shrinkwrap,
+.disp_msgform #main-content .results .table_scroll .shrinkwrap {
   font-family: "Montserrat", sans-serif;
   color: #555555;
 }
 .disp_threads #main-content .results .table_scroll .shrinkwrap img,
 .disp_messages #main-content .results .table_scroll .shrinkwrap img,
-.disp_contacts #main-content .results .table_scroll .shrinkwrap img {
+.disp_contacts #main-content .results .table_scroll .shrinkwrap img,
+.disp_msgform #main-content .results .table_scroll .shrinkwrap img {
   border-radius: 100%;
 }
 .disp_threads #main-content .evo_form__thread,
 .disp_messages #main-content .evo_form__thread,
-.disp_contacts #main-content .evo_form__thread {
+.disp_contacts #main-content .evo_form__thread,
+.disp_msgform #main-content .evo_form__thread {
   padding: 30px;
   background-color: #ffffff;
   box-shadow: none;
@@ -1437,22 +1453,26 @@ img {
 @media screen and (max-width: 480px) {
   .disp_threads #main-content .evo_form__thread,
   .disp_messages #main-content .evo_form__thread,
-  .disp_contacts #main-content .evo_form__thread {
+  .disp_contacts #main-content .evo_form__thread,
+  .disp_msgform #main-content .evo_form__thread {
     padding: 10px;
   }
 }
 .disp_threads #main-content .evo_form__thread label,
 .disp_messages #main-content .evo_form__thread label,
-.disp_contacts #main-content .evo_form__thread label {
+.disp_contacts #main-content .evo_form__thread label,
+.disp_msgform #main-content .evo_form__thread label {
   font-family: "Montserrat", sans-serif;
   color: #555555;
 }
 .disp_threads #main-content .evo_form__thread input,
 .disp_messages #main-content .evo_form__thread input,
 .disp_contacts #main-content .evo_form__thread input,
+.disp_msgform #main-content .evo_form__thread input,
 .disp_threads #main-content .evo_form__thread textarea,
 .disp_messages #main-content .evo_form__thread textarea,
-.disp_contacts #main-content .evo_form__thread textarea {
+.disp_contacts #main-content .evo_form__thread textarea,
+.disp_msgform #main-content .evo_form__thread textarea {
   border-radius: 0;
   box-shadow: none;
   font-family: "Lato", sans-serif;
@@ -1461,37 +1481,45 @@ img {
 .disp_threads #main-content .evo_form__thread input:focus,
 .disp_messages #main-content .evo_form__thread input:focus,
 .disp_contacts #main-content .evo_form__thread input:focus,
+.disp_msgform #main-content .evo_form__thread input:focus,
 .disp_threads #main-content .evo_form__thread textarea:focus,
 .disp_messages #main-content .evo_form__thread textarea:focus,
-.disp_contacts #main-content .evo_form__thread textarea:focus {
+.disp_contacts #main-content .evo_form__thread textarea:focus,
+.disp_msgform #main-content .evo_form__thread textarea:focus {
   border-color: #1abc9c;
 }
 .disp_threads #main-content .evo_form__thread .token-input-list-facebook,
 .disp_messages #main-content .evo_form__thread .token-input-list-facebook,
-.disp_contacts #main-content .evo_form__thread .token-input-list-facebook {
+.disp_contacts #main-content .evo_form__thread .token-input-list-facebook,
+.disp_msgform #main-content .evo_form__thread .token-input-list-facebook {
   box-shadow: none;
   border-radius: 0;
   border-color: #dddddd;
 }
 .disp_threads #main-content .evo_form__thread .token-input-list-facebook li,
 .disp_messages #main-content .evo_form__thread .token-input-list-facebook li,
-.disp_contacts #main-content .evo_form__thread .token-input-list-facebook li {
+.disp_contacts #main-content .evo_form__thread .token-input-list-facebook li,
+.disp_msgform #main-content .evo_form__thread .token-input-list-facebook li {
   font-family: "Lato", sans-serif;
 }
 .disp_threads #main-content .evo_form__thread .token-input-list-facebook input:active,
 .disp_messages #main-content .evo_form__thread .token-input-list-facebook input:active,
 .disp_contacts #main-content .evo_form__thread .token-input-list-facebook input:active,
+.disp_msgform #main-content .evo_form__thread .token-input-list-facebook input:active,
 .disp_threads #main-content .evo_form__thread .token-input-list-facebook input:active,
 .disp_messages #main-content .evo_form__thread .token-input-list-facebook input:active,
 .disp_contacts #main-content .evo_form__thread .token-input-list-facebook input:active,
+.disp_msgform #main-content .evo_form__thread .token-input-list-facebook input:active,
 .disp_threads #main-content .evo_form__thread .token-input-list-facebook input:focus,
 .disp_messages #main-content .evo_form__thread .token-input-list-facebook input:focus,
-.disp_contacts #main-content .evo_form__thread .token-input-list-facebook input:focus {
+.disp_contacts #main-content .evo_form__thread .token-input-list-facebook input:focus,
+.disp_msgform #main-content .evo_form__thread .token-input-list-facebook input:focus {
   border-color: #1abc9c;
 }
 .disp_threads #main-content .SaveButton,
 .disp_messages #main-content .SaveButton,
-.disp_contacts #main-content .SaveButton {
+.disp_contacts #main-content .SaveButton,
+.disp_msgform #main-content .SaveButton {
   font-family: "Montserrat", sans-serif !important;
   font-size: 1.2rem;
   border-radius: 2px;
@@ -1499,23 +1527,51 @@ img {
 }
 .disp_threads #main-content .SaveButton.btn-primary,
 .disp_messages #main-content .SaveButton.btn-primary,
-.disp_contacts #main-content .SaveButton.btn-primary {
+.disp_contacts #main-content .SaveButton.btn-primary,
+.disp_msgform #main-content .SaveButton.btn-primary {
   background-color: #1abc9c;
   border: 1px solid #1abc9c;
 }
 .disp_threads #main-content .SaveButton.btn-info,
 .disp_messages #main-content .SaveButton.btn-info,
-.disp_contacts #main-content .SaveButton.btn-info {
+.disp_contacts #main-content .SaveButton.btn-info,
+.disp_msgform #main-content .SaveButton.btn-info {
   background-color: #777777;
   border-color: #777777;
 }
 .disp_threads #main-content .SaveButton:focus,
 .disp_messages #main-content .SaveButton:focus,
 .disp_contacts #main-content .SaveButton:focus,
+.disp_msgform #main-content .SaveButton:focus,
 .disp_threads #main-content .SaveButton:active,
 .disp_messages #main-content .SaveButton:active,
-.disp_contacts #main-content .SaveButton:active {
+.disp_contacts #main-content .SaveButton:active,
+.disp_msgform #main-content .SaveButton:active {
   outline: none;
+}
+.disp_threads #main-content .submit,
+.disp_messages #main-content .submit,
+.disp_contacts #main-content .submit,
+.disp_msgform #main-content .submit {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.5rem;
+  background-color: #1abc9c;
+  border-color: #1abc9c;
+  border-radius: 2px;
+}
+.disp_threads #main-content .submit:hover,
+.disp_messages #main-content .submit:hover,
+.disp_contacts #main-content .submit:hover,
+.disp_msgform #main-content .submit:hover,
+.disp_threads #main-content .submit:active,
+.disp_messages #main-content .submit:active,
+.disp_contacts #main-content .submit:active,
+.disp_msgform #main-content .submit:active,
+.disp_threads #main-content .submit:focus,
+.disp_messages #main-content .submit:focus,
+.disp_contacts #main-content .submit:focus,
+.disp_msgform #main-content .submit:focus {
+  outline: 0;
 }
 .filters input {
   font-size: 1.4rem;
@@ -1592,6 +1648,140 @@ img {
 }
 .disp_contacts input.SaveButton {
   padding: 5px 10px !important;
+}
+.disp_user #main-content a:hover,
+.disp_user #main-content a:active,
+.disp_user #main-content a:focus {
+  background-color: transparent;
+}
+.disp_user #main-content .pager {
+  margin-top: 0;
+  margin-bottom: 30px;
+}
+.disp_user #main-content .pager a {
+  padding: 10px 15px;
+  margin-bottom: 0;
+  border-radius: 2px;
+  border: none;
+  color: #555555;
+  box-shadow: 1px 2px 4px rgba(35, 35, 35, 0.12);
+}
+.disp_user #main-content .pager a:hover,
+.disp_user #main-content .pager a:focus,
+.disp_user #main-content .pager a:active {
+  color: #ffffff;
+  background-color: #1abc9c;
+}
+.disp_user #main-content .profile_content {
+  background-color: #ffffff;
+  padding: 30px 30px 0;
+  box-shadow: 1px 2px 4px rgba(35, 35, 35, 0.12);
+}
+@media screen and (max-width: 480px) {
+  .disp_user #main-content .profile_content {
+    padding: 2rem;
+  }
+}
+.disp_user #main-content .profile_content .profile_column_left {
+  width: 250px;
+  margin: 0 0 25px;
+}
+@media screen and (max-width: 768px) {
+  .disp_user #main-content .profile_content .profile_column_left {
+    width: 100%;
+    max-width: 100%;
+  }
+}
+.disp_user #main-content .profile_content .profile_column_left img {
+  max-width: 250px;
+  height: auto;
+  display: block;
+  text-align: center;
+  margin: 0 auto;
+}
+.disp_user #main-content .profile_content .profile_column_left h1 {
+  font-size: 3rem;
+}
+.disp_user #main-content .profile_content .profile_column_left h2 {
+  font-size: 2.8rem;
+  margin-top: 15px;
+}
+@media screen and (max-width: 768px) {
+  .disp_user #main-content .profile_content .profile_column_left h1,
+  .disp_user #main-content .profile_content .profile_column_left .text-muted,
+  .disp_user #main-content .profile_content .profile_column_left p {
+    text-align: center;
+  }
+}
+.disp_user #main-content .profile_content .profile_column_left .profile_buttons {
+  font-size: 1.3rem;
+}
+.disp_user #main-content .profile_content .profile_column_left .profile_buttons button:hover,
+.disp_user #main-content .profile_content .profile_column_left .profile_buttons button:focus,
+.disp_user #main-content .profile_content .profile_column_left .profile_buttons button:hover {
+  outline: 0;
+}
+.disp_user #main-content .profile_content .profile_column_left .profile_buttons a.btn-warning {
+  color: #ffffff;
+  background-color: #f0ad4e;
+}
+.disp_user #main-content .profile_content .profile_column_left .profile_buttons a.btn-danger {
+  color: #ffffff;
+  background-color: #d9534f;
+}
+@media screen and (min-width: 768px) {
+  .disp_user #main-content .profile_content .profile_column_right {
+    margin-left: 280px;
+  }
+}
+.disp_user #main-content .profile_content .profile_column_right .panel {
+  margin-bottom: 3rem;
+  border-radius: 2px;
+}
+@media screen and (max-width: 480px) {
+  .disp_user #main-content .profile_content .profile_column_right .panel {
+    margin-bottom: 2rem;
+  }
+}
+.disp_user #main-content .profile_content .profile_column_right .form-group {
+  margin-bottom: 5px;
+}
+.disp_user #main-content .profile_content .profile_column_right .control-label {
+  width: 105px;
+}
+.disp_user #main-content .profile_content .profile_column_right .control-label .fa {
+  padding-right: 3px;
+}
+.disp_user #main-content .profile_content .profile_column_right .fixedform-controls {
+  margin-left: 115px;
+  word-break: break-word;
+}
+@media screen and (max-width: 660px) {
+  .disp_user #main-content .profile_content .profile_column_right .control-label {
+    float: none;
+    margin-bottom: 0;
+  }
+  .disp_user #main-content .profile_content .profile_column_right .control-label .fa {
+    padding-right: 5px;
+  }
+  .disp_user #main-content .profile_content .profile_column_right .fixedform-controls {
+    margin-left: 0;
+  }
+  .disp_user #main-content .profile_content .profile_column_right .form-control-static {
+    padding-top: 0;
+    line-height: 1.2;
+  }
+}
+@media screen and (min-width: 991px) {
+  .disp_user .col-md-8 #main-content .profile_column_left {
+    width: 215px;
+  }
+  .disp_user .col-md-8 #main-content .profile_column_left img {
+    max-width: 215px;
+  }
+  .disp_user .col-md-8 #main-content .profile_column_right {
+    margin-left: 245px;
+  }
 }
 .disp_posts #main-content .well.evo_intro_post {
   margin-bottom: 30px;
@@ -2164,8 +2354,8 @@ img {
   transition: all 0.3s ease;
 }
 .disp_mediaidx #main-content .evo_image_index .item:hover a img {
-  -webkit-transition: all 3.5s ease;
-  transition: all 3.5s ease;
+  -webkit-transition: all 3.5s linear;
+  transition: all 3.5s linear;
   -webkit-transform: scale(1.2);
   -ms-transform: scale(1.2);
   transform: scale(1.2);
@@ -2206,23 +2396,43 @@ img {
   border: 0;
   box-shadow: 1px 2px 4px rgba(35, 35, 35, 0.12);
 }
+@media screen and (max-width: 480px) {
+  .disp_comments #main-content .evo_comment {
+    padding: 2rem 2rem 1.5rem;
+  }
+}
 .disp_comments #main-content .evo_comment .evo_comment_title {
   margin-bottom: 0;
 }
 .disp_comments #main-content .evo_comment .evo_comment_title.first {
   border-bottom: 1px solid #eeeeee;
   text-transform: capitalize;
-  margin: 0 0 1.5rem;
+  margin-top: 0;
   padding-bottom: 1rem;
 }
 .disp_comments #main-content .evo_comment .evo_comment_title.first a {
   color: #1abc9c;
 }
 .disp_comments #main-content .evo_comment .evo_comment_avatar {
-  top: 78px;
+  top: 30px;
+}
+@media screen and (max-width: 480px) {
+  .disp_comments #main-content .evo_comment .evo_comment_avatar {
+    display: none;
+  }
+}
+@media screen and (max-width: 480px) {
+  .disp_comments #main-content .evo_comment .evo_comment_rating {
+    margin-left: 0;
+  }
 }
 .disp_comments #main-content .evo_comment .evo_comment_text {
   color: #6f6f6f;
+}
+@media screen and (max-width: 480px) {
+  .disp_comments #main-content .evo_comment .evo_comment_text {
+    margin-left: 0;
+  }
 }
 .disp_comments #main-content .evo_comment .evo_comment_text a {
   text-decoration: none;

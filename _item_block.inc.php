@@ -231,6 +231,7 @@ echo '<div class="'.$content_block.'">'; // Beginning of post display
 			}
 		?>
 
+      <?php if( ! $Item->is_intro() ) : ?>
 		<nav class="post_comments_link">
 		<?php
 			// Link to comments, trackbacks, etc.:
@@ -258,6 +259,7 @@ echo '<div class="'.$content_block.'">'; // Beginning of post display
 			) );
 		?>
 		</nav>
+      <?php endif; ?>
 	</footer>
 
 	<?php

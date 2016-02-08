@@ -2,14 +2,27 @@
 
 global $disp;
 
-$disp_status = 'layout';
-if ( $disp == 'single' || $disp == 'page' ) {
-   $disp_status = 'single_layout';
-} else if ( $disp == 'mediaidx' ) {
-   $disp_status = 'mediaidx_layout';
-} else if ( $disp == 'posts' ) {
-   $disp_status = 'posts_layout';
-}
+$disp_status = '';
+switch ( $disp ) {
+   case 'single':
+      $disp_status = 'single_layout';
+   break;
+   case 'page':
+      $disp_status = 'single_layout';
+   break;
+   case 'posts':
+      $disp_status = 'posts_layout';
+   break;
+   case 'mediaidx':
+      $disp_status = 'mediaidx_layout';
+   break;
+   case 'user':
+      $disp_status = 'user_layout';
+   break;
+   default:
+      $disp_status = 'layout';
+   break;
+};
 
 
 if( $Skin->is_visible_sidebar( $disp_status ) ) { // Display sidebar: ?>

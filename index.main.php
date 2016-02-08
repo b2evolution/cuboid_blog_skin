@@ -36,13 +36,21 @@ skin_include( '_html_header.inc.php', array() );
 skin_include( '_body_header.inc.php' );
 // ------------------------------- END OF SITE HEADER --------------------------------
 
-$column = 'layout';
-if ( $disp == 'page' ) {
-   $column = 'single_layout';
-} else if ( $disp == 'mediaidx' ) {
-   $column = 'mediaidx_layout';
-}
-
+$column = '';
+switch ( $disp ) {
+   case 'page':
+      $column = 'single_layout';
+   break;
+   case 'mediaidx':
+      $column = 'mediaidx_layout';
+   break;
+   case 'user':
+      $column = 'user_layout';
+   break;
+   default:
+      $column = 'layout';
+   break;
+};
 ?>
 
 <div id="content">

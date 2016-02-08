@@ -31,7 +31,7 @@ class cuboid_blog_Skin extends Skin
 	 */
 	function get_default_name()
 	{
-		return 'Cuboid Blog';
+		return 'Cuboid Blog Skin';
 	}
 
 
@@ -179,11 +179,11 @@ class cuboid_blog_Skin extends Skin
              */
             'posts_settings_start' => array(
                'layout' => 'begin_fieldset',
-               'label'  => T_('Post Settings')
+               'label'  => T_('Posts Layout')
             ),
                'posts_layout' => array(
                   'label'        => T_('Posts Layout'),
-                  'note'         => T_('Select Single Layout for post 3 column'),
+                  'note'         => T_('Select "Single Column Large" Layout for Post 3 Column'),
                   'type'         => 'select',
                   'options'      => array(
                      'single_column'              => T_('Single Column Large'),
@@ -196,8 +196,8 @@ class cuboid_blog_Skin extends Skin
                   'defaultvalue' => 'right_sidebar',
                ),
                'posts_column' => array(
-                  'label'    => T_('Posts Content Masonry'),
-                  'note'     => '',
+                  'label'    => T_('Posts Columns'),
+                  'note'     => T_('( Number of posts columns in posts disp. )'),
                   'type'     => 'radio',
                   'options'  => array(
                      array( 'one', T_('1 Column') ),
@@ -372,6 +372,32 @@ class cuboid_blog_Skin extends Skin
 
             /**
              * ============================================================================
+             * Single Disp
+             * ============================================================================
+             */
+            'user_settings_start' => array(
+               'layout' => 'begin_fieldset',
+               'label'  => T_('User Disp Layout')
+            ),
+               // Single Layout
+               'user_layout' => array(
+                  'label'        => T_('Page Layout'),
+                  'note'         => '',
+                  'defaultvalue' => 'single_column_normal',
+                  'type'         => 'select',
+                  'options'      => array(
+                     'single_column_normal'       => T_('Single Column'),
+                     'left_sidebar'               => T_('Left Sidebar'),
+                     'right_sidebar'              => T_('Right Sidebar'),
+                  ),
+               ),
+            'user_settings_end' => array(
+               'layout' => 'end_fieldset',
+            ),
+            // End Single Disp
+
+            /**
+             * ============================================================================
              * Colorbox Image Zoom
              * ============================================================================
              */
@@ -533,8 +559,11 @@ class cuboid_blog_Skin extends Skin
       }
 
       require_js( $this->get_url().'assets/js/script.js' );
-
 		// Skin specific initializations:
+
+      // Add Favicon
+      $favicon = $this->get_setting( 'favicon' );
+      add_headline( '<link rel="shortcut icon" href="'. $favicon .'"/>' );
 
 		// Limit images by max height:
 		$max_image_height = intval( $this->get_setting( 'max_image_height' ) );
@@ -616,7 +645,9 @@ class cuboid_blog_Skin extends Skin
          #comment_form .evo_form .preview:hover, #comment_form .evo_form .preview:focus, #comment_form .evo_form .preview:active,
          .widget_core_user_login .submit:hover, .widget_core_user_register .submit:hover,
          .disp_single #main-content .pager .previous a::before, .disp_page #main-content .pager .previous a::before, .disp_single #main-content .pager .next a::before, .disp_page #main-content .pager .next a::before,
-         .evo_post_comment_notification .btn:hover, .evo_post_comment_notification .btn:active, .evo_post_comment_notification .btn:focus
+         .evo_post_comment_notification .btn:hover, .evo_post_comment_notification .btn:active, .evo_post_comment_notification .btn:focus,
+         .disp_threads #main-content .submit, .disp_messages #main-content .submit, .disp_contacts #main-content .submit, .disp_msgform #main-content .submit,
+         .disp_user #main-content .pager a:hover, .disp_user #main-content .pager a:focus, .disp_user #main-content .pager a:active
          { background-color: '.$color.'; }
 
          .widget_core_coll_search_form .search .search_field,
@@ -628,7 +659,8 @@ class cuboid_blog_Skin extends Skin
          #comment_form .evo_form .preview:hover, #comment_form .evo_form .preview:focus, #comment_form .evo_form .preview:active,
          .widget_core_user_login .submit:hover, .widget_core_user_register .submit:hover,
          .disp_single #main-content .pager .previous a:hover, .disp_page #main-content .pager .previous a:hover, .disp_single #main-content .pager .next a:hover, .disp_page #main-content .pager .next a:hover,
-         .evo_post_comment_notification .btn:hover, .evo_post_comment_notification .btn:active, .evo_post_comment_notification .btn:focus
+         .evo_post_comment_notification .btn:hover, .evo_post_comment_notification .btn:active, .evo_post_comment_notification .btn:focus,
+         .disp_threads #main-content .submit, .disp_messages #main-content .submit, .disp_contacts #main-content .submit, .disp_msgform #main-content .submit
          { border-color: '.$color.'; }
          ';
       }
