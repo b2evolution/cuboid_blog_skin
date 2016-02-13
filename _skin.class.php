@@ -56,6 +56,33 @@ class cuboid_blog_Skin extends Skin
 	}
 
 
+   /**
+     * Get supported collection kinds.
+     *
+     * This should be overloaded in skins.
+     *
+     * For each kind the answer could be:
+     * - 'yes' : this skin does support that collection kind (the result will be was is expected)
+     * - 'partial' : this skin is not a primary choice for this collection kind (but still produces an output that makes sense)
+     * - 'maybe' : this skin has not been tested with this collection kind
+     * - 'no' : this skin does not support that collection kind (the result would not be what is expected)
+     * There may be more possible answers in the future...
+     */
+   public function get_supported_coll_kinds()
+   {
+     $supported_kinds = array(
+        'main'   => 'partial',
+        'std'    => 'yes',		// Blog
+        'photo'  => 'Yes',
+        'forum'  => 'no',
+        'manual' => 'maybe',
+        'group'  => 'maybe',  // Tracker
+        // Any kind that is not listed should be considered as "maybe" supported
+     );
+     return $supported_kinds;
+   }
+
+
 	/**
 	 * Get definitions for editable params
 	 *
@@ -163,7 +190,7 @@ class cuboid_blog_Skin extends Skin
             ),
                'head_center_mode' => array(
                   'label'        => T_('Max Width Header Center Mode'),
-                  'note'         => T_('px - Set Max Width for Header Center Mode, default ( 992px )'),
+                  'note'         => T_('px - Set Max Width for Header Center Mode. Default ( 992px ), example: 1170px'),
                   'defaultvalue' => '992',
                   'size'         => '5',
                   'type'         => 'integer',
