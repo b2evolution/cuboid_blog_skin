@@ -224,9 +224,9 @@ echo '<div class="'.$content_block.'">'; // Beginning of post display
 			if( ! $Item->is_intro() )
 			{ // List all tags attached to this post:
 				$Item->tags( array(
-						'before'    => '<nav class="small post_tags">',
+						'before'    => '<nav class="small post_tags"><h3>'. T_( 'Tags: ' ).'</h3>',
 						'after'     => '</nav>',
-						'separator' => ' ',
+						'separator' => '',
 					) );
 			}
 		?>

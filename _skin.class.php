@@ -102,7 +102,7 @@ class cuboid_blog_Skin extends Skin
             ),
                // Layout
                'layout' => array(
-                  'label'        => T_('Layout'),
+                  'label'        => T_('Front Page Layout'),
                   'note'         => '',
                   'defaultvalue' => 'right_sidebar',
                   'type'         => 'select',
@@ -282,10 +282,50 @@ class cuboid_blog_Skin extends Skin
                   ),
                   'defaultvalue' => 'center',
                ),
+               'posts_wrap_bg' => array(
+                  'label'        => T_('Posts Background Wrapper'),
+                  'note'         => T_('Default value is #FFFFFF'),
+                  'defaultvalue' => '#FFFFFF',
+                  'type'         => 'color',
+               ),
             'posts_settings_end' => array(
                'layout' => 'end_fieldset',
             ),
             // End Single Disp
+
+
+            /**
+             * ============================================================================
+             * Tags Layout
+             * ============================================================================
+             */
+            'tags_settings_start' => array(
+               'layout' => 'begin_fieldset',
+               'label'  => T_('Tags Layout')
+            ),
+               'tags_color' => array(
+                  'label'        => T_('Tags Text Color'),
+                  'note'         => T_('Default value is #FFFFFF'),
+                  'defaultvalue' => '#FFFFFF',
+                  'type'         => 'color',
+               ),
+               'tags_bg' => array(
+                  'label'        => T_('Tags Background Color'),
+                  'note'         => T_('Default value is #333333'),
+                  'defaultvalue' => '#333333',
+                  'type'         => 'color',
+               ),
+               'tags_icon' => array(
+                  'label'        => T_('Show Icon Tags'),
+                  'note'         => T_('Check to show icon tags.'),
+                  'defaultvalue' => 1,
+                  'type'         => 'checkbox',
+               ),
+            'tags_settings_end' => array(
+               'layout' => 'end_fieldset',
+            ),
+            // End Single Disp
+
 
             /**
              * ============================================================================
@@ -318,6 +358,51 @@ class cuboid_blog_Skin extends Skin
 
             /**
              * ============================================================================
+             * Sidebar Options
+             * ============================================================================
+             */
+            'sidebar_settings_start' => array(
+               'layout' => 'begin_fieldset',
+               'label'  => T_('Sidebar Options')
+            ),
+               'side_bg_wrap' => array(
+                  'label'        => T_('Widget Wrapper Background'),
+                  'note'         => T_('Default value is #FFFFFF'),
+                  'defaultvalue' => '#FFFFFF',
+                  'type'         => 'color',
+               ),
+               'side_widget_title' => array(
+                  'label'        => T_('Widget Title Color'),
+                  'note'         => T_('Default value is #555555'),
+                  'defaultvalue' => '#555555',
+                  'type'         => 'color',
+               ),
+               'side_widget_content' => array(
+                  'label'        => T_('Widget Content Color'),
+                  'note'         => T_('Default value is #6F6F6F'),
+                  'defaultvalue' => '#6F6F6F',
+                  'type'         => 'color',
+               ),
+               'side_widget_link' => array(
+                  'label'        => T_('Widget Link Color'),
+                  'note'         => T_('Default value is <strong>Empty</strong>. The empty value link color will be follow Color Schemes.'),
+                  'defaultvalue' => '',
+                  'type'         => 'color',
+                  'allow_empty'  => true,
+               ),
+               'side_border' => array(
+                  'label'        => T_('Widget Border Color'),
+                  'note'         => T_('Default value is #EEEEEE'),
+                  'defaultvalue' => '#EEEEEE',
+                  'type'         => 'color',
+               ),
+            'sidebar_settings_end' => array(
+               'layout' => 'end_fieldset',
+            ),
+            // End Single Disp
+
+            /**
+             * ============================================================================
              * Footer Settings
              * ============================================================================
              */
@@ -325,17 +410,35 @@ class cuboid_blog_Skin extends Skin
                'layout' => 'begin_fieldset',
                'label'  => T_('Footer Settings')
             ),
+               'footer_widget' => array(
+                  'label'        => T_('Display Footer Widget'),
+                  'note'         => T_('Check to enable footer widget.'),
+                  'defaultvalue' => 1,
+                  'type'         => 'checkbox',
+               ),
                'footer_bg_color' => array(
                   'label'        => T_('Footer Main Background Color'),
                   'note'         => T_('Default value is #262626'),
                   'defaultvalue' => '#262626',
                   'type'         => 'color',
                ),
-               'footer_widget' => array(
-                  'label'        => T_('Display Footer Widget'),
-                  'note'         => T_('Check to enable footer widget.'),
-                  'defaultvalue' => 1,
-                  'type'         => 'checkbox',
+               'footer_widget_title' => array(
+                  'label'        => T_('Footer Widget Title Color'),
+                  'note'         => T_('Default value is #FFFFFF'),
+                  'defaultvalue' => '#FFFFFF',
+                  'type'         => 'color',
+               ),
+               'footer_widget_content' => array(
+                  'label'        => T_('Footer Widget Content Color'),
+                  'note'         => T_('Default value is #FFFFFF'),
+                  'defaultvalue' => '#FFFFFF',
+                  'type'         => 'color',
+               ),
+               'footer_widget_link' => array(
+                  'label'        => T_('Footer Widget Link Color'),
+                  'note'         => T_('Default value is <strong>Empty</strong>.'),
+                  'defaultvalue' => '#FFFFFF',
+                  'type'         => 'color',
                ),
                'footer_border_color' => array(
                   'label'        => T_('Footer Border Color'),
@@ -808,6 +911,64 @@ class cuboid_blog_Skin extends Skin
 
       /**
        * ============================================================================
+       * Posts
+       * ============================================================================
+       */
+      if ( $bg = $this->get_setting( 'posts_wrap_bg' ) ) {
+         $custom_css .= '
+         .disp_posts #main-content .evo_featured_post,
+         #main-content .evo_post, #main-content .evo_featured_post
+         { background-color: '.$bg.' }';
+      }
+
+      /**
+       * ============================================================================
+       * Tags
+       * ============================================================================
+       */
+      if ( $color = $this->get_setting( 'tags_color' ) ) {
+         $custom_css .= '#main-content .post_tags a, .tag_cloud a, #main-content .post_tags a::before { color: '.$color.' }';
+      }
+      if ( $bg = $this->get_setting( 'tags_bg' ) ) {
+         $custom_css .= '#main-content .post_tags a, .tag_cloud a { background-color: '.$bg.' }';
+      }
+      if ( $this->get_setting( 'tags_icon' ) == 0 ) {
+         $custom_css .= '#main-content .post_tags a::before, .tag_cloud a::before { content: \'\'; display: none }';
+      }
+
+      /**
+       * ============================================================================
+       * Sidebar Widget Options
+       * ============================================================================
+       */
+      if ( $bg = $this->get_setting( 'side_bg_wrap' ) ) {
+         $custom_css .= '#main-sidebar .evo_widget { background-color: '. $bg .' }';
+      }
+      if ( $color = $this->get_setting( 'side_widget_title' ) ) {
+         $custom_css .= '#main-sidebar .evo_widget .panel-title { color: '.$color.' }';
+         $custom_css .= '#main-sidebar .evo_widget .panel-title::after { background-color: '.$color.' }';
+      }
+      if ( $color = $this->get_setting( 'side_widget_content' ) ) {
+         $custom_css .= '
+         #main-sidebar .evo_widget,
+         #main-sidebar .widget_core_user_login .user_group,
+         #main-sidebar .widget_core_user_login .user_level
+         { color: '.$color.' }';
+      }
+      if ( $border = $this->get_setting( 'side_border' ) ) {
+         $custom_css .= '
+         #content .evo_widget ul li,
+         #content .evo_widget ul > ul > li:last-child,
+         .widget_core_linkblog ul ul, .widget_core_content_hierarchy ul ul,
+         .widget_core_coll_xml_feeds .notes
+         { border-color: '.$border.' }';
+      }
+      if( $color = $this->get_setting( 'side_widget_link' ) ) {
+         $custom_css .= '#main-sidebar .evo_widget a { color: '.$color.' }';
+      }
+
+      /**
+       * ============================================================================
        * Footer Settings Output
        * ============================================================================
        */
@@ -815,8 +976,22 @@ class cuboid_blog_Skin extends Skin
 			$custom_css .= 'body #main-footer { background-color: '.$bg_color." }\n";
 		}
 
+      if ( $color = $this->get_setting( 'footer_widget_title' ) ) {
+         $custom_css .= '#main-footer .main_widget .title_widget,
+         #main-footer .main_widget .widget_core_org_members .user_link h3 { color: '.$color.' }';
+         $custom_css .= '#main-footer .main_widget .title_widget::before { background-color: '.$color.' }';
+      }
+
       if ( $bg_color = $this->get_setting( 'footer_sm_bgcolor' ) ) {
-         $custom_css .= '#main-footer .footer_social_media{ background-color: '.$bg_color.'; }';
+         $custom_css .= '#main-footer .footer_social_media{ background-color: '.$bg_color.' }';
+      }
+
+      if ( $color = $this->get_setting( 'footer_widget_content' ) ) {
+         $custom_css .= '#main-footer .main_widget { color: '.$color.' }';
+      }
+
+      if( $link = $this->get_setting( 'footer_widget_link' ) ) {
+         $custom_css .= '#main-footer .main_widget a { color: '.$link.' }';
       }
 
       if ( $border_color = $this->get_setting( 'footer_border_color' ) ) {

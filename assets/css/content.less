@@ -299,9 +299,9 @@
 
             a {
 
-               &::before {
-                  border-radius: 3px;
-               }
+               // &::before {
+               //    border-radius: 3px;
+               // }
 
                &::after {
                   top: 35%;
@@ -328,7 +328,7 @@
          }
 
          img {
-            border-radius: 3px;
+            border-radius: 0;
          }
       }
 
@@ -494,24 +494,43 @@
    // Post Tags
    // ======================================================================== /
    .post_tags{
-       margin-top: 0;
+      margin-top: 0;
+      margin-bottom: 15px;
+
+      h3{
+         display: inline-block;
+         // font-weight: 700;
+         font-size: 17px;
+         text-transform: uppercase;
+         vertical-align: bottom;
+         padding-right: 5px;
+      }
 
       a{
          font-family: @font_heading;
          text-transform: capitalize;
-         font-size: 1.1rem;
-         padding: 4px 8px;
-         background: #F1F1F1;
-         color: #AAAAAA;
-         transition: all 0.2s ease;
+         font-size: 1.2rem;
+         padding: 6px 11px;
+         background: @tag_bg;
+         color: @tag_col;
+         border-radius: 0;
+         margin-bottom: 3px;
+         margin-right: 4px;
 
          &, &::before{
             transition: all 0.3s ease;
          }
 
+         &::before {
+            color: @w;
+            opacity: 0.85;
+            padding-right: 2px;
+         }
+
          &:hover, &:active, &:focus {
             background: @primary;
             color: @w;
+            text-decoration: none;
 
             &::before{
                color: @w;
@@ -694,6 +713,10 @@
          &::last-child {
             margin-bottom: 0;
          }
+      }
+
+      img {
+         border-radius: 0;
       }
    }
 
