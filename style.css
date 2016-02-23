@@ -148,6 +148,10 @@ img {
     display: block;
   }
 }
+.navbar-collapse {
+  -webkit-transition: all 0.32s ease-in-out;
+  transition: all 0.32s ease-in-out;
+}
 @media screen and (max-width: 991px) {
   .navbar-collapse {
     margin-top: 10px;
@@ -155,10 +159,10 @@ img {
 }
 @media screen and (max-width: 768px) {
   .navbar-collapse {
-    padding-top: 15px;
+    position: relative;
+    top: 20px;
     padding-left: 0;
     padding-right: 0;
-    margin-top: 15px;
   }
 }
 .navbar-collapse .nav.nav-tabs {

@@ -288,6 +288,30 @@ class cuboid_blog_Skin extends Skin
                   'defaultvalue' => '#FFFFFF',
                   'type'         => 'color',
                ),
+               'posts_title_color' => array(
+                  'label'        => T_('Posts Title Color'),
+                  'note'         => T_('Default value is #555555'),
+                  'defaultvalue' => '#555555',
+                  'type'         => 'color',
+               ),
+               'posts_info_color' => array(
+                  'label'        => T_('Posts Info Text Color'),
+                  'note'         => T_('Default value is #777777'),
+                  'defaultvalue' => '#777777',
+                  'type'         => 'color',
+               ),
+               'posts_info_link' => array(
+                  'label'        => T_('Posts Info Link Color'),
+                  'note'         => T_('Default value is #A9A9A9'),
+                  'defaultvalue' => '#A9A9A9',
+                  'type'         => 'color',
+               ),
+               'posts_content_color' => array(
+                  'label'        => T_('Posts Content Color'),
+                  'note'         => T_('Default value is #6F6F6F'),
+                  'defaultvalue' => '#6F6F6F',
+                  'type'         => 'color',
+               ),
             'posts_settings_end' => array(
                'layout' => 'end_fieldset',
             ),
@@ -458,17 +482,36 @@ class cuboid_blog_Skin extends Skin
                   'defaultvalue' => 1,
                   'type'         => 'checkbox',
                ),
-               'footer_copyright' => array(
-                  'label'        => T_('Display Footer Copyright'),
-                  'note'         => T_('Check to display footer copyright.'),
-                  'defaultvalue' => 1,
-                  'type'         => 'checkbox',
+               'footer_sm_color' => array(
+                  'label'        => T_('Social Media Icon Color'),
+                  'note'         => T_('Default value is #FFFFFF'),
+                  'defaultvalue' => '#FFFFFF',
+                  'type'         => 'color',
                ),
                'footer_sm_bgcolor' => array(
                   'label'        => T_('Social Media Background Color'),
                   'note'         => T_('Default value is #212121'),
                   'defaultvalue' => '#212121',
                   'type'         => 'color',
+               ),
+               'footer_copyright' => array(
+                  'label'        => T_('Display Footer Copyright'),
+                  'note'         => T_('Check to display footer copyright.'),
+                  'defaultvalue' => 1,
+                  'type'         => 'checkbox',
+               ),
+               'footer_copyright_content' => array(
+                  'label'        => T_('Copyright Content Color'),
+                  'note'         => T_('Default value is #FFFFFF'),
+                  'defaultvalue' => '#FFFFFF',
+                  'type'         => 'color',
+               ),
+               'footer_copyright_link' => array(
+                  'label'        => T_('Copyright Link Color'),
+                  'note'         => T_('Default value is <strong>Empty</strong>. The color follow Color Schemes.'),
+                  'defaultvalue' => '',
+                  'type'         => 'color',
+                  'allow_empty'  => true,
                ),
             'footer_settings_end' => array(
                'layout' => 'end_fieldset',
@@ -917,8 +960,29 @@ class cuboid_blog_Skin extends Skin
       if ( $bg = $this->get_setting( 'posts_wrap_bg' ) ) {
          $custom_css .= '
          .disp_posts #main-content .evo_featured_post,
-         #main-content .evo_post, #main-content .evo_featured_post
+         .disp_posts #main-content .evo_post, .disp_posts #main-content .evo_featured_post
          { background-color: '.$bg.' }';
+      }
+
+      if ( $color = $this->get_setting( 'posts_title_color' ) ) {
+         $custom_css .= '
+         .disp_posts #main-content .evo_post_title h1 a, .disp_posts #main-content .evo_post_title h2 a, .disp_posts #main-content .evo_post_title h3 a,
+         .disp_posts #main-content .evo_post .evo_post__full h1, .disp_posts #main-content .evo_featured_post .evo_post__full h1, .disp_posts #main-content .evo_post .evo_post__excerpt h1, .disp_posts #main-content .evo_featured_post .evo_post__excerpt h1, .disp_posts #main-content .evo_post .evo_post__full h2, .disp_posts #main-content .evo_featured_post .evo_post__full h2, .disp_posts #main-content .evo_post .evo_post__excerpt h2, .disp_posts #main-content .evo_featured_post .evo_post__excerpt h2, .disp_posts #main-content .evo_post .evo_post__full h3, .disp_posts #main-content .evo_featured_post .evo_post__full h3, .disp_posts #main-content .evo_post .evo_post__excerpt h3, .disp_posts #main-content .evo_featured_post .evo_post__excerpt h3, .disp_posts #main-content .evo_post .evo_post__full h4, .disp_posts #main-content .evo_featured_post .evo_post__full h4, .disp_posts #main-content .evo_post .evo_post__excerpt h4, .disp_posts #main-content .evo_featured_post .evo_post__excerpt h4, .disp_posts #main-content .evo_post .evo_post__full h5, .disp_posts #main-content .evo_featured_post .evo_post__full h5, .disp_posts #main-content .evo_post .evo_post__excerpt h5, .disp_posts #main-content .evo_featured_post .evo_post__excerpt h5, .disp_posts #main-content .evo_post .evo_post__full h6, .disp_posts #main-content .evo_featured_post .evo_post__full h6, .disp_posts #main-content .evo_post .evo_post__excerpt h6, .disp_posts #main-content .evo_featured_post .evo_post__excerpt h6,
+         .disp_posts #main-content .post_tags h3
+         { color: '.$color.' }
+         ';
+      }
+
+      if ( $color = $this->get_setting( 'posts_info_color' ) ) {
+         $custom_css .= '.disp_posts #main-content .evo_post .small.text-muted, .disp_posts #main-content .evo_featured_post .small.text-muted { color: '.$color.' }';
+      }
+
+      if ( $color =$this->get_setting( 'posts_info_link' ) ) {
+         $custom_css .= '.disp_posts #main-content .evo_post .small.text-muted span, .disp_posts #main-content .evo_featured_post .small.text-muted span, #main-content .evo_post .small.text-muted a, .disp_posts #main-content .evo_featured_post .small.text-muted a { color: '.$color.' }';
+      }
+
+      if ( $color = $this->get_setting( 'posts_content_color' ) ) {
+         $custom_css .= '.disp_posts #main-content .evo_post__full_text, .disp_posts #main-content .evo_post__excerpt_text { color: '.$color.' }';
       }
 
       /**
@@ -982,6 +1046,11 @@ class cuboid_blog_Skin extends Skin
          $custom_css .= '#main-footer .main_widget .title_widget::before { background-color: '.$color.' }';
       }
 
+      if ( $color = $this->get_setting( 'footer_sm_color' ) ) {
+         $custom_css .= '#main-footer .footer_social_media .ufld_icon_links a span, #main-footer .footer_social_media .ufld_icon_links a .fa { color: '.$color.' }';
+         $custom_css .= '#main-footer .footer_social_media .ufld_icon_links a:hover span, #main-footer .footer_social_media .ufld_icon_links a:hover .fa { color: #FFFFFF }';
+      }
+
       if ( $bg_color = $this->get_setting( 'footer_sm_bgcolor' ) ) {
          $custom_css .= '#main-footer .footer_social_media{ background-color: '.$bg_color.' }';
       }
@@ -997,12 +1066,21 @@ class cuboid_blog_Skin extends Skin
       if ( $border_color = $this->get_setting( 'footer_border_color' ) ) {
          $custom_css .= '#main-footer .main_widget ul li, #main-footer .main_widget ul > ul > li:last-child { border-color: '.$border_color.'; }';
          $custom_css .= '#main-footer .footer_social_media, #main-footer .copyright,
-         #main-footer .main_widget .widget_core_coll_xml_feeds .notes
-         { border-top-color: '.$border_color.'; }';
+         #main-footer .main_widget .widget_core_coll_xml_feeds .notes,
+         #main-footer #content .evo_widget ul li, #main-footer #content .evo_widget ul > ul > li:last-child, #main-footer .widget_core_linkblog ul ul, #main-footer .widget_core_content_hierarchy ul ul, #main-footer .widget_core_coll_xml_feeds .notes
+         { border-color: '.$border_color.'; }';
       }
 
       if ( $bg_color = $this->get_setting( 'footer_tags_bg' ) ) {
          $custom_css .= '#main-footer .evo_widget .tag_cloud a { background-color: '.$bg_color.'; }';
+      }
+
+      if ( $color = $this->get_setting( 'footer_copyright_content' ) ) {
+         $custom_css .= '#main-footer .copyright .copyright_text { color: '.$color.' }';
+      }
+
+      if ( $link = $this->get_setting( 'footer_copyright_link' ) ) {
+         $custom_css .= '#main-footer .copyright .copyright_text a { color: '.$link.' }';
       }
 
       /**
