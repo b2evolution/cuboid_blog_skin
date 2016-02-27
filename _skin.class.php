@@ -115,16 +115,16 @@ class cuboid_blog_Skin extends Skin
                 $arr_filenames = $filesnames =array();
                 if(file_exists($img_folder))
                 {
-                      $filesnames = scandir($img_folder);  
+                      $filesnames = scandir($img_folder);
                 }
                 $count = 0;
-                foreach ( $filesnames as $name ) 
+                foreach ( $filesnames as $name )
                 {
                         $count++;
                         if ( $name != "." && $name != ".." && $name != "_evocache" && $this->isImage($img_folder.$name) ) //not the folder and other files
                         {
-                              $arr_filenames[] = array( $img_folder_url.$name, 
-                                  "<a href='".$img_folder_url.$name."' target='blank'><img src='".$img_folder_url.$name."' width=".$thumb_width."px heigh=".$thumb_height."px /></a>" );                               
+                              $arr_filenames[] = array( $img_folder_url.$name,
+                                  "<a href='".$img_folder_url.$name."' target='blank'><img src='".$img_folder_url.$name."' width=".$thumb_width."px heigh=".$thumb_height."px /></a>" );
                         }
                         if ($count==30) break; // The max number of the images we want to show
                 }
@@ -203,10 +203,10 @@ class cuboid_blog_Skin extends Skin
                   'defaultvalue' => reset($arr_bodybg[0]),
                ),
                'bg_image_custom' => array(
-                   'label'    => T_('User Custom Background Image'),                               
-                   'note'     => T_('（Please create a folder named <b><i>'.str_replace("/","",$custom_bodybg_cat).'</i></b> in your collection media folder and put the images into it. Now <a href="admin.php?ctrl=files" target="_blank"><i>Create folder or Upload images</i></a>）'),                           
-                   'type'     => 'radio',                        
-                   'options'  => $arr_custom_bodybg,                   
+                   'label'    => T_('User Custom Background Image'),
+                   'note'     => T_('（Please create a folder named <b><i>'.str_replace("/","",$custom_bodybg_cat).'</i></b> in your collection media folder and put the images into it. Now <a href="admin.php?ctrl=files" target="_blank"><i>Create folder or Upload images</i></a>）'),
+                   'type'     => 'radio',
+                   'options'  => $arr_custom_bodybg,
                    'defaultvalue' => reset($arr_custom_bodybg[0]),
                ),
                'site_background_color' => array(
@@ -927,24 +927,24 @@ class cuboid_blog_Skin extends Skin
       // Site Background
       $bg_image = $this->get_setting( 'bg_image' );
       if ( $this->get_setting( 'background_type' ) == 'images' && $bg_image ) {
-            if($bg_image == "none") 
+            if($bg_image == "none")
             {
                     $custom_css .= "body { background: transparent; }";
-            }else 
+            }else
             {
                     $custom_css .= "body { background-image: url('".$bg_image."');}";
-            }     
+            }
       }
       // User custom bg images setting
       $bg_image_custom = $this->get_setting( 'bg_image_custom' );
       if ( $this->get_setting( 'background_type' ) == 'custom_images' && $bg_image_custom ) {
-            if($bg_image_custom == "none") 
+            if($bg_image_custom == "none")
             {
                     $custom_css .= "body { background: transparent; }";
-            }else 
+            }else
             {
                     $custom_css .= "body { background-image: url('".$bg_image_custom."');}";
-            }  
+            }
       }
 
       if ( $this->get_setting( 'background_type' ) == 'color' ) {
