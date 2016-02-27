@@ -57,17 +57,17 @@ class cuboid_blog_Skin extends Skin
 
 
    /**
-     * Get supported collection kinds.
-     *
-     * This should be overloaded in skins.
-     *
-     * For each kind the answer could be:
-     * - 'yes' : this skin does support that collection kind (the result will be was is expected)
-     * - 'partial' : this skin is not a primary choice for this collection kind (but still produces an output that makes sense)
-     * - 'maybe' : this skin has not been tested with this collection kind
-     * - 'no' : this skin does not support that collection kind (the result would not be what is expected)
-     * There may be more possible answers in the future...
-     */
+   * Get supported collection kinds.
+   *
+   * This should be overloaded in skins.
+   *
+   * For each kind the answer could be:
+   * - 'yes' : this skin does support that collection kind (the result will be was is expected)
+   * - 'partial' : this skin is not a primary choice for this collection kind (but still produces an output that makes sense)
+   * - 'maybe' : this skin has not been tested with this collection kind
+   * - 'no' : this skin does not support that collection kind (the result would not be what is expected)
+   * There may be more possible answers in the future...
+   */
    public function get_supported_coll_kinds()
    {
      $supported_kinds = array(
@@ -81,56 +81,57 @@ class cuboid_blog_Skin extends Skin
      );
      return $supported_kinds;
    }
-        /**
-         * Judge if the file is the image we want to use
-         *
-	 * @param string filepath: the path of a file
-         *         array arr_types: the file type we want to use
-	 * @return array
-	 */
-        function isImage( $filepath, $arr_types=array( ".gif", ".jpeg", ".png", ".bmp" ) )
-        {
-                if(file_exists($filepath))
-                {
-                        $info = getimagesize($filepath);
-                        $ext = image_type_to_extension($info['2']);
-                        return in_array($ext,$arr_types);
-                }else
-                {
-                        return false;
-                }
-        }
 
-        /**
-         * Get the pictures of one local folder as an array
-         *
-	 * @param string img_folder; the image folder;
-         *         string img_folder_url; folder url, we would like to show the img of this folder on the screen for user viewing;
-	 *         int thumb_width: thumb image whdth shown on the skin setting page
-	 *         int thumb_height: thumb image height shown on the skin setting page
-	 * @return array
-	 */
-        function get_arr_pics_from_folder( $img_folder, $img_folder_url, $thumb_width = 50, $thumb_height = 50 )
-        {
-                $arr_filenames = $filesnames =array();
-                if(file_exists($img_folder))
-                {
-                      $filesnames = scandir($img_folder);
-                }
-                $count = 0;
-                foreach ( $filesnames as $name )
-                {
-                        $count++;
-                        if ( $name != "." && $name != ".." && $name != "_evocache" && $this->isImage($img_folder.$name) ) //not the folder and other files
-                        {
-                              $arr_filenames[] = array( $img_folder_url.$name,
-                                  "<a href='".$img_folder_url.$name."' target='blank'><img src='".$img_folder_url.$name."' width=".$thumb_width."px heigh=".$thumb_height."px /></a>" );
-                        }
-                        if ($count==30) break; // The max number of the images we want to show
-                }
-                $arr_filenames[] = array("none",T_("Transparent"));
-                return $arr_filenames;
-        }
+
+  /**
+   * Judge if the file is the image we want to use
+   *
+   * @param string filepath: the path of a file
+   * array arr_types: the file type we want to use
+   * @return array
+   */
+   function isImage( $filepath, $arr_types=array( ".gif", ".jpeg", ".png", ".bmp" ) )
+   {
+      if(file_exists($filepath)) {
+         $info = getimagesize($filepath);
+         $ext  = image_type_to_extension($info['2']);
+         return in_array($ext,$arr_types);
+      } else {
+         return false;
+      }
+   }
+
+
+   /**
+   * Get the pictures of one local folder as an array
+   *
+   * @param string img_folder; the image folder;
+   * string img_folder_url; folder url, we would like to show the img of this folder on the screen for user viewing;
+   * int thumb_width: thumb image whdth shown on the skin setting page
+   * int thumb_height: thumb image height shown on the skin setting page
+   * @return array
+   */
+   function get_arr_pics_from_folder( $img_folder, $img_folder_url, $thumb_width = 50, $thumb_height = 50 )
+   {
+      $arr_filenames = $filesnames =array();
+      if(file_exists($img_folder))
+      {
+         $filesnames = scandir($img_folder);
+      }
+      $count = 0;
+      foreach ( $filesnames as $name )
+      {
+         $count++;
+         if ( $name != "." && $name != ".." && $name != "_evocache" && $this->isImage($img_folder.$name) ) //not the folder and other files
+         {
+            $arr_filenames[] = array( $img_folder_url.$name,
+            "<a href='".$img_folder_url.$name."' target='blank'><img src='".$img_folder_url.$name."' width=".$thumb_width."px heigh=".$thumb_height."px /></a>" );
+         }
+         if ($count==30) break; // The max number of the images we want to show
+      }
+      $arr_filenames[] = array("none",T_("Transparent"));
+      return $arr_filenames;
+   }
 
 
 	/**
@@ -141,15 +142,15 @@ class cuboid_blog_Skin extends Skin
 	 */
 	function get_param_definitions( $params )
 	{
-            global $Blog;
+      global $Blog;
       // Load to use function get_available_thumb_sizes()
       load_funcs( 'files/model/_image.funcs.php' );
       // System provide bg images
       $bodybg_cat = 'assets/images/bodybg/'; // Background images folder relative to this skin folder
-      $arr_bodybg = $this -> get_arr_pics_from_folder( $this->get_path().$bodybg_cat, $this->get_url().$bodybg_cat, 50, 50 );
+      $arr_bodybg = $this -> get_arr_pics_from_folder( $this->get_path().$bodybg_cat, $this->get_url().$bodybg_cat, 60, 60 );
       // User Custom bg images
       $custom_bodybg_cat  = "bodybg/"; // Background images folder which created by users themselves, and it's relative to collection media dir
-      $arr_custom_bodybg = $this->get_arr_pics_from_folder( $Blog->get_media_dir().$custom_bodybg_cat, $Blog->get_media_url().$custom_bodybg_cat, 50 ,50);
+      $arr_custom_bodybg = $this->get_arr_pics_from_folder( $Blog->get_media_dir().$custom_bodybg_cat, $Blog->get_media_url().$custom_bodybg_cat, 65 ,65);
 
 		$r = array_merge( array(
             'general_settings_start' => array(
@@ -186,34 +187,55 @@ class cuboid_blog_Skin extends Skin
                ),
                'background_type' => array(
                   'label'    => T_('Site Background Style'),
-                  'note'     => '',
-                  'type'     => 'radio',
+                  'note'     => T_('Select your favorite <strong>Background Style</strong> for your site.'),
+                  'type'     => 'select',
                   'options'  => array(
-                     array( 'color', T_('Background Color') ),
-                     array( 'images', T_('Image Pattern') ),
-                     array( 'custom_images', T_('User Custom Image') ),
+                     'color'         => T_('Site Background Color'),
+                     'images'        => T_('Background Image Pattern'),
+                     'custom_images' => T_('Custom Background Image'),
                   ),
                   'defaultvalue' => 'images',
-               ),
-               'bg_image' => array(
-                  'label'    => T_('Background Image Pattern'),
-                  'note'     => T_('Choose your favorite background image pattern'),
-                  'type'     => 'radio',
-                  'options'  => $arr_bodybg,
-                  'defaultvalue' => reset($arr_bodybg[0]),
-               ),
-               'bg_image_custom' => array(
-                   'label'    => T_('User Custom Background Image'),
-                   'note'     => T_('（Please create a folder named <b><i>'.str_replace("/","",$custom_bodybg_cat).'</i></b> in your collection media folder and put the images into it. Now <a href="admin.php?ctrl=files" target="_blank"><i>Create folder or Upload images</i></a>）'),
-                   'type'     => 'radio',
-                   'options'  => $arr_custom_bodybg,
-                   'defaultvalue' => reset($arr_custom_bodybg[0]),
                ),
                'site_background_color' => array(
                   'label'        => T_('Site Background Color'),
                   'note'         => T_('Default value is #F5F7F9'),
                   'defaultvalue' => '#F5F7F9',
                   'type'         => 'color',
+               ),
+               'bg_image' => array(
+                  'label'        => T_('Background Image Pattern'),
+                  'note'         => T_('Choose your favorite background image pattern'),
+                  'type'         => 'radio',
+                  'options'      => $arr_bodybg,
+                  'defaultvalue' => reset($arr_bodybg[0]),
+               ),
+               'bg_image_custom' => array(
+                   'label'        => T_('User Custom Background Image'),
+                   'note'         => T_('（Please create a folder named <b><i>'.str_replace("/","",$custom_bodybg_cat).'</i></b> in your collection media folder and put the images into it. Now <a href="admin.php?ctrl=files" target="_blank"><i>Create folder or Upload images</i></a>）'),
+                   'type'         => 'radio',
+                   'options'      => $arr_custom_bodybg,
+                   'defaultvalue' => reset($arr_custom_bodybg[0]),
+               ),
+               'bg_image_custom_attach' => array(
+                  'label'    => T_('Custom Background Attachment'),
+                  'note'     => T_('Select the Background Attachment for Custom Background Image.'),
+                  'type'     => 'select',
+                  'options'  => array(
+                     'initial'    => T_('Initial'),
+                     'fixed'      => T_('Fixed'),
+                  ),
+                  'defaultvalue' => 'initial',
+               ),
+               'bg_image_custom_size' => array(
+                  'label'    => T_('Custom Background Size'),
+                  'note'     => T_('Select the background size for Custom Background Image.'),
+                  'type'     => 'select',
+                  'options'  => array(
+                     'auto'     => T_('Auto'),
+                     'contain'  => T_('Contain'),
+                     'cover'    => T_('Cover'),
+                  ),
+                  'defaultvalue' => 'auto',
                ),
 
                // Favicon
@@ -925,32 +947,51 @@ class cuboid_blog_Skin extends Skin
 
 
       // Site Background
-      $bg_image = $this->get_setting( 'bg_image' );
-      if ( $this->get_setting( 'background_type' ) == 'images' && $bg_image ) {
-            if($bg_image == "none")
-            {
-                    $custom_css .= "body { background: transparent; }";
-            }else
-            {
-                    $custom_css .= "body { background-image: url('".$bg_image."');}";
-            }
-      }
-      // User custom bg images setting
-      $bg_image_custom = $this->get_setting( 'bg_image_custom' );
-      if ( $this->get_setting( 'background_type' ) == 'custom_images' && $bg_image_custom ) {
-            if($bg_image_custom == "none")
-            {
-                    $custom_css .= "body { background: transparent; }";
-            }else
-            {
-                    $custom_css .= "body { background-image: url('".$bg_image_custom."');}";
-            }
-      }
-
       if ( $this->get_setting( 'background_type' ) == 'color' ) {
          $color = $this->get_setting( 'site_background_color' );
          $custom_css .= 'body {background-color: '.$color.';}';
       }
+
+      $bg_image = $this->get_setting( 'bg_image' );
+      if ( $this->get_setting( 'background_type' ) == 'images' && $bg_image ) {
+         if($bg_image == "none") {
+            $custom_css .= "body { background: transparent; }";
+         } else {
+            $custom_css .= "body { background-image: url('".$bg_image."');}";
+         }
+      }
+
+      // User custom bg images setting
+      $bg_image_custom = $this->get_setting( 'bg_image_custom' );
+      if ( $this->get_setting( 'background_type' ) == 'custom_images' && $bg_image_custom ) {
+         if($bg_image_custom == "none")
+         {
+            $custom_css .= "body { background: transparent; }";
+         } else {
+            $custom_css .= "body { background-image: url('".$bg_image_custom."');}";
+         }
+      }
+
+      $bg_image_custom_attach = $this->get_setting( 'bg_image_custom_attach' );
+      if ( $this->get_setting( 'background_type' ) == 'custom_images' && $bg_image_custom_attach ) {
+         if ( $bg_image_custom_attach == 'initial' ) {
+            $custom_css .= "body { background-attachment: initial; }";
+         } else {
+            $custom_css .= "body { background-attachment: fixed; }";
+         }
+      }
+
+      $bg_image_custom_size = $this->get_setting( 'bg_image_custom_size' );
+      if ( $this->get_setting( 'background_type' ) == 'custom_images' && $bg_image_custom_size ) {
+         if ( $bg_image_custom_size == 'auto' ) {
+            $custom_css .= "body { background-size: auto; }";
+         } else if ( $bg_image_custom_size == 'contain' ){
+            $custom_css .= "body { background-size: contain; }";
+         } else {
+            $custom_css .= "body { background-size: cover; }";
+         }
+      }
+
 
       /**
        * ============================================================================
@@ -1151,7 +1192,7 @@ class cuboid_blog_Skin extends Skin
       if( ! empty( $custom_css ) )
 		{ // Function for custom_css:
 		$custom_css = '<style type="text/css">
-         <!--
+      <!--
          '.$custom_css.'
          -->
 		</style>';
