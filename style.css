@@ -1056,7 +1056,7 @@ img {
   text-transform: uppercase;
 }
 #comment_form .panel-body {
-  padding-top: 3rem;
+  padding: 3rem;
 }
 #comment_form .evo_form label {
   font-family: "Montserrat", sans-serif;
@@ -2142,6 +2142,39 @@ img {
   background-color: #1abc9c;
   border-color: #1abc9c;
   color: #ffffff;
+}
+.disp_single .fieldset_wrapper,
+.disp_page .fieldset_wrapper {
+  margin-top: 40px;
+}
+.disp_single .fieldset_wrapper .panel,
+.disp_page .fieldset_wrapper .panel {
+  border-color: #eeeeee;
+  border-radius: 0;
+}
+.disp_single .fieldset_wrapper .panel .panel-heading,
+.disp_page .fieldset_wrapper .panel .panel-heading {
+  border-color: #eeeeee;
+}
+.disp_single .fieldset_wrapper .panel .panel-body,
+.disp_page .fieldset_wrapper .panel .panel-body {
+  padding: 30px;
+}
+.disp_single .fieldset_wrapper .panel .panel-body .badge,
+.disp_page .fieldset_wrapper .panel .panel-body .badge {
+  width: 20px;
+  height: 20px;
+  padding: 0;
+  line-height: 20px;
+}
+.disp_single .fieldset_wrapper .panel .panel-body .evo_comment__meta,
+.disp_page .fieldset_wrapper .panel .panel-body .evo_comment__meta {
+  border-top: 0;
+  border-right: 0;
+  border-left: 0;
+  padding-left: 0;
+  padding-right: 0;
+  box-shadow: none;
 }
 .disp_front #main-content .evo_widget {
   background-color: #ffffff;
