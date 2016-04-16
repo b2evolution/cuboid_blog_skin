@@ -37,6 +37,15 @@
          .evo_comment_avatar {
             top: 30px;
 
+            @media screen and ( max-width: @MX ){
+               top: 0;
+               float: left;
+
+               &::after, &::before {
+                  position: relative;
+               }
+            }
+
             @media screen and ( max-width: @S ) {
                display: none;
             }
@@ -66,6 +75,14 @@
                }
             }
 
+         }
+
+         @media screen and ( max-width: @MX ) {
+            &::after, &::before {
+               content: '';
+               display: table;
+               clear: both;
+            }
          }
 
       }

@@ -196,7 +196,7 @@ switch ( $disp ) {
       					'featured_intro_after'  => '</div>',
 
       					// Form "Sending a message"
-      					'msgform_form_title'    => T_('Sending a message'),
+      					'msgform_form_title'    => T_('Messages'),
       				) );
       			// Note: you can customize any of the sub templates included here by
       			// copying the matching php file into your skin directory.

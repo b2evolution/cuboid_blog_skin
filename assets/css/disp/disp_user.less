@@ -1,0 +1,178 @@
+// ======================================================================== /
+// Disp User
+// ======================================================================== /
+.disp_user {
+
+   #main-content {
+
+      a {
+         &:hover, &:active, &:focus {
+            background-color: transparent;
+         }
+      }
+
+      .pager {
+         margin-top: 0;
+         margin-bottom: 30px;
+
+         a {
+            padding: 10px 15px;
+            margin-bottom: 0;
+            border-radius: 2px;
+            border: none;
+            color: @c5;
+            box-shadow: @box-shadow;
+
+            &:hover, &:focus, &:active {
+               color: @w;
+               background-color: @primary;
+            }
+         }
+      }
+
+      .profile_content {
+         background-color: @w;
+         padding: 30px 30px 0;
+         box-shadow: @box-shadow;
+
+         @media screen and ( max-width: @S ) {
+            padding: 2rem;
+         }
+
+         .profile_column_left {
+            width: 250px;
+            margin: 0 0 25px;
+
+            @media screen and ( max-width: @M ) {
+               width: 100%;
+               max-width: 100%;
+            }
+
+            img {
+               max-width: 250px;
+               height: auto;
+               display: block;
+               text-align: center;
+               margin: 0 auto;
+            }
+
+            h1 {
+               font-size: 3rem;
+            }
+
+            h2 {
+               font-size: 2.8rem;
+               margin-top: 15px;
+            }
+
+            @media screen and ( max-width: @M ) {
+               h1, .text-muted, p {
+                  text-align: center;
+               }
+            }
+
+            .profile_buttons {
+               font-size: 1.3rem;
+
+               button {
+                  &:hover, &:focus, &:hover {
+                     outline: 0;
+                  }
+               }
+
+               a.btn-warning {
+                  color: @w;
+                  background-color: @btn_warning;
+               }
+
+               a.btn-danger {
+                  color: @w;
+                  background-color: @btn_danger;
+               }
+
+            }
+
+         }
+
+         .profile_column_right {
+            @media screen and ( min-width: @M ){
+               margin-left: 280px;
+            }
+
+            .panel {
+               margin-bottom: 3rem;
+               // border-radius: 2px;
+
+               @media screen and ( max-width: @S ) {
+                  margin-bottom: 2rem;
+               }
+            }
+
+            .form-group {
+               margin-bottom: 5px;
+            }
+
+            .control-label {
+               width: 105px;
+
+               .fa {
+                  padding-right: 3px;
+               }
+            }
+
+            .fixedform-controls {
+               margin-left: 115px;
+               word-break: break-word;
+            }
+
+            @media screen and ( max-width: 660px ) {
+               .control-label {
+                  float: none;
+                  margin-bottom: 0;
+
+                  .fa {
+                     padding-right: 5px;
+                  }
+               }
+
+               .fixedform-controls {
+                  margin-left: 0;
+               }
+
+               .form-control-static {
+                  padding-top: 0;
+                  line-height: 1.2;
+               }
+
+            }
+
+         }
+
+      }
+
+   }
+
+   .col-md-8 #main-content {
+
+      @media screen and ( min-width: @MM ) {
+         .profile_column_left {
+            width: 215px;
+
+            img {
+               max-width: 215px;
+            }
+         }
+
+         .profile_column_right {
+            margin-left: 245px;
+         }
+      }
+
+   }
+
+}
+
+
+// ======================================================================== /
+// Disp Users
+// ======================================================================== /

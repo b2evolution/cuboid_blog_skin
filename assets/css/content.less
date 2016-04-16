@@ -244,6 +244,7 @@
          display: table;
          margin-left: auto;
          margin-right: auto;
+         // width: 100%;
 
          img {
             border-radius: 0;
@@ -871,6 +872,15 @@
 
       &.active {
          font-weight: 700;
+
+         a, span {
+            background-color: @primary;
+
+            &:hover, &:active, &:focus {
+               border-color: @primary;
+               background-color: @primary;
+            }
+         }
       }
    }
 }

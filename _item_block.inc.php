@@ -94,7 +94,7 @@ echo '<div class="'.$content_block.'">'; // Beginning of post display
       ) );
    }
 
-   if ( $disp == 'single' ) {
+   if ( $disp == 'single' || $disp == 'page' ) {
    // Display images that are linked to this post:
       $Item->images( array(
          // Optionally restrict to files/images linked to specific position: 'teaser'|'teaserperm'|'teaserlink'|'aftermore'|'inline'|'cover'

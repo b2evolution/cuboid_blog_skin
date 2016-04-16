@@ -32,6 +32,7 @@ a {
    &:hover, &:active, &:focus {
       text-decoration: underline;
       color: @primary;
+      outline: 0;
    }
 }
 
@@ -88,4 +89,21 @@ blockquote {
 
 img {
    max-width: 100%;
+}
+
+
+// Button
+// ======================================================================== /
+.btn, button, span {
+
+   &:hover, &:active, &:focus {
+      outline: 0;
+   }
+}
+
+.alert {
+   border-radius: 0;
+   .close {
+         top: 0;
+   }
 }

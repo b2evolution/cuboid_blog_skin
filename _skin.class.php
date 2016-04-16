@@ -891,7 +891,7 @@ class cuboid_blog_Skin extends Skin
          .disp_contacts .form_send_contacts .btn-default:hover, .disp_contacts .form_send_contacts .btn-default:active, .disp_contacts .form_send_contacts .btn-default:focus,
          .filters .btn-info,
          .disp_threads #main-content .results .action_icon.btn-primary, .disp_messages #main-content .results .action_icon.btn-primary, .disp_contacts #main-content .results .action_icon.btn-primary,
-         .btn-success
+         .btn-success, .pagination li.active a:hover, .pagination li.active span:hover, .pagination li.active a:active, .pagination li.active span:active, .pagination li.active a:focus, .pagination li.active span:focus, .pagination li.active a, .pagination li.active span, .pagination li a:hover, .pagination li span:hover, .pagination li a:active, .pagination li span:active, .pagination li a:focus, .pagination li span:focus
          { background-color: '.$color.'; }
 
          .disp_front #main-content .widget_core_poll .btn-default.active, .disp_front #main-content .widget_core_poll .btn-default.focus, .disp_front #main-content .widget_core_poll .btn-default:active, .disp_front #main-content .widget_core_poll .btn-default:focus, .disp_front #main-content .widget_core_poll .btn-default:hover, .disp_front #main-content .widget_core_poll .open > .dropdown-toggle.btn-default,
@@ -901,7 +901,7 @@ class cuboid_blog_Skin extends Skin
          .filters .btn-info,
          .disp_threads #main-content .results .action_icon.btn-primary, .disp_messages #main-content .results .action_icon.btn-primary, .disp_contacts #main-content .results .action_icon.btn-primary,
          .disp_threads #main-content .evo_form__thread input:focus, .disp_messages #main-content .evo_form__thread input:focus, .disp_contacts #main-content .evo_form__thread input:focus, .disp_threads #main-content .evo_form__thread textarea:focus, .disp_messages #main-content .evo_form__thread textarea:focus, .disp_contacts #main-content .evo_form__thread textarea:focus,
-         .btn-success
+         .btn-success, .pagination li.active a:hover, .pagination li.active span:hover, .pagination li.active a:active, .pagination li.active span:active, .pagination li.active a:focus, .pagination li.active span:focus, .disp_msgform #main-content .form_text_input:hover, .disp_msgform #main-content .form_textarea_input:hover, .disp_msgform #main-content .form_text_input:active, .disp_msgform #main-content .form_textarea_input:active, .disp_msgform #main-content .form_text_input:focus, .disp_msgform #main-content .form_textarea_input:focus
          { border-color: '.$color.'; }
 
          .disp_posts #content .evo_featured_post
