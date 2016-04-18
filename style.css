@@ -598,6 +598,10 @@ span:focus {
 #main-content .evo_featured_post .small.text-muted a:hover {
   color: #1abc9c;
 }
+#main-content .evo_post .small.text-muted a:hover span,
+#main-content .evo_featured_post .small.text-muted a:hover span {
+  color: #1abc9c;
+}
 #main-content .evo_post .evo_post__full .evo_post__full_text,
 #main-content .evo_featured_post .evo_post__full .evo_post__full_text,
 #main-content .evo_post .evo_post__excerpt .evo_post__full_text,
@@ -1616,11 +1620,12 @@ span:focus {
   display: block;
 }
 .disp_msgform #main-content .submit.btn-primary {
+  font-size: 1.3rem;
+  font-weight: 700;
   -webkit-transition: all 0.32s ease-in-out;
   transition: all 0.32s ease-in-out;
   position: relative;
   text-transform: uppercase;
-  font-weight: 700;
 }
 .disp_msgform #main-content .submit.btn-primary:hover,
 .disp_msgform #main-content .submit.btn-primary:active,
@@ -2506,6 +2511,9 @@ span:focus {
   color: #ffffff;
   background-color: #d9534f;
 }
+.disp_user #main-content .profile_content .profile_column_left .profile_buttons p {
+  margin-bottom: 8px;
+}
 @media screen and (min-width: 768px) {
   .disp_user #main-content .profile_content .profile_column_right {
     margin-left: 280px;
@@ -2531,6 +2539,30 @@ span:focus {
 .disp_user #main-content .profile_content .profile_column_right .fixedform-controls {
   margin-left: 115px;
   word-break: break-word;
+}
+.disp_user #main-content .profile_content .profile_column_right .panel {
+  position: relative;
+  border-radius: 0;
+  border: none;
+  -webkit-transition: all 0.32s ease-in-out;
+  transition: all 0.32s ease-in-out;
+}
+.disp_user #main-content .profile_content .profile_column_right .panel:hover,
+.disp_user #main-content .profile_content .profile_column_right .panel:active,
+.disp_user #main-content .profile_content .profile_column_right .panel:focus {
+  box-shadow: 3px 6px 20px -6px rgba(66, 66, 66, 0.1);
+}
+.disp_user #main-content .profile_content .profile_column_right .panel-heading {
+  border-radius: 0;
+  border-bottom: 0;
+  background-color: #eeeeee;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+}
+.disp_user #main-content .profile_content .profile_column_right .panel-body {
+  border: 1px solid #eeeeee;
 }
 @media screen and (max-width: 660px) {
   .disp_user #main-content .profile_content .profile_column_right .control-label {
@@ -2558,6 +2590,58 @@ span:focus {
   .disp_user .col-md-8 #main-content .profile_column_right {
     margin-left: 245px;
   }
+}
+.disp_user .btn {
+  border-radius: 2px;
+  padding: 8px 12px;
+  -webkit-transition: all 0.32s ease-in-out;
+  transition: all 0.32s ease-in-out;
+}
+.disp_users .results {
+  border: 0;
+  border-radius: 0;
+  box-shadow: 1px 2px 4px rgba(35, 35, 35, 0.12);
+}
+.disp_users .results .panel-heading {
+  background-color: #eeeeee;
+  padding: 20px;
+  border-bottom: 0;
+}
+.disp_users .results .panel-heading .panel-title {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.6rem;
+  text-transform: uppercase;
+}
+.disp_users .results .filters {
+  padding: 25px;
+}
+.disp_users .results .filters .form-group {
+  margin-bottom: 3px;
+}
+.disp_users .results .filters .form_text_input,
+.disp_users .results .filters select {
+  box-shadow: none;
+  border-radius: 2px;
+  border-color: #dddddd;
+}
+.disp_users .results .btn {
+  border-radius: 2px;
+}
+.disp_users .results .table_scroll {
+  padding: 15px;
+}
+.disp_users .results .table_scroll .table {
+  border-left: 1px solid #eeeeee;
+  border-right: 1px solid #eeeeee;
+}
+.disp_users .results .table_scroll th,
+.disp_users .results .table_scroll td,
+.disp_users .results .table_scroll .table.table tr td.firstcol.shrinkwrap {
+  padding: 6px 12px;
+  border-color: #eeeeee;
+}
+.disp_users .results .table_scroll .table.table tr td.firstcol.shrinkwrap a img {
+  border-radius: 3px;
 }
 .filters input {
   font-size: 1.4rem;

@@ -135,7 +135,8 @@
          }
       }
 
-      a, .evo_post__full .evo_post__full_text, .post_comments_link a {
+      a, .evo_post__full .evo_post__full_text,
+      .post_comments_link a {
          color: @w;
       }
 
@@ -143,7 +144,8 @@
 
    // Evo Post Global Style
    // ======================================================================== /
-   .evo_post__full_text, .evo_post__excerpt_text {
+   .evo_post__full_text,
+   .evo_post__excerpt_text {
       font-size: 1.5rem;
       letter-spacing: 0.2px;
       color: @color_content;
@@ -167,7 +169,8 @@
 
       // Evo Post Image and Gallery Before Title
       // ======================================================================== /
-      .evo_image_block, .evo_post_gallery__image {
+      .evo_image_block,
+      .evo_post_gallery__image {
             position: relative;
             overflow: hidden;
 
@@ -354,6 +357,9 @@
          a {
             &:hover {
                color: @primary;
+               span {
+                  color: @primary;
+               }
             }
          }
       }

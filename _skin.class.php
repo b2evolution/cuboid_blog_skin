@@ -867,7 +867,7 @@ class cuboid_blog_Skin extends Skin
          $custom_css .= '
          a, a:hover, a:active, a:focus,
          .disp_search #main-content .search_result .search_content_wrap .search_title a:hover, .disp_search #main-content .search_result .search_content_wrap .search_title a:active, .disp_search #main-content .search_result .search_content_wrap .search_title a:focus,
-         .widget_plugin_evo_Calr .bCalendarTable tfoot a:hover
+         .widget_plugin_evo_Calr .bCalendarTable tfoot a:hover, #main-content .evo_post .small.text-muted a:hover span, #main-content .evo_featured_post .small.text-muted a:hover span
          { color: '.$color.'; }
 
          /* Header */
