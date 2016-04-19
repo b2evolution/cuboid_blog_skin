@@ -1,0 +1,137 @@
+// ======================================================================== /
+// Disp Profile Style
+// ======================================================================== /
+.disp_profile,
+.disp_avatar,
+.disp_pwdchange,
+.disp_userprefs,
+.disp_subs {
+
+    #main-content {
+
+        .profile_tabs {
+            background-color: @w;
+            box-shadow: 3px 3px 5px -1px rgba(0, 0, 0, 0.05);
+            border-bottom: 0;
+            margin: 0 0 30px;
+
+            li {
+                margin: 0;
+                padding: 0;
+
+                &.active {
+                    a {
+                        background-color: @primary;
+                        color: @w;
+                    }
+                }
+            }
+
+            a {
+                padding: 15px 20px;
+                font-family: @font_heading;
+                text-transform: uppercase;
+                font-size: 1.3rem;
+                border: 0;
+                border-radius: 0;
+                margin-right: 2px;
+
+                &:hover, &:active, &:focus {
+                    background-color: @primary;
+                    color: @w;
+                }
+            }
+        }
+
+
+        // Evo Form
+        // ======================================================================== /
+        .evo_form {
+
+            .btn {
+                border-radius: 2px;
+                padding: 8px 12px;
+                font-family: @font_heading;
+                font-size: 1.3rem;
+                text-transform: uppercase;
+            }
+
+            .panel {
+                border-radius: 0;
+                border: 0;
+                box-shadow: @box-shadow;
+                margin-bottom: 30px;
+            }
+
+            .panel-heading {
+                border-radius: 0;
+                border-bottom: 0;
+                background-color: @primary;
+                color: @w;
+                font-family: @font_heading;
+                font-size: 1.4rem;
+                text-transform: uppercase;
+                padding: 12px 20px;
+            }
+
+            #fieldset_wrapper_4 .fieldset {
+                .form_text_input {
+                    width: 92%;
+                }
+            }
+
+            .panel-body {
+                padding: 30px;
+
+                .controls {
+                    .help-inline {
+                        .fa {
+                            margin-right: 3px;
+                        }
+                    }
+                }
+
+                .form-control {
+                    box-shadow: none;
+                    border-radius: 2px;
+                    padding: 8px 12px;
+                    border-color: @cd;
+                    margin-right: 5px;
+
+                    &:hover, &:active, &:focus {
+                        border-color: @primary;
+                    }
+                }
+
+                #edited_user_email {
+                    margin-right: 0;
+                }
+
+                .form_text_input,
+                .form_textarea_input {
+                    height: auto;
+                }
+
+                .avatar_main_frame,
+                .avatartag {
+                    border-color: @cd;
+                    border-radius: 2px;
+                }
+            }
+
+            .SaveButton {
+                padding: 12px 20px;
+                box-shadow: @box-shadow;
+            }
+        }
+
+    }
+
+}
+
+
+.disp_pwdchange {
+    #main-content .evo_form .panel-body {
+        padding: 30px 28px;
+    }
+}

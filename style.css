@@ -82,7 +82,10 @@ button:active,
 span:active,
 .btn:focus,
 button:focus,
-span:focus {
+span:focus,
+.btn:active:focus,
+button:active:focus,
+span:active:focus {
   outline: 0;
 }
 .alert {
@@ -274,8 +277,8 @@ span:focus {
   }
 }
 /* ----------------------------------------------------------------------------
- * # Content Styling
- * -------------------------------------------------------------------------- */
+* # Content Styling
+* -------------------------------------------------------------------------- */
 #content {
   margin-top: 5rem;
 }
@@ -502,9 +505,11 @@ span:focus {
 }
 #main-content .evo_post .evo_image_block,
 #main-content .evo_featured_post .evo_image_block {
-  display: table;
+  display: inline-block;
+  max-width: 100%;
   margin-left: auto;
   margin-right: auto;
+  margin-bottom: 5px;
 }
 #main-content .evo_post .evo_image_block img,
 #main-content .evo_featured_post .evo_image_block img {
@@ -1086,6 +1091,8 @@ span:focus {
 }
 #comment_form .evo_form .form_text_input,
 #comment_form .evo_form .form_textarea_input {
+  padding: 8px 12px;
+  height: auto;
   border-radius: 0;
   border-color: #dddddd;
   box-shadow: none;
@@ -1943,7 +1950,8 @@ span:focus {
 }
 .disp_posts #main-content .evo_post .evo_post_images {
   display: block;
-  margin-bottom: 2rem;
+  margin-left: -3rem;
+  margin-right: -3rem;
 }
 .disp_posts #main-content .evo_post .evo_post_images img {
   border-radius: 0;
@@ -1952,6 +1960,7 @@ span:focus {
   margin-top: -2.5rem;
   margin-left: -3rem;
   margin-right: -3rem;
+  margin-bottom: 15px;
 }
 @media screen and (max-width: 480px) {
   .disp_posts #main-content .evo_post .evo_post_images .evo_image_block {
@@ -2642,6 +2651,434 @@ span:focus {
 }
 .disp_users .results .table_scroll .table.table tr td.firstcol.shrinkwrap a img {
   border-radius: 3px;
+}
+.disp_profile #main-content .profile_tabs,
+.disp_avatar #main-content .profile_tabs,
+.disp_pwdchange #main-content .profile_tabs,
+.disp_userprefs #main-content .profile_tabs,
+.disp_subs #main-content .profile_tabs {
+  background-color: #ffffff;
+  box-shadow: 3px 3px 5px -1px rgba(0, 0, 0, 0.05);
+  border-bottom: 0;
+  margin: 0 0 30px;
+}
+.disp_profile #main-content .profile_tabs li,
+.disp_avatar #main-content .profile_tabs li,
+.disp_pwdchange #main-content .profile_tabs li,
+.disp_userprefs #main-content .profile_tabs li,
+.disp_subs #main-content .profile_tabs li {
+  margin: 0;
+  padding: 0;
+}
+.disp_profile #main-content .profile_tabs li.active a,
+.disp_avatar #main-content .profile_tabs li.active a,
+.disp_pwdchange #main-content .profile_tabs li.active a,
+.disp_userprefs #main-content .profile_tabs li.active a,
+.disp_subs #main-content .profile_tabs li.active a {
+  background-color: #1abc9c;
+  color: #ffffff;
+}
+.disp_profile #main-content .profile_tabs a,
+.disp_avatar #main-content .profile_tabs a,
+.disp_pwdchange #main-content .profile_tabs a,
+.disp_userprefs #main-content .profile_tabs a,
+.disp_subs #main-content .profile_tabs a {
+  padding: 15px 20px;
+  font-family: "Montserrat", sans-serif;
+  text-transform: uppercase;
+  font-size: 1.3rem;
+  border: 0;
+  border-radius: 0;
+  margin-right: 2px;
+}
+.disp_profile #main-content .profile_tabs a:hover,
+.disp_avatar #main-content .profile_tabs a:hover,
+.disp_pwdchange #main-content .profile_tabs a:hover,
+.disp_userprefs #main-content .profile_tabs a:hover,
+.disp_subs #main-content .profile_tabs a:hover,
+.disp_profile #main-content .profile_tabs a:active,
+.disp_avatar #main-content .profile_tabs a:active,
+.disp_pwdchange #main-content .profile_tabs a:active,
+.disp_userprefs #main-content .profile_tabs a:active,
+.disp_subs #main-content .profile_tabs a:active,
+.disp_profile #main-content .profile_tabs a:focus,
+.disp_avatar #main-content .profile_tabs a:focus,
+.disp_pwdchange #main-content .profile_tabs a:focus,
+.disp_userprefs #main-content .profile_tabs a:focus,
+.disp_subs #main-content .profile_tabs a:focus {
+  background-color: #1abc9c;
+  color: #ffffff;
+}
+.disp_profile #main-content .evo_form .btn,
+.disp_avatar #main-content .evo_form .btn,
+.disp_pwdchange #main-content .evo_form .btn,
+.disp_userprefs #main-content .evo_form .btn,
+.disp_subs #main-content .evo_form .btn {
+  border-radius: 2px;
+  padding: 8px 12px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.3rem;
+  text-transform: uppercase;
+}
+.disp_profile #main-content .evo_form .panel,
+.disp_avatar #main-content .evo_form .panel,
+.disp_pwdchange #main-content .evo_form .panel,
+.disp_userprefs #main-content .evo_form .panel,
+.disp_subs #main-content .evo_form .panel {
+  border-radius: 0;
+  border: 0;
+  box-shadow: 1px 2px 4px rgba(35, 35, 35, 0.12);
+  margin-bottom: 30px;
+}
+.disp_profile #main-content .evo_form .panel-heading,
+.disp_avatar #main-content .evo_form .panel-heading,
+.disp_pwdchange #main-content .evo_form .panel-heading,
+.disp_userprefs #main-content .evo_form .panel-heading,
+.disp_subs #main-content .evo_form .panel-heading {
+  border-radius: 0;
+  border-bottom: 0;
+  background-color: #1abc9c;
+  color: #ffffff;
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.4rem;
+  text-transform: uppercase;
+  padding: 12px 20px;
+}
+.disp_profile #main-content .evo_form #fieldset_wrapper_4 .fieldset .form_text_input,
+.disp_avatar #main-content .evo_form #fieldset_wrapper_4 .fieldset .form_text_input,
+.disp_pwdchange #main-content .evo_form #fieldset_wrapper_4 .fieldset .form_text_input,
+.disp_userprefs #main-content .evo_form #fieldset_wrapper_4 .fieldset .form_text_input,
+.disp_subs #main-content .evo_form #fieldset_wrapper_4 .fieldset .form_text_input {
+  width: 92%;
+}
+.disp_profile #main-content .evo_form .panel-body,
+.disp_avatar #main-content .evo_form .panel-body,
+.disp_pwdchange #main-content .evo_form .panel-body,
+.disp_userprefs #main-content .evo_form .panel-body,
+.disp_subs #main-content .evo_form .panel-body {
+  padding: 30px;
+}
+.disp_profile #main-content .evo_form .panel-body .controls .help-inline .fa,
+.disp_avatar #main-content .evo_form .panel-body .controls .help-inline .fa,
+.disp_pwdchange #main-content .evo_form .panel-body .controls .help-inline .fa,
+.disp_userprefs #main-content .evo_form .panel-body .controls .help-inline .fa,
+.disp_subs #main-content .evo_form .panel-body .controls .help-inline .fa {
+  margin-right: 3px;
+}
+.disp_profile #main-content .evo_form .panel-body .form-control,
+.disp_avatar #main-content .evo_form .panel-body .form-control,
+.disp_pwdchange #main-content .evo_form .panel-body .form-control,
+.disp_userprefs #main-content .evo_form .panel-body .form-control,
+.disp_subs #main-content .evo_form .panel-body .form-control {
+  box-shadow: none;
+  border-radius: 2px;
+  padding: 8px 12px;
+  border-color: #dddddd;
+  margin-right: 5px;
+}
+.disp_profile #main-content .evo_form .panel-body .form-control:hover,
+.disp_avatar #main-content .evo_form .panel-body .form-control:hover,
+.disp_pwdchange #main-content .evo_form .panel-body .form-control:hover,
+.disp_userprefs #main-content .evo_form .panel-body .form-control:hover,
+.disp_subs #main-content .evo_form .panel-body .form-control:hover,
+.disp_profile #main-content .evo_form .panel-body .form-control:active,
+.disp_avatar #main-content .evo_form .panel-body .form-control:active,
+.disp_pwdchange #main-content .evo_form .panel-body .form-control:active,
+.disp_userprefs #main-content .evo_form .panel-body .form-control:active,
+.disp_subs #main-content .evo_form .panel-body .form-control:active,
+.disp_profile #main-content .evo_form .panel-body .form-control:focus,
+.disp_avatar #main-content .evo_form .panel-body .form-control:focus,
+.disp_pwdchange #main-content .evo_form .panel-body .form-control:focus,
+.disp_userprefs #main-content .evo_form .panel-body .form-control:focus,
+.disp_subs #main-content .evo_form .panel-body .form-control:focus {
+  border-color: #1abc9c;
+}
+.disp_profile #main-content .evo_form .panel-body #edited_user_email,
+.disp_avatar #main-content .evo_form .panel-body #edited_user_email,
+.disp_pwdchange #main-content .evo_form .panel-body #edited_user_email,
+.disp_userprefs #main-content .evo_form .panel-body #edited_user_email,
+.disp_subs #main-content .evo_form .panel-body #edited_user_email {
+  margin-right: 0;
+}
+.disp_profile #main-content .evo_form .panel-body .form_text_input,
+.disp_avatar #main-content .evo_form .panel-body .form_text_input,
+.disp_pwdchange #main-content .evo_form .panel-body .form_text_input,
+.disp_userprefs #main-content .evo_form .panel-body .form_text_input,
+.disp_subs #main-content .evo_form .panel-body .form_text_input,
+.disp_profile #main-content .evo_form .panel-body .form_textarea_input,
+.disp_avatar #main-content .evo_form .panel-body .form_textarea_input,
+.disp_pwdchange #main-content .evo_form .panel-body .form_textarea_input,
+.disp_userprefs #main-content .evo_form .panel-body .form_textarea_input,
+.disp_subs #main-content .evo_form .panel-body .form_textarea_input {
+  height: auto;
+}
+.disp_profile #main-content .evo_form .panel-body .avatar_main_frame,
+.disp_avatar #main-content .evo_form .panel-body .avatar_main_frame,
+.disp_pwdchange #main-content .evo_form .panel-body .avatar_main_frame,
+.disp_userprefs #main-content .evo_form .panel-body .avatar_main_frame,
+.disp_subs #main-content .evo_form .panel-body .avatar_main_frame,
+.disp_profile #main-content .evo_form .panel-body .avatartag,
+.disp_avatar #main-content .evo_form .panel-body .avatartag,
+.disp_pwdchange #main-content .evo_form .panel-body .avatartag,
+.disp_userprefs #main-content .evo_form .panel-body .avatartag,
+.disp_subs #main-content .evo_form .panel-body .avatartag {
+  border-color: #dddddd;
+  border-radius: 2px;
+}
+.disp_profile #main-content .evo_form .SaveButton,
+.disp_avatar #main-content .evo_form .SaveButton,
+.disp_pwdchange #main-content .evo_form .SaveButton,
+.disp_userprefs #main-content .evo_form .SaveButton,
+.disp_subs #main-content .evo_form .SaveButton {
+  padding: 12px 20px;
+  box-shadow: 1px 2px 4px rgba(35, 35, 35, 0.12);
+}
+.disp_pwdchange #main-content .evo_form .panel-body {
+  padding: 30px 28px;
+}
+.disp_access_requires_login #main-content,
+.disp_lostpassword #main-content,
+.disp_login #main-content,
+.disp_register #main-content {
+  background-color: #ffffff;
+  padding: 30px;
+  box-shadow: 1px 2px 4px rgba(35, 35, 35, 0.12);
+}
+.disp_access_requires_login #content,
+.disp_lostpassword #content,
+.disp_login #content,
+.disp_register #content {
+  min-height: 70vh;
+}
+.skin-form .panel-body .panel {
+  border: none;
+  box-shadow: none;
+}
+.skin-form .panel-body .panel-body {
+  padding: 0;
+}
+.skin-form .fieldset {
+  margin: 0;
+}
+.skin-form .fieldset div.input {
+  margin: 0;
+}
+.skin-form .control-buttons,
+.skin-form div.input {
+  padding: 0;
+  width: 100%;
+  text-align: center;
+}
+.evo_panel__login,
+.evo_panel__lostpass,
+.evo_panel__register,
+.evo_panel__activation {
+  min-width: 290px;
+  margin: 1.5em auto auto;
+}
+.evo_panel__login .panel,
+.evo_panel__lostpass .panel,
+.evo_panel__register .panel,
+.evo_panel__activation .panel {
+  border-radius: 0;
+  border-color: #dddddd;
+  box-shadow: none;
+  margin-bottom: 5px;
+}
+.evo_panel__login .panel-heading,
+.evo_panel__lostpass .panel-heading,
+.evo_panel__register .panel-heading,
+.evo_panel__activation .panel-heading {
+  border-radius: 0;
+  background-color: #eeeeee;
+}
+.evo_panel__login .panel-heading .panel-title,
+.evo_panel__lostpass .panel-heading .panel-title,
+.evo_panel__register .panel-heading .panel-title,
+.evo_panel__activation .panel-heading .panel-title {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  padding: 6px 15px;
+}
+.evo_panel__login .panel-heading .panel-title .close,
+.evo_panel__lostpass .panel-heading .panel-title .close,
+.evo_panel__register .panel-heading .panel-title .close,
+.evo_panel__activation .panel-heading .panel-title .close {
+  top: 0;
+}
+.evo_panel__login .panel-body,
+.evo_panel__lostpass .panel-body,
+.evo_panel__register .panel-body,
+.evo_panel__activation .panel-body {
+  padding: 30px 30px 15px;
+}
+.evo_panel__login .panel-body .form_text_input,
+.evo_panel__lostpass .panel-body .form_text_input,
+.evo_panel__register .panel-body .form_text_input,
+.evo_panel__activation .panel-body .form_text_input {
+  border-radius: 2px;
+  box-shadow: none;
+  height: auto;
+  padding: 10px 12px;
+}
+.evo_panel__login .panel-body .form_text_input:hover,
+.evo_panel__lostpass .panel-body .form_text_input:hover,
+.evo_panel__register .panel-body .form_text_input:hover,
+.evo_panel__activation .panel-body .form_text_input:hover,
+.evo_panel__login .panel-body .form_text_input:active,
+.evo_panel__lostpass .panel-body .form_text_input:active,
+.evo_panel__register .panel-body .form_text_input:active,
+.evo_panel__activation .panel-body .form_text_input:active,
+.evo_panel__login .panel-body .form_text_input:focus,
+.evo_panel__lostpass .panel-body .form_text_input:focus,
+.evo_panel__register .panel-body .form_text_input:focus,
+.evo_panel__activation .panel-body .form_text_input:focus,
+.evo_panel__login .panel-body .form_text_input:focus:invalid:focus,
+.evo_panel__lostpass .panel-body .form_text_input:focus:invalid:focus,
+.evo_panel__register .panel-body .form_text_input:focus:invalid:focus,
+.evo_panel__activation .panel-body .form_text_input:focus:invalid:focus {
+  box-shadow: none !important;
+}
+.evo_panel__login .btn,
+.evo_panel__lostpass .btn,
+.evo_panel__register .btn,
+.evo_panel__activation .btn {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.3rem;
+  text-transform: uppercase;
+  border-radius: 2px;
+  -webkit-transition: all 0.2s linear;
+  transition: all 0.2s linear;
+}
+.evo_panel__login .btn.btn-success,
+.evo_panel__lostpass .btn.btn-success,
+.evo_panel__register .btn.btn-success,
+.evo_panel__activation .btn.btn-success {
+  background-color: #1abc9c;
+  border-color: #1abc9c;
+}
+.evo_panel__login .btn:hover,
+.evo_panel__lostpass .btn:hover,
+.evo_panel__register .btn:hover,
+.evo_panel__activation .btn:hover {
+  box-shadow: 1px 2px 4px #c5c5c5;
+  -webkit-transform: translateY(-0.5px);
+  -ms-transform: translateY(-0.5px);
+  transform: translateY(-0.5px);
+}
+.evo_panel__login {
+  max-width: 450px;
+}
+.evo_panel__lostpass {
+  max-width: 480px;
+}
+.evo_panel__lostpass #ffield_x label {
+  display: none;
+}
+.evo_panel__activation {
+  max-width: 530px;
+}
+.evo_panel__activation #activateinfo_form .control-buttons {
+  text-align: left;
+}
+.evo_panel__register {
+  max-width: 580px;
+}
+.evo_panel__register .control-buttons {
+  text-align: left;
+}
+.evo_panel__register.register-disabled {
+  width: 350px;
+}
+.evo_panel__register .form-control#country,
+.evo_panel__register .form-control#u {
+  width: 100%;
+}
+.evo_form__login_links {
+  padding: 0 5px;
+  font-size: 92%;
+}
+.evo_form__login fieldset {
+  margin-bottom: 20px;
+}
+.evo_form__login .controls {
+  padding: 0;
+  margin: 0;
+  width: 100%;
+}
+.evo_form__login .control-buttons {
+  margin-left: 0;
+}
+.evo_form__login input.form-control[type=text],
+.evo_form__login input.form-control[type=password] {
+  width: 100%;
+}
+.evo_form__login .btn {
+  margin-top: 5px;
+}
+#login_form .control-buttons {
+  text-align: left;
+}
+.standard_login_link {
+  text-align: center;
+  margin: 3em 0 1ex 0;
+}
+.form_footer_notes {
+  margin-top: 0;
+}
+.disp_edit #item_checkchanges {
+  background-color: #ffffff;
+  padding: 20px 30px 30px;
+  box-shadow: 1px 2px 4px rgba(35, 35, 35, 0.12);
+}
+.disp_edit #item_checkchanges .btn {
+  border-radius: 2px;
+}
+.disp_edit #item_checkchanges .btn.btn-info {
+  background-color: #333333;
+  border-color: #333333;
+}
+.disp_edit #item_checkchanges .btn.btn-default {
+  border-color: #ffffff;
+}
+.disp_edit #item_checkchanges .btn.btn-default:hover,
+.disp_edit #item_checkchanges .btn.btn-default:active,
+.disp_edit #item_checkchanges .btn.btn-default:focus {
+  border-color: #e6e6e6;
+}
+.disp_edit #item_checkchanges .btn.btn-status-published {
+  border-radius: 2px;
+  padding: 12px 20px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.3rem;
+  text-transform: uppercase;
+  border-color: #93B96D;
+}
+.disp_edit #item_checkchanges .panel {
+  border-radius: 2px;
+  border-color: #1abc9c;
+}
+.disp_edit #item_checkchanges .panel .panel-heading {
+  background-color: #1abc9c;
+  color: #ffffff;
+  font-family: "Montserrat", sans-serif;
+  border-radius: 0;
+  border-bottom: 0;
+  padding: 15px 20px;
+}
+.disp_edit #item_checkchanges .panel .panel-body .form_text_input,
+.disp_edit #item_checkchanges .panel .panel-body .form_textarea_input {
+  box-shadow: none;
+  border-radius: 2px;
+}
+.disp_edit #item_checkchanges .well {
+  border-radius: 2px;
+  box-shadow: none;
+}
+.disp_edit #item_checkchanges .edit_actions {
+  margin-top: 20px;
+  margin-bottom: 10px;
 }
 .filters input {
   font-size: 1.4rem;
@@ -3599,105 +4036,6 @@ div.bSideItem {
   text-shadow: 0 1px 0 #ffffff;
 }
 div.bSideItem h4 {
-  margin-top: 0;
-}
-.skin-form .panel-body .panel {
-  border: none;
-  box-shadow: none;
-}
-.skin-form .panel-body .panel-body {
-  padding: 0;
-}
-.skin-form .fieldset {
-  margin: 0;
-}
-.skin-form .fieldset div.input {
-  margin: 0;
-}
-.skin-form .control-buttons,
-.skin-form div.input {
-  padding: 0;
-  width: 100%;
-  text-align: center;
-}
-.evo_panel__login,
-.evo_panel__lostpass,
-.evo_panel__register,
-.evo_panel__activation {
-  min-width: 290px;
-  margin: 1.5em auto auto;
-}
-.evo_panel__login .panel,
-.evo_panel__lostpass .panel,
-.evo_panel__register .panel,
-.evo_panel__activation .panel {
-  margin: 5px 0;
-}
-.evo_panel__login .panel-body,
-.evo_panel__lostpass .panel-body,
-.evo_panel__register .panel-body,
-.evo_panel__activation .panel-body {
-  padding-top: 20px;
-  padding-bottom: 0;
-}
-.evo_panel__login {
-  max-width: 400px;
-}
-.evo_panel__lostpass {
-  max-width: 480px;
-}
-.evo_panel__lostpass #ffield_x label {
-  display: none;
-}
-.evo_panel__activation {
-  max-width: 530px;
-}
-.evo_panel__activation #activateinfo_form .control-buttons {
-  text-align: left;
-}
-.evo_panel__register {
-  max-width: 580px;
-}
-.evo_panel__register .control-buttons {
-  text-align: left;
-}
-.evo_panel__register.register-disabled {
-  width: 350px;
-}
-.evo_panel__register .form-control#country,
-.evo_panel__register .form-control#u {
-  width: 100%;
-}
-.evo_form__login_links {
-  padding: 0 5px;
-  font-size: 92%;
-}
-.evo_form__login fieldset {
-  margin-bottom: 20px;
-}
-.evo_form__login .controls {
-  padding: 0;
-  margin: 0;
-  width: 100%;
-}
-.evo_form__login .control-buttons {
-  margin-left: 0;
-}
-.evo_form__login input.form-control[type=text],
-.evo_form__login input.form-control[type=password] {
-  width: 100%;
-}
-.evo_form__login .btn {
-  margin-top: 5px;
-}
-#login_form .control-buttons {
-  text-align: left;
-}
-.standard_login_link {
-  text-align: center;
-  margin: 3em 0 1ex 0;
-}
-.form_footer_notes {
   margin-top: 0;
 }
 div.action_messages,

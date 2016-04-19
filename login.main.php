@@ -1,17 +1,20 @@
 <?php
 /**
- * This file is the template that displays "access denied" for non-members.
+ * This is the main/default page template for the "bootstrap_blog" skin.
+ *
+ * This skin only uses one single template which includes most of its features.
+ * It will also rely on default includes for specific dispays (like the comment form).
  *
  * For a quick explanation of b2evo 2.0 skins, please start here:
  * {@link http://b2evolution.net/man/skin-development-primer}
+ *
+ * The main page template is used to display the blog when no specific page template is available
+ * to handle the request (based on $disp).
  *
  * @package evoskins
  * @subpackage bootstrap_blog
  */
 if( !defined('EVO_MAIN_INIT') ) die( 'Please, do not access this page directly.' );
-
-
-global $app_version, $disp, $Blog;
 
 if( version_compare( $app_version, '6.4' ) < 0 )
 { // Older skins (versions 2.x and above) should work on newer b2evo versions, but newer skins may not work on older b2evo versions.
@@ -32,6 +35,7 @@ skin_include( '_html_header.inc.php', array() );
 // If site headers are enabled, they will be included here:
 siteskin_include( '_site_body_header.inc.php' );
 // ------------------------------- END OF SITE HEADER --------------------------------
+
 
 $column = '';
 switch ( $disp ) {
@@ -119,64 +123,66 @@ $content_grid = $Skin->get_column_class( $column );
 </header><!-- #main-header -->
 <?php } ?>
 
-
 <div id="content">
-	<div class="container">
-		<div class="row">
-			<div class="<?php if( $Skin->is_visible_container( 'sidebar' ) ){ echo $Skin->get_column_class( $column ); } else { echo 'col-md-12'; } ?>">
-				<main id="main-content"><!-- This is were a link like "Jump to main content" would land -->
-					<!-- ================================= START OF MAIN AREA ================================== -->
+   <div class="container">
+      <div class="row">
 
-				<?php
-				if( ! in_array( $disp, array( 'login', 'lostpassword', 'register', 'activateinfo', 'access_requires_login' ) ) )
-				{ // Don't display the messages here because they are displayed inside wrapper to have the same width as form
-					// ------------------------- MESSAGES GENERATED FROM ACTIONS -------------------------
-					messages( array(
-						'block_start' => '<div class="action_messages">',
-						'block_end'   => '</div>',
-					) );
-					// --------------------------------- END OF MESSAGES ---------------------------------
-				}
-				?>
+      	<div class="<?php if( $Skin->is_visible_container( 'sidebar' ) ){ echo $Skin->get_column_class( $column ); } else { echo 'col-md-12'; } ?>">
 
-				<?php
-				// ------------------- PREV/NEXT POST LINKS (SINGLE POST MODE) -------------------
-				item_prevnext_links( array(
-					'block_start' => '<nav><ul class="pager">',
-					'prev_start'  => '<li class="previous">',
-					'prev_end'    => '</li>',
-					'next_start'  => '<li class="next">',
-					'next_end'    => '</li>',
-					'block_end'   => '</ul></nav>',
-				) );
-				// ------------------------- END OF PREV/NEXT POST LINKS -------------------------
-				?>
+      		<main id="main-content"><!-- This is were a link like "Jump to main content" would land -->
+      		<!-- ================================= START OF MAIN AREA ================================== -->
 
-				<?php
-				// ------------------------ TITLE FOR THE CURRENT REQUEST ------------------------
-				request_title( array(
-					'title_before'       => '<h2 class="title_head_post">',
-					'title_after'        => '</h2>',
-					'title_none'         => '',
-					'glue'               => ' - ',
-					'title_single_disp'  => false,
-					'title_page_disp'    => false,
-					'format'             => 'htmlbody',
-					'register_text'      => '',
-					'login_text'         => '',
-					'lostpassword_text'  => '',
-					'account_activation' => '',
-					'msgform_text'       => '',
-					'user_text'          => '',
-					'users_text'         => '',
-					'display_edit_links' => false,
-				) );
-				// ----------------------------- END OF REQUEST TITLE ----------------------------
-				?>
+      		<?php
+      		if( ! in_array( $disp, array( 'login', 'lostpassword', 'register', 'activateinfo', 'access_requires_login' ) ) )
+      		{ // Don't display the messages here because they are displayed inside wrapper to have the same width as form
+      			// ------------------------- MESSAGES GENERATED FROM ACTIONS -------------------------
+      			messages( array(
+   					'block_start' => '<div class="action_messages">',
+   					'block_end'   => '</div>',
+   				) );
+      			// --------------------------------- END OF MESSAGES ---------------------------------
+      		}
+      		?>
 
-				<?php
-				// -------------- MAIN CONTENT TEMPLATE INCLUDED HERE (Based on $disp) --------------
-				skin_include( '$disp$', array(
+      		<?php
+      			// ------------------- PREV/NEXT POST LINKS (SINGLE POST MODE) -------------------
+      			item_prevnext_links( array(
+   					'block_start' => '<nav><ul class="pager">',
+						'prev_start'  => '<li class="previous">',
+						'prev_end'    => '</li>',
+						'next_start'  => '<li class="next">',
+						'next_end'    => '</li>',
+   					'block_end'   => '</ul></nav>',
+   				) );
+      			// ------------------------- END OF PREV/NEXT POST LINKS -------------------------
+      		?>
+
+      		<?php
+      			// ------------------------ TITLE FOR THE CURRENT REQUEST ------------------------
+      			request_title( array(
+   					'title_before'       => '<h2 class="title_head_post">',
+   					'title_after'        => '</h2>',
+   					'title_none'         => '',
+   					'glue'               => ' - ',
+   					'title_single_disp'  => false,
+   					'title_page_disp'    => false,
+   					'format'             => 'htmlbody',
+   					'register_text'      => '',
+   					'login_text'         => '',
+   					'lostpassword_text'  => '',
+   					'account_activation' => '',
+   					'msgform_text'       => '',
+   					'user_text'          => '',
+   					'users_text'         => '',
+   					'display_edit_links' => false,
+   				) );
+      			// ----------------------------- END OF REQUEST TITLE ----------------------------
+      		?>
+
+
+      		<?php
+      			// -------------- MAIN CONTENT TEMPLATE INCLUDED HERE (Based on $disp) --------------
+      			skin_include( '$disp$', array(
       					'author_link_text' => 'preferredname',
       					// Profile tabs to switch between user edit forms
       					'profile_tabs' => array(
@@ -251,23 +257,23 @@ $content_grid = $Skin->get_column_class( $column );
       			// Note: you can customize any of the sub templates included here by
       			// copying the matching php file into your skin directory.
       			// ------------------------- END OF MAIN CONTENT TEMPLATE ---------------------------
-					?>
-				</main>
+      		?>
+      		</main>
 
-			</div><!-- .col -->
+      	</div><!-- .col -->
 
-			<?php
-			if ( $Skin->is_visible_container( 'sidebar' ) ) {
-				// ------------------------- SIDEBAR INCLUDED HERE --------------------------
-				skin_include( '_sidebar.inc.php' );
-				// Note: You can customize the sidebar by copying the
-				// _sidebar.inc.php file into the current skin folder.
-				// ----------------------------- END OF SIDEBAR -----------------------------
-			}
-			?>
+		<?php
+		if ( $Skin->is_visible_container( 'sidebar' ) ) {
+			// ------------------------- SIDEBAR INCLUDED HERE --------------------------
+			skin_include( '_sidebar.inc.php' );
+			// Note: You can customize the sidebar by copying the
+			// _sidebar.inc.php file into the current skin folder.
+			// ----------------------------- END OF SIDEBAR -----------------------------
+		}
+		?>
 
-		</div><!-- .row -->
-	</div><!-- .container -->
+      </div><!-- .row -->
+   </div><!-- .container -->
 </div><!-- #content -->
 
 

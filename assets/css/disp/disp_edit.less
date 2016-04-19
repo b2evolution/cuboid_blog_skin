@@ -1,0 +1,73 @@
+// ======================================================================== /
+// Style Edit
+// ======================================================================== /
+.disp_edit {
+
+    #item_checkchanges {
+        background-color: @w;
+        padding: 20px 30px 30px;
+        box-shadow: @box-shadow;
+
+        .btn {
+            border-radius: 2px;
+
+            &.btn-info {
+                background-color: @c3;
+                border-color: @c3;
+            }
+
+            &.btn-default {
+                border-color: @w;
+                &:hover, &:active, &:focus {
+                    border-color: #e6e6e6;
+                }
+            }
+
+            &.btn-status-published {
+                border-radius: 2px;
+                padding: 12px 20px;
+                font-family: @font_heading;
+                font-size: 1.3rem;
+                text-transform: uppercase;
+                border-color: #93B96D;
+            }
+        }
+
+        .panel {
+            border-radius: 2px;
+            border-color: @primary;
+
+            .panel-heading {
+                background-color: @primary;
+                color: @w;
+                font-family: @font_heading;
+                border-radius: 0;
+                border-bottom: 0;
+                padding: 15px 20px;
+            }
+
+            .panel-body {
+
+                .form_text_input,
+                .form_textarea_input {
+                    box-shadow: none;
+                    border-radius: 2px;
+                }
+
+            }
+
+        }
+
+        .well {
+            border-radius: 2px;
+            box-shadow: none;
+        }
+
+        .edit_actions {
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+
+    }
+
+}

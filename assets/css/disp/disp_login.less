@@ -1,0 +1,183 @@
+// ======================================================================== /
+// Disp Login and Access Require Login
+// ======================================================================== /
+.disp_access_requires_login,
+.disp_lostpassword,
+.disp_login,
+.disp_register {
+    #main-content {
+        background-color: @w;
+        padding: 30px;
+        box-shadow: @box-shadow;
+    }
+
+    #content {
+        min-height: 70vh;
+    }
+}
+
+// Login/Register forms:
+// ======================================================================== /
+.skin-form {
+	.panel-body {
+		.panel {
+			border: none;
+			box-shadow: none;
+		}
+		.panel-body {
+			padding: 0;
+		}
+	}
+	.fieldset {
+		margin: 0;
+		div.input {
+			margin: 0;
+		}
+	}
+	.control-buttons, div.input {
+		padding: 0;
+		width: 100%;
+		text-align: center;
+	}
+}
+
+// Global Style Disp Login, Lostpass, Register, Activation
+// ======================================================================== /
+.evo_panel__login,
+.evo_panel__lostpass,
+.evo_panel__register,
+.evo_panel__activation {
+	min-width: 290px;
+	margin: 1.5em auto auto;
+
+	.panel {
+        border-radius: 0;
+        border-color: @cd;
+        box-shadow: none;
+        margin-bottom: 5px;
+	}
+
+    .panel-heading {
+        border-radius: 0;
+        background-color: @color_border;
+
+        .panel-title {
+            font-family: @font_heading;
+            font-size: 1.5rem;
+            text-transform: uppercase;
+            padding: 6px 15px;
+
+            .close {
+                top: 0;
+            }
+        }
+    }
+
+	.panel-body {
+        padding: 30px 30px 15px;
+
+        .form_text_input {
+            border-radius: 2px;
+            box-shadow: none;
+            height: auto;
+            padding: 10px 12px;
+
+            &:hover, &:active, &:focus,
+            &:focus:invalid:focus {
+                box-shadow: none !important;
+            }
+        }
+	}
+
+    .btn {
+        font-family: @font_heading;
+        font-size: 1.3rem;
+        text-transform: uppercase;
+        border-radius: 2px;
+        transition: all 0.2s linear;
+
+        &.btn-success {
+            background-color: @primary;
+            border-color: @primary;
+        }
+
+        &:hover {
+            box-shadow: 1px 2px 4px @cc5;
+            transform: translateY(-0.5px);
+        }
+    }
+
+}
+
+.evo_panel__login {
+	max-width: 450px;
+}
+
+.evo_panel__lostpass {
+	max-width: 480px;
+	#ffield_x label {
+		display: none;
+	}
+}
+
+.evo_panel__activation {
+	max-width: 530px;
+	#activateinfo_form .control-buttons{
+		text-align: left;
+	}
+}
+
+.evo_panel__register {
+	max-width: 580px;
+	.control-buttons{
+		text-align: left;
+	}
+	&.register-disabled {
+		width: 350px;
+	}
+	.form-control {
+		&#country, &#u {
+			width: 100%;
+		}
+	}
+}
+
+.evo_form__login_links {
+	padding: 0 5px;
+	font-size: 92%;
+}
+
+.evo_form__login {
+	fieldset {
+		margin-bottom: 20px;
+	}
+	.controls {
+		padding: 0;
+		margin: 0;
+		width: 100%;
+	}
+	.control-buttons {
+		margin-left: 0;
+	}
+	input.form-control[type=text], input.form-control[type=password] {
+		width: 100%;
+	}
+	.btn {
+		margin-top: 5px;
+	}
+}
+
+#login_form {
+	.control-buttons {
+		text-align: left;
+	}
+}
+
+.standard_login_link {
+	text-align: center;
+	margin: 3em 0 1ex 0;
+}
+
+.form_footer_notes {
+	margin-top: 0;
+}
