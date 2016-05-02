@@ -7,7 +7,7 @@
 ====
 ### Posts Page
 
-![disp=posts](skinshot_posts.png)
+![disp=posts](skinshot_posts.jpg)
 
 ### Single Post Page
 
