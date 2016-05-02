@@ -6,194 +6,194 @@
 .disp_contacts,
 .disp_msgform {
 
-   #main-content {
-      padding: 30px;
-      background-color: @w;
-      box-shadow: @box-shadow;
-      margin-bottom: 30px;
+    #main-content {
+        padding: 30px;
+        background-color: @w;
+        box-shadow: @box-shadow;
+        margin-bottom: 30px;
 
-      @media screen and ( max-width: @S ) {
-         padding: 20px;
-      }
+        @media screen and ( max-width: @S ) {
+            padding: 20px;
+        }
 
-      // Title Head Post
-      // ======================================================================== /
-      .title_head_post {
-         padding: 0 0 20px;
-         margin-bottom: 0;
-         box-shadow: none;
-      }
-
-      // Results
-      // ======================================================================== /
-      .results {
-         // padding: 0 20px 20px;
-         border-radius: 0;
-         background-color: @w;
-         margin-bottom: 0;
-         box-shadow: none;
-
-         .fieldset_title {
-            padding: 15px 10px;
-            background-color: @cf7;
-         }
-
-         input {
+        // Title Head Post
+        // ======================================================================== /
+        .title_head_post {
+            padding: 0 0 20px;
+            margin-bottom: 0;
             box-shadow: none;
-            border-radius: 2px;
-            font-size: 1.4rem;
+        }
 
-            &:focus {
-               border-color: @primary;
-            }
-         }
-
-         .action_icon {
-            font-size: 1.2rem;
-            font-weight: 600;
-            border-radius: 2px;
-            margin: -11px 0 0 8px;
-
-            &.btn-primary {
-               background-color: @primary;
-               border-color: @primary;
-            }
-
-            .fa {
-               padding-right: 3px;
-            }
-         }
-
-
-         // Table Content
-         // ======================================================================== /
-         .table_scroll {
-
-            th {
-               font-family: @font_heading;
-               font-size: 1.3rem;
-
-               span {
-                  color: @c5;
-               }
-            }
-
-            th, td {
-               padding: 8px;
-            }
-
-            .firstcol {
-
-               img {
-                  border-radius: 100%;
-               }
-
-               .nowrap {
-                  white-space: normal;
-               }
-            }
-
-            .thread_subject {
-               .fa {
-                  padding-right: 5px;
-               }
-            }
-
-            .shrinkwrap {
-               font-family: @font_heading;
-               color: @c5;
-
-               img {
-                  border-radius: 100%;
-               }
-            }
-
-         }
-
-      }
-
-      // Form Thread
-      // ======================================================================== /
-      .evo_form__thread {
-         padding: 30px;
-         background-color: @w;
-         box-shadow: none;
-         border: 1px solid @cd;
-
-         @media screen and ( max-width: @S ) {
-            padding: 10px;
-         }
-
-         label {
-            font-family: @font_heading;
-            color: @c5;
-         }
-
-         input, textarea {
+        // Results
+        // ======================================================================== /
+        .results {
+            // padding: 0 20px 20px;
             border-radius: 0;
+            background-color: @w;
+            margin-bottom: 0;
             box-shadow: none;
-            font-family: @font_body;
-            border-color: @cd;
 
-            &:focus {
-               border-color: @primary;
-            }
-         }
-
-         .token-input-list-facebook {
-            box-shadow: none;
-            border-radius: 0;
-            border-color: @cd;
-
-            li {
-               font-family: @font_body;
+            .fieldset_title {
+                padding: 15px 10px;
+                background-color: @cf7;
             }
 
             input {
-               &:active, &:active, &:focus {
-                  border-color: @primary;
-               }
+                box-shadow: none;
+                border-radius: 2px;
+                font-size: 1.4rem;
+
+                &:focus {
+                    border-color: @primary;
+                }
             }
 
-         }
+            .action_icon {
+                font-size: 1.2rem;
+                font-weight: 600;
+                border-radius: 2px;
+                margin: -11px 0 0 8px;
 
-      }
+                &.btn-primary {
+                    background-color: @primary;
+                    border-color: @primary;
+                }
 
-      .SaveButton{
-         font-family: @font_heading !important;
-         font-size: 1.2rem;
-         border-radius: 2px;
-         padding: 10px 15px;
+                .fa {
+                    padding-right: 3px;
+                }
+            }
 
-         &.btn-primary {
+
+            // Table Content
+            // ======================================================================== /
+            .table_scroll {
+
+                th {
+                    font-family: @font_heading;
+                    font-size: 1.3rem;
+
+                    span {
+                        color: @c5;
+                    }
+                }
+
+                th, td {
+                    padding: 8px;
+                }
+
+                .firstcol {
+
+                    img {
+                        border-radius: 100%;
+                    }
+
+                    .nowrap {
+                        white-space: normal;
+                    }
+                }
+
+                .thread_subject {
+                    .fa {
+                        padding-right: 5px;
+                    }
+                }
+
+                .shrinkwrap {
+                    font-family: @font_heading;
+                    color: @c5;
+
+                    img {
+                        border-radius: 100%;
+                    }
+                }
+
+            }
+
+        }
+
+        // Form Thread
+        // ======================================================================== /
+        .evo_form__thread {
+            padding: 30px;
+            background-color: @w;
+            box-shadow: none;
+            border: 1px solid @cd;
+
+            @media screen and ( max-width: @S ) {
+                padding: 10px;
+            }
+
+            label {
+                font-family: @font_heading;
+                color: @c5;
+            }
+
+            input, textarea {
+                border-radius: 0;
+                box-shadow: none;
+                font-family: @font_body;
+                border-color: @cd;
+
+                &:focus {
+                    border-color: @primary;
+                }
+            }
+
+            .token-input-list-facebook {
+                box-shadow: none;
+                border-radius: 0;
+                border-color: @cd;
+
+                li {
+                    font-family: @font_body;
+                }
+
+                input {
+                    &:active, &:active, &:focus {
+                        border-color: @primary;
+                    }
+                }
+
+            }
+
+        }
+
+        .SaveButton{
+            font-family: @font_heading !important;
+            font-size: 1.2rem;
+            border-radius: 2px;
+            padding: 10px 15px;
+
+            &.btn-primary {
+                background-color: @primary;
+                border: 1px solid @primary;
+            }
+
+            &.btn-info {
+                background-color: @c7;
+                border-color: @c7;
+            }
+
+            &:focus, &:active {
+                outline: none;
+            }
+
+        }
+
+        .submit {
+            font-family: @font_heading;
+            font-size: 1.5rem;
             background-color: @primary;
-            border: 1px solid @primary;
-         }
+            border-color: @primary;
+            border-radius: 2px;
 
-         &.btn-info {
-            background-color: @c7;
-            border-color: @c7;
-         }
+            &:hover, &:active, &:focus {
+                outline: 0;
+            }
+        }
 
-         &:focus, &:active {
-            outline: none;
-         }
-
-      }
-
-      .submit {
-         font-family: @font_heading;
-         font-size: 1.5rem;
-         background-color: @primary;
-         border-color: @primary;
-         border-radius: 2px;
-
-         &:hover, &:active, &:focus {
-            outline: 0;
-         }
-      }
-
-   }
+    }
 
 }
 
@@ -203,23 +203,23 @@
 // ======================================================================== /
 .disp_contacts {
 
-   .form_send_contacts {
-      margin-top: 20px;
+    .form_send_contacts {
+        margin-top: 20px;
 
-      .btn-default {
+        .btn-default {
 
-         &:hover, &:active, &:focus {
-            color: @w;
-            background-color: @primary;
-            border-color: @primary;
-         }
-      }
-   }
+            &:hover, &:active, &:focus {
+                color: @w;
+                background-color: @primary;
+                border-color: @primary;
+            }
+        }
+    }
 
 
-   input.SaveButton {
-      padding: 5px 10px !important;
-   }
+    input.SaveButton {
+        padding: 5px 10px !important;
+    }
 
 }
 
@@ -229,62 +229,62 @@
 // ======================================================================== /
 .disp_msgform {
 
-   #main-content {
-      .panel {
-         border: 0;
-         // border-color: @color_border;
-         border-radius: 0;
-      }
+    #main-content {
+        .panel {
+            border: 0;
+            // border-color: @color_border;
+            border-radius: 0;
+        }
 
-      .panel-heading {
-         padding: 0 0 15px;
-         border-radius: 0;
-         border-bottom: 0;
-         background-color: transparent;
+        .panel-heading {
+            padding: 0 0 15px;
+            border-radius: 0;
+            border-bottom: 0;
+            background-color: transparent;
 
-         .panel-title {
-            font-size: 3rem;
-            color: @c5;
-         }
-      }
+            .panel-title {
+                font-size: 3rem;
+                color: @c5;
+            }
+        }
 
-      .panel-body {
-         padding: 30px;
-         border: 1px solid @color_border;
-      }
+        .panel-body {
+            padding: 30px;
+            border: 1px solid @color_border;
+        }
 
-      .form_text_input, .form_textarea_input {
-         padding: 10px 12px;
-         border-radius: 0;
-         box-shadow: none;
-         border-color: @color_border;
-         height: auto;
-         margin-right: 2px;
+        .form_text_input, .form_textarea_input {
+            padding: 10px 12px;
+            border-radius: 0;
+            box-shadow: none;
+            border-color: @color_border;
+            height: auto;
+            margin-right: 2px;
 
-         &:hover, &:active, &:focus {
-            border-color: @primary;
-         }
+            &:hover, &:active, &:focus {
+                border-color: @primary;
+            }
 
-         .help-inline {
-            display: block;
-         }
-      }
+            .help-inline {
+                display: block;
+            }
+        }
 
-      .submit.btn-primary {
-         font-size: 1.3rem;
-         font-weight: 700;
+        .submit.btn-primary {
+            font-size: 1.3rem;
+            font-weight: 700;
 
-         transition: all 0.32s ease-in-out;
-         position: relative;
-         text-transform: uppercase;
+            transition: all 0.32s ease-in-out;
+            position: relative;
+            text-transform: uppercase;
 
 
-         &:hover, &:active, &:focus {
-            box-shadow: 2px 2px 10px 2px rgba(26, 26, 26, 0.20);
-            transform: translateY(-2px);
-         }
-      }
+            &:hover, &:active, &:focus {
+                box-shadow: 2px 2px 10px 2px rgba(26, 26, 26, 0.20);
+                transform: translateY(-2px);
+            }
+        }
 
-   }
+    }
 
 }

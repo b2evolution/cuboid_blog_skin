@@ -204,6 +204,7 @@
 .widget_core_user_avatars,
 .widget_core_coll_avatar,
 .widget_flow_blocks > div {
+    // width: 100%;
 
    img {
       border-radius: 0;
@@ -212,7 +213,7 @@
 
    a {
       position: relative;
-      display: inline-block;
+      display: block;
       overflow: hidden;
 
       &::before , &::after {
@@ -717,29 +718,29 @@ textarea.message_text {
 // ======================================================================== /
 .widget_core_coll_media_index {
 
-   .widget_flow_blocks {
+    .widget_flow_blocks {
 
-      & > div{
-         margin-bottom: 0;
-         margin-top: 0;
+        & > div{
+            max-width: 100%;
+            margin: 2px;
 
-         a {
+            a {
 
-            &::before {
-               background-color: rgba(0, 0, 0, 0.75);
+                &::before {
+                    background-color: rgba(0, 0, 0, 0.75);
+                }
+
+                &::after {
+                    content: "\f1d8";
+                    top: 35%;
+                    font-size: 1.7rem;
+                }
+
             }
 
-            &::after {
-               content: "\f1d8";
-               top: 35%;
-               font-size: 1.7rem;
-            }
+        }
 
-         }
-
-      }
-
-   }
+    }
 
 }
 
@@ -748,34 +749,34 @@ textarea.message_text {
 // Orgainze Member
 // ======================================================================== /
 .widget_core_org_members {
-   .col-lg-4 {
-      display: block;
-      width: 100%;
-      float: none;
+    .col-lg-4 {
+        display: block;
+        width: 100%;
+        float: none;
 
-      img {
-         width: 120px;
-         height: 120px;
-      }
-   }
+        img {
+            width: 120px;
+            height: 120px;
+        }
+    }
 
-   .user_link {
-      color: @c5;
+    .user_link {
+        color: @c5;
 
-      h3 {
-         font-family: @font_heading;
+        h3 {
+            font-family: @font_heading;
             font-size: 1.8rem;
-         font-weight: 700;
-      }
+            font-weight: 700;
+        }
 
-      &:hover {
-         color: @primary;
-      }
-   }
+        &:hover {
+            color: @primary;
+        }
+    }
 
-   .ufld_icon_links {
-      margin-bottom: 10px;
-   }
+    .ufld_icon_links {
+        margin-bottom: 10px;
+    }
 
 }
 
@@ -785,16 +786,16 @@ textarea.message_text {
 .widget_core_linkblog,
 .widget_core_content_hierarchy {
 
-   ul > ul > li:last-child {
-      border: none !important;
-   }
+    ul > ul > li:last-child {
+        border: none !important;
+    }
 
-   ul ul {
-      border-bottom: 1px solid @color_border;
+    ul ul {
+        border-bottom: 1px solid @color_border;
 
-      &:last-child {
-         border-bottom: none;
-      }
-   }
+        &:last-child {
+            border-bottom: none;
+        }
+    }
 
 }

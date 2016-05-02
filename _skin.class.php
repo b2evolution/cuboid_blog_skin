@@ -83,7 +83,7 @@ class cuboid_blog_Skin extends Skin
    }
 
 
-  /**
+   /**
    * Judge if the file is the image we want to use
    *
    * @param string filepath: the path of a file
@@ -92,13 +92,13 @@ class cuboid_blog_Skin extends Skin
    */
    function isImage( $filepath, $arr_types=array( ".gif", ".jpeg", ".png", ".bmp" ) )
    {
-      if(file_exists($filepath)) {
-         $info = getimagesize($filepath);
-         $ext  = image_type_to_extension($info['2']);
-         return in_array($ext,$arr_types);
-      } else {
-         return false;
-      }
+	   if(file_exists($filepath)) {
+		   $info = getimagesize($filepath);
+		   $ext  = image_type_to_extension($info['2']);
+		   return in_array($ext,$arr_types);
+	   } else {
+		   return false;
+	   }
    }
 
 
@@ -113,24 +113,24 @@ class cuboid_blog_Skin extends Skin
    */
    function get_arr_pics_from_folder( $img_folder, $img_folder_url, $thumb_width = 50, $thumb_height = 50 )
    {
-      $arr_filenames = $filesnames =array();
-      if(file_exists($img_folder))
-      {
-         $filesnames = scandir($img_folder);
-      }
-      $count = 0;
-      foreach ( $filesnames as $name )
-      {
-         $count++;
-         if ( $name != "." && $name != ".." && $name != "_evocache" && $this->isImage($img_folder.$name) ) //not the folder and other files
-         {
-            $arr_filenames[] = array( $img_folder_url.$name,
-            "<a href='".$img_folder_url.$name."' target='blank'><img src='".$img_folder_url.$name."' width=".$thumb_width."px heigh=".$thumb_height."px /></a>" );
-         }
-         if ($count==30) break; // The max number of the images we want to show
-      }
-      $arr_filenames[] = array("none",T_("Transparent"));
-      return $arr_filenames;
+	   $arr_filenames = $filesnames =array();
+	   if(file_exists($img_folder))
+	   {
+		   $filesnames = scandir($img_folder);
+	   }
+	   $count = 0;
+	   foreach ( $filesnames as $name )
+	   {
+		   $count++;
+		   if ( $name != "." && $name != ".." && $name != "_evocache" && $this->isImage($img_folder.$name) ) //not the folder and other files
+		   {
+			   $arr_filenames[] = array( $img_folder_url.$name,
+			   "<a href='".$img_folder_url.$name."' target='blank'><img src='".$img_folder_url.$name."' width=".$thumb_width."px heigh=".$thumb_height."px /></a>" );
+		   }
+		   if ($count==30) break; // The max number of the images we want to show
+	   }
+	   $arr_filenames[] = array("none",T_("Transparent"));
+	   return $arr_filenames;
    }
 
 
@@ -157,103 +157,110 @@ class cuboid_blog_Skin extends Skin
                'layout' => 'begin_fieldset',
                'label'  => T_('General settings')
             ),
-               // Layout
-               'layout' => array(
-                  'label'        => T_('Front Page Layout'),
-                  'note'         => '',
-                  'defaultvalue' => 'right_sidebar',
-                  'type'         => 'select',
-                  'options'      => array(
-                     'single_column'              => T_('Single Column Large'),
-                     'single_column_normal'       => T_('Single Column'),
-                     'single_column_narrow'       => T_('Single Column Narrow'),
-                     'single_column_extra_narrow' => T_('Single Column Extra Narrow'),
-                     'left_sidebar'               => T_('Left Sidebar'),
-                     'right_sidebar'              => T_('Right Sidebar'),
-                  ),
-               ),
-               'max_image_height' => array(
-                  'label'        => T_('Max image height'),
-                  'note'         => 'px',
-                  'defaultvalue' => '',
-                  'type'         => 'integer',
-                  'allow_empty'  => true,
-               ),
-               'color_schemes' => array(
-                  'label'        => T_('Color Schemes'),
-                  'note'         => T_('Default value is #1ABC9C'),
-                  'defaultvalue' => '#1ABC9C',
-                  'type'         => 'color',
-               ),
-               'background_type' => array(
-                  'label'    => T_('Site Background Style'),
-                  'note'     => T_('Select your favorite <strong>Background Style</strong> for your site.'),
-                  'type'     => 'select',
-                  'options'  => array(
-                     'color'         => T_('Site Background Color'),
-                     'images'        => T_('Background Image Pattern'),
-                     'custom_images' => T_('Custom Background Image'),
-                  ),
-                  'defaultvalue' => 'images',
-               ),
-               'site_background_color' => array(
-                  'label'        => T_('Site Background Color'),
-                  'note'         => T_('Default value is #F5F7F9'),
-                  'defaultvalue' => '#F5F7F9',
-                  'type'         => 'color',
-               ),
-               'bg_image' => array(
-                  'label'        => T_('Background Image Pattern'),
-                  'note'         => T_('Choose your favorite background image pattern'),
-                  'type'         => 'radio',
-                  'options'      => $arr_bodybg,
-                  'defaultvalue' => reset($arr_bodybg[0]),
-               ),
-               'bg_image_custom' => array(
-                   'label'        => T_('User Custom Background Image'),
-                   'note'         => T_('（Please create a folder named <b><i>'.str_replace("/","",$custom_bodybg_cat).'</i></b> in your collection media folder and put the images into it. Now <a href="admin.php?ctrl=files" target="_blank"><i>Create folder or Upload images</i></a>）'),
-                   'type'         => 'radio',
-                   'options'      => $arr_custom_bodybg,
-                   'defaultvalue' => reset($arr_custom_bodybg[0]),
-               ),
-               'bg_image_custom_attach' => array(
-                  'label'    => T_('Custom Background Attachment'),
-                  'note'     => T_('Select the Background Attachment for Custom Background Image.'),
-                  'type'     => 'select',
-                  'options'  => array(
-                     'initial'    => T_('Initial'),
-                     'fixed'      => T_('Fixed'),
-                  ),
-                  'defaultvalue' => 'initial',
-               ),
-               'bg_image_custom_size' => array(
-                  'label'    => T_('Custom Background Size'),
-                  'note'     => T_('Select the background size for Custom Background Image.'),
-                  'type'     => 'select',
-                  'options'  => array(
-                     'auto'     => T_('Auto'),
-                     'contain'  => T_('Contain'),
-                     'cover'    => T_('Cover'),
-                  ),
-                  'defaultvalue' => 'auto',
-               ),
+				// Layout
+				'layout' => array(
+					'label'        => T_('Front Page Layout'),
+					'note'         => '',
+					'defaultvalue' => 'right_sidebar',
+					'type'         => 'select',
+					'options'      => array(
+						'single_column'              => T_('Single Column Large'),
+						'single_column_normal'       => T_('Single Column'),
+						'single_column_narrow'       => T_('Single Column Narrow'),
+						'single_column_extra_narrow' => T_('Single Column Extra Narrow'),
+						'left_sidebar'               => T_('Left Sidebar'),
+						'right_sidebar'              => T_('Right Sidebar'),
+					),
+				),
+				'max_image_height' => array(
+					'label'        => T_('Max image height'),
+					'note'         => 'px',
+					'defaultvalue' => '',
+					'type'         => 'integer',
+					'allow_empty'  => true,
+				),
+				'color_schemes' => array(
+					'label'        => T_('Color Schemes'),
+					'note'         => T_('Default value is #1ABC9C'),
+					'defaultvalue' => '#1ABC9C',
+					'type'         => 'color',
+				),
+				'background_type' => array(
+					'label'    => T_('Site Background Style'),
+					'note'     => T_('Select your favorite <strong>Background Style</strong> for your site.'),
+					'type'     => 'select',
+					'options'  => array(
+						'color'         => T_('Site Background Color'),
+						'images'        => T_('Background Image Pattern'),
+						'custom_images' => T_('Custom Background Image'),
+					),
+					'defaultvalue' => 'images',
+				),
+				'site_background_color' => array(
+					'label'        => T_('Site Background Color'),
+					'note'         => T_('Default value is #F5F7F9'),
+					'defaultvalue' => '#F5F7F9',
+					'type'         => 'color',
+				),
+				'bg_image' => array(
+					'label'        => T_('Background Image Pattern'),
+					'note'         => T_('Choose your favorite background image pattern'),
+					'type'         => 'radio',
+					'options'      => $arr_bodybg,
+					'defaultvalue' => reset($arr_bodybg[0]),
+				),
+				'bg_image_custom' => array(
+					'label'        => T_('User Custom Background Image'),
+					'note'         => T_('（Please create a folder named <b><i>'.str_replace("/","",$custom_bodybg_cat).'</i></b> in your collection media folder and put the images into it. Now <a href="admin.php?ctrl=files" target="_blank"><i>Create folder or Upload images</i></a>）'),
+					'type'         => 'radio',
+					'options'      => $arr_custom_bodybg,
+					'defaultvalue' => reset($arr_custom_bodybg[0]),
+				),
+				'bg_image_custom_attach' => array(
+					'label'    => T_('Custom Background Attachment'),
+					'note'     => T_('Select the Background Attachment for Custom Background Image.'),
+					'type'     => 'select',
+					'options'  => array(
+						'initial'    => T_('Initial'),
+						'fixed'      => T_('Fixed'),
+					),
+					'defaultvalue' => 'initial',
+				),
+				'bg_image_custom_size' => array(
+					'label'    => T_('Custom Background Size'),
+					'note'     => T_('Select the background size for Custom Background Image.'),
+					'type'     => 'select',
+					'options'  => array(
+						'auto'     => T_('Auto'),
+						'contain'  => T_('Contain'),
+						'cover'    => T_('Cover'),
+					),
+					'defaultvalue' => 'auto',
+				),
 
-               // Favicon
-               'favicon' => array (
-                  'label'        => T_( 'Favicon' ),
-                  'note'         => T_( 'Change the default favicon' ),
-                  'defaultvalue' => 'assets/images/favicon.png',
-                  'type'         => 'text',
-                  'size'         => '50'
-               ),
+				// Favicon
+				'favicon' => array (
+					'label'        => T_( 'Favicon' ),
+					'note'         => T_( 'Change the default favicon' ),
+					'defaultvalue' => 'assets/images/favicon.png',
+					'type'         => 'text',
+					'size'         => '50'
+				),
 
-               // Back To Top
-               'bt_top' => array(
-                  'label'        => T_('Display Button Back To Top'),
-                  'note'         => T_('Check to enable button back to top.'),
-                  'defaultvalue' => 1,
-                  'type'         => 'checkbox',
-               ),
+				// Back To Top
+				'bt_top' => array(
+					'label'        => T_('Display Button Back To Top'),
+					'note'         => T_('Check to enable button back to top.'),
+					'defaultvalue' => 1,
+					'type'         => 'checkbox',
+				),
+				'bg_wrap_content' => array(
+					'label'			=> T_( 'Content Background Wrapper' ),
+					'note'			=> T_( 'Change Background wrapper for Posts, Widget, Search Results and other ' ),
+					'type'			=> 'color',
+					'defaultvalue'	=> '#FFFFFF',
+
+				),
             'general_settings_end' => array(
                'layout' => 'end_fieldset',
             ),
@@ -361,12 +368,12 @@ class cuboid_blog_Skin extends Skin
                   ),
                   'defaultvalue' => 'center',
                ),
-               'posts_wrap_bg' => array(
-                  'label'        => T_('Posts Background Wrapper'),
-                  'note'         => T_('Default value is #FFFFFF'),
-                  'defaultvalue' => '#FFFFFF',
-                  'type'         => 'color',
-               ),
+            //    'posts_wrap_bg' => array(
+            //       'label'        => T_('Posts Background Wrapper'),
+            //       'note'         => T_('Default value is #FFFFFF'),
+            //       'defaultvalue' => '#FFFFFF',
+            //       'type'         => 'color',
+            //    ),
                'posts_title_color' => array(
                   'label'        => T_('Posts Title Color'),
                   'note'         => T_('Default value is #555555'),
@@ -468,12 +475,12 @@ class cuboid_blog_Skin extends Skin
                'layout' => 'begin_fieldset',
                'label'  => T_('Sidebar Options')
             ),
-               'side_bg_wrap' => array(
-                  'label'        => T_('Widget Wrapper Background'),
-                  'note'         => T_('Default value is #FFFFFF'),
-                  'defaultvalue' => '#FFFFFF',
-                  'type'         => 'color',
-               ),
+            //    'side_bg_wrap' => array(
+            //       'label'        => T_('Widget Wrapper Background'),
+            //       'note'         => T_('Default value is #FFFFFF'),
+            //       'defaultvalue' => '#FFFFFF',
+            //       'type'         => 'color',
+            //    ),
                'side_widget_title' => array(
                   'label'        => T_('Widget Title Color'),
                   'note'         => T_('Default value is #555555'),
@@ -803,44 +810,44 @@ class cuboid_blog_Skin extends Skin
 			'disp_auto',               // Automatically include additional CSS and/or JS required by certain disps (replace with 'disp_off' to disable this)
 		) );
 
-      // Include Masonry Grind for MediaIdx
-      if ( $disp == 'mediaidx' || $disp == 'posts' ) {
-         require_js( $this->get_url() . 'assets/js/masonry.pkgd.min.js' );
-         require_js( $this->get_url() . 'assets/js/imagesloaded.pkgd.min.js' );
-      }
+		// Include Masonry Grind for MediaIdx
+		if ( $disp == 'mediaidx' || $disp == 'posts' ) {
+			require_js( $this->get_url() . 'assets/js/masonry.pkgd.min.js' );
+			require_js( $this->get_url() . 'assets/js/imagesloaded.pkgd.min.js' );
+		}
 
-      if( $disp == 'posts' ) {
-         add_js_headline("
-				jQuery( document ).ready( function($) {
-               $('.main_item_posts').imagesLoaded().done( function( instance ) {
-                  $('.main_item_posts').masonry({
-                   // options
-                    itemSelector: '.item_posts',
-                 });
-               });
+		if( $disp == 'posts' ) {
+			add_js_headline("
+			jQuery( document ).ready( function($) {
+				$('.main_item_posts').imagesLoaded().done( function( instance ) {
+					$('.main_item_posts').masonry({
+						// options
+						itemSelector: '.item_posts',
+					});
 				});
+			});
 			");
-      }
+		}
 
-      if ( $disp == 'mediaidx' ) {
-         add_js_headline("
-				jQuery( document ).ready( function($) {
-               $('.evo_image_index').imagesLoaded().done( function( instance ) {
-                  $('.evo_image_index').masonry({
-                   // options
-                    itemSelector: '.grid-item',
-                 });
-               });
+		if ( $disp == 'mediaidx' ) {
+			add_js_headline("
+			jQuery( document ).ready( function($) {
+				$('.evo_image_index').imagesLoaded().done( function( instance ) {
+					$('.evo_image_index').masonry({
+						// options
+						itemSelector: '.grid-item',
+					});
 				});
+			});
 			");
-      }
+		}
 
-      require_js( $this->get_url().'assets/js/script.js' );
+		require_js( $this->get_url().'assets/js/script.js' );
 		// Skin specific initializations:
 
-      // Add Favicon
-      $favicon = $this->get_setting( 'favicon' );
-      add_headline( '<link rel="shortcut icon" href="'. $favicon .'"/>' );
+		// Add Favicon
+		$favicon = $this->get_setting( 'favicon' );
+		add_headline( '<link rel="shortcut icon" href="'. $favicon .'"/>' );
 
 		// Limit images by max height:
 		$max_image_height = intval( $this->get_setting( 'max_image_height' ) );
@@ -849,362 +856,371 @@ class cuboid_blog_Skin extends Skin
 			add_css_headline( '.evo_image_block img { max-height: '.$max_image_height.'px; width: auto; }' );
 		}
 
-      // Skin specific initializations:
+		// Skin specific initializations:
 		// Add custom CSS:
 		$custom_css = '';
 
 
-      /**
-       * ============================================================================
-       * General Settings Output
-       * ============================================================================
-       */
-      if ( $color = $this->get_setting( 'color_schemes' ) ) {
-         // General
-         $custom_css .= '
-         a, a:hover, a:active, a:focus,
-         .disp_search #main-content .search_result .search_content_wrap .search_title a:hover, .disp_search #main-content .search_result .search_content_wrap .search_title a:active, .disp_search #main-content .search_result .search_content_wrap .search_title a:focus,
-         .widget_plugin_evo_Calr .bCalendarTable tfoot a:hover, #main-content .evo_post .small.text-muted a:hover span, #main-content .evo_featured_post .small.text-muted a:hover span
-         { color: '.$color.'; }
+		/**
+		* ============================================================================
+		* General Settings Output
+		* ============================================================================
+		*/
+		if ( $color = $this->get_setting( 'color_schemes' ) ) {
+			// General
+			$custom_css .= '
+			a, a:hover, a:active, a:focus,
+			.disp_search #main-content .search_result .search_content_wrap .search_title a:hover, .disp_search #main-content .search_result .search_content_wrap .search_title a:active, .disp_search #main-content .search_result .search_content_wrap .search_title a:focus,
+			.widget_plugin_evo_Calr .bCalendarTable tfoot a:hover, #main-content .evo_post .small.text-muted a:hover span, #main-content .evo_featured_post .small.text-muted a:hover span
+			{ color: '.$color.'; }
 
-         /* Header */
-         .navbar-collapse .nav.nav-tabs li a::after
-         { background-color: '.$color.'; }
+			/* Header */
+			.navbar-collapse .nav.nav-tabs li a::after, .navbar-collapse ul li.active a
+			{ background-color: '.$color.'; }
 
-         /* Posts */
-         #content .evo_post_title h2 a:hover,
-         #main-content .evo_post .small.text-muted a:hover, #main-content .evo_featured_post .small.text-muted a:hover,
-         .disp_search #main-content .search_result .search_result_score.dimmed
-         { color: '.$color.'; }
+			/* Posts */
+			#content .evo_post_title h2 a:hover,
+			#main-content .evo_post .small.text-muted a:hover, #main-content .evo_featured_post .small.text-muted a:hover,
+			.disp_search #main-content .search_result .search_result_score.dimmed
+			{ color: '.$color.'; }
 
-         #main-content .evo_intro_post, #main-content .featurepost,
-         .pagination > .active > span, .pagination > .active > span:hover, .pagination > li > a:hover,
-         #main-content .post_tags a:hover, #main-content .post_tags a:active, #main-content .post_tags a:focus,
-         #main-content .evo_post .evo_post__full .evo_post_more_link a:hover, #main-content .evo_featured_post .evo_post__full .evo_post_more_link a:hover, #main-content .evo_post .evo_post__excerpt .evo_post_more_link a:hover, #main-content .evo_featured_post .evo_post__excerpt .evo_post_more_link a:hover, #main-content .evo_post .evo_post__full .evo_post__excerpt_more_link a:hover, #main-content .evo_featured_post .evo_post__full .evo_post__excerpt_more_link a:hover, #main-content .evo_post .evo_post__excerpt .evo_post__excerpt_more_link a:hover, #main-content .evo_featured_post .evo_post__excerpt .evo_post__excerpt_more_link a:hover, #main-content .evo_post .evo_post__full .evo_post_more_link a:active, #main-content .evo_featured_post .evo_post__full .evo_post_more_link a:active, #main-content .evo_post .evo_post__excerpt .evo_post_more_link a:active, #main-content .evo_featured_post .evo_post__excerpt .evo_post_more_link a:active, #main-content .evo_post .evo_post__full .evo_post__excerpt_more_link a:active, #main-content .evo_featured_post .evo_post__full .evo_post__excerpt_more_link a:active, #main-content .evo_post .evo_post__excerpt .evo_post__excerpt_more_link a:active, #main-content .evo_featured_post .evo_post__excerpt .evo_post__excerpt_more_link a:active, #main-content .evo_post .evo_post__full .evo_post_more_link a:focus, #main-content .evo_featured_post .evo_post__full .evo_post_more_link a:focus, #main-content .evo_post .evo_post__excerpt .evo_post_more_link a:focus, #main-content .evo_featured_post .evo_post__excerpt .evo_post_more_link a:focus, #main-content .evo_post .evo_post__full .evo_post__excerpt_more_link a:focus, #main-content .evo_featured_post .evo_post__full .evo_post__excerpt_more_link a:focus, #main-content .evo_post .evo_post__excerpt .evo_post__excerpt_more_link a:focus, #main-content .evo_featured_post .evo_post__excerpt .evo_post__excerpt_more_link a:focus,
-         .disp_front #main-content .widget_core_coll_featured_intro .jumbotron,
-         .disp_front #main-content .widget_core_poll .btn-default.active, .disp_front #main-content .widget_core_poll .btn-default.focus, .disp_front #main-content .widget_core_poll .btn-default:active, .disp_front #main-content .widget_core_poll .btn-default:focus, .disp_front #main-content .widget_core_poll .btn-default:hover, .disp_front #main-content .widget_core_poll .open > .dropdown-toggle.btn-default,
-         .disp_search #main-content .search_result .search_result_score.dimmed::after,
-         .disp_threads #main-content .SaveButton.btn-primary, .disp_messages #main-content .SaveButton.btn-primary, .disp_contacts #main-content .SaveButton.btn-primary,
-         .disp_contacts .form_send_contacts .btn-default:hover, .disp_contacts .form_send_contacts .btn-default:active, .disp_contacts .form_send_contacts .btn-default:focus,
-         .filters .btn-info,
-         .disp_threads #main-content .results .action_icon.btn-primary, .disp_messages #main-content .results .action_icon.btn-primary, .disp_contacts #main-content .results .action_icon.btn-primary,
-         .btn-success, .pagination li.active a:hover, .pagination li.active span:hover, .pagination li.active a:active, .pagination li.active span:active, .pagination li.active a:focus, .pagination li.active span:focus, .pagination li.active a, .pagination li.active span, .pagination li a:hover, .pagination li span:hover, .pagination li a:active, .pagination li span:active, .pagination li a:focus, .pagination li span:focus,
-		 .disp_profile #main-content .profile_tabs li.active a, .disp_avatar #main-content .profile_tabs li.active a, .disp_pwdchange #main-content .profile_tabs li.active a, .disp_userprefs #main-content .profile_tabs li.active a, .disp_subs #main-content .profile_tabs li.active a,
-		 .disp_profile #main-content .profile_tabs a:hover, .disp_avatar #main-content .profile_tabs a:hover, .disp_pwdchange #main-content .profile_tabs a:hover, .disp_userprefs #main-content .profile_tabs a:hover, .disp_subs #main-content .profile_tabs a:hover, .disp_profile #main-content .profile_tabs a:active, .disp_avatar #main-content .profile_tabs a:active, .disp_pwdchange #main-content .profile_tabs a:active, .disp_userprefs #main-content .profile_tabs a:active, .disp_subs #main-content .profile_tabs a:active, .disp_profile #main-content .profile_tabs a:focus, .disp_avatar #main-content .profile_tabs a:focus, .disp_pwdchange #main-content .profile_tabs a:focus, .disp_userprefs #main-content .profile_tabs a:focus, .disp_subs #main-content .profile_tabs a:focus,
-		 .disp_profile #main-content .evo_form .panel-heading, .disp_avatar #main-content .evo_form .panel-heading, .disp_pwdchange #main-content .evo_form .panel-heading, .disp_userprefs #main-content .evo_form .panel-heading, .disp_subs #main-content .evo_form .panel-heading,
-		 .evo_panel__login .btn.btn-success, .evo_panel__lostpass .btn.btn-success, .evo_panel__register .btn.btn-success, .evo_panel__activation .btn.btn-success,
-		 .disp_edit #item_checkchanges .panel .panel-heading
-         { background-color: '.$color.'; }
+			#main-content .evo_intro_post, #main-content .featurepost,
+			.pagination > .active > span, .pagination > .active > span:hover, .pagination > li > a:hover,
+			#main-content .post_tags a:hover, #main-content .post_tags a:active, #main-content .post_tags a:focus,
+			#main-content .evo_post .evo_post__full .evo_post_more_link a:hover, #main-content .evo_featured_post .evo_post__full .evo_post_more_link a:hover, #main-content .evo_post .evo_post__excerpt .evo_post_more_link a:hover, #main-content .evo_featured_post .evo_post__excerpt .evo_post_more_link a:hover, #main-content .evo_post .evo_post__full .evo_post__excerpt_more_link a:hover, #main-content .evo_featured_post .evo_post__full .evo_post__excerpt_more_link a:hover, #main-content .evo_post .evo_post__excerpt .evo_post__excerpt_more_link a:hover, #main-content .evo_featured_post .evo_post__excerpt .evo_post__excerpt_more_link a:hover, #main-content .evo_post .evo_post__full .evo_post_more_link a:active, #main-content .evo_featured_post .evo_post__full .evo_post_more_link a:active, #main-content .evo_post .evo_post__excerpt .evo_post_more_link a:active, #main-content .evo_featured_post .evo_post__excerpt .evo_post_more_link a:active, #main-content .evo_post .evo_post__full .evo_post__excerpt_more_link a:active, #main-content .evo_featured_post .evo_post__full .evo_post__excerpt_more_link a:active, #main-content .evo_post .evo_post__excerpt .evo_post__excerpt_more_link a:active, #main-content .evo_featured_post .evo_post__excerpt .evo_post__excerpt_more_link a:active, #main-content .evo_post .evo_post__full .evo_post_more_link a:focus, #main-content .evo_featured_post .evo_post__full .evo_post_more_link a:focus, #main-content .evo_post .evo_post__excerpt .evo_post_more_link a:focus, #main-content .evo_featured_post .evo_post__excerpt .evo_post_more_link a:focus, #main-content .evo_post .evo_post__full .evo_post__excerpt_more_link a:focus, #main-content .evo_featured_post .evo_post__full .evo_post__excerpt_more_link a:focus, #main-content .evo_post .evo_post__excerpt .evo_post__excerpt_more_link a:focus, #main-content .evo_featured_post .evo_post__excerpt .evo_post__excerpt_more_link a:focus,
+			.disp_front #main-content .widget_core_coll_featured_intro .jumbotron,
+			.disp_front #main-content .widget_core_poll .btn-default.active, .disp_front #main-content .widget_core_poll .btn-default.focus, .disp_front #main-content .widget_core_poll .btn-default:active, .disp_front #main-content .widget_core_poll .btn-default:focus, .disp_front #main-content .widget_core_poll .btn-default:hover, .disp_front #main-content .widget_core_poll .open > .dropdown-toggle.btn-default,
+			.disp_search #main-content .search_result .search_result_score.dimmed::after,
+			.disp_threads #main-content .SaveButton.btn-primary, .disp_messages #main-content .SaveButton.btn-primary, .disp_contacts #main-content .SaveButton.btn-primary,
+			.disp_contacts .form_send_contacts .btn-default:hover, .disp_contacts .form_send_contacts .btn-default:active, .disp_contacts .form_send_contacts .btn-default:focus,
+			.filters .btn-info,
+			.disp_threads #main-content .results .action_icon.btn-primary, .disp_messages #main-content .results .action_icon.btn-primary, .disp_contacts #main-content .results .action_icon.btn-primary,
+			.btn-success, .pagination li.active a:hover, .pagination li.active span:hover, .pagination li.active a:active, .pagination li.active span:active, .pagination li.active a:focus, .pagination li.active span:focus, .pagination li.active a, .pagination li.active span, .pagination li a:hover, .pagination li span:hover, .pagination li a:active, .pagination li span:active, .pagination li a:focus, .pagination li span:focus,
+			.disp_profile #main-content .profile_tabs li.active a, .disp_avatar #main-content .profile_tabs li.active a, .disp_pwdchange #main-content .profile_tabs li.active a, .disp_userprefs #main-content .profile_tabs li.active a, .disp_subs #main-content .profile_tabs li.active a,
+			.disp_profile #main-content .profile_tabs a:hover, .disp_avatar #main-content .profile_tabs a:hover, .disp_pwdchange #main-content .profile_tabs a:hover, .disp_userprefs #main-content .profile_tabs a:hover, .disp_subs #main-content .profile_tabs a:hover, .disp_profile #main-content .profile_tabs a:active, .disp_avatar #main-content .profile_tabs a:active, .disp_pwdchange #main-content .profile_tabs a:active, .disp_userprefs #main-content .profile_tabs a:active, .disp_subs #main-content .profile_tabs a:active, .disp_profile #main-content .profile_tabs a:focus, .disp_avatar #main-content .profile_tabs a:focus, .disp_pwdchange #main-content .profile_tabs a:focus, .disp_userprefs #main-content .profile_tabs a:focus, .disp_subs #main-content .profile_tabs a:focus,
+			.disp_profile #main-content .evo_form .panel-heading, .disp_avatar #main-content .evo_form .panel-heading, .disp_pwdchange #main-content .evo_form .panel-heading, .disp_userprefs #main-content .evo_form .panel-heading, .disp_subs #main-content .evo_form .panel-heading,
+			.evo_panel__login .btn.btn-success, .evo_panel__lostpass .btn.btn-success, .evo_panel__register .btn.btn-success, .evo_panel__activation .btn.btn-success,
+			.disp_edit #item_checkchanges .panel .panel-heading
+			{ background-color: '.$color.'; }
 
-         .disp_front #main-content .widget_core_poll .btn-default.active, .disp_front #main-content .widget_core_poll .btn-default.focus, .disp_front #main-content .widget_core_poll .btn-default:active, .disp_front #main-content .widget_core_poll .btn-default:focus, .disp_front #main-content .widget_core_poll .btn-default:hover, .disp_front #main-content .widget_core_poll .open > .dropdown-toggle.btn-default,
-         .disp_search #main-content .search_result .search_result_score.dimmed,
-         .disp_threads #main-content .SaveButton.btn-primary, .disp_messages #main-content .SaveButton.btn-primary, .disp_contacts #main-content .SaveButton.btn-primary,
-         .disp_contacts .form_send_contacts .btn-default:hover, .disp_contacts .form_send_contacts .btn-default:active, .disp_contacts .form_send_contacts .btn-default:focus,
-         .filters .btn-info,
-         .disp_threads #main-content .results .action_icon.btn-primary, .disp_messages #main-content .results .action_icon.btn-primary, .disp_contacts #main-content .results .action_icon.btn-primary,
-         .disp_threads #main-content .evo_form__thread input:focus, .disp_messages #main-content .evo_form__thread input:focus, .disp_contacts #main-content .evo_form__thread input:focus, .disp_threads #main-content .evo_form__thread textarea:focus, .disp_messages #main-content .evo_form__thread textarea:focus, .disp_contacts #main-content .evo_form__thread textarea:focus,
-         .btn-success, .pagination li.active a:hover, .pagination li.active span:hover, .pagination li.active a:active, .pagination li.active span:active, .pagination li.active a:focus, .pagination li.active span:focus, .disp_msgform #main-content .form_text_input:hover, .disp_msgform #main-content .form_textarea_input:hover, .disp_msgform #main-content .form_text_input:active, .disp_msgform #main-content .form_textarea_input:active, .disp_msgform #main-content .form_text_input:focus, .disp_msgform #main-content .form_textarea_input:focus,
+			.disp_front #main-content .widget_core_poll .btn-default.active, .disp_front #main-content .widget_core_poll .btn-default.focus, .disp_front #main-content .widget_core_poll .btn-default:active, .disp_front #main-content .widget_core_poll .btn-default:focus, .disp_front #main-content .widget_core_poll .btn-default:hover, .disp_front #main-content .widget_core_poll .open > .dropdown-toggle.btn-default,
+			.disp_search #main-content .search_result .search_result_score.dimmed,
+			.disp_threads #main-content .SaveButton.btn-primary, .disp_messages #main-content .SaveButton.btn-primary, .disp_contacts #main-content .SaveButton.btn-primary,
+			.disp_contacts .form_send_contacts .btn-default:hover, .disp_contacts .form_send_contacts .btn-default:active, .disp_contacts .form_send_contacts .btn-default:focus,
+			.filters .btn-info,
+			.disp_threads #main-content .results .action_icon.btn-primary, .disp_messages #main-content .results .action_icon.btn-primary, .disp_contacts #main-content .results .action_icon.btn-primary,
+			.disp_threads #main-content .evo_form__thread input:focus, .disp_messages #main-content .evo_form__thread input:focus, .disp_contacts #main-content .evo_form__thread input:focus, .disp_threads #main-content .evo_form__thread textarea:focus, .disp_messages #main-content .evo_form__thread textarea:focus, .disp_contacts #main-content .evo_form__thread textarea:focus,
+			.btn-success, .pagination li.active a:hover, .pagination li.active span:hover, .pagination li.active a:active, .pagination li.active span:active, .pagination li.active a:focus, .pagination li.active span:focus, .disp_msgform #main-content .form_text_input:hover, .disp_msgform #main-content .form_textarea_input:hover, .disp_msgform #main-content .form_text_input:active, .disp_msgform #main-content .form_textarea_input:active, .disp_msgform #main-content .form_text_input:focus, .disp_msgform #main-content .form_textarea_input:focus,
 
-		 .disp_profile #main-content .evo_form .panel-body .form-control:hover, .disp_avatar #main-content .evo_form .panel-body .form-control:hover, .disp_pwdchange #main-content .evo_form .panel-body .form-control:hover, .disp_userprefs #main-content .evo_form .panel-body .form-control:hover, .disp_subs #main-content .evo_form .panel-body .form-control:hover, .disp_profile #main-content .evo_form .panel-body .form-control:active, .disp_avatar #main-content .evo_form .panel-body .form-control:active, .disp_pwdchange #main-content .evo_form .panel-body .form-control:active, .disp_userprefs #main-content .evo_form .panel-body .form-control:active, .disp_subs #main-content .evo_form .panel-body .form-control:active, .disp_profile #main-content .evo_form .panel-body .form-control:focus, .disp_avatar #main-content .evo_form .panel-body .form-control:focus, .disp_pwdchange #main-content .evo_form .panel-body .form-control:focus, .disp_userprefs #main-content .evo_form .panel-body .form-control:focus, .disp_subs #main-content .evo_form .panel-body .form-control:focus,
+			.disp_profile #main-content .evo_form .panel-body .form-control:hover, .disp_avatar #main-content .evo_form .panel-body .form-control:hover, .disp_pwdchange #main-content .evo_form .panel-body .form-control:hover, .disp_userprefs #main-content .evo_form .panel-body .form-control:hover, .disp_subs #main-content .evo_form .panel-body .form-control:hover, .disp_profile #main-content .evo_form .panel-body .form-control:active, .disp_avatar #main-content .evo_form .panel-body .form-control:active, .disp_pwdchange #main-content .evo_form .panel-body .form-control:active, .disp_userprefs #main-content .evo_form .panel-body .form-control:active, .disp_subs #main-content .evo_form .panel-body .form-control:active, .disp_profile #main-content .evo_form .panel-body .form-control:focus, .disp_avatar #main-content .evo_form .panel-body .form-control:focus, .disp_pwdchange #main-content .evo_form .panel-body .form-control:focus, .disp_userprefs #main-content .evo_form .panel-body .form-control:focus, .disp_subs #main-content .evo_form .panel-body .form-control:focus,
 
-		 #login_form input:focus:invalid:focus, #login_form select:focus:invalid:focus, #login_form textarea:focus:invalid:focus, .evo_panel__login .btn.btn-success, .evo_panel__lostpass .btn.btn-success, .evo_panel__register .btn.btn-success, .evo_panel__activation .btn.btn-success, .form-control:focus,
+			#login_form input:focus:invalid:focus, #login_form select:focus:invalid:focus, #login_form textarea:focus:invalid:focus, .evo_panel__login .btn.btn-success, .evo_panel__lostpass .btn.btn-success, .evo_panel__register .btn.btn-success, .evo_panel__activation .btn.btn-success, .form-control:focus,
 
-		 .disp_edit #item_checkchanges .panel
-         { border-color: '.$color.'; }
+			.disp_edit #item_checkchanges .panel
+			{ border-color: '.$color.'; }
 
-         .disp_posts #content .evo_featured_post
-         { border-left-color: '.$color.'; }
+			.disp_posts #content .evo_featured_post
+			{ border-left-color: '.$color.'; }
 
-         /* Sidebar - Widget - Single */
-         .evo_widget a:hover, .evo_widget a:active, .evo_widget a:focus,
-         #main-footer .main_widget a:hover, #main-footer .main_widget a:active, #main-footer .main_widget a:focus,
-         .evo_comment .evo_comment_info .delete_link:hover, .evo_comment__preview .evo_comment_info .delete_link:hover, .evo_comment .evo_comment_info .edit_link:hover, .evo_comment__preview .evo_comment_info .edit_link:hover, .evo_comment .evo_comment_info .delete_link:active, .evo_comment__preview .evo_comment_info .delete_link:active, .evo_comment .evo_comment_info .edit_link:active, .evo_comment__preview .evo_comment_info .edit_link:active, .evo_comment .evo_comment_info .delete_link:focus, .evo_comment__preview .evo_comment_info .delete_link:focus, .evo_comment .evo_comment_info .edit_link:focus, .evo_comment__preview .evo_comment_info .edit_link:focus,
-         .disp_comments #main-content .evo_comment .evo_comment_title.first a,
-         .evo_comment .evo_comment_title a:hover, .evo_comment__preview .evo_comment_title a:hover
-         { color: '.$color.'; }
+			/* Sidebar - Widget - Single */
+			.evo_widget a:hover, .evo_widget a:active, .evo_widget a:focus,
+			#main-footer .main_widget a:hover, #main-footer .main_widget a:active, #main-footer .main_widget a:focus,
+			.evo_comment .evo_comment_info .delete_link:hover, .evo_comment__preview .evo_comment_info .delete_link:hover, .evo_comment .evo_comment_info .edit_link:hover, .evo_comment__preview .evo_comment_info .edit_link:hover, .evo_comment .evo_comment_info .delete_link:active, .evo_comment__preview .evo_comment_info .delete_link:active, .evo_comment .evo_comment_info .edit_link:active, .evo_comment__preview .evo_comment_info .edit_link:active, .evo_comment .evo_comment_info .delete_link:focus, .evo_comment__preview .evo_comment_info .delete_link:focus, .evo_comment .evo_comment_info .edit_link:focus, .evo_comment__preview .evo_comment_info .edit_link:focus,
+			.disp_comments #main-content .evo_comment .evo_comment_title.first a,
+			.evo_comment .evo_comment_title a:hover, .evo_comment__preview .evo_comment_title a:hover
+			{ color: '.$color.'; }
 
-         .widget_core_coll_search_form .search .search_submit,
-         .tag_cloud a:hover, .tag_cloud a:active, .tag_cloud a:focus,
-         .widget_plugin_evo_Calr .bCalendarTable #bCalendarToday,
-         #main-footer .main_widget .widget_core_coll_tag_cloud .tag_cloud a:hover, #main-footer .main_widget .widget_core_coll_tag_cloud .tag_cloud a:active, #main-footer .main_widget .widget_core_coll_tag_cloud .tag_cloud a:focus,
-         .bt-top:hover, .bt-top:focus, .bt-top:active,
-         .disp_single #feedbacks .evo_comment__meta_info a:hover, .disp_page #feedbacks .evo_comment__meta_info a:hover,
-         #comment_form .evo_form .submit,
-         #comment_form .evo_form .preview:hover, #comment_form .evo_form .preview:focus, #comment_form .evo_form .preview:active,
-         .widget_core_user_login .submit:hover, .widget_core_user_register .submit:hover,
-         .disp_single #main-content .pager .previous a::before, .disp_page #main-content .pager .previous a::before, .disp_single #main-content .pager .next a::before, .disp_page #main-content .pager .next a::before,
-         .evo_post_comment_notification .btn:hover, .evo_post_comment_notification .btn:active, .evo_post_comment_notification .btn:focus,
-         .disp_threads #main-content .submit, .disp_messages #main-content .submit, .disp_contacts #main-content .submit, .disp_msgform #main-content .submit,
-         .disp_user #main-content .pager a:hover, .disp_user #main-content .pager a:focus, .disp_user #main-content .pager a:active
-         { background-color: '.$color.'; }
+			.widget_core_coll_search_form .search .search_submit,
+			.tag_cloud a:hover, .tag_cloud a:active, .tag_cloud a:focus,
+			.widget_plugin_evo_Calr .bCalendarTable #bCalendarToday,
+			#main-footer .main_widget .widget_core_coll_tag_cloud .tag_cloud a:hover, #main-footer .main_widget .widget_core_coll_tag_cloud .tag_cloud a:active, #main-footer .main_widget .widget_core_coll_tag_cloud .tag_cloud a:focus,
+			.bt-top:hover, .bt-top:focus, .bt-top:active,
+			.disp_single #feedbacks .evo_comment__meta_info a:hover, .disp_page #feedbacks .evo_comment__meta_info a:hover,
+			#comment_form .evo_form .submit,
+			#comment_form .evo_form .preview:hover, #comment_form .evo_form .preview:focus, #comment_form .evo_form .preview:active,
+			.widget_core_user_login .submit:hover, .widget_core_user_register .submit:hover,
+			.disp_single #main-content .pager .previous a::before, .disp_page #main-content .pager .previous a::before, .disp_single #main-content .pager .next a::before, .disp_page #main-content .pager .next a::before,
+			.evo_post_comment_notification .btn:hover, .evo_post_comment_notification .btn:active, .evo_post_comment_notification .btn:focus,
+			.disp_threads #main-content .submit, .disp_messages #main-content .submit, .disp_contacts #main-content .submit, .disp_msgform #main-content .submit,
+			.disp_user #main-content .pager a:hover, .disp_user #main-content .pager a:focus, .disp_user #main-content .pager a:active
+			{ background-color: '.$color.'; }
 
-         .widget_core_coll_search_form .search .search_field,
-         .widget_core_coll_search_form .search .search_submit,
-         .bt-top:hover, .bt-top:focus, .bt-top:active,
-         .disp_single #feedbacks .evo_comment__meta_info a:hover, .disp_page #feedbacks .evo_comment__meta_info a:hover,
-         #comment_form .evo_form .form_text_input:focus, #comment_form .evo_form .form_textarea_input:focus,
-         #comment_form .evo_form .submit,
-         #comment_form .evo_form .preview:hover, #comment_form .evo_form .preview:focus, #comment_form .evo_form .preview:active,
-         .widget_core_user_login .submit:hover, .widget_core_user_register .submit:hover,
-         .disp_single #main-content .pager .previous a:hover, .disp_page #main-content .pager .previous a:hover, .disp_single #main-content .pager .next a:hover, .disp_page #main-content .pager .next a:hover,
-         .evo_post_comment_notification .btn:hover, .evo_post_comment_notification .btn:active, .evo_post_comment_notification .btn:focus,
-         .disp_threads #main-content .submit, .disp_messages #main-content .submit, .disp_contacts #main-content .submit, .disp_msgform #main-content .submit
-         { border-color: '.$color.'; }
-         ';
-      }
-
-
-      // Site Background
-      if ( $this->get_setting( 'background_type' ) == 'color' ) {
-         $color = $this->get_setting( 'site_background_color' );
-         $custom_css .= 'body {background-color: '.$color.';}';
-      }
-
-      $bg_image = $this->get_setting( 'bg_image' );
-      if ( $this->get_setting( 'background_type' ) == 'images' && $bg_image ) {
-         if($bg_image == "none") {
-            $custom_css .= "body { background: transparent; }";
-         } else {
-            $custom_css .= "body { background-image: url('".$bg_image."');}";
-         }
-      }
-
-      // User custom bg images setting
-      $bg_image_custom = $this->get_setting( 'bg_image_custom' );
-      if ( $this->get_setting( 'background_type' ) == 'custom_images' && $bg_image_custom ) {
-         if($bg_image_custom == "none")
-         {
-            $custom_css .= "body { background: transparent; }";
-         } else {
-            $custom_css .= "body { background-image: url('".$bg_image_custom."');}";
-         }
-      }
-
-      $bg_image_custom_attach = $this->get_setting( 'bg_image_custom_attach' );
-      if ( $this->get_setting( 'background_type' ) == 'custom_images' && $bg_image_custom_attach ) {
-         if ( $bg_image_custom_attach == 'initial' ) {
-            $custom_css .= "body { background-attachment: initial; }";
-         } else {
-            $custom_css .= "body { background-attachment: fixed; }";
-         }
-      }
-
-      $bg_image_custom_size = $this->get_setting( 'bg_image_custom_size' );
-      if ( $this->get_setting( 'background_type' ) == 'custom_images' && $bg_image_custom_size ) {
-         if ( $bg_image_custom_size == 'auto' ) {
-            $custom_css .= "body { background-size: auto; }";
-         } else if ( $bg_image_custom_size == 'contain' ){
-            $custom_css .= "body { background-size: contain; }";
-         } else {
-            $custom_css .= "body { background-size: cover; }";
-         }
-      }
+			.widget_core_coll_search_form .search .search_field,
+			.widget_core_coll_search_form .search .search_submit,
+			.bt-top:hover, .bt-top:focus, .bt-top:active,
+			.disp_single #feedbacks .evo_comment__meta_info a:hover, .disp_page #feedbacks .evo_comment__meta_info a:hover,
+			#comment_form .evo_form .form_text_input:focus, #comment_form .evo_form .form_textarea_input:focus,
+			#comment_form .evo_form .submit,
+			#comment_form .evo_form .preview:hover, #comment_form .evo_form .preview:focus, #comment_form .evo_form .preview:active,
+			.widget_core_user_login .submit:hover, .widget_core_user_register .submit:hover,
+			.disp_single #main-content .pager .previous a:hover, .disp_page #main-content .pager .previous a:hover, .disp_single #main-content .pager .next a:hover, .disp_page #main-content .pager .next a:hover,
+			.evo_post_comment_notification .btn:hover, .evo_post_comment_notification .btn:active, .evo_post_comment_notification .btn:focus,
+			.disp_threads #main-content .submit, .disp_messages #main-content .submit, .disp_contacts #main-content .submit, .disp_msgform #main-content .submit
+			{ border-color: '.$color.'; }
+			';
+		}
 
 
-      /**
-       * ============================================================================
-       * Header Settings Output
-       * ============================================================================
-       */
-      if ( $width = $this->get_setting( 'head_center_mode' ) ) {
-         $custom_css .= '
-         @media only screen and ( max-width: '.$width.'px )
-         and ( min-width: 768px ) {
-            #main-header .col-md-4,
-            #main-header .col-md-8 {
-               width: 100%;
-               text-align: center;
-               margin: 0 auto;
-            }
+		// Site Background
+		if ( $this->get_setting( 'background_type' ) == 'color' ) {
+			$color = $this->get_setting( 'site_background_color' );
+			$custom_css .= 'body {background-color: '.$color.';}';
+		}
 
-            #main-header {
-               padding-bottom: 2rem;
-            }
+		$bg_image = $this->get_setting( 'bg_image' );
+		if ( $this->get_setting( 'background_type' ) == 'images' && $bg_image ) {
+			if($bg_image == "none") {
+				$custom_css .= "body { background: transparent; }";
+			} else {
+				$custom_css .= "body { background-image: url('".$bg_image."');}";
+			}
+		}
 
-            #main-header .col-md-4{
-               margin-bottom: 15px;
-            }
+		// User custom bg images setting
+		$bg_image_custom = $this->get_setting( 'bg_image_custom' );
+		if ( $this->get_setting( 'background_type' ) == 'custom_images' && $bg_image_custom ) {
+			if($bg_image_custom == "none")
+			{
+				$custom_css .= "body { background: transparent; }";
+			} else {
+				$custom_css .= "body { background-image: url('".$bg_image_custom."');}";
+			}
+		}
 
-            .navbar-collapse .nav.nav-tabs {
-               display: inline-block;
-               text-align: center;
-               margin: 0 auto;
-               float: none;
-            }
-         }
-         ';
-      }
+		$bg_image_custom_attach = $this->get_setting( 'bg_image_custom_attach' );
+		if ( $this->get_setting( 'background_type' ) == 'custom_images' && $bg_image_custom_attach ) {
+			if ( $bg_image_custom_attach == 'initial' ) {
+				$custom_css .= "body { background-attachment: initial; }";
+			} else {
+				$custom_css .= "body { background-attachment: fixed; }";
+			}
+		}
+
+		$bg_image_custom_size = $this->get_setting( 'bg_image_custom_size' );
+		if ( $this->get_setting( 'background_type' ) == 'custom_images' && $bg_image_custom_size ) {
+			if ( $bg_image_custom_size == 'auto' ) {
+				$custom_css .= "body { background-size: auto; }";
+			} else if ( $bg_image_custom_size == 'contain' ){
+				$custom_css .= "body { background-size: contain; }";
+			} else {
+				$custom_css .= "body { background-size: cover; }";
+			}
+		}
+
+		if ( $bg = $this->get_setting( 'bg_wrap_content' ) ) {
+			$custom_css .= '#main-content .evo_post, #main-content .evo_featured_post, .disp_posts #main-content .evo_featured_post,
+			#main-sidebar .evo_widget, #content .evo_widget, .disp_comments #main-content .evo_comment,
+			.disp_user #main-content .profile_content,
+			.disp_search #main-content, .disp_search #main-content .title_head_post, .disp_search #main-content .search_result,
+			.disp_404 #main-content,
+			.disp_messages #main-content, .disp_messages #main-content .title_head_post { background-color: '.$bg.'; }';
+		}
+
+
+		/**
+		* ============================================================================
+		* Header Settings Output
+		* ============================================================================
+		*/
+		if ( $width = $this->get_setting( 'head_center_mode' ) ) {
+			$custom_css .= '
+			@media only screen and ( max-width: '.$width.'px )
+			and ( min-width: 768px ) {
+				#main-header .col-md-4,
+				#main-header .col-md-8 {
+					width: 100%;
+					text-align: center;
+					margin: 0 auto;
+				}
+
+				#main-header {
+					padding-bottom: 2rem;
+				}
+
+				#main-header .col-md-4{
+					margin-bottom: 15px;
+				}
+
+				.navbar-collapse .nav.nav-tabs {
+					display: inline-block;
+					text-align: center;
+					margin: 0 auto;
+					float: none;
+				}
+			}
+			';
+		}
 
 		if ( $color = $this->get_setting( 'header_bg_color' ) ) {
 			$custom_css .= 'body #main-header { background-color: '.$color.' }';
 		}
 
-      if ( $color = $this->get_setting( 'nav_color_link' ) ) {
-         $custom_css .= '.navbar-collapse .nav.nav-tabs li a{ color: '.$color.' }';
-      }
+		if ( $color = $this->get_setting( 'nav_color_link' ) ) {
+			$custom_css .= '.navbar-collapse .nav.nav-tabs li a{ color: '.$color.' }';
+		}
 
-      if ( $color = $this->get_setting( 'nav_color_hovlink' ) ) {
-         $custom_css .= '.navbar-collapse .nav.nav-tabs li a:hover { color: '.$color.' }';
-      }
+		if ( $color = $this->get_setting( 'nav_color_hovlink' ) ) {
+			$custom_css .= '.navbar-collapse .nav.nav-tabs li a:hover { color: '.$color.' }';
+		}
 
-      if ( $color = $this->get_setting( 'head_tagline_bg_color' ) ) {
+		if ( $color = $this->get_setting( 'head_tagline_bg_color' ) ) {
 			$custom_css .= 'body #head_tagline { background-color: '.$color." }\n";
 		}
 
-      /**
-       * ============================================================================
-       * Posts
-       * ============================================================================
-       */
-      if ( $bg = $this->get_setting( 'posts_wrap_bg' ) ) {
-         $custom_css .= '
-         .disp_posts #main-content .evo_featured_post,
-         .disp_posts #main-content .evo_post, .disp_posts #main-content .evo_featured_post
-         { background-color: '.$bg.' }';
-      }
+		/**
+		* ============================================================================
+		* Posts
+		* ============================================================================
+		*/
+		// if ( $bg = $this->get_setting( 'posts_wrap_bg' ) ) {
+		// 	$custom_css .= '
+		// 	.disp_posts #main-content .evo_featured_post,
+		// 	.disp_posts #main-content .evo_post, .disp_posts #main-content .evo_featured_post
+		// 	{ background-color: '.$bg.' }';
+		// }
 
-      if ( $color = $this->get_setting( 'posts_title_color' ) ) {
-         $custom_css .= '
-         .disp_posts #main-content .evo_post_title h1 a, .disp_posts #main-content .evo_post_title h2 a, .disp_posts #main-content .evo_post_title h3 a,
-         .disp_posts #main-content .evo_post .evo_post__full h1, .disp_posts #main-content .evo_featured_post .evo_post__full h1, .disp_posts #main-content .evo_post .evo_post__excerpt h1, .disp_posts #main-content .evo_featured_post .evo_post__excerpt h1, .disp_posts #main-content .evo_post .evo_post__full h2, .disp_posts #main-content .evo_featured_post .evo_post__full h2, .disp_posts #main-content .evo_post .evo_post__excerpt h2, .disp_posts #main-content .evo_featured_post .evo_post__excerpt h2, .disp_posts #main-content .evo_post .evo_post__full h3, .disp_posts #main-content .evo_featured_post .evo_post__full h3, .disp_posts #main-content .evo_post .evo_post__excerpt h3, .disp_posts #main-content .evo_featured_post .evo_post__excerpt h3, .disp_posts #main-content .evo_post .evo_post__full h4, .disp_posts #main-content .evo_featured_post .evo_post__full h4, .disp_posts #main-content .evo_post .evo_post__excerpt h4, .disp_posts #main-content .evo_featured_post .evo_post__excerpt h4, .disp_posts #main-content .evo_post .evo_post__full h5, .disp_posts #main-content .evo_featured_post .evo_post__full h5, .disp_posts #main-content .evo_post .evo_post__excerpt h5, .disp_posts #main-content .evo_featured_post .evo_post__excerpt h5, .disp_posts #main-content .evo_post .evo_post__full h6, .disp_posts #main-content .evo_featured_post .evo_post__full h6, .disp_posts #main-content .evo_post .evo_post__excerpt h6, .disp_posts #main-content .evo_featured_post .evo_post__excerpt h6,
-         .disp_posts #main-content .post_tags h3
-         { color: '.$color.' }
-         ';
-      }
+		if ( $color = $this->get_setting( 'posts_title_color' ) ) {
+			$custom_css .= '
+			.disp_posts #main-content .evo_post_title h1 a, .disp_posts #main-content .evo_post_title h2 a, .disp_posts #main-content .evo_post_title h3 a,
+			.disp_posts #main-content .evo_post .evo_post__full h1, .disp_posts #main-content .evo_featured_post .evo_post__full h1, .disp_posts #main-content .evo_post .evo_post__excerpt h1, .disp_posts #main-content .evo_featured_post .evo_post__excerpt h1, .disp_posts #main-content .evo_post .evo_post__full h2, .disp_posts #main-content .evo_featured_post .evo_post__full h2, .disp_posts #main-content .evo_post .evo_post__excerpt h2, .disp_posts #main-content .evo_featured_post .evo_post__excerpt h2, .disp_posts #main-content .evo_post .evo_post__full h3, .disp_posts #main-content .evo_featured_post .evo_post__full h3, .disp_posts #main-content .evo_post .evo_post__excerpt h3, .disp_posts #main-content .evo_featured_post .evo_post__excerpt h3, .disp_posts #main-content .evo_post .evo_post__full h4, .disp_posts #main-content .evo_featured_post .evo_post__full h4, .disp_posts #main-content .evo_post .evo_post__excerpt h4, .disp_posts #main-content .evo_featured_post .evo_post__excerpt h4, .disp_posts #main-content .evo_post .evo_post__full h5, .disp_posts #main-content .evo_featured_post .evo_post__full h5, .disp_posts #main-content .evo_post .evo_post__excerpt h5, .disp_posts #main-content .evo_featured_post .evo_post__excerpt h5, .disp_posts #main-content .evo_post .evo_post__full h6, .disp_posts #main-content .evo_featured_post .evo_post__full h6, .disp_posts #main-content .evo_post .evo_post__excerpt h6, .disp_posts #main-content .evo_featured_post .evo_post__excerpt h6,
+			.disp_posts #main-content .post_tags h3
+			{ color: '.$color.' }
+			';
+		}
 
-      if ( $color = $this->get_setting( 'posts_info_color' ) ) {
-         $custom_css .= '.disp_posts #main-content .evo_post .small.text-muted, .disp_posts #main-content .evo_featured_post .small.text-muted { color: '.$color.' }';
-      }
+		if ( $color = $this->get_setting( 'posts_info_color' ) ) {
+			$custom_css .= '.disp_posts #main-content .evo_post .small.text-muted, .disp_posts #main-content .evo_featured_post .small.text-muted { color: '.$color.' }';
+		}
 
-      if ( $color =$this->get_setting( 'posts_info_link' ) ) {
-         $custom_css .= '.disp_posts #main-content .evo_post .small.text-muted span, .disp_posts #main-content .evo_featured_post .small.text-muted span, #main-content .evo_post .small.text-muted a, .disp_posts #main-content .evo_featured_post .small.text-muted a { color: '.$color.' }';
-      }
+		if ( $color =$this->get_setting( 'posts_info_link' ) ) {
+			$custom_css .= '.disp_posts #main-content .evo_post .small.text-muted span, .disp_posts #main-content .evo_featured_post .small.text-muted span, #main-content .evo_post .small.text-muted a, .disp_posts #main-content .evo_featured_post .small.text-muted a { color: '.$color.' }';
+		}
 
-      if ( $color = $this->get_setting( 'posts_content_color' ) ) {
-         $custom_css .= '.disp_posts #main-content .evo_post__full_text, .disp_posts #main-content .evo_post__excerpt_text { color: '.$color.' }';
-      }
+		if ( $color = $this->get_setting( 'posts_content_color' ) ) {
+			$custom_css .= '.disp_posts #main-content .evo_post__full_text, .disp_posts #main-content .evo_post__excerpt_text { color: '.$color.' }';
+		}
 
-      /**
-       * ============================================================================
-       * Tags
-       * ============================================================================
-       */
-      if ( $color = $this->get_setting( 'tags_color' ) ) {
-         $custom_css .= '#main-content .post_tags a, .tag_cloud a, #main-content .post_tags a::before { color: '.$color.' }';
-      }
-      if ( $bg = $this->get_setting( 'tags_bg' ) ) {
-         $custom_css .= '#main-content .post_tags a, .tag_cloud a { background-color: '.$bg.' }';
-      }
-      if ( $this->get_setting( 'tags_icon' ) == 0 ) {
-         $custom_css .= '#main-content .post_tags a::before, .tag_cloud a::before { content: \'\'; display: none }';
-      }
+		/**
+		* ============================================================================
+		* Tags
+		* ============================================================================
+		*/
+		if ( $color = $this->get_setting( 'tags_color' ) ) {
+			$custom_css .= '#main-content .post_tags a, .tag_cloud a, #main-content .post_tags a::before { color: '.$color.' }';
+		}
+		if ( $bg = $this->get_setting( 'tags_bg' ) ) {
+			$custom_css .= '#main-content .post_tags a, .tag_cloud a { background-color: '.$bg.' }';
+		}
+		if ( $this->get_setting( 'tags_icon' ) == 0 ) {
+			$custom_css .= '#main-content .post_tags a::before, .tag_cloud a::before { content: \'\'; display: none }';
+		}
 
-      /**
-       * ============================================================================
-       * Sidebar Widget Options
-       * ============================================================================
-       */
-      if ( $bg = $this->get_setting( 'side_bg_wrap' ) ) {
-         $custom_css .= '#main-sidebar .evo_widget { background-color: '. $bg .' }';
-      }
-      if ( $color = $this->get_setting( 'side_widget_title' ) ) {
-         $custom_css .= '#main-sidebar .evo_widget .panel-title { color: '.$color.' }';
-         $custom_css .= '#main-sidebar .evo_widget .panel-title::after { background-color: '.$color.' }';
-      }
-      if ( $color = $this->get_setting( 'side_widget_content' ) ) {
-         $custom_css .= '
-         #main-sidebar .evo_widget,
-         #main-sidebar .widget_core_user_login .user_group,
-         #main-sidebar .widget_core_user_login .user_level
-         { color: '.$color.' }';
-      }
-      if ( $border = $this->get_setting( 'side_border' ) ) {
-         $custom_css .= '
-         #content .evo_widget ul li,
-         #content .evo_widget ul > ul > li:last-child,
-         .widget_core_linkblog ul ul, .widget_core_content_hierarchy ul ul,
-         .widget_core_coll_xml_feeds .notes
-         { border-color: '.$border.' }';
-      }
-      if( $color = $this->get_setting( 'side_widget_link' ) ) {
-         $custom_css .= '#main-sidebar .evo_widget a { color: '.$color.' }';
-      }
+		/**
+		* ============================================================================
+		* Sidebar Widget Options
+		* ============================================================================
+		*/
+		// if ( $bg = $this->get_setting( 'side_bg_wrap' ) ) {
+		// 	$custom_css .= '#main-sidebar .evo_widget { background-color: '. $bg .' }';
+		// }
+		if ( $color = $this->get_setting( 'side_widget_title' ) ) {
+			$custom_css .= '#main-sidebar .evo_widget .panel-title { color: '.$color.' }';
+			$custom_css .= '#main-sidebar .evo_widget .panel-title::after { background-color: '.$color.' }';
+		}
+		if ( $color = $this->get_setting( 'side_widget_content' ) ) {
+			$custom_css .= '
+			#main-sidebar .evo_widget,
+			#main-sidebar .widget_core_user_login .user_group,
+			#main-sidebar .widget_core_user_login .user_level
+			{ color: '.$color.' }';
+		}
+		if ( $border = $this->get_setting( 'side_border' ) ) {
+			$custom_css .= '
+			#content .evo_widget ul li,
+			#content .evo_widget ul > ul > li:last-child,
+			.widget_core_linkblog ul ul, .widget_core_content_hierarchy ul ul,
+			.widget_core_coll_xml_feeds .notes
+			{ border-color: '.$border.' }';
+		}
+		if( $color = $this->get_setting( 'side_widget_link' ) ) {
+			$custom_css .= '#main-sidebar .evo_widget a { color: '.$color.' }';
+		}
 
-      /**
-       * ============================================================================
-       * Footer Settings Output
-       * ============================================================================
-       */
+		/**
+		* ============================================================================
+		* Footer Settings Output
+		* ============================================================================
+		*/
 		if ( $bg_color = $this->get_setting( 'footer_bg_color' ) ) {
 			$custom_css .= 'body #main-footer { background-color: '.$bg_color." }\n";
 		}
 
-      if ( $color = $this->get_setting( 'footer_widget_title' ) ) {
-         $custom_css .= '#main-footer .main_widget .title_widget,
-         #main-footer .main_widget .widget_core_org_members .user_link h3 { color: '.$color.' }';
-         $custom_css .= '#main-footer .main_widget .title_widget::before { background-color: '.$color.' }';
-      }
+		if ( $color = $this->get_setting( 'footer_widget_title' ) ) {
+			$custom_css .= '#main-footer .main_widget .title_widget,
+			#main-footer .main_widget .widget_core_org_members .user_link h3 { color: '.$color.' }';
+			$custom_css .= '#main-footer .main_widget .title_widget::before { background-color: '.$color.' }';
+		}
 
-      if ( $color = $this->get_setting( 'footer_sm_color' ) ) {
-         $custom_css .= '#main-footer .footer_social_media .ufld_icon_links a span, #main-footer .footer_social_media .ufld_icon_links a .fa { color: '.$color.' }';
-         $custom_css .= '#main-footer .footer_social_media .ufld_icon_links a:hover span, #main-footer .footer_social_media .ufld_icon_links a:hover .fa { color: #FFFFFF }';
-      }
+		if ( $color = $this->get_setting( 'footer_sm_color' ) ) {
+			$custom_css .= '#main-footer .footer_social_media .ufld_icon_links a span, #main-footer .footer_social_media .ufld_icon_links a .fa { color: '.$color.' }';
+			$custom_css .= '#main-footer .footer_social_media .ufld_icon_links a:hover span, #main-footer .footer_social_media .ufld_icon_links a:hover .fa { color: #FFFFFF }';
+		}
 
-      if ( $bg_color = $this->get_setting( 'footer_sm_bgcolor' ) ) {
-         $custom_css .= '#main-footer .footer_social_media{ background-color: '.$bg_color.' }';
-      }
+		if ( $bg_color = $this->get_setting( 'footer_sm_bgcolor' ) ) {
+			$custom_css .= '#main-footer .footer_social_media{ background-color: '.$bg_color.' }';
+		}
 
-      if ( $color = $this->get_setting( 'footer_widget_content' ) ) {
-         $custom_css .= '#main-footer .main_widget { color: '.$color.' }';
-      }
+		if ( $color = $this->get_setting( 'footer_widget_content' ) ) {
+			$custom_css .= '#main-footer .main_widget { color: '.$color.' }';
+		}
 
-      if( $link = $this->get_setting( 'footer_widget_link' ) ) {
-         $custom_css .= '#main-footer .main_widget a { color: '.$link.' }';
-      }
+		if( $link = $this->get_setting( 'footer_widget_link' ) ) {
+			$custom_css .= '#main-footer .main_widget a { color: '.$link.' }';
+		}
 
-      if ( $border_color = $this->get_setting( 'footer_border_color' ) ) {
-         $custom_css .= '#main-footer .main_widget ul li, #main-footer .main_widget ul > ul > li:last-child { border-color: '.$border_color.'; }';
-         $custom_css .= '#main-footer .footer_social_media, #main-footer .copyright,
-         #main-footer .main_widget .widget_core_coll_xml_feeds .notes,
-         #main-footer #content .evo_widget ul li, #main-footer #content .evo_widget ul > ul > li:last-child, #main-footer .widget_core_linkblog ul ul, #main-footer .widget_core_content_hierarchy ul ul, #main-footer .widget_core_coll_xml_feeds .notes
-         { border-color: '.$border_color.'; }';
-      }
+		if ( $border_color = $this->get_setting( 'footer_border_color' ) ) {
+			$custom_css .= '#main-footer .main_widget ul li, #main-footer .main_widget ul > ul > li:last-child { border-color: '.$border_color.'; }';
+			$custom_css .= '#main-footer .footer_social_media, #main-footer .copyright,
+			#main-footer .main_widget .widget_core_coll_xml_feeds .notes,
+			#main-footer #content .evo_widget ul li, #main-footer #content .evo_widget ul > ul > li:last-child, #main-footer .widget_core_linkblog ul ul, #main-footer .widget_core_content_hierarchy ul ul, #main-footer .widget_core_coll_xml_feeds .notes
+			{ border-color: '.$border_color.'; }';
+		}
 
-      if ( $bg_color = $this->get_setting( 'footer_tags_bg' ) ) {
-         $custom_css .= '#main-footer .evo_widget .tag_cloud a { background-color: '.$bg_color.'; }';
-      }
+		if ( $bg_color = $this->get_setting( 'footer_tags_bg' ) ) {
+			$custom_css .= '#main-footer .evo_widget .tag_cloud a { background-color: '.$bg_color.'; }';
+		}
 
-      if ( $color = $this->get_setting( 'footer_copyright_content' ) ) {
-         $custom_css .= '#main-footer .copyright .copyright_text { color: '.$color.' }';
-      }
+		if ( $color = $this->get_setting( 'footer_copyright_content' ) ) {
+			$custom_css .= '#main-footer .copyright .copyright_text { color: '.$color.' }';
+		}
 
-      if ( $link = $this->get_setting( 'footer_copyright_link' ) ) {
-         $custom_css .= '#main-footer .copyright .copyright_text a { color: '.$link.' }';
-      }
+		if ( $link = $this->get_setting( 'footer_copyright_link' ) ) {
+			$custom_css .= '#main-footer .copyright .copyright_text a { color: '.$link.' }';
+		}
 
-      /**
-       * ============================================================================
-       * Mediaidx Custom Style
-       * ============================================================================
-       */
-      if ( $padding = $this->get_setting( 'padding_column' ) ) {
-         $custom_css .= '.disp_mediaidx #main-content .evo_image_index .grid-item { padding: '.$padding.'px; }';
-         $custom_css .= '.disp_mediaidx #main-content .evo_image_index { margin-left: -'.$padding.'px; margin-right: -'.$padding.'px; }';
-      }
+		/**
+		* ============================================================================
+		* Mediaidx Custom Style
+		* ============================================================================
+		*/
+		if ( $padding = $this->get_setting( 'padding_column' ) ) {
+			$custom_css .= '.disp_mediaidx #main-content .evo_image_index .grid-item { padding: '.$padding.'px; }';
+			$custom_css .= '.disp_mediaidx #main-content .evo_image_index { margin-left: -'.$padding.'px; margin-right: -'.$padding.'px; }';
+		}
 
-      /**
-       * ============================================================================
-       * Output CSS
-       * ============================================================================
-       */
-      if( ! empty( $custom_css ) )
+		/**
+		* ============================================================================
+		* Output CSS
+		* ============================================================================
+		*/
+		if( ! empty( $custom_css ) )
 		{ // Function for custom_css:
-		$custom_css = '<style type="text/css">
-      	<!--
-         '.$custom_css.'
-         -->
-		</style>';
-		add_headline( $custom_css );
+			$custom_css = '<style type="text/css">
+			<!--
+			'.$custom_css.'
+			-->
+			</style>';
+			add_headline( $custom_css );
 		}
 
 	}

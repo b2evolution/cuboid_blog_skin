@@ -1,237 +1,237 @@
 .disp_single, .disp_page {
 
 
-   #main-content {
+    #main-content {
 
-      // Pagination
-      // ======================================================================== /
-      .pager {
-         margin-top: 0;
-         margin-bottom: 3rem;
-
-         @media screen and ( max-width: @S ) {
-            margin-bottom: 2rem;
-         }
-
-         .previous, .next {
-
-            a {
-               position: relative;
-               font-family: @font_heading;
-               text-transform: capitalize;
-               letter-spacing: 0;
-               border-radius: 0;
-               border: 0;
-               padding: 8px 20px;
-               margin-bottom: 0;
-               color: @c5;
-               background-color: @w;
-               z-index: 0;
-               box-shadow: @box-shadow;
-               transition: all 0.32s ease-in-out;
-
-               // Responsive
-               @media screen and ( max-width: @MX ) {
-                  float: none;
-                  width: 100%;
-               }
-
-               &::before {
-                  content: '';
-                  position: absolute;
-                  bottom: 0;
-                  width: 0;
-                  height: 100%;
-                  background-color: @primary;
-                  z-index: -1;
-                  transition: all 0.32s ease-in-out;
-               }
-
-               &:hover{
-                  color: @w;
-                  border-color: @primary;
-
-                  &::before {
-                     width: 100%;
-                  }
-               }
-            }
-         }
-
-         .previous {
-            a {
-               @media screen and ( max-width: @S ) {
-                  margin-bottom: 10px;
-               }
-
-               &::before {
-                  right: 0;
-               }
-            }
-         }
-
-         .next {
-            a {
-               &::before {
-                  left: 0;
-               }
-            }
-         }
-
-      }
-
-      // Cover Image
-      // ======================================================================== /
-      .cover_image {
-         margin-top: -2.5rem;
-         margin-left: -3rem;
-         margin-right: -3rem;
-         margin-bottom: 2rem;
-
-         @media screen and ( max-width: @MX ) {
-            margin-top: -1.5rem;
-            margin-left: -2rem;
-            margin-right: -2rem;
-            margin-bottom: 1.5rem;
-         }
-
-         .evo_image_block {
-            margin: 0;
-
-            img {
-               width: 100%;
-            }
-         }
-
-      }
-
-      // Iframer size If layout use single column
-      // ======================================================================== /
-      .col-md-12 .videoblock {
-         iframe {
-            min-width: 80%;
-            margin: 0 auto;
-            height: 420px;
+        // Pagination
+        // ======================================================================== /
+        .pager {
+            margin-top: 0;
+            margin-bottom: 3rem;
 
             @media screen and ( max-width: @S ) {
-               height: 260px;
+                margin-bottom: 2rem;
             }
+
+            .previous, .next {
+
+                a {
+                    position: relative;
+                    font-family: @font_heading;
+                    text-transform: capitalize;
+                    letter-spacing: 0;
+                    border-radius: 0;
+                    border: 0;
+                    padding: 8px 20px;
+                    margin-bottom: 0;
+                    color: @c5;
+                    background-color: @w;
+                    z-index: 0;
+                    box-shadow: @box-shadow;
+                    transition: all 0.32s ease-in-out;
+
+                    // Responsive
+                    @media screen and ( max-width: @MX ) {
+                        float: none;
+                        width: 100%;
+                    }
+
+                    &::before {
+                        content: '';
+                        position: absolute;
+                        bottom: 0;
+                        width: 0;
+                        height: 100%;
+                        background-color: @primary;
+                        z-index: -1;
+                        transition: all 0.32s ease-in-out;
+                    }
+
+                    &:hover{
+                        color: @w;
+                        border-color: @primary;
+
+                        &::before {
+                            width: 100%;
+                        }
+                    }
+                }
+            }
+
+            .previous {
+                a {
+                    @media screen and ( max-width: @S ) {
+                        margin-bottom: 10px;
+                    }
+
+                    &::before {
+                        right: 0;
+                    }
+                }
+            }
+
+            .next {
+                a {
+                    &::before {
+                        left: 0;
+                    }
+                }
+            }
+
+        }
+
+        // Cover Image
+        // ======================================================================== /
+        .cover_image {
+            margin-top: -2.5rem;
+            margin-left: -3rem;
+            margin-right: -3rem;
+            margin-bottom: 2rem;
+
+            @media screen and ( max-width: @MX ) {
+                margin-top: -1.5rem;
+                margin-left: -2rem;
+                margin-right: -2rem;
+                margin-bottom: 1.5rem;
+            }
+
+            .evo_image_block {
+                margin: 0;
+
+                img {
+                    width: 100%;
+                }
+            }
+
+        }
+
+        // Iframer size If layout use single column
+        // ======================================================================== /
+        .col-md-12 .videoblock {
+            iframe {
+                min-width: 80%;
+                margin: 0 auto;
+                height: 420px;
+
+                @media screen and ( max-width: @S ) {
+                    height: 260px;
+                }
+
+                @media screen and ( max-width: @XS ) {
+                    height: 176px;
+                }
+            }
+        }
+
+        // Evo Post
+        // ======================================================================== /
+        .evo_post,
+        .evo_featured_post {
+            @media screen and ( max-width: @MX ) {
+                padding: 1.5rem 2rem 1rem;
+                margin-right: -15px;
+                margin-left: -15px;
+            }
+        }
+
+
+        .evo_post {
+
+            // Evo Post Title
+            // ======================================================================== /
+            .evo_post_title {
+                h1 {
+                    margin-top: 5px;
+                    margin-bottom: 0;
+                }
+            }
+
+        }
+
+    } // End #Content
+
+    // FeedBacks Style
+    // ======================================================================== /
+    #feedbacks {
+        border-top: 1px solid @color_border;
+        margin-top: 3rem;
+        padding-top: 2rem;
+        color: @color_content;
+
+        // Title Feedbacks
+        // ======================================================================== /
+        .evo_comment__list_title {
+            font-family: @font_heading;
+            font-size: 2rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            color: @c5;
 
             @media screen and ( max-width: @XS ) {
-               height: 176px;
+                width: 100%;
+                margin: 0 auto;
+                text-align: center;
             }
-         }
-      }
+        }
 
-      // Evo Post
-      // ======================================================================== /
-      .evo_post,
-      .evo_featured_post {
-         @media screen and ( max-width: @MX ) {
-            padding: 1.5rem 2rem 1rem;
-            margin-right: -15px;
-            margin-left: -15px;
-         }
-      }
+        // Comment Meta Info
+        // ======================================================================== /
+        .evo_comment__meta_info {
+            padding: 18px 0 20px;
 
-
-      .evo_post {
-
-         // Evo Post Title
-         // ======================================================================== /
-         .evo_post_title {
-            h1 {
-               margin-top: 5px;
-               margin-bottom: 0;
+            @media screen and ( max-width: @XS ) {
+                float: none;
+                text-align: center;
+                margin: 1.5rem auto 0;
             }
-         }
 
-      }
+            a {
+                font-family: @font_heading;
+                font-size: 1.1rem;
+                transition: all 0.2s ease-in-out;
 
-   } // End #Content
-
-   // FeedBacks Style
-   // ======================================================================== /
-   #feedbacks {
-      border-top: 1px solid @color_border;
-      margin-top: 3rem;
-      padding-top: 2rem;
-      color: @color_content;
-
-      // Title Feedbacks
-      // ======================================================================== /
-      .evo_comment__list_title {
-         font-family: @font_heading;
-         font-size: 2rem;
-         font-weight: 700;
-         text-transform: uppercase;
-         color: @c5;
-
-         @media screen and ( max-width: @XS ) {
-            width: 100%;
-            margin: 0 auto;
-            text-align: center;
-         }
-      }
-
-      // Comment Meta Info
-      // ======================================================================== /
-      .evo_comment__meta_info {
-         padding: 18px 0 20px;
-
-         @media screen and ( max-width: @XS ) {
-            float: none;
-            text-align: center;
-            margin: 1.5rem auto 0;
-         }
-
-         a {
-            font-family: @font_heading;
-            font-size: 1.1rem;
-            transition: all 0.2s ease-in-out;
-
-            &:hover {
-               background-color: @primary;
-               border-color: @primary;
-               color: @w;
+                &:hover {
+                    background-color: @primary;
+                    border-color: @primary;
+                    color: @w;
+                }
             }
-         }
-      }
-   }
+        }
+    }
 
 
-   .fieldset_wrapper {
-      margin-top: 40px;
+    .fieldset_wrapper {
+        margin-top: 40px;
 
-      .panel {
-         border-color: @color_border;
-         border-radius: 0;
-
-         .panel-heading {
+        .panel {
             border-color: @color_border;
-         }
+            border-radius: 0;
 
-         .panel-body {
-            padding: 30px;
-
-            .badge {
-               width: 20px;
-               height: 20px;
-               padding: 0;
-               line-height: 20px;
+            .panel-heading {
+                border-color: @color_border;
             }
 
-            .evo_comment__meta {
-               border-top: 0;
-               border-right: 0;
-               border-left: 0;
-               padding-left: 0;
-               padding-right: 0;
-               box-shadow: none;
+            .panel-body {
+                padding: 30px;
+
+                .badge {
+                    width: 20px;
+                    height: 20px;
+                    padding: 0;
+                    line-height: 20px;
+                }
+
+                .evo_comment__meta {
+                    border-top: 0;
+                    border-right: 0;
+                    border-left: 0;
+                    padding-left: 0;
+                    padding-right: 0;
+                    box-shadow: none;
+                }
             }
-         }
-      }
-   }
+        }
+    }
 
 }
 // End .disp_singe

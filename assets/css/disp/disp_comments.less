@@ -3,92 +3,92 @@
 // ======================================================================== /
 .disp_comments {
 
-   #main-content {
+    #main-content {
 
-      // Evo Comment
-      // ======================================================================== /
-      .evo_comment {
-         padding: 3rem;
-         border-radius: 0;
-         border: 0;
-         box-shadow: @box-shadow;
-
-         @media screen and ( max-width: @S ) {
-            padding: 2rem 2rem 1.5rem;
-         }
-
-         .evo_comment_title{
-            margin-bottom: 0;
-
-            &.first {
-               border-bottom: 1px solid @color_border;
-               text-transform: capitalize;
-               margin-top: 0;
-               padding-bottom: 1rem;
-
-
-               a {
-                  color: @primary;
-               }
-            }
-
-         }
-
-         .evo_comment_avatar {
-            top: 30px;
-
-            @media screen and ( max-width: @MX ){
-               top: 0;
-               float: left;
-
-               &::after, &::before {
-                  position: relative;
-               }
-            }
+        // Evo Comment
+        // ======================================================================== /
+        .evo_comment {
+            padding: 3rem;
+            border-radius: 0;
+            border: 0;
+            box-shadow: @box-shadow;
 
             @media screen and ( max-width: @S ) {
-               display: none;
+                padding: 2rem 2rem 1.5rem;
             }
 
-         }
+            .evo_comment_title{
+                margin-bottom: 0;
 
-         .evo_comment_rating {
+                &.first {
+                    border-bottom: 1px solid @color_border;
+                    text-transform: capitalize;
+                    margin-top: 0;
+                    padding-bottom: 1rem;
 
-            @media screen and ( max-width: @S ) {
-               margin-left: 0;
+
+                    a {
+                        color: @primary;
+                    }
+                }
+
             }
 
-         }
+            .evo_comment_avatar {
+                top: 30px;
 
-         .evo_comment_text {
-            color: @color_content;
+                @media screen and ( max-width: @MX ){
+                    top: 0;
+                    float: left;
 
-            @media screen and ( max-width: @S ) {
-               margin-left: 0;
+                    &::after, &::before {
+                        position: relative;
+                    }
+                }
+
+                @media screen and ( max-width: @S ) {
+                    display: none;
+                }
+
             }
 
-            a {
-               text-decoration: none;
-               &:hover {
-                  background-color: transparent;
-                  text-decoration: underline;
-               }
+            .evo_comment_rating {
+
+                @media screen and ( max-width: @S ) {
+                    margin-left: 0;
+                }
+
             }
 
-         }
+            .evo_comment_text {
+                color: @color_content;
 
-         @media screen and ( max-width: @MX ) {
-            &::after, &::before {
-               content: '';
-               display: table;
-               clear: both;
+                @media screen and ( max-width: @S ) {
+                    margin-left: 0;
+                }
+
+                a {
+                    text-decoration: none;
+                    &:hover {
+                        background-color: transparent;
+                        text-decoration: underline;
+                    }
+                }
+
             }
-         }
 
-      }
+            @media screen and ( max-width: @MX ) {
+                &::after, &::before {
+                    content: '';
+                    display: table;
+                    clear: both;
+                }
+            }
 
-   }
-   // End #main-content
+        }
+
+    }
+    // End #main-content
 
 }
 // End .disp_comments

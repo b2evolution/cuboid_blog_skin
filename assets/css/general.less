@@ -6,89 +6,89 @@
 @import url(https://fonts.googleapis.com/css?family=Montserrat:400,700);
 
 /* ----------------------------------------------------------------------------
- * Global Style
- * -------------------------------------------------------------------------- */
+* Global Style
+* -------------------------------------------------------------------------- */
 html, body{
-   font-size: 10px;
+    font-size: 10px;
 
-   // @media screen and ( max-width: @M ) {
-   //    font-size: 9.75px;
-   // }
-   //
-   // @media screen and ( max-width: @S ) {
-   //    font-size: 9.5px;
-   // }
-
+    // @media screen and ( max-width: @M ) {
+    //    font-size: 9.75px;
+    // }
+    //
+    // @media screen and ( max-width: @S ) {
+    //    font-size: 9.5px;
+    // }
 }
 
 body{
-   font: normal 1.5rem/1.5 @font_body;
+    font: normal 1.5rem/1.5 @font_body;
 }
 
 
 a {
-   color: @primary;
+    color: @primary;
 
-   &:hover, &:active, &:focus {
-      text-decoration: underline;
-      color: @primary;
-      outline: 0;
-   }
+    &:hover, &:active, &:focus {
+        text-decoration: underline;
+        color: @primary;
+        outline: 0;
+    }
 }
 
 // Typograpy
 // ======================================================================== /
 h1, h2, h3, h4, h5, h6 {
-   font-family: @font_heading;
-   font-weight: 700;
-   letter-spacing: 0;
-   color: @c5;
+    font-family: @font_heading;
+    font-weight: 700;
+    letter-spacing: 0;
+    color: @c5;
 }
 
 p {
-   margin: 0 0 1.5rem;
+    margin: 0 0 1.5rem;
 }
 
 ul, ol {
-   margin: 0 0 1.5rem 2.5rem;
+    margin: 0 0 1.5rem 2.5rem;
 
-   & ul {
-      margin-bottom: 0;
-   }
+    & ul {
+        margin-bottom: 0;
+    }
 
-   li {
-      padding: 4px 0;
+    li {
+        padding: 4px 0;
 
-      p {
-         margin-bottom: 5px;
-      }
+        p {
+            margin-bottom: 5px;
+        }
 
-   }
+    }
 
 }
 
 pre {
-   border-radius: 3px;
-   padding: 1.5rem;
-   margin-top: 2rem;
-   margin-bottom: 2rem;
-   background-color: @cf7;
-   border-color: @cd;
+    border-radius: 3px;
+    padding: 1.5rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    background-color: @cf7;
+    border-color: @cd;
 }
 
 blockquote {
-   margin: 1.5rem 0;
-   font-size: 1.8rem;
-   line-height: 1.3;
-   font-style: italic;
+    margin: 1.5rem 0;
+    font-size: 1.8rem;
+    line-height: 1.3;
+    font-style: italic;
 
-   p {
-      margin-bottom: 0;
-   }
+    p {
+        margin-bottom: 0;
+    }
 }
 
 img {
-   max-width: 100%;
+    max-width: 100%;
+    height: auto;
 }
 
 
@@ -96,14 +96,14 @@ img {
 // ======================================================================== /
 .btn, button, span {
 
-   &:hover, &:active, &:focus, &:active:focus {
-      outline: 0;
-   }
+    &:hover, &:active, &:focus, &:active:focus {
+        outline: 0;
+    }
 }
 
 .alert {
-   border-radius: 0;
-   .close {
-         top: 0;
-   }
+    border-radius: 0;
+    .close {
+        top: 0;
+    }
 }

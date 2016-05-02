@@ -52,5 +52,5 @@ If you ever get stuck with setting up Cuboid with your B2evolution installation,
 
 ```
 Version 0.1
-– Initial Version – February, 2016
+– Initial Version – Mei, 2016
 ```

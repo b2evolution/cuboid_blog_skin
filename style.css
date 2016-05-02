@@ -5,8 +5,8 @@
  * // Import the asset style
  * -------------------------------------------------------------------------- */
 /* ----------------------------------------------------------------------------
- * Global Style
- * -------------------------------------------------------------------------- */
+* Global Style
+* -------------------------------------------------------------------------- */
 html,
 body {
   font-size: 10px;
@@ -73,6 +73,7 @@ blockquote p {
 }
 img {
   max-width: 100%;
+  height: auto;
 }
 .btn:hover,
 button:hover,
@@ -95,8 +96,8 @@ span:active:focus {
   top: 0;
 }
 /* ----------------------------------------------------------------------------
- * Main Header Style
- * -------------------------------------------------------------------------- */
+* Main Header Style
+* -------------------------------------------------------------------------- */
 #main-header {
   padding: 35px 0;
   margin-top: -16px;
@@ -186,29 +187,59 @@ span:active:focus {
     padding-right: 0;
   }
 }
-.navbar-collapse .nav.nav-tabs {
+.navbar-collapse ul {
   margin: 0;
   float: right;
   border-bottom: none;
 }
 @media screen and (max-width: 991px) and (min-width: 768px) {
-  .navbar-collapse .nav.nav-tabs {
+  .navbar-collapse ul {
     display: inline-block;
     float: none;
     text-align: center;
     margin: 0 auto;
   }
 }
-.navbar-collapse .nav.nav-tabs li {
+.navbar-collapse ul ul {
+  list-style-type: none;
+  display: inline-block;
+  float: none;
+}
+@media screen and (max-width: 768px) {
+  .navbar-collapse ul ul {
+    display: block;
+  }
+}
+.navbar-collapse ul ul li {
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+}
+.navbar-collapse ul ul a {
+  display: block;
+  text-decoration: none;
+}
+.navbar-collapse ul li {
+  margin: 0;
   padding: 0;
 }
 @media screen and (max-width: 991px) {
-  .navbar-collapse .nav.nav-tabs li {
+  .navbar-collapse ul li {
     display: inline-block;
     float: none;
   }
 }
-.navbar-collapse .nav.nav-tabs li a {
+.navbar-collapse ul li.active a {
+  background-color: #1abc9c;
+  border: 0;
+  border-radius: 0;
+}
+.navbar-collapse ul li.active a:hover,
+.navbar-collapse ul li.active a:active,
+.navbar-collapse ul li.active a:focus {
+  border: 0;
+}
+.navbar-collapse ul a {
   position: relative;
   font-family: "Lato", sans-serif;
   font-size: 1.2rem;
@@ -222,11 +253,11 @@ span:active:focus {
   z-index: 0;
 }
 @media screen and (max-width: 1025px) and (min-width: 768px) {
-  .navbar-collapse .nav.nav-tabs li a {
+  .navbar-collapse ul a {
     margin: 0;
   }
 }
-.navbar-collapse .nav.nav-tabs li a::after {
+.navbar-collapse ul a::after {
   content: '';
   position: absolute;
   bottom: 0;
@@ -238,40 +269,40 @@ span:active:focus {
   -webkit-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
 }
-.navbar-collapse .nav.nav-tabs li a:hover,
-.navbar-collapse .nav.nav-tabs li a:active,
-.navbar-collapse .nav.nav-tabs li a:focus {
+.navbar-collapse ul a:hover,
+.navbar-collapse ul a:active,
+.navbar-collapse ul a:focus {
   background-color: transparent;
   border-color: transparent;
   opacity: 1;
 }
-.navbar-collapse .nav.nav-tabs li a:hover::after,
-.navbar-collapse .nav.nav-tabs li a:active::after,
-.navbar-collapse .nav.nav-tabs li a:focus::after {
+.navbar-collapse ul a:hover::after,
+.navbar-collapse ul a:active::after,
+.navbar-collapse ul a:focus::after {
   height: 100%;
 }
-.navbar-collapse .nav.nav-tabs li a.selected {
+.navbar-collapse ul a.selected {
   background: transparent;
   border: 0;
   opacity: 1;
   cursor: pointer;
 }
-.navbar-collapse .nav.nav-tabs li a.selected::after {
+.navbar-collapse ul a.selected::after {
   height: 100%;
 }
 @media screen and (max-width: 767px) {
-  .navbar-collapse .nav.nav-tabs {
+  .navbar-collapse ul {
     float: none;
   }
-  .navbar-collapse .nav.nav-tabs > li {
+  .navbar-collapse ul > li {
     float: none;
     margin: 0;
     width: 100%;
   }
-  .navbar-collapse .nav.nav-tabs li {
+  .navbar-collapse ul li {
     display: block;
   }
-  .navbar-collapse .nav.nav-tabs li a {
+  .navbar-collapse ul li a {
     padding: 10px 0;
     text-align: center;
   }
@@ -1928,6 +1959,10 @@ span:active:focus {
   box-shadow: 1px 2px 4px rgba(35, 35, 35, 0.12);
   border-left: 10px solid #1abc9c;
 }
+.disp_posts #main-content .evo_featured_post .evo_post_images {
+  margin-left: -3rem;
+  margin-right: -3rem;
+}
 .disp_posts #main-content .evo_featured_post .evo_image_block {
   margin-top: -2.5rem;
   margin-left: -3rem;
@@ -2013,6 +2048,15 @@ span:active:focus {
 .disp_posts #main-content .main_item_posts .item_posts.three_column .evo_featured_post {
   padding-left: 2.5rem;
   padding-right: 2.5rem;
+}
+.disp_posts #main-content .main_item_posts .item_posts.two_column .evo_post .evo_post_images,
+.disp_posts #main-content .main_item_posts .item_posts.three_column .evo_post .evo_post_images,
+.disp_posts #main-content .main_item_posts .item_posts.two_column .evo_intro_post .evo_post_images,
+.disp_posts #main-content .main_item_posts .item_posts.three_column .evo_intro_post .evo_post_images,
+.disp_posts #main-content .main_item_posts .item_posts.two_column .evo_featured_post .evo_post_images,
+.disp_posts #main-content .main_item_posts .item_posts.three_column .evo_featured_post .evo_post_images {
+  margin-right: -2.5rem;
+  margin-left: -2.5rem;
 }
 .disp_posts #main-content .main_item_posts .item_posts.two_column .evo_post .evo_post_images .evo_image_block,
 .disp_posts #main-content .main_item_posts .item_posts.three_column .evo_post .evo_post_images .evo_image_block,
@@ -3392,7 +3436,7 @@ span:active:focus {
 .widget_core_coll_avatar a,
 .widget_flow_blocks > div a {
   position: relative;
-  display: inline-block;
+  display: block;
   overflow: hidden;
 }
 .widget_core_user_avatars a::before,
@@ -3732,8 +3776,8 @@ textarea.message_text {
   width: 95%;
 }
 .widget_core_coll_media_index .widget_flow_blocks > div {
-  margin-bottom: 0;
-  margin-top: 0;
+  max-width: 100%;
+  margin: 2px;
 }
 .widget_core_coll_media_index .widget_flow_blocks > div a::before {
   background-color: rgba(0, 0, 0, 0.75);
