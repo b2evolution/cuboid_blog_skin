@@ -1012,7 +1012,7 @@ class cuboid_blog_Skin extends Skin
 			#main-sidebar .evo_widget, #content .evo_widget, .disp_comments #main-content .evo_comment,
 			.disp_user #main-content .profile_content,
 			.disp_search #main-content, .disp_search #main-content .title_head_post, .disp_search #main-content .search_result,
-			.disp_404 #main-content,
+			.disp_404 #main-content, .disp_front #main-content .evo_widget,
 			.disp_messages #main-content, .disp_messages #main-content .title_head_post { background-color: '.$bg.'; }';
 		}
 
@@ -1292,13 +1292,13 @@ class cuboid_blog_Skin extends Skin
 					'grp_col_start_last'      => '<td class="lastcol $class$" $colspan_attrib$>',
 					'grp_col_end'             => "</td>\n",
 					'grp_line_end'            => "</tr>\n\n",
-   				'body_end'                => "</tbody>\n\n",
-   				'total_line_start'        => '<tr class="total">'."\n",
+	   				'body_end'                => "</tbody>\n\n",
+	   				'total_line_start'        => '<tr class="total">'."\n",
 					'total_col_start'         => '<td $class_attrib$>',
 					'total_col_start_first'   => '<td class="firstcol $class$">',
 					'total_col_start_last'    => '<td class="lastcol $class$">',
 					'total_col_end'           => "</td>\n",
-   				'total_line_end'          => "</tr>\n\n",
+   					'total_line_end'          => "</tr>\n\n",
 					'list_end'                => "</table></div>\n\n",
 					'footer_start'            => '',
 					'footer_text'             => '<div class="center"><ul class="pagination">'
