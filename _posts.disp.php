@@ -23,15 +23,10 @@ while( mainlist_get_item() )
 { // For each blog post, do everything below up to the closing curly brace "}"
    global $Skin;
 
-   $content = 'excerpt';
-   if ( $Skin->get_setting( 'posts_content_mode' ) == 'auto' ) {
-      $content = 'auto';
-   }
-
 	// ---------------------- ITEM BLOCK INCLUDED HERE ------------------------
 	skin_include( '_item_block.inc.php', array(
-			'content_mode' => $content, // 'auto' will auto select depending on $disp-detail
-		) );
+		'content_mode' => 'auto', // 'auto' will auto select depending on $disp-detail
+	) );
 	// ----------------------------END ITEM BLOCK  ----------------------------
 
 } // ---------------------------------- END OF POSTS ------------------------------------

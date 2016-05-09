@@ -347,16 +347,6 @@ class cuboid_blog_Skin extends Skin
                   ),
                   'defaultvalue' => 'one',
                ),
-               'posts_content_mode' => array(
-                  'label'    => T_('Posts Content Mode'),
-                  'note'     => '',
-                  'type'     => 'radio',
-                  'options'  => array(
-                     array( 'auto', T_('Auto') ),
-                     array( 'excerpt', T_('Excerpt') ),
-                  ),
-                  'defaultvalue' => 'excerpt',
-               ),
                'pagination_layout' => array(
                   'label'        => T_('Pagination Layout'),
                   'note'         => T_('Select Layout for Pagination'),
