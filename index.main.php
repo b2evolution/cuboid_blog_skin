@@ -208,9 +208,9 @@ switch ( $disp ) {
 
 			<?php
 			// ------------------------- SIDEBAR INCLUDED HERE --------------------------
-			skin_include( '_sidebar.inc.php' );
-			// Note: You can customize the sidebar by copying the
-			// _sidebar.inc.php file into the current skin folder.
+				skin_include( '_sidebar.inc.php' );
+				// Note: You can customize the sidebar by copying the
+				// _sidebar.inc.php file into the current skin folder.
 			// ----------------------------- END OF SIDEBAR -----------------------------
 			?>
 
