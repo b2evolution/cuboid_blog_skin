@@ -17,33 +17,33 @@ global $comment_template_counter;
 
 // Default params:
 $params = array_merge( array(
-		'comment_start'         => '<article class="evo_comment panel panel-default">',
-		'comment_end'           => '</article>',
-		'comment_post_display'	=> false,	// Do we want ot display the title of the post we're referring to?
-		'comment_post_before'   => '<h3 class="evo_comment_post_title">',
-		'comment_post_after'    => '</h3>',
-		'comment_title_before'  => '<div class="panel-heading"><h4 class="evo_comment_title panel-title">',
-		'comment_title_after'   => '</h4></div><div class="panel-body">',
-		'comment_avatar_before' => '<span class="evo_comment_avatar">',
-		'comment_avatar_after'  => '</span>',
-		'comment_rating_before' => '<div class="evo_comment_rating">',
-		'comment_rating_after'  => '</div>',
-		'comment_text_before'   => '<div class="evo_comment_text">',
-		'comment_text_after'    => '</div>',
-		'comment_info_before'   => '<div class="evo_comment_info clear text-muted"><small>',
-		'comment_info_after'    => '</small></div>',
-		'link_to'               => 'userurl>userpage', // 'userpage' or 'userurl' or 'userurl>userpage' or 'userpage>userurl'
-		'author_link_text'      => 'name', // avatar_name | avatar_login | only_avatar | name | login | nickname | firstname | lastname | fullname | preferredname
-		'before_image'          => '<figure class="evo_image_block">',
-		'before_image_legend'   => '<figcaption class="evo_image_legend">',
-		'after_image_legend'    => '</figcaption>',
-		'after_image'           => '</figure>',
-		'image_size'            => 'fit-1280x720',
-		'image_class'           => 'img-responsive',
-		'Comment'               => NULL, // This object MUST be passed as a param!
-      'time_before'           => '<time class="comment_date">',
-      'time_after'            => '</time>',
-	), $params );
+	'comment_start'         => '<article class="evo_comment panel panel-default">',
+	'comment_end'           => '</article>',
+	'comment_post_display'	=> false,	// Do we want ot display the title of the post we're referring to?
+	'comment_post_before'   => '<h3 class="evo_comment_post_title">',
+	'comment_post_after'    => '</h3>',
+	'comment_title_before'  => '<div class="panel-heading"><h4 class="evo_comment_title panel-title">',
+	'comment_title_after'   => '</h4></div><div class="panel-body">',
+	'comment_avatar_before' => '<span class="evo_comment_avatar">',
+	'comment_avatar_after'  => '</span>',
+	'comment_rating_before' => '<div class="evo_comment_rating">',
+	'comment_rating_after'  => '</div>',
+	'comment_text_before'   => '<div class="evo_comment_text">',
+	'comment_text_after'    => '</div>',
+	'comment_info_before'   => '<div class="evo_comment_info clear text-muted"><small>',
+	'comment_info_after'    => '</small></div>',
+	'link_to'               => 'userurl>userpage', // 'userpage' or 'userurl' or 'userurl>userpage' or 'userpage>userurl'
+	'author_link_text'      => 'name', // avatar_name | avatar_login | only_avatar | name | login | nickname | firstname | lastname | fullname | preferredname
+	'before_image'          => '<figure class="evo_image_block">',
+	'before_image_legend'   => '<figcaption class="evo_image_legend">',
+	'after_image_legend'    => '</figcaption>',
+	'after_image'           => '</figure>',
+	'image_size'            => 'fit-1280x720',
+	'image_class'           => 'img-responsive',
+	'Comment'               => NULL, // This object MUST be passed as a param!
+	'time_before'           => '<time class="comment_date">',
+	'time_after'            => '</time>',
+), $params );
 
 if( ! isset( $comment_template_counter ) )
 {	// Initialize global comment counter:
@@ -68,8 +68,8 @@ if( $params['comment_post_display'] )
 	echo $params['comment_post_before'];
 	echo T_('In response to:').' ';
 	$Comment->Item->title( array(
-			'link_type' => 'permalink',
-		) );
+		'link_type' => 'permalink',
+	) );
 	echo $params['comment_post_after'];
 }
 
@@ -100,14 +100,14 @@ switch( $Comment->get( 'type' ) )
 		}
 
 		$Comment->author2( array(
-				'before'       => ' ',
-				'after'        => '#',
-				'before_user'  => '',
-				'after_user'   => '#',
-				'format'       => 'htmlbody',
-				'link_to'      => $params['link_to'],		// 'userpage' or 'userurl' or 'userurl>userpage' or 'userpage>userurl'
-				'link_text'    => $params['author_link_text'],
-			) );
+			'before'       => ' ',
+			'after'        => '#',
+			'before_user'  => '',
+			'after_user'   => '#',
+			'format'       => 'htmlbody',
+			'link_to'      => $params['link_to'],		// 'userpage' or 'userurl' or 'userurl>userpage' or 'userpage>userurl'
+			'link_text'    => $params['author_link_text'],
+		) );
 
 		if( ! $Comment->get_author_User() )
 		{ // Display action icon to message only if this comment is from a visitor
@@ -117,23 +117,23 @@ switch( $Comment->get( 'type' ) )
 
 	case 'trackback': // Display a trackback:
 		$Comment->permanent_link( array(
-				'before'    => '',
-				'after'     => ' '.T_('from:').' ',
-				'text' 		=> T_('Trackback'),
-				'class'		=> 'evo_comment_type',
-				'nofollow'	=> true,
-			) );
+			'before'    => '',
+			'after'     => ' '.T_('from:').' ',
+			'text' 		=> T_('Trackback'),
+			'class'		=> 'evo_comment_type',
+			'nofollow'	=> true,
+		) );
 		$Comment->author( '', '#', '', '#', 'htmlbody', true, $params['author_link_text'] );
 		break;
 
 	case 'pingback': // Display a pingback:
 		$Comment->permanent_link( array(
-				'before'    => '',
-				'after'     => ' '.T_('from:').' ',
-				'text' 		=> T_('Pingback'),
-				'class'		=> 'evo_comment_type',
-				'nofollow'	=> true,
-			) );
+			'before'    => '',
+			'after'     => ' '.T_('from:').' ',
+			'text' 		=> T_('Pingback'),
+			'class'		=> 'evo_comment_type',
+			'nofollow'	=> true,
+		) );
 		$Comment->author( '', '#', '', '#', 'htmlbody', true, $params['author_link_text'] );
 		break;
 }
@@ -172,9 +172,9 @@ echo $params['comment_avatar_after'];
 
 // Rating:
 $Comment->rating( array(
-		'before' => $params['comment_rating_before'],
-		'after'  => $params['comment_rating_after'],
-	) );
+	'before' => $params['comment_rating_before'],
+	'after'  => $params['comment_rating_after'],
+) );
 
 // Text:
 echo $params['comment_text_before'];

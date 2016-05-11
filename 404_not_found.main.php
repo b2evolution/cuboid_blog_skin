@@ -39,37 +39,37 @@ skin_include( '_body_header.inc.php' );
 ?>
 
 <div id="content">
-   <div class="container">
-      <div class="row">
-      	<div class="col-md-12">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
 
-      		<main id="main-content"><!-- This is were a link like "Jump to main content" would land -->
-      		<!-- ================================= START OF MAIN AREA ================================== -->
+				<main id="main-content"><!-- This is were a link like "Jump to main content" would land -->
+					<!-- ================================= START OF MAIN AREA ================================== -->
 
-      		<?php
-      		if( ! in_array( $disp, array( 'login', 'lostpassword', 'register', 'activateinfo', 'access_requires_login' ) ) )
-      		{ // Don't display the messages here because they are displayed inside wrapper to have the same width as form
-      			// ------------------------- MESSAGES GENERATED FROM ACTIONS -------------------------
-      			messages( array(
-   					'block_start' => '<div class="action_messages">',
-   					'block_end'   => '</div>',
-   				) );
-      			// --------------------------------- END OF MESSAGES ---------------------------------
-      		}
-      		?>
+					<?php
+					if( ! in_array( $disp, array( 'login', 'lostpassword', 'register', 'activateinfo', 'access_requires_login' ) ) )
+					{ // Don't display the messages here because they are displayed inside wrapper to have the same width as form
+						// ------------------------- MESSAGES GENERATED FROM ACTIONS -------------------------
+						messages( array(
+							'block_start' => '<div class="action_messages">',
+							'block_end'   => '</div>',
+						) );
+						// --------------------------------- END OF MESSAGES ---------------------------------
+					}
+					?>
 
-      		<?php
-      			// -------------- MAIN CONTENT TEMPLATE INCLUDED HERE (Based on $disp) --------------
-      			skin_include( '$disp$', array( ) );
-      			// Note: you can customize any of the sub templates included here by
-      			// copying the matching php file into your skin directory.
-      			// ------------------------- END OF MAIN CONTENT TEMPLATE ---------------------------
-      		?>
-      		</main>
+					<?php
+					// -------------- MAIN CONTENT TEMPLATE INCLUDED HERE (Based on $disp) --------------
+					skin_include( '$disp$', array( ) );
+					// Note: you can customize any of the sub templates included here by
+					// copying the matching php file into your skin directory.
+					// ------------------------- END OF MAIN CONTENT TEMPLATE ---------------------------
+					?>
+				</main>
 
-      	</div><!-- .col -->
-      </div><!-- .row -->
-   </div><!-- .container -->
+			</div><!-- .col -->
+		</div><!-- .row -->
+	</div><!-- .container -->
 </div><!-- #content -->
 
 

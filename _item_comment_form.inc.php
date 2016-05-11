@@ -31,7 +31,7 @@ $params = array_merge( array(
 		'form_params'          => array( // Use to change structure of form, i.e. fieldstart, fieldend and etc.
 			'comments_disabled_before' => '<p class="alert alert-warning">',
 			'comments_disabled_after' => '</p>',
-			),
+		),
 		'policy_text'          => '',
 		'author_link_text'     => 'name',
 		'textarea_lines'       => 10,
@@ -53,8 +53,8 @@ $params = array_merge( array(
 				'data-placement' => 'bottom',
 				'data-html'      => 'true',
 				'title'          => htmlspecialchars( get_upload_restriction( array(
-						'block_after'     => '',
-						'block_separator' => '<br /><br />' ) ) )
+					'block_after'     => '',
+					'block_separator' => '<br /><br />' ) ) )
 			) ),
 		'comment_mode'         => '', // Can be 'quote' from GET request
 	), $params );
@@ -395,10 +395,10 @@ function validateCommentForm(form)
 		}
 
 		$comment_options[] = $msgform_class_start.
-													'<label><input type="checkbox" class="checkbox" name="comment_allow_msgform" tabindex="8"'
-													.( $comment_allow_msgform ? ' checked="checked"' : '' ).' value="1" /> '.T_('Allow message form').'</label>'
-													.' <span class="note">('.T_('Allow users to contact me through a message form -- Your email will <strong>not</strong> be revealed!').')</span>'.
-													$msgform_class_end;
+							'<label><input type="checkbox" class="checkbox" name="comment_allow_msgform" tabindex="8"'
+							.( $comment_allow_msgform ? ' checked="checked"' : '' ).' value="1" /> '.T_('Allow message form').'</label>'
+							.' <span class="note">('.T_('Allow users to contact me through a message form -- Your email will <strong>not</strong> be revealed!').')</span>'.
+							$msgform_class_end;
 		// TODO: If we have an email in a cookie, Add links called "Add a contact icon to all my previous comments" and "Remove contact icon from all my previous comments".
 	}
 

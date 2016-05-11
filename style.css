@@ -1988,6 +1988,12 @@ span:active:focus {
   margin-left: -3rem;
   margin-right: -3rem;
 }
+@media screen and (max-width: 480px) {
+  .disp_posts #main-content .evo_post .evo_post_images {
+    margin-left: -2rem;
+    margin-right: -2rem;
+  }
+}
 .disp_posts #main-content .evo_post .evo_post_images img {
   border-radius: 0;
 }
@@ -3141,8 +3147,8 @@ span:active:focus {
   border-color: #555555;
 }
 /* ----------------------------------------------------------------------------
- * Sidebar Styling
- * -------------------------------------------------------------------------- */
+* Sidebar Styling
+* -------------------------------------------------------------------------- */
 #main-sidebar .evo_widget {
   padding: 15px;
   border: none;
@@ -3823,8 +3829,8 @@ textarea.message_text {
   border-bottom: none;
 }
 /* ----------------------------------------------------------------------------
- * Footer Styling
- * -------------------------------------------------------------------------- */
+* Footer Styling
+* -------------------------------------------------------------------------- */
 #main-footer {
   margin-top: 5rem;
   background-color: #262626;

@@ -1,137 +1,137 @@
 /* ----------------------------------------------------------------------------
- * Sidebar Styling
- * -------------------------------------------------------------------------- */
+* Sidebar Styling
+* -------------------------------------------------------------------------- */
 #main-sidebar{
 
-   .evo_widget{
-      padding: 15px;
-      border: none;
-      border-radius: 0;
-      margin-bottom: 3rem;
+    .evo_widget{
+        padding: 15px;
+        border: none;
+        border-radius: 0;
+        margin-bottom: 3rem;
 
-      @media screen and ( max-width: @L )
-      and ( min-width: @MM ) {
-         padding: 5px;
-      }
+        @media screen and ( max-width: @L )
+        and ( min-width: @MM ) {
+            padding: 5px;
+        }
 
-      @media screen and ( max-width: @S ) {
-         padding: 1.5rem 1rem;
-      }
+        @media screen and ( max-width: @S ) {
+            padding: 1.5rem 1rem;
+        }
 
-      @media screen and ( max-width: @XS ) {
-         padding: 1.5rem 0.5rem;
-      }
+        @media screen and ( max-width: @XS ) {
+            padding: 1.5rem 0.5rem;
+        }
 
-      .panel-heading{
-         background-color: transparent;
-         border: none;
-         padding: 1rem 1.5rem 1.5rem;
-      }
+        .panel-heading{
+            background-color: transparent;
+            border: none;
+            padding: 1rem 1.5rem 1.5rem;
+        }
 
-      .panel-title{
-         position: relative;
-         display: inline-block;
-         font-size: 1.5rem;
-         text-transform: uppercase;
-         letter-spacing: 1px;
-         color: @c5;
+        .panel-title{
+            position: relative;
+            display: inline-block;
+            font-size: 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: @c5;
 
-         &::after {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 0;
-            width: 50%;
-            height: 2px;
-            background-color: @c5;
-         }
-      }
-
-   }
-
-   // Padding 30px
-   // ======================================================================== /
-   .widget_core_breadcrumb_path,
-   .widget_core_image {
-      padding: 3rem;
-   }
-
-   // Widget Long Description
-   // ======================================================================== /
-   .widget_core_coll_longdesc {
-      text-align: center;
-
-      .panel-title {
-         font-size: 2.6rem;
-
-         &:after {
-            display: none;
-         }
-      }
-   }
-
-   // List Public and List Owner
-   // ======================================================================== /
-   .widget_core_colls_list_public, .widget_core_colls_list_owner {
-
-      & > ul {
-         padding-left: 15px;
-         padding-right: 15px;
-         margin-top: 10px;
-      }
-
-      a {
-         font-weight: 400;
-      }
-
-   }
-
-   // Widget Tags
-   // ======================================================================== /
-   .widget_core_coll_tag_cloud {
-      .tag_cloud {
-         a {
-            &:hover {
-               color: @w;
+            &::after {
+                content: '';
+                position: absolute;
+                bottom: -10px;
+                left: 0;
+                width: 50%;
+                height: 2px;
+                background-color: @c5;
             }
-         }
-      }
-   }
+        }
 
-   // Widget Coll Title and Logo
-   // ======================================================================== /
-   .widget_core_coll_title,
-   .widget_core_coll_logo {
+    }
 
-      .panel-title {
+    // Padding 30px
+    // ======================================================================== /
+    .widget_core_breadcrumb_path,
+    .widget_core_image {
+        padding: 3rem;
+    }
 
-         &::after {
-            display: none;
-         }
-      }
+    // Widget Long Description
+    // ======================================================================== /
+    .widget_core_coll_longdesc {
+        text-align: center;
 
-   }
+        .panel-title {
+            font-size: 2.6rem;
 
-   // Widget Coll Tagline
-   // ======================================================================== /
-   .widget_core_coll_tagline {
-      color: @c5;
-   }
+            &:after {
+                display: none;
+            }
+        }
+    }
 
-   // Custom Icon Link for sidebar
-   // ======================================================================== /
-   .ufld_icon_links {
+    // List Public and List Owner
+    // ======================================================================== /
+    .widget_core_colls_list_public, .widget_core_colls_list_owner {
 
-      a{
-         color: @c7;
+        & > ul {
+            padding-left: 15px;
+            padding-right: 15px;
+            margin-top: 10px;
+        }
 
-         &:hover, &:active, &:focus {
-            color: @w;
-            text-decoration: none;
-         }
-      }
+        a {
+            font-weight: 400;
+        }
 
-   }
+    }
+
+    // Widget Tags
+    // ======================================================================== /
+    .widget_core_coll_tag_cloud {
+        .tag_cloud {
+            a {
+                &:hover {
+                    color: @w;
+                }
+            }
+        }
+    }
+
+    // Widget Coll Title and Logo
+    // ======================================================================== /
+    .widget_core_coll_title,
+    .widget_core_coll_logo {
+
+        .panel-title {
+
+            &::after {
+                display: none;
+            }
+        }
+
+    }
+
+    // Widget Coll Tagline
+    // ======================================================================== /
+    .widget_core_coll_tagline {
+        color: @c5;
+    }
+
+    // Custom Icon Link for sidebar
+    // ======================================================================== /
+    .ufld_icon_links {
+
+        a{
+            color: @c7;
+
+            &:hover, &:active, &:focus {
+                color: @w;
+                text-decoration: none;
+            }
+        }
+
+    }
 
 
 }

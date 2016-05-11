@@ -358,12 +358,6 @@ class cuboid_blog_Skin extends Skin
                   ),
                   'defaultvalue' => 'center',
                ),
-            //    'posts_wrap_bg' => array(
-            //       'label'        => T_('Posts Background Wrapper'),
-            //       'note'         => T_('Default value is #FFFFFF'),
-            //       'defaultvalue' => '#FFFFFF',
-            //       'type'         => 'color',
-            //    ),
                'posts_title_color' => array(
                   'label'        => T_('Posts Title Color'),
                   'note'         => T_('Default value is #555555'),

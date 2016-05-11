@@ -17,40 +17,39 @@ global $Item, $Skin, $app_version;
 
 // Default params:
 $params = array_merge( array(
-		'feature_block'             => false,			// fp>yura: what is this for??
-		// Classes for the <article> tag:
-		'item_class'                => 'evo_post evo_content_block',
-		'item_type_class'           => 'evo_post__ptyp_',
-		'item_status_class'         => 'evo_post__',
-		// Controlling the title:
-		'disp_title'                => true,
-		'item_title_line_before'    => '<div class="evo_post_title">',	// Note: we use an extra class because it facilitates styling
-		'item_title_before'         => '<h2>',
-		'item_title_after'          => '</h2>',
-		'item_title_single_before'  => '<h1>',	// This replaces the above in case of disp=single or disp=page
-		'item_title_single_after'   => '</h1>',
-		'item_title_line_after'     => '</div>',
+	'feature_block'             => false,			// fp>yura: what is this for??
+	// Classes for the <article> tag:
+	'item_class'                => 'evo_post evo_content_block',
+	'item_type_class'           => 'evo_post__ptyp_',
+	'item_status_class'         => 'evo_post__',
+	// Controlling the title:
+	'disp_title'                => true,
+	'item_title_line_before'    => '<div class="evo_post_title">',	// Note: we use an extra class because it facilitates styling
+	'item_title_before'         => '<h2>',
+	'item_title_after'          => '</h2>',
+	'item_title_single_before'  => '<h1>',	// This replaces the above in case of disp=single or disp=page
+	'item_title_single_after'   => '</h1>',
+	'item_title_line_after'     => '</div>',
 
-		// Controlling the content:
-      'before_content_teaser'     => '',
-      'after_content_teaser'      => '',
-		'content_mode'              => 'auto',		// excerpt|full|normal|auto -- auto will auto select depending on $disp-detail
-		'image_class'               => 'img-responsive',
-		'image_size'                => 'fit-1280x720',
-      'image_link_to'             => 'original', // Can be 'original', 'single' or empty
-		'author_link_text'          => 'preferredname',
+	// Controlling the content:
+	'before_content_teaser'     => '',
+	'after_content_teaser'      => '',
+	'content_mode'              => 'auto',		// excerpt|full|normal|auto -- auto will auto select depending on $disp-detail
+	'image_class'               => 'img-responsive',
+	'image_size'                => 'fit-1280x720',
+	'image_link_to'             => 'original', // Can be 'original', 'single' or empty
+	'author_link_text'          => 'preferredname',
 
-      'before_images'             => '<div class="evo_post_images">',
-      'before_image'              => '<figure class="evo_image_block">',
-      'before_image_legend'       => '<figcaption class="evo_image_legend">',
-      'after_image_legend'        => '</figcaption>',
-      'after_image'               => '</figure>',
-      'after_images'              => '</div>',
+	'before_images'             => '<div class="evo_post_images">',
+	'before_image'              => '<figure class="evo_image_block">',
+	'before_image_legend'       => '<figcaption class="evo_image_legend">',
+	'after_image_legend'        => '</figcaption>',
+	'after_image'               => '</figure>',
+	'after_images'              => '</div>',
 
-      'before_gallery'            => '<div class="evo_post_gallery clearfix">',
-      'after_gallery'             => '</div>',
-
-	), $params );
+	'before_gallery'            => '<div class="evo_post_gallery clearfix">',
+	'after_gallery'             => '</div>',
+), $params );
 
 
 // Post Column
@@ -71,46 +70,45 @@ echo '<div class="'.$content_block.'">'; // Beginning of post display
 ?>
 
 <article id="<?php $Item->anchor_id() ?>" class="<?php $Item->div_classes( $params ) ?>" lang="<?php $Item->lang() ?>">
+<?php
+	if ( $disp == 'posts' ) {
+		// Display images that are linked to this post:
+		$Item->images( array(
+			// Optionally restrict to files/images linked to specific position: 'teaser'|'teaserperm'|'teaserlink'|'aftermore'|'inline'|'cover'
+			'restrict_to_image_position' => 'teaser',
+			'before'                     => $params['before_images'],
+			'before_image'               => $params['before_image'],
+			'before_image_legend'        => $params['before_image_legend'],
+			'after_image_legend'         => $params['after_image_legend'],
+			'after_image'                => $params['after_image'],
+			'after'                      => $params['after_images'],
+			'image_class'                => $params['image_class'],
+			'image_size'                 => $params['image_size'],
+			'limit'                      => 2,
+			'image_link_to'              => $params['image_link_to'],
 
-   <?php
-   if ( $disp == 'posts' ) {
-   // Display images that are linked to this post:
-      $Item->images( array(
-         // Optionally restrict to files/images linked to specific position: 'teaser'|'teaserperm'|'teaserlink'|'aftermore'|'inline'|'cover'
-         'restrict_to_image_position' => 'teaser',
-         'before'                     => $params['before_images'],
-         'before_image'               => $params['before_image'],
-         'before_image_legend'        => $params['before_image_legend'],
-         'after_image_legend'         => $params['after_image_legend'],
-         'after_image'                => $params['after_image'],
-         'after'                      => $params['after_images'],
-         'image_class'                => $params['image_class'],
-         'image_size'                 => $params['image_size'],
-         'limit'                      => 2,
-         'image_link_to'              => $params['image_link_to'],
+			'before_gallery'             => $params['before_gallery'],
+			'after_gallery'              => $params['after_gallery'],
+		) );
+	}
 
-         'before_gallery'             => $params['before_gallery'],
-         'after_gallery'              => $params['after_gallery'],
-      ) );
-   }
-
-   if ( $disp == 'single' || $disp == 'page' ) {
-   // Display images that are linked to this post:
-      $Item->images( array(
-         // Optionally restrict to files/images linked to specific position: 'teaser'|'teaserperm'|'teaserlink'|'aftermore'|'inline'|'cover'
-         'restrict_to_image_position' => 'cover',
-         'before'                     => '<div class="evo_post_images cover_image">',
-         'before_image'               => $params['before_image'],
-         'before_image_legend'        => $params['before_image_legend'],
-         'after_image_legend'         => $params['after_image_legend'],
-         'after_image'                => $params['after_image'],
-         'after'                      => $params['after_images'],
-         'image_class'                => $params['image_class'],
-         'image_size'                 => 'original',
-         'limit'                      => 1,
-         'image_link_to'              => $params['image_link_to'],
-      ) );
-   }
+	if ( $disp == 'single' || $disp == 'page' ) {
+		// Display images that are linked to this post:
+		$Item->images( array(
+			// Optionally restrict to files/images linked to specific position: 'teaser'|'teaserperm'|'teaserlink'|'aftermore'|'inline'|'cover'
+			'restrict_to_image_position' => 'cover',
+			'before'                     => '<div class="evo_post_images cover_image">',
+			'before_image'               => $params['before_image'],
+			'before_image_legend'        => $params['before_image_legend'],
+			'after_image_legend'         => $params['after_image_legend'],
+			'after_image'                => $params['after_image'],
+			'after'                      => $params['after_images'],
+			'image_class'                => $params['image_class'],
+			'image_size'                 => 'original',
+			'limit'                      => 1,
+			'image_link_to'              => $params['image_link_to'],
+		) );
+	}
    ?>
 
 	<header>
@@ -135,10 +133,10 @@ echo '<div class="'.$content_block.'">'; // Beginning of post display
 
 			// POST TITLE:
 			$Item->title( array(
-					'before'    => $title_before,
-					'after'     => $title_after,
-					'link_type' => '#'
-				) );
+				'before'    => $title_before,
+				'after'     => $title_after,
+				'link_type' => '#'
+			) );
 
 			// EDIT LINK:
 			if( $Item->is_intro() )
@@ -224,10 +222,10 @@ echo '<div class="'.$content_block.'">'; // Beginning of post display
 			if( ! $Item->is_intro() )
 			{ // List all tags attached to this post:
 				$Item->tags( array(
-						'before'    => '<nav class="small post_tags"><h3>'. T_( 'Tags: ' ).'</h3>',
-						'after'     => '</nav>',
-						'separator' => '',
-					) );
+					'before'    => '<nav class="small post_tags"><h3>'. T_( 'Tags: ' ).'</h3>',
+					'after'     => '</nav>',
+					'separator' => '',
+				) );
 			}
 		?>
 
