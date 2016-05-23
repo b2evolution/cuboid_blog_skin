@@ -44,13 +44,4 @@
 
 ### Need Assistance? Get In Touch!
 
-If you ever get stuck with setting up Cuboid with your B2evolution installation, you can get in touch with our friendly and dedicated support via our [Support Forum](http://forums.b2evolution.net/).
-
-===
-
-### Changes & Updates
-
-```
-Version 0.1
-– Initial Version – May, 2016
-```
+If you ever get stuck with setting up Cuboid with your b2evolution installation, you can get in touch with our friendly and dedicated support via our [Support Forum](http://forums.b2evolution.net/).

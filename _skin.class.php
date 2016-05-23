@@ -56,101 +56,101 @@ class cuboid_blog_Skin extends Skin
 	}
 
 
-   /**
-   * Get supported collection kinds.
-   *
-   * This should be overloaded in skins.
-   *
-   * For each kind the answer could be:
-   * - 'yes' : this skin does support that collection kind (the result will be was is expected)
-   * - 'partial' : this skin is not a primary choice for this collection kind (but still produces an output that makes sense)
-   * - 'maybe' : this skin has not been tested with this collection kind
-   * - 'no' : this skin does not support that collection kind (the result would not be what is expected)
-   * There may be more possible answers in the future...
-   */
-   public function get_supported_coll_kinds()
-   {
-     $supported_kinds = array(
-        'main'   => 'partial',
-        'std'    => 'yes',		// Blog
-        'photo'  => 'Yes',
-        'forum'  => 'no',
-        'manual' => 'maybe',
-        'group'  => 'maybe',  // Tracker
-        // Any kind that is not listed should be considered as "maybe" supported
-     );
-     return $supported_kinds;
-   }
-
-
-   /**
-   * Judge if the file is the image we want to use
-   *
-   * @param string filepath: the path of a file
-   * array arr_types: the file type we want to use
-   * @return array
-   */
-   function isImage( $filepath, $arr_types=array( ".gif", ".jpeg", ".png", ".bmp" ) )
-   {
-	   if(file_exists($filepath)) {
-		   $info = getimagesize($filepath);
-		   $ext  = image_type_to_extension($info['2']);
-		   return in_array($ext,$arr_types);
-	   } else {
-		   return false;
-	   }
-   }
-
-
-   /**
-   * Get the pictures of one local folder as an array
-   *
-   * @param string img_folder; the image folder;
-   * string img_folder_url; folder url, we would like to show the img of this folder on the screen for user viewing;
-   * int thumb_width: thumb image whdth shown on the skin setting page
-   * int thumb_height: thumb image height shown on the skin setting page
-   * @return array
-   */
-   function get_arr_pics_from_folder( $img_folder, $img_folder_url, $thumb_width = 50, $thumb_height = 50 )
-   {
-	   $arr_filenames = $filesnames =array();
-	   if(file_exists($img_folder))
-	   {
-		   $filesnames = scandir($img_folder);
-	   }
-	   $count = 0;
-	   foreach ( $filesnames as $name )
-	   {
-		   $count++;
-		   if ( $name != "." && $name != ".." && $name != "_evocache" && $this->isImage($img_folder.$name) ) //not the folder and other files
-		   {
-			   $arr_filenames[] = array( $img_folder_url.$name,
-			   "<a href='".$img_folder_url.$name."' target='blank'><img src='".$img_folder_url.$name."' width=".$thumb_width."px heigh=".$thumb_height."px /></a>" );
-		   }
-		   if ($count==30) break; // The max number of the images we want to show
-	   }
-	   $arr_filenames[] = array("none",T_("Transparent"));
-	   return $arr_filenames;
-   }
+	/**
+	* Get supported collection kinds.
+	*
+	* This should be overloaded in skins.
+	*
+	* For each kind the answer could be:
+	* - 'yes' : this skin does support that collection kind (the result will be was is expected)
+	* - 'partial' : this skin is not a primary choice for this collection kind (but still produces an output that makes sense)
+	* - 'maybe' : this skin has not been tested with this collection kind
+	* - 'no' : this skin does not support that collection kind (the result would not be what is expected)
+	* There may be more possible answers in the future...
+	*/
+	public function get_supported_coll_kinds()
+	{
+		$supported_kinds = array(
+			'main'   => 'partial',
+			'std'    => 'yes',		// Blog
+			'photo'  => 'Yes',
+			'forum'  => 'no',
+			'manual' => 'maybe',
+			'group'  => 'maybe',  // Tracker
+			// Any kind that is not listed should be considered as "maybe" supported
+		);
+		return $supported_kinds;
+	}
 
 
 	/**
-	 * Get definitions for editable params
-	 *
-	 * @see Plugin::GetDefaultSettings()
-	 * @param local params like 'for_editing' => true
-	 */
+	* Judge if the file is the image we want to use
+	*
+	* @param string filepath: the path of a file
+	* array arr_types: the file type we want to use
+	* @return array
+	*/
+	function isImage( $filepath, $arr_types=array( ".gif", ".jpeg", ".png", ".bmp" ) )
+	{
+		if(file_exists($filepath)) {
+			$info = getimagesize($filepath);
+			$ext  = image_type_to_extension($info['2']);
+			return in_array($ext,$arr_types);
+		} else {
+			return false;
+		}
+	}
+
+
+	/**
+	* Get the pictures of one local folder as an array
+	*
+	* @param string img_folder; the image folder;
+	* string img_folder_url; folder url, we would like to show the img of this folder on the screen for user viewing;
+	* int thumb_width: thumb image whdth shown on the skin setting page
+	* int thumb_height: thumb image height shown on the skin setting page
+	* @return array
+	*/
+	function get_arr_pics_from_folder( $img_folder, $img_folder_url, $thumb_width = 50, $thumb_height = 50 )
+	{
+		$arr_filenames = $filesnames =array();
+		if(file_exists($img_folder))
+		{
+			$filesnames = scandir($img_folder);
+		}
+		$count = 0;
+		foreach ( $filesnames as $name )
+		{
+			$count++;
+			if ( $name != "." && $name != ".." && $name != "_evocache" && $this->isImage($img_folder.$name) ) //not the folder and other files
+			{
+				$arr_filenames[] = array( $img_folder_url.$name,
+				"<a href='".$img_folder_url.$name."' target='blank'><img src='".$img_folder_url.$name."' width=".$thumb_width."px heigh=".$thumb_height."px /></a>" );
+			}
+			if ($count==30) break; // The max number of the images we want to show
+		}
+		$arr_filenames[] = array("none",T_("Transparent"));
+		return $arr_filenames;
+	}
+
+
+	/**
+	* Get definitions for editable params
+	*
+	* @see Plugin::GetDefaultSettings()
+	* @param local params like 'for_editing' => true
+	*/
 	function get_param_definitions( $params )
 	{
-      global $Blog;
-      // Load to use function get_available_thumb_sizes()
-      load_funcs( 'files/model/_image.funcs.php' );
-      // System provide bg images
-      $bodybg_cat = 'assets/images/bodybg/'; // Background images folder relative to this skin folder
-      $arr_bodybg = $this -> get_arr_pics_from_folder( $this->get_path().$bodybg_cat, $this->get_url().$bodybg_cat, 60, 60 );
-      // User Custom bg images
-      $custom_bodybg_cat  = "bodybg/"; // Background images folder which created by users themselves, and it's relative to collection media dir
-      $arr_custom_bodybg = $this->get_arr_pics_from_folder( $Blog->get_media_dir().$custom_bodybg_cat, $Blog->get_media_url().$custom_bodybg_cat, 65 ,65);
+		global $Blog;
+		// Load to use function get_available_thumb_sizes()
+		load_funcs( 'files/model/_image.funcs.php' );
+		// System provide bg images
+		$bodybg_cat = 'assets/images/bodybg/'; // Background images folder relative to this skin folder
+		$arr_bodybg = $this -> get_arr_pics_from_folder( $this->get_path().$bodybg_cat, $this->get_url().$bodybg_cat, 60, 60 );
+		// User Custom bg images
+		$custom_bodybg_cat = "bodybg/"; // Background images folder which created by users themselves, and it's relative to collection media dir
+		$arr_custom_bodybg = $this->get_arr_pics_from_folder( $Blog->get_media_dir().$custom_bodybg_cat, $Blog->get_media_url().$custom_bodybg_cat, 65 ,65);
 
 		$r = array_merge( array(
             'general_settings_start' => array(
@@ -265,52 +265,80 @@ class cuboid_blog_Skin extends Skin
                'layout' => 'end_fieldset',
             ),
 
+			/* Page Setting
+			 * ========================================================================== */
+			'page_setting_start' => array(
+				'layout'	=> 'begin_fieldset',
+				'label'		=> T_( 'Page Settings' ),
+			),
+				'page_content_color' => array(
+				   'label'        => T_('Page Content Color'),
+				   'note'         => T_('Default value is #6F6F6F'),
+				   'defaultvalue' => '',
+				   'type'         => 'color',
+				),
+				'page_font_size' => array(
+					'label'			=> T_( 'Font Size Page' ),
+					'note'			=> T_( 'px. Change font size for content all page.' ),
+					'type'			=> 'integer',
+					'defaultvalue'	=> '',
+					'size'			=> 5,
+					'allow_empty'	=> true,
+				),
+				'page_info_color' => array(
+				   'label'        => T_('Page Info Text Color'),
+				   'note'         => T_('Default value is #777777'),
+				   'defaultvalue' => '#777777',
+				   'type'         => 'color',
+				),
+				'page_info_link' => array(
+				   'label'        => T_('Page Info Link Color'),
+				   'note'         => T_('Default value is #A9A9A9'),
+				   'defaultvalue' => '#A9A9A9',
+				   'type'         => 'color',
+				),
+			'page_setting_end' => array(
+				'layout'	=> 'end_fieldset',
+			),
+
             /**
              * ============================================================================
              * Header Settings
              * ============================================================================
              */
-            'header_settings_start' => array(
-               'layout' => 'begin_fieldset',
-               'label'  => T_('Header settings')
-            ),
-               'head_center_mode' => array(
-                  'label'        => T_('Max Width Header Center Mode'),
-                  'note'         => T_('px - Set Max Width for Header Center Mode. Default ( 992px ), example: 1170px'),
-                  'defaultvalue' => '992',
-                  'size'         => '5',
-                  'type'         => 'integer',
-                  'allow_empty'  => true,
-               ),
-               // 'header_hum_menu' => array(
-               //    'label'        => T_('Menu Hamburger Layout:'),
-               //    'note'         => T_('px - Set Max Width for activated Humberger Menu, default ( 768px )'),
-               //    'defaultvalue' => '768',
-               //    'size'         => '5',
-               //    'type'         => 'integer',
-               //    'allow_empty'  => true,
-               // ),
-               'header_bg_color' => array(
-                  'label'        => T_('Header Background Color'),
-                  'note'         => T_('Default value is #262626'),
-                  'defaultvalue' => '#262626',
-                  'type'         => 'color',
-               ),
-               'nav_color_link' => array(
-                  'label'        => T_('Navigation Link Color'),
-                  'note'         => T_('Default value is #FFFFFF'),
-                  'defaultvalue' => '#FFFFFF',
-                  'type'         => 'color',
-               ),
-               'nav_color_hovlink' => array(
-                  'label'        => T_('Navigation Hover Link Color'),
-                  'note'         => T_('Default value is #FFFFFF'),
-                  'defaultvalue' => '#FFFFFF',
-                  'type'         => 'color',
-               ),
-            'header_settings_end' => array(
-               'layout' => 'end_fieldset',
-            ),
+			'header_settings_start' => array(
+				'layout' => 'begin_fieldset',
+				'label'  => T_('Header settings')
+			),
+				'head_center_mode' => array(
+					'label'        => T_('Max Width Header Center Mode'),
+					'note'         => T_('px - Set Max Width for Header Center Mode. Default ( 992px ), example: 1170px'),
+					'defaultvalue' => '992',
+					'size'         => '5',
+					'type'         => 'integer',
+					'allow_empty'  => true,
+				),
+				'header_bg_color' => array(
+					'label'        => T_('Header Background Color'),
+					'note'         => T_('Default value is #262626'),
+					'defaultvalue' => '#262626',
+					'type'         => 'color',
+				),
+				'nav_color_link' => array(
+					'label'        => T_('Navigation Link Color'),
+					'note'         => T_('Default value is #FFFFFF'),
+					'defaultvalue' => '#FFFFFF',
+					'type'         => 'color',
+				),
+				'nav_color_hovlink' => array(
+					'label'        => T_('Navigation Hover Link Color'),
+					'note'         => T_('Default value is #FFFFFF'),
+					'defaultvalue' => '#FFFFFF',
+					'type'         => 'color',
+				),
+			'header_settings_end' => array(
+				'layout' => 'end_fieldset',
+			),
             // End Header Settings
 
             /**
@@ -362,24 +390,6 @@ class cuboid_blog_Skin extends Skin
                   'label'        => T_('Posts Title Color'),
                   'note'         => T_('Default value is #555555'),
                   'defaultvalue' => '#555555',
-                  'type'         => 'color',
-               ),
-               'posts_info_color' => array(
-                  'label'        => T_('Posts Info Text Color'),
-                  'note'         => T_('Default value is #777777'),
-                  'defaultvalue' => '#777777',
-                  'type'         => 'color',
-               ),
-               'posts_info_link' => array(
-                  'label'        => T_('Posts Info Link Color'),
-                  'note'         => T_('Default value is #A9A9A9'),
-                  'defaultvalue' => '#A9A9A9',
-                  'type'         => 'color',
-               ),
-               'posts_content_color' => array(
-                  'label'        => T_('Posts Content Color'),
-                  'note'         => T_('Default value is #6F6F6F'),
-                  'defaultvalue' => '#6F6F6F',
                   'type'         => 'color',
                ),
             'posts_settings_end' => array(
@@ -459,12 +469,6 @@ class cuboid_blog_Skin extends Skin
                'layout' => 'begin_fieldset',
                'label'  => T_('Sidebar Options')
             ),
-            //    'side_bg_wrap' => array(
-            //       'label'        => T_('Widget Wrapper Background'),
-            //       'note'         => T_('Default value is #FFFFFF'),
-            //       'defaultvalue' => '#FFFFFF',
-            //       'type'         => 'color',
-            //    ),
                'side_widget_title' => array(
                   'label'        => T_('Widget Title Color'),
                   'note'         => T_('Default value is #555555'),
@@ -993,12 +997,31 @@ class cuboid_blog_Skin extends Skin
 
 		if ( $bg = $this->get_setting( 'bg_wrap_content' ) ) {
 			$custom_css .= '#main-content .evo_post, #main-content .evo_featured_post, .disp_posts #main-content .evo_featured_post,
-			#main-sidebar .evo_widget, #content .evo_widget, .disp_comments #main-content .evo_comment,
-			.disp_user #main-content .profile_content,
-			.disp_search #main-content, .disp_search #main-content .title_head_post, .disp_search #main-content .search_result,
-			.disp_404 #main-content, .disp_front #main-content .evo_widget,
-			.disp_messages #main-content, .disp_messages #main-content .title_head_post { background-color: '.$bg.'; }';
+			#main-sidebar .evo_widget, #content .evo_widget, .disp_comments #main-content .evo_comment, .disp_user #main-content .profile_content, .disp_threads #main-content, .disp_messages #main-content, .disp_contacts #main-content, .disp_msgform #main-content, .disp_threads #main-content .title_head_post, .disp_messages #main-content .title_head_post, .disp_contacts #main-content .title_head_post, .disp_msgform #main-content .title_head_post, .disp_help #main-content, .disp_users .results .filters, .disp_users .results .table_scroll, .disp_access_requires_login #main-content, .disp_lostpassword #main-content, .disp_login #main-content, .disp_register #main-content, .disp_search #main-content, .disp_search #main-content .title_head_post, .disp_search #main-content .search_result, .disp_404 #main-content, .disp_front #main-content .evo_widget, .disp_sitemap #main-content h3, .disp_messages #main-content, .disp_messages #main-content .title_head_post { background-color: '.$bg.'; }';
 		}
+
+		/**
+		 * ============================================================================
+		 * Page Setting
+		 * ============================================================================
+		 */
+		if( $font = $this->get_setting('page_font_size') ) {
+			$custom_css .= 'body{ font-size: '.$font.'px }';
+		}
+
+		if ( $color = $this->get_setting( 'page_info_color' ) ) {
+			$custom_css .= '.disp_posts #main-content .evo_post .small.text-muted, .disp_posts #main-content .evo_featured_post .small.text-muted, .disp_page #main-content .evo_post .small.text-muted, .disp_page #main-content .evo_featured_post .small.text-muted, .disp_single #main-content .evo_post .small.text-muted, .disp_single #main-content .evo_featured_post .small.text-muted { color: '.$color.' }';
+		}
+
+		if ( $color =$this->get_setting( 'page_info_link' ) ) {
+			$custom_css .= '.disp_posts #main-content .evo_post .small.text-muted span, .disp_posts #main-content .evo_featured_post .small.text-muted span, #main-content .evo_post .small.text-muted a, .disp_posts #main-content .evo_featured_post .small.text-muted a, .disp_page #main-content .evo_post .small.text-muted span, .disp_page #main-content .evo_featured_post .small.text-muted span, #main-content .evo_post .small.text-muted a, .disp_page #main-content .evo_featured_post .small.text-muted a, .disp_single #main-content .evo_post .small.text-muted span, .disp_single #main-content .evo_featured_post .small.text-muted span, #main-content .evo_post .small.text-muted a, .disp_single #main-content .evo_featured_post .small.text-muted a { color: '.$color.' }';
+		}
+
+		if ( $color = $this->get_setting( 'page_content_color' ) ) {
+			$custom_css .= 'html, body, .disp_single #feedbacks, .disp_page #feedbacks, #content .evo_widget, .disp_posts #main-content .evo_post__full_text, .disp_posts #main-content .evo_post__excerpt_text, .disp_page #main-content .evo_post__full_text, .disp_page #main-content .evo_post__excerpt_text, .disp_single #main-content .evo_post__full_text, .disp_single #main-content .evo_post__excerpt_text, .disp_comments #main-content .evo_comment .evo_comment_text, .disp_search #main-content .msg_nothing, .disp_search #main-content .search_result .search_content_wrap .result_content
+			{ color: '.$color.' }';
+		}
+
 
 
 		/**
@@ -1056,13 +1079,6 @@ class cuboid_blog_Skin extends Skin
 		* Posts
 		* ============================================================================
 		*/
-		// if ( $bg = $this->get_setting( 'posts_wrap_bg' ) ) {
-		// 	$custom_css .= '
-		// 	.disp_posts #main-content .evo_featured_post,
-		// 	.disp_posts #main-content .evo_post, .disp_posts #main-content .evo_featured_post
-		// 	{ background-color: '.$bg.' }';
-		// }
-
 		if ( $color = $this->get_setting( 'posts_title_color' ) ) {
 			$custom_css .= '
 			.disp_posts #main-content .evo_post_title h1 a, .disp_posts #main-content .evo_post_title h2 a, .disp_posts #main-content .evo_post_title h3 a,
@@ -1072,17 +1088,17 @@ class cuboid_blog_Skin extends Skin
 			';
 		}
 
-		if ( $color = $this->get_setting( 'posts_info_color' ) ) {
-			$custom_css .= '.disp_posts #main-content .evo_post .small.text-muted, .disp_posts #main-content .evo_featured_post .small.text-muted { color: '.$color.' }';
-		}
-
-		if ( $color =$this->get_setting( 'posts_info_link' ) ) {
-			$custom_css .= '.disp_posts #main-content .evo_post .small.text-muted span, .disp_posts #main-content .evo_featured_post .small.text-muted span, #main-content .evo_post .small.text-muted a, .disp_posts #main-content .evo_featured_post .small.text-muted a { color: '.$color.' }';
-		}
-
-		if ( $color = $this->get_setting( 'posts_content_color' ) ) {
-			$custom_css .= '.disp_posts #main-content .evo_post__full_text, .disp_posts #main-content .evo_post__excerpt_text { color: '.$color.' }';
-		}
+		// if ( $color = $this->get_setting( 'posts_info_color' ) ) {
+		// 	$custom_css .= '.disp_posts #main-content .evo_post .small.text-muted, .disp_posts #main-content .evo_featured_post .small.text-muted { color: '.$color.' }';
+		// }
+		//
+		// if ( $color =$this->get_setting( 'posts_info_link' ) ) {
+		// 	$custom_css .= '.disp_posts #main-content .evo_post .small.text-muted span, .disp_posts #main-content .evo_featured_post .small.text-muted span, #main-content .evo_post .small.text-muted a, .disp_posts #main-content .evo_featured_post .small.text-muted a { color: '.$color.' }';
+		// }
+		//
+		// if ( $color = $this->get_setting( 'posts_content_color' ) ) {
+		// 	$custom_css .= '.disp_posts #main-content .evo_post__full_text, .disp_posts #main-content .evo_post__excerpt_text { color: '.$color.' }';
+		// }
 
 		/**
 		* ============================================================================
