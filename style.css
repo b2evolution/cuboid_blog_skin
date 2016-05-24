@@ -1268,6 +1268,9 @@ span:active:focus {
   display: inline-block;
   box-shadow: none;
 }
+.disp_404 .error_404 {
+  box-shadow: none;
+}
 .disp_404 .error_404 .fa-warning {
   font-size: 6rem;
   color: #555555;
@@ -1279,6 +1282,17 @@ span:active:focus {
   .disp_404 .error_404 h2 {
     font-size: 3.2rem;
   }
+}
+div.error_404 {
+  padding: 40px;
+  margin: 0;
+  background-color: #ffffff;
+  text-align: center;
+  box-shadow: 1px 2px 4px rgba(35, 35, 35, 0.12);
+}
+div.error_404 .fa-warning {
+  font-size: 6rem;
+  color: #555555;
 }
 .disp_comments #main-content .evo_comment {
   padding: 3rem;

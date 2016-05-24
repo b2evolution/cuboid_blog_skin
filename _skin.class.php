@@ -996,8 +996,8 @@ class cuboid_blog_Skin extends Skin
 		}
 
 		if ( $bg = $this->get_setting( 'bg_wrap_content' ) ) {
-			$custom_css .= '#main-content .evo_post, #main-content .evo_featured_post, .disp_posts #main-content .evo_featured_post,
-			#main-sidebar .evo_widget, #content .evo_widget, .disp_comments #main-content .evo_comment, .disp_user #main-content .profile_content, .disp_threads #main-content, .disp_messages #main-content, .disp_contacts #main-content, .disp_msgform #main-content, .disp_threads #main-content .title_head_post, .disp_messages #main-content .title_head_post, .disp_contacts #main-content .title_head_post, .disp_msgform #main-content .title_head_post, .disp_help #main-content, .disp_users .results .filters, .disp_users .results .table_scroll, .disp_access_requires_login #main-content, .disp_lostpassword #main-content, .disp_login #main-content, .disp_register #main-content, .disp_search #main-content, .disp_search #main-content .title_head_post, .disp_search #main-content .search_result, .disp_404 #main-content, .disp_front #main-content .evo_widget, .disp_sitemap #main-content h3, .disp_messages #main-content, .disp_messages #main-content .title_head_post { background-color: '.$bg.'; }';
+			$custom_css .= '#main-content .evo_post, #main-content .evo_featured_post, .disp_posts #main-content .evo_featured_post, div.error_404, .msg_nothing, #main-content .title_head_post, #main-sidebar .evo_widget, #content .evo_widget, .disp_comments #main-content .evo_comment, .disp_user #main-content .profile_content, .disp_threads #main-content, .disp_messages #main-content, .disp_contacts #main-content, .disp_msgform #main-content, .disp_threads #main-content .title_head_post, .disp_messages #main-content .title_head_post, .disp_contacts #main-content .title_head_post, .disp_msgform #main-content .title_head_post, .disp_help #main-content, .disp_users .results .filters, .disp_users .results .table_scroll, .disp_access_requires_login #main-content, .disp_lostpassword #main-content, .disp_login #main-content, .disp_register #main-content, .disp_search #main-content, .disp_search #main-content .title_head_post, .disp_search #main-content .search_result, .disp_404 #main-content, .disp_front #main-content .evo_widget, .disp_sitemap #main-content h3, .disp_messages #main-content, .disp_messages #main-content .title_head_post, .disp_profile #main-content .evo_form .panel-body, .disp_avatar #main-content .evo_form .panel-body, .disp_pwdchange #main-content .evo_form .panel-body, .disp_userprefs #main-content .evo_form .panel-body, .disp_subs #main-content .evo_form .panel-body
+			{ background-color: '.$bg.'; }';
 		}
 
 		/**
@@ -1019,7 +1019,7 @@ class cuboid_blog_Skin extends Skin
 
 		if ( $color = $this->get_setting( 'page_content_color' ) ) {
 			$custom_css .= 'html, body, .disp_single #feedbacks, .disp_page #feedbacks, #content .evo_widget, .disp_posts #main-content .evo_post__full_text, .disp_posts #main-content .evo_post__excerpt_text, .disp_page #main-content .evo_post__full_text, .disp_page #main-content .evo_post__excerpt_text, .disp_single #main-content .evo_post__full_text, .disp_single #main-content .evo_post__excerpt_text, .disp_comments #main-content .evo_comment .evo_comment_text, .disp_search #main-content .msg_nothing, .disp_search #main-content .search_result .search_content_wrap .result_content
-			{ color: '.$color.' }';
+			{ color: '.$color.' !important}';
 		}
 
 
