@@ -43,3 +43,67 @@
     }
 
 }
+
+
+/* ----------------------------------------------------------------------------
+ * // Profile tabs on ?disp=profile
+ * -------------------------------------------------------------------------- */
+ul.profile_tabs {
+	margin: 0 2ex 2ex;
+	position: relative;
+	top: 1px;
+}
+
+.profile_avatar {
+	float: right;
+	padding: 10px;
+	margin-left: 10px;
+}
+
+// Use full width for all textarea
+.form-horizontal .controls textarea.form-control {
+	width: 100%;
+}
+
+
+// Links disp=comment
+.evo_comment_title a, .pull-right .evo_comment_type {
+	color: #337ab7;
+}
+
+
+div.bSideItem {
+	background: #F7F5FA;
+	border-radius: 5px;
+	padding: 10px;
+	margin-bottom: 10px;
+	text-shadow: 0 1px 0 @w;
+	h4 {
+		margin-top: 0;
+	}
+}
+
+// Messages
+div.action_messages, div.log_container {
+	margin: 0;
+}
+
+// Positions on the action buttons near page titles
+.evo_post_title {
+	display: table;
+	h2 {
+		display: table-cell;
+		margin: 0;
+		padding: 20px 0 10px;
+	}
+	.btn-group {
+		display: table-cell;
+		padding: 20px 0 10px 30px;
+		vertical-align: inherit;
+	}
+}
+
+// This skin needs this for disp=posts to separate from lower pagination
+footer.row {
+	margin-top: 20px;
+}

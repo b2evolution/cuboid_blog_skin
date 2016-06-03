@@ -799,3 +799,66 @@ textarea.message_text {
     }
 
 }
+
+
+// WIDGET CATEGORY LIST
+// ======================================================================== /
+.widget_core_coll_category_list {
+
+    .panel-body {
+        h4 {
+            position: relative;
+            font-family: @font_heading;
+            font-size: 1.6rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            overflow: hidden;
+            padding-top: 10px;
+            padding-bottom: 18px;
+            margin-bottom: -1px;
+            // margin-top: 2px;
+
+            &:before {
+                content: '';
+                position: absolute;
+                bottom: 0;
+                width: 100%;
+                height: 1px;
+                background-color: @color_border;
+            }
+
+            &:after {
+                content: '';
+                position: absolute;
+                top: 16px;
+                width: 100%;
+                height: 2px;
+                background-color: @primary;
+            }
+
+            a {
+                padding-right: 10px;
+            }
+        }
+
+        ul {
+
+            li {
+                &.evo_cat_meta {
+                    margin-left: 0;
+                    list-style: none;
+                    a {
+                        color: @primary;
+                        font-weight: normal;
+                    }
+                }
+            }
+
+            & > ul > li:last-child {
+                border-bottom: 0;
+            }
+
+        }
+    }
+
+}

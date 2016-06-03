@@ -227,32 +227,32 @@ class cuboid_blog_Skin extends Skin
 					'defaultvalue' => 'initial',
 				),
 				'bg_image_custom_size' => array(
-					'label'    => T_('Custom Background Size'),
-					'note'     => T_('Select the background size for Custom Background Image.'),
-					'type'     => 'select',
-					'options'  => array(
-						'auto'     => T_('Auto'),
-						'contain'  => T_('Contain'),
-						'cover'    => T_('Cover'),
+					'label'    		=> T_('Custom Background Size'),
+					'note'     		=> T_('Select the background size for Custom Background Image.'),
+					'type'     		=> 'select',
+					'defaultvalue' 	=> 'auto',
+					'options'  		=> array(
+						'auto'    => T_('Auto'),
+						'contain' => T_('Contain'),
+						'cover'   => T_('Cover'),
 					),
-					'defaultvalue' => 'auto',
 				),
 
 				// Favicon
 				'favicon' => array (
-					'label'        => T_( 'Favicon' ),
-					'note'         => T_( 'Change the default favicon' ),
-					'defaultvalue' => 'assets/images/favicon.png',
-					'type'         => 'text',
-					'size'         => '50'
+					'label'        	=> T_( 'Favicon' ),
+					'note'         	=> T_( 'Change the default favicon' ),
+					'defaultvalue' 	=> 'assets/images/favicon.png',
+					'type'         	=> 'text',
+					'size'         	=> '50'
 				),
 
 				// Back To Top
 				'bt_top' => array(
-					'label'        => T_('Display Button Back To Top'),
-					'note'         => T_('Check to enable button back to top.'),
-					'defaultvalue' => 1,
-					'type'         => 'checkbox',
+					'label'        	=> T_('Display Button Back To Top'),
+					'note'         	=> T_('Check to enable button back to top.'),
+					'defaultvalue' 	=> 1,
+					'type'         	=> 'checkbox',
 				),
 				'bg_wrap_content' => array(
 					'label'			=> T_( 'Content Background Wrapper' ),
@@ -272,10 +272,16 @@ class cuboid_blog_Skin extends Skin
 				'label'		=> T_( 'Page Settings' ),
 			),
 				'page_content_color' => array(
-				   'label'        => T_('Page Content Color'),
-				   'note'         => T_('Default value is #6F6F6F'),
-				   'defaultvalue' => '',
-				   'type'         => 'color',
+				   'label'			=> T_('Page Content Color'),
+				   'note'         	=> T_('Default value is #6F6F6F'),
+				   'defaultvalue' 	=> '',
+				   'type'         	=> 'color',
+				),
+				'page_heading_color' => array(
+					'label'			=> T_( 'Page Heading Color' ),
+					'note'			=> T_( 'Default value is #555555' ),
+					'type'			=> 'color',
+					'defaultvalue'	=> '#555555',
 				),
 				'page_font_size' => array(
 					'label'			=> T_( 'Font Size Page' ),
@@ -286,16 +292,16 @@ class cuboid_blog_Skin extends Skin
 					'allow_empty'	=> true,
 				),
 				'page_info_color' => array(
-				   'label'        => T_('Page Info Text Color'),
-				   'note'         => T_('Default value is #777777'),
-				   'defaultvalue' => '#777777',
-				   'type'         => 'color',
+				   'label'        	=> T_('Page Info Text Color'),
+				   'note'        	=> T_('Default value is #777777'),
+				   'defaultvalue' 	=> '#777777',
+				   'type'         	=> 'color',
 				),
 				'page_info_link' => array(
-				   'label'        => T_('Page Info Link Color'),
-				   'note'         => T_('Default value is #A9A9A9'),
-				   'defaultvalue' => '#A9A9A9',
-				   'type'         => 'color',
+				   'label'        	=> T_('Page Info Link Color'),
+				   'note'         	=> T_('Default value is #A9A9A9'),
+				   'defaultvalue'	=> '#A9A9A9',
+				   'type'         	=> 'color',
 				),
 			'page_setting_end' => array(
 				'layout'	=> 'end_fieldset',
@@ -996,8 +1002,9 @@ class cuboid_blog_Skin extends Skin
 		}
 
 		if ( $bg = $this->get_setting( 'bg_wrap_content' ) ) {
-			$custom_css .= '#main-content .evo_post, #main-content .evo_featured_post, .disp_posts #main-content .evo_featured_post, div.error_404, .msg_nothing, #main-content .title_head_post, #main-sidebar .evo_widget, #content .evo_widget, .disp_comments #main-content .evo_comment, .disp_user #main-content .profile_content, .disp_threads #main-content, .disp_messages #main-content, .disp_contacts #main-content, .disp_msgform #main-content, .disp_threads #main-content .title_head_post, .disp_messages #main-content .title_head_post, .disp_contacts #main-content .title_head_post, .disp_msgform #main-content .title_head_post, .disp_help #main-content, .disp_users .results .filters, .disp_users .results .table_scroll, .disp_access_requires_login #main-content, .disp_lostpassword #main-content, .disp_login #main-content, .disp_register #main-content, .disp_search #main-content, .disp_search #main-content .title_head_post, .disp_search #main-content .search_result, .disp_404 #main-content, .disp_front #main-content .evo_widget, .disp_sitemap #main-content h3, .disp_messages #main-content, .disp_messages #main-content .title_head_post, .disp_profile #main-content .evo_form .panel-body, .disp_avatar #main-content .evo_form .panel-body, .disp_pwdchange #main-content .evo_form .panel-body, .disp_userprefs #main-content .evo_form .panel-body, .disp_subs #main-content .evo_form .panel-body
+			$custom_css .= '#main-content .evo_post, #main-content .evo_featured_post, .disp_posts #main-content .evo_featured_post, div.error_404, .msg_nothing, #main-content .title_head_post, #main-sidebar .evo_widget, #content .evo_widget, .disp_comments #main-content .evo_comment, .disp_user #main-content .profile_content, .disp_threads #main-content, .disp_messages #main-content, .disp_contacts #main-content, .disp_msgform #main-content, .disp_threads #main-content .title_head_post, .disp_messages #main-content .title_head_post, .disp_contacts #main-content .title_head_post, .disp_msgform #main-content .title_head_post, .disp_help #main-content, .disp_users .results .filters, .disp_users .results .table_scroll, .disp_access_requires_login #main-content, .disp_lostpassword #main-content, .disp_login #main-content, .disp_register #main-content, .disp_search #main-content, .disp_search #main-content .title_head_post, .disp_search #main-content .search_result, .disp_404 #main-content, .disp_front #main-content .evo_widget, .disp_sitemap #main-content h3, .disp_messages #main-content, .disp_messages #main-content .title_head_post, .disp_profile #main-content .evo_form .panel-body, .disp_avatar #main-content .evo_form .panel-body, .disp_pwdchange #main-content .evo_form .panel-body, .disp_userprefs #main-content .evo_form .panel-body, .disp_subs #main-content .evo_form .panel-body, .disp_mediaidx #main-content .evo_image_index .note
 			{ background-color: '.$bg.'; }';
+			$custom_css .= '.disp_mediaidx #main-content .evo_image_index .item{ border-color: '.$bg.' }';
 		}
 
 		/**
@@ -1020,6 +1027,13 @@ class cuboid_blog_Skin extends Skin
 		if ( $color = $this->get_setting( 'page_content_color' ) ) {
 			$custom_css .= 'html, body, .disp_single #feedbacks, .disp_page #feedbacks, #content .evo_widget, .disp_posts #main-content .evo_post__full_text, .disp_posts #main-content .evo_post__excerpt_text, .disp_page #main-content .evo_post__full_text, .disp_page #main-content .evo_post__excerpt_text, .disp_single #main-content .evo_post__full_text, .disp_single #main-content .evo_post__excerpt_text, .disp_comments #main-content .evo_comment .evo_comment_text, .disp_search #main-content .msg_nothing, .disp_search #main-content .search_result .search_content_wrap .result_content
 			{ color: '.$color.' !important}';
+		}
+
+		if( $color = $this->get_setting( 'page_heading_color' ) ) {
+			$custom_css .= 'h1, h2, h3, h4, h5, h6,
+			.disp_front #main-content .evo_widget .title_widget, .disp_mediaidx #main-content .evo_image_index .note, .disp_404 .error_404 .fa-warning, div.error_404 .fa-warning, .disp_search #main-content .search_result .search_content_wrap .search_title, .disp_search #main-content .search_result .search_content_wrap .search_title a
+			{ color: '.$color.' }';
+			$custom_css .= '.disp_front #main-content .evo_widget .title_widget::after { background-color: '.$color.' }';
 		}
 
 
