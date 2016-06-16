@@ -155,7 +155,7 @@ class cuboid_blog_Skin extends Skin
 		$r = array_merge( array(
             'general_settings_start' => array(
                'layout' => 'begin_fieldset',
-               'label'  => T_('General settings')
+               'label'  => T_('General Settings (All disps)')
             ),
 				// Layout
 				'layout' => array(
@@ -238,15 +238,6 @@ class cuboid_blog_Skin extends Skin
 					),
 				),
 
-				// Favicon
-				'favicon' => array (
-					'label'        	=> T_( 'Favicon' ),
-					'note'         	=> T_( 'Change the default favicon' ),
-					'defaultvalue' 	=> 'assets/images/favicon.png',
-					'type'         	=> 'text',
-					'size'         	=> '50'
-				),
-
 				// Back To Top
 				'bt_top' => array(
 					'label'        	=> T_('Display Button Back To Top'),
@@ -269,7 +260,7 @@ class cuboid_blog_Skin extends Skin
 			 * ========================================================================== */
 			'page_setting_start' => array(
 				'layout'	=> 'begin_fieldset',
-				'label'		=> T_( 'Page Settings' ),
+				'label'		=> T_( 'Page Settings (All disps)' ),
 			),
 				'page_content_color' => array(
 				   'label'			=> T_('Page Content Color'),
@@ -314,7 +305,7 @@ class cuboid_blog_Skin extends Skin
              */
 			'header_settings_start' => array(
 				'layout' => 'begin_fieldset',
-				'label'  => T_('Header settings')
+				'label'  => T_('Header settings (All disps)')
 			),
 				'head_center_mode' => array(
 					'label'        => T_('Max Width Header Center Mode'),
@@ -354,7 +345,7 @@ class cuboid_blog_Skin extends Skin
              */
             'posts_settings_start' => array(
                'layout' => 'begin_fieldset',
-               'label'  => T_('Posts Layout')
+               'label'  => T_('Posts Settings (disp=posts)')
             ),
                'posts_layout' => array(
                   'label'        => T_('Posts Layout'),
@@ -373,11 +364,11 @@ class cuboid_blog_Skin extends Skin
                'posts_column' => array(
                   'label'    => T_('Posts Columns'),
                   'note'     => T_('( Number of posts columns in posts disp. )'),
-                  'type'     => 'radio',
+                  'type'     => 'select',
                   'options'  => array(
-                     array( 'one', T_('1 Column') ),
-                     array( 'two', T_('2 Column') ),
-                     array( 'three', T_('3 Column') ),
+                    	'one' 	=> T_('1 Column'),
+                    	'two' 	=> T_('2 Columns'),
+                    	'three' => T_('3 Columns'),
                   ),
                   'defaultvalue' => 'one',
                ),
@@ -411,7 +402,7 @@ class cuboid_blog_Skin extends Skin
              */
             'tags_settings_start' => array(
                'layout' => 'begin_fieldset',
-               'label'  => T_('Tags Layout')
+               'label'  => T_('Tags Layout Settings (All disps)')
             ),
                'tags_color' => array(
                   'label'        => T_('Tags Text Color'),
@@ -444,7 +435,7 @@ class cuboid_blog_Skin extends Skin
              */
             'single_settings_start' => array(
                'layout' => 'begin_fieldset',
-               'label'  => T_('Single and Page Disp')
+               'label'  => T_('Single and Page Disp Settings (disp=single and disp=page)')
             ),
                // Single Layout
                'single_layout' => array(
@@ -473,7 +464,7 @@ class cuboid_blog_Skin extends Skin
              */
             'sidebar_settings_start' => array(
                'layout' => 'begin_fieldset',
-               'label'  => T_('Sidebar Options')
+               'label'  => T_('Sidebar Settings (All disps)')
             ),
                'side_widget_title' => array(
                   'label'        => T_('Widget Title Color'),
@@ -512,7 +503,7 @@ class cuboid_blog_Skin extends Skin
              */
             'footer_settings_start' => array(
                'layout' => 'begin_fieldset',
-               'label'  => T_('Footer Settings')
+               'label'  => T_('Footer Settings (All disps)')
             ),
                'footer_widget' => array(
                   'label'        => T_('Display Footer Widget'),
@@ -605,7 +596,7 @@ class cuboid_blog_Skin extends Skin
              */
             'section_media_start' => array(
                'layout'   => 'begin_fieldset',
-               'label'    => T_( 'Media Posts' )
+               'label'    => T_( 'Media Posts Settings (disp=mediaidx)' )
             ),
                // Single Layout
                'mediaidx_layout' => array(
@@ -658,7 +649,7 @@ class cuboid_blog_Skin extends Skin
              */
             'user_settings_start' => array(
                'layout' => 'begin_fieldset',
-               'label'  => T_('User Disp Layout')
+               'label'  => T_('User Disp Layout (All disps)')
             ),
                // Single Layout
                'user_layout' => array(
@@ -684,7 +675,7 @@ class cuboid_blog_Skin extends Skin
              */
 				'section_colorbox_start' => array(
 					'layout' => 'begin_fieldset',
-					'label'  => T_('Colorbox Image Zoom')
+					'label'  => T_('Colorbox Image Zoom (All disps)')
 				),
 					'colorbox' => array(
 						'label'        => T_('Colorbox Image Zoom'),
@@ -735,7 +726,7 @@ class cuboid_blog_Skin extends Skin
 
 				'section_username_start' => array(
 					'layout' => 'begin_fieldset',
-					'label'  => T_('Username options')
+					'label'  => T_('Username options (All disp)')
 				),
 					'gender_colored' => array(
 						'label'        => T_('Display gender'),
@@ -761,7 +752,7 @@ class cuboid_blog_Skin extends Skin
 
 				'section_access_start' => array(
 					'layout' => 'begin_fieldset',
-					'label'  => T_('When access is denied or requires login...')
+					'label'  => T_('When access is denied or requires login... (disp=access_denied and disp=access_requires_login)')
 				),
 					'access_login_containers' => array(
 						'label'   => T_('Display on login screen'),
@@ -838,10 +829,6 @@ class cuboid_blog_Skin extends Skin
 
 		require_js( $this->get_url().'assets/js/script.js' );
 		// Skin specific initializations:
-
-		// Add Favicon
-		$favicon = $this->get_setting( 'favicon' );
-		add_headline( '<link rel="shortcut icon" href="'. $favicon .'"/>' );
 
 		// Limit images by max height:
 		$max_image_height = intval( $this->get_setting( 'max_image_height' ) );

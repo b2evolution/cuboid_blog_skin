@@ -8,7 +8,7 @@
     @media screen and ( max-width: @MX ) {
         margin-top: 3rem;
     }
-    
+
     .main_widget {
         padding: 3rem 0 4rem;
         color: @w;
@@ -83,6 +83,7 @@
         .widget_core_user_links {
 
             .ufld_icon_links {
+
                 a {
                     background-color: @c3;
                     transition: all 0.32s ease-in-out;
@@ -175,6 +176,29 @@
             }
         }
 
+        // WIDGET LIST POSTS
+        // ======================================================================== /
+        .widget_core_coll_item_list,
+        .widget_core_coll_featured_posts,
+        .widget_core_coll_post_list,
+        .widget_core_coll_page_list,
+        .widget_core_coll_related_post_list {
+
+            // LAYOUD RWD
+            // ======================================================================== /
+            &.evo_layout_rwd {
+
+                .widget_rwd_blocks  {
+                    .widget_rwd_content {
+                        background-color: transparent;
+                    }
+                }
+
+            }
+
+        }
+
+
     }
 
     // Footer Social media
@@ -186,6 +210,11 @@
 
         .ufld_icon_links {
             text-align: left;
+
+            @media screen and ( max-width: @S ) {
+                padding-left: 15px;
+                padding-right: 15px;
+            }
 
             a {
                 border-radius: 2px;
@@ -293,4 +322,11 @@
 
 .no-touch .cd-hover {
     opacity: 1;
+}
+
+
+// SIDEWIDTH STYLE
+// ======================================================================== /
+.sitewide_footer {
+    box-shadow: none !important;
 }

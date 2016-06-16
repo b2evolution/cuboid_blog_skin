@@ -20,10 +20,18 @@ html, body{
     // }
 }
 
-body{
-    font: normal 1.5rem/1.5 @font_body;
+html, html a {
+    -webkit-font-smoothing: antialiased;
+    text-shadow: 1px 1px 1px rgba(0,0,0,0.004);
 }
 
+body{
+    font: normal 1.5rem/1.5 @font_body;
+
+    text-rendering: optimizelegibility !important;
+    -webkit-font-smoothing: antialiased !important;
+    -moz-osx-font-smoothing: grayscale;
+}
 
 a {
     color: @primary;
