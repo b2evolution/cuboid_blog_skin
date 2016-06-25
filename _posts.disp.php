@@ -15,6 +15,10 @@
  */
 if( !defined('EVO_MAIN_INIT') ) die( 'Please, do not access this page directly.' );
 
+?>
+
+<div class="main_item_posts">
+<?php
 // --------------------------------- START OF POSTS -------------------------------------
 // Display message if no post:
 display_if_empty();
@@ -32,3 +36,5 @@ while( mainlist_get_item() )
 } // ---------------------------------- END OF POSTS ------------------------------------
 
 ?>
+
+</div>

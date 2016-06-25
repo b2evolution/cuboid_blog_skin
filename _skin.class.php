@@ -808,6 +808,7 @@ class cuboid_blog_Skin extends Skin
 					$('.main_item_posts').masonry({
 						// options
 						itemSelector: '.item_posts',
+						percentPosition: true,
 					});
 				});
 			});
@@ -821,6 +822,7 @@ class cuboid_blog_Skin extends Skin
 					$('.evo_image_index').masonry({
 						// options
 						itemSelector: '.grid-item',
+						percentPosition: true,
 					});
 				});
 			});

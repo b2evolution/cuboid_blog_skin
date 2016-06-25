@@ -105,16 +105,14 @@ if ( $disp == 'page' ) {
 
                <?php
                $list_is_empty = display_if_empty();
-               if( !$list_is_empty ) : ?>
-                  <div class="main_item_posts">
-               		<?php
+               if( !$list_is_empty ) :
                		// Go Grab the featured post:
                		if( ! in_array( $disp, array( 'single', 'page' ) ) && $Item = & get_featured_Item() )
                		{ // We have a featured/intro post to display:
                			// ---------------------- ITEM BLOCK INCLUDED HERE ------------------------
                			skin_include( '_item_block.inc.php', array(
         					'feature_block' => true,
-        					'content_mode'  => 'full', // We want regular "full" content, even in category browsing: i-e no excerpt or thumbnail
+        					'content_mode'  => 'excerpt', // We want regular "full" content, even in category browsing: i-e no excerpt or thumbnail
         					'intro_mode'    => 'normal',	// Intro posts will be displayed in normal mode
         					'item_class'    => ( $Item->is_intro() ? 'well evo_intro_post' : 'well evo_featured_post' ),
         				) );
@@ -200,7 +198,6 @@ if ( $disp == 'page' ) {
                			// copying the matching php file into your skin directory.
                			// ------------------------- END OF MAIN CONTENT TEMPLATE ---------------------------
                		?>
-                  </div>
                <?php endif; ?>
       		</main>
 

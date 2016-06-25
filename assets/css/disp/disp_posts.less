@@ -36,6 +36,14 @@
 
         }
 
+        .evo_intro_post {
+            .evo_post_images {
+                margin-left: -3rem;
+                margin-right: -3rem;
+                margin-top: -3.5rem;
+            }
+        }
+
         .evo_post, .evo_featured_post {
 
             .evo_post__full, .evo_post__excerpt {
@@ -131,11 +139,17 @@
 
             .item_posts {
                 width: 100%;
-                float: left;
                 padding: 0 15px;
+
+                &.intro_post {
+                    width: 100% !important;
+                }
 
                 &.two_column,
                 &.three_column {
+                    @media screen and ( min-width: @MX ) {
+                        float: left;
+                    }
 
                     .evo_post,
                     .evo_intro_post,
@@ -210,7 +224,8 @@
                 // Three Column
                 // ======================================================================== /
                 &.three_column {
-                    width: 33.333%;
+                    width: 100% / 3;
+                    // margin: 0 0 -1px 0;
 
                     @media screen and ( max-width: @MM ) {
                         width: 50%;

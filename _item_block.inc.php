@@ -62,9 +62,12 @@ if ( $disp == 'posts' && ($Skin->get_setting( 'posts_column' ) == 'two') ) {
 
 // Content Block
 $content_block = 'evo_content_block';
-if ( $disp === 'posts' ) {
+if ( $disp === 'posts' && $Item->is_intro() ) {
+	$content_block = "item_posts intro_post";
+} elseif( $disp === 'posts' ) {
    $content_block = "item_posts $column";
 }
+
 
 echo '<div class="'.$content_block.'">'; // Beginning of post display
 ?>
@@ -109,6 +112,26 @@ echo '<div class="'.$content_block.'">'; // Beginning of post display
 			'image_link_to'              => $params['image_link_to'],
 		) );
 	}
+
+	if( $Item->is_intro() )
+		{	// Display images that are linked to this post:
+			$Item->images( array(
+				'before_image'             => '<div class="evo_post_images"><figure class="special_cover_intro">',
+				'before_image_legend'      => '<figcaption class="evo_image_legend">',
+				'after_image_legend'       => '</figcaption>',
+				'after_image'              => '</figure></div>',
+				'image_class'              => 'img-responsive',
+				'image_size'               => 'fit-1280x720',
+				'image_limit'              =>  1,
+				'image_link_to'            => 'original', // Can be 'original', 'single' or empty
+				// We DO NOT want to display galleries here, only one cover image
+				'gallery_image_limit'      => 0,
+				'gallery_colls'            => 0,
+				// We want ONLY cover image to display here
+				'restrict_to_image_position' => 'cover',
+			) );
+		}
+
    ?>
 
 	<header>
