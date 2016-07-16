@@ -496,6 +496,22 @@ class cuboid_blog_Skin extends Skin
             ),
             // End Single Disp
 
+			/* Title Comment
+			 * ========================================================================== */
+			'uil_widget_settings_start' => array(
+				'layout'	=> 'begin_fieldset',
+				'label'		=> T_( 'UIL Widget Settings (All Disp)' ),
+			),
+				'uil_widget_readmore' => array(
+					'label'			=> T_( 'UIL Widger Readmore' ),
+					'note'			=> T_( 'Check the box to show readmore after widget content( Excerpt and Teaser )' ),
+					'type'			=> 'checkbox',
+					'defaultvalue'	=> 1,
+				),
+			'uil_widget_settings_end' => array(
+				'layout'	=> 'end_fieldset',
+			),
+
             /**
              * ============================================================================
              * Footer Settings
@@ -1147,6 +1163,15 @@ class cuboid_blog_Skin extends Skin
 		}
 		if( $color = $this->get_setting( 'side_widget_link' ) ) {
 			$custom_css .= '#main-sidebar .evo_widget a { color: '.$color.' }';
+		}
+
+		/**
+		 * ============================================================================
+		 * UIL Widget Settings
+		 * ============================================================================
+		 */
+		if ( $this->get_setting( 'uil_widget_readmore' ) == 0 ) {
+			$custom_css .= 'div.widget_core_coll_item_list.evo_noexcerpt.evo_withteaser div.item_content > a, div.widget_core_coll_featured_posts.evo_noexcerpt.evo_withteaser div.item_content > a, div.widget_core_coll_post_list.evo_noexcerpt.evo_withteaser div.item_content > a, div.widget_core_coll_page_list.evo_noexcerpt.evo_withteaser div.item_content > a, div.widget_core_coll_related_post_list.evo_noexcerpt.evo_withteaser div.item_content > a, div.widget_core_coll_item_list.evo_withexcerpt.evo_withteaser div.item_content > a, div.widget_core_coll_featured_posts.evo_withexcerpt.evo_withteaser div.item_content > a, div.widget_core_coll_post_list.evo_withexcerpt.evo_withteaser div.item_content > a, div.widget_core_coll_page_list.evo_withexcerpt.evo_withteaser div.item_content > a, div.widget_core_coll_related_post_list.evo_withexcerpt.evo_withteaser div.item_content > a, div.widget_core_coll_item_list.evo_withexcerpt.evo_noteaser div.item_content > a, div.widget_core_coll_featured_posts.evo_withexcerpt.evo_noteaser div.item_content > a, div.widget_core_coll_post_list.evo_withexcerpt.evo_noteaser div.item_content > a, div.widget_core_coll_page_list.evo_withexcerpt.evo_noteaser div.item_content > a, div.widget_core_coll_related_post_list.evo_withexcerpt.evo_noteaser div.item_content > a, div.widget_core_coll_item_list.evo_noexcerpt.evo_withteaser div.item_excerpt > a, div.widget_core_coll_featured_posts.evo_noexcerpt.evo_withteaser div.item_excerpt > a, div.widget_core_coll_post_list.evo_noexcerpt.evo_withteaser div.item_excerpt > a, div.widget_core_coll_page_list.evo_noexcerpt.evo_withteaser div.item_excerpt > a, div.widget_core_coll_related_post_list.evo_noexcerpt.evo_withteaser div.item_excerpt > a, div.widget_core_coll_item_list.evo_withexcerpt.evo_withteaser div.item_excerpt > a, div.widget_core_coll_featured_posts.evo_withexcerpt.evo_withteaser div.item_excerpt > a, div.widget_core_coll_post_list.evo_withexcerpt.evo_withteaser div.item_excerpt > a, div.widget_core_coll_page_list.evo_withexcerpt.evo_withteaser div.item_excerpt > a, div.widget_core_coll_related_post_list.evo_withexcerpt.evo_withteaser div.item_excerpt > a, div.widget_core_coll_item_list.evo_withexcerpt.evo_noteaser div.item_excerpt > a, div.widget_core_coll_featured_posts.evo_withexcerpt.evo_noteaser div.item_excerpt > a, div.widget_core_coll_post_list.evo_withexcerpt.evo_noteaser div.item_excerpt > a, div.widget_core_coll_page_list.evo_withexcerpt.evo_noteaser div.item_excerpt > a, div.widget_core_coll_related_post_list.evo_withexcerpt.evo_noteaser div.item_excerpt > a { display: none }';
 		}
 
 		/**

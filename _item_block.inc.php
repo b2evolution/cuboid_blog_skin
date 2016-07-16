@@ -230,6 +230,46 @@ echo '<div class="'.$content_block.'">'; // Beginning of post display
 	</header>
 
 	<?php
+	if( $disp == 'single' )
+	{
+		?>
+		<div class="evo_container evo_container__item_single">
+		<?php
+		// ------------------------- "Item Single" CONTAINER EMBEDDED HERE --------------------------
+			// Display container contents:
+			skin_container( /* TRANS: Widget container name */ NT_('Item Single'), array(
+				'widget_context' 			 => 'item',	// Signal that we are displaying within an Item
+				// The following (optional) params will be used as defaults for widgets included in this container:
+				// This will enclose each widget in a block:
+				'block_start' 				 => '<div class="$wi_class$">',
+				'block_end' 				 => '</div>',
+				// This will enclose the title of each widget:
+				'block_title_start' 		 => '<h3>',
+				'block_title_end' 			 => '</h3>',
+				// Template params for "Item Tags" widget
+				'widget_item_tags_before'    => '<div class="post_tags"><h3>'.T_('Tags').'</h3>: ',
+				'widget_item_tags_after'     => '</div>',
+				'widget_item_tags_separator' => '',
+				// Params for skin file "_item_content.inc.php"
+				'widget_item_content_params' => $params,
+				// Template params for "Item Attachments" widget:
+				'widget_item_attachments_params' => array(
+					'limit_attach'       => 1000,
+					'before'             => '<div class="evo_post_attachments"><h3>'.T_('Attachments').':</h3><ul class="evo_files">',
+					'after'              => '</ul></div>',
+					'before_attach'      => '<li class="evo_file">',
+					'after_attach'       => '</li>',
+					'before_attach_size' => ' <span class="evo_file_size">(',
+					'after_attach_size'  => ')</span>',
+				),
+			) );
+		// ----------------------------- END OF "Item Single" CONTAINER -----------------------------
+		?>
+		</div>
+		<?php
+	}
+	else
+	{
 	// this will create a <section>
 		// ---------------------- POST CONTENT INCLUDED HERE ----------------------
 		skin_include( '_item_content.inc.php', $params );
@@ -237,12 +277,13 @@ echo '<div class="'.$content_block.'">'; // Beginning of post display
 		// /skins/_item_content.inc.php file into the current skin folder.
 		// -------------------------- END OF POST CONTENT -------------------------
 	// this will end a </section>
+	}
 	?>
 
 	<footer>
 
 		<?php
-			if( ! $Item->is_intro() )
+			if( ! $Item->is_intro() && $disp == 'posts' )
 			{ // List all tags attached to this post:
 				$Item->tags( array(
 					'before'    => '<nav class="small post_tags"><h3>'. T_( 'Tags: ' ).'</h3>',
