@@ -496,15 +496,15 @@ class cuboid_blog_Skin extends Skin
             ),
             // End Single Disp
 
-			/* Title Comment
+			/* Special Widget Settings (All Disps)
 			 * ========================================================================== */
 			'uil_widget_settings_start' => array(
 				'layout'	=> 'begin_fieldset',
-				'label'		=> T_( 'UIL Widget Settings (All Disp)' ),
+				'label'		=> T_( 'Special Widget Settings (All Disps)' ),
 			),
 				'uil_widget_readmore' => array(
-					'label'			=> T_( 'UIL Widger Readmore' ),
-					'note'			=> T_( 'Check the box to show readmore after widget content( Excerpt and Teaser )' ),
+					'label'			=> T_( 'List-type Widgets "Read more" button' ),
+					'note'			=> T_( 'Check to display the "Read more" button after content on all list-type widgets (Excerpt and Teaser)' ),
 					'type'			=> 'checkbox',
 					'defaultvalue'	=> 1,
 				),
