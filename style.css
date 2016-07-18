@@ -4634,17 +4634,21 @@ div.error_404 .fa-warning {
 }
 .disp_single #main-content .evo_post .evo_container__item_single .widget_core_item_about_author,
 .disp_page #main-content .evo_post .evo_container__item_single .widget_core_item_about_author {
-  line-height: 26px;
+  border: 1px solid #eeeeee;
+  padding: 20px;
+  background-color: #f7f7f7;
 }
 .disp_single #main-content .evo_post .evo_container__item_single .widget_core_item_about_author h3,
 .disp_page #main-content .evo_post .evo_container__item_single .widget_core_item_about_author h3 {
+  font-size: 15px;
+  text-transform: uppercase;
   margin-top: 0;
+  margin-bottom: 10px;
+  border-radius: 2px;
 }
 .disp_single #main-content .evo_post .evo_container__item_single .widget_core_item_about_author .avatar,
 .disp_page #main-content .evo_post .evo_container__item_single .widget_core_item_about_author .avatar {
-  width: 30px;
-  height: 30px;
-  border-radius: 5px;
+  border-radius: 3px;
 }
 .disp_single #feedbacks,
 .disp_page #feedbacks {
