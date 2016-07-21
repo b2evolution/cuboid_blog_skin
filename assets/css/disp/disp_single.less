@@ -169,18 +169,17 @@
                     border: 1px solid @e;
                     padding: 20px;
                     background-color: @cf7;
-                    // line-height: 26px;
 
                     h3 {
-                        font-size: 15px;
-                        text-transform: uppercase;
                         margin-top: 0;
-                        margin-bottom: 10px;
+                        margin-bottom: 15px;
                         border-radius: 2px;
                     }
 
                     .avatar {
-                        border-radius: 3px;
+                        border-radius: 0;
+                        border: 1px solid @e;
+                        padding: 4px;
                     }
                 }
             }
@@ -239,6 +238,106 @@
     }
 
 
+    // Content Comment
+    // ======================================================================== /
+    .content_comment {
+
+        & > .panel-default {
+            border-color: @color_border;
+
+            .panel-heading {
+                border-color: @color_border;
+            }
+        }
+
+        & > .panel-default,
+        & > .panel-danger {
+            border-radius: 0;
+            margin-top: 5px;
+
+            .panel-title {
+                color: @c5;
+                text-transform: uppercase;
+
+                &::before {
+                    content: "\f0e6";
+                    display: inline-block;
+                    font: normal normal normal 14px/1 FontAwesome;
+                    font-size: inherit;
+                    text-rendering: auto;
+                    -webkit-font-smoothing: antialiased;
+                    -moz-osx-font-smoothing: grayscale;
+                    margin-right: 8px;
+                }
+            }
+
+            & > .panel-body {
+                padding: 3rem;
+            }
+
+            .evo_form {
+
+                label {
+                    font-family: @font_heading;
+                    color: @c5;
+                }
+
+                .form_text_input, .form_textarea_input {
+                    padding: 8px 12px;
+                    height: auto;
+                    border-radius: 0;
+                    border-color: @cd;
+                    box-shadow: none;
+
+                    &:focus, &:focus, &:active {
+                        border-color: @primary;
+                        outline: none;
+                    }
+                }
+
+                // Button Style
+                // ======================================================================== /
+                .preview, .submit {
+                    border-radius: 2px;
+                    font-family: @font_heading;
+                    text-transform: uppercase;
+                    font-size: 1.2rem;
+                    letter-spacing: 0.5px;
+                    box-shadow: none;
+                    padding: 12px 15px;
+                    margin-bottom: 5px;
+                    transition: all 0.2s ease-in-out;
+
+                    &:hover, &:active, &:focus {
+                        outline: none;
+                    }
+                }
+
+                .preview {
+                    background-color: #5BDCC3;
+                    border-color: #5BDCC3;
+
+                    &:hover, &:focus, &:active {
+                        background-color: @primary;
+                        border-color: @primary;
+                    }
+                }
+
+                .submit {
+                    background-color: @primary;
+                    border-color: @primary;
+
+                    &:hover, &:focus, &:active {
+                        background-color: @c3;
+                        border-color: @c3;
+                    }
+                }
+
+            }
+        }
+    }
+
+
     .fieldset_wrapper {
         margin-top: 40px;
 
@@ -250,7 +349,7 @@
                 border-color: @color_border;
             }
 
-            .panel-body {
+            & > .panel-body {
                 padding: 30px;
 
                 .badge {

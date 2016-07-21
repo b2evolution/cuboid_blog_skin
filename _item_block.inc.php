@@ -314,13 +314,15 @@ echo '<div class="'.$content_block.'">'; // Beginning of post display
       <?php endif; ?>
 	</footer>
 
-	<?php
-		// ------------------ FEEDBACK (COMMENTS/TRACKBACKS) INCLUDED HERE ------------------
-		skin_include( '_item_feedback.inc.php', array_merge( array(), $params ) );
-		// Note: You can customize the default item feedback by copying the generic
-		// /skins/_item_feedback.inc.php file into the current skin folder.
-		// ---------------------- END OF FEEDBACK (COMMENTS/TRACKBACKS) ---------------------
-	?>
+	<div class="content_comment">
+		<?php
+			// ------------------ FEEDBACK (COMMENTS/TRACKBACKS) INCLUDED HERE ------------------
+			skin_include( '_item_feedback.inc.php', array_merge( array(), $params ) );
+			// Note: You can customize the default item feedback by copying the generic
+			// /skins/_item_feedback.inc.php file into the current skin folder.
+			// ---------------------- END OF FEEDBACK (COMMENTS/TRACKBACKS) ---------------------
+		?>
+	</div>
 
 	<?php
    if( evo_version_compare( $app_version, '6.7' ) >= 0 )
@@ -336,7 +338,7 @@ echo '<div class="'.$content_block.'">'; // Beginning of post display
 		skin_include( '_item_meta_comments.inc.php', array(
 	       'comment_start'         => '<article class="evo_comment evo_comment__meta panel panel-default">',
 	       'comment_end'           => '</article>',
-	   ) );
+	    ) );
 		// ---------------------- END OF META COMMENTS ---------------------
    }
    ?>

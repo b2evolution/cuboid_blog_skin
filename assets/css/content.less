@@ -813,88 +813,88 @@
 
     }
 
-    } // End .comment form
+} // End .comment form
 
 
-    // Comment Notif
-    // ======================================================================== /
-    .evo_post_comment_notification {
+// Comment Notif
+// ======================================================================== /
+.evo_post_comment_notification {
+    font-size: 1.3rem;
+    .btn {
+        font-size: 1.2rem;
+        transition: all 0.2s ease-in-out;
+
+        &:hover, &:active, &:focus {
+            background-color: @primary;
+            border-color: @primary;
+            color: @w;
+            box-shadow: none;
+        }
+
+    }
+}
+
+.evo_post_feedback_feed_msg {
+    a {
         font-size: 1.3rem;
-        .btn {
-            font-size: 1.2rem;
+    }
+}
+
+// ======================================================================== /
+// Message Nothing
+// ======================================================================== /
+.msg_nothing {
+    padding: 30px;
+    margin-bottom: 30px;
+    background-color: @w;
+    box-shadow: @box-shadow;
+}
+
+
+// ======================================================================== /
+// Pagination
+// ======================================================================== /
+.pagination {
+    margin: -0.5rem 0 2rem;
+    font-size: 1.3rem;
+    font-family: @font_heading;
+    font-weight: 700;
+
+    li {
+        float: left;
+        margin: 0 2px;
+
+        & > a, & > span {
+            display: inline-block;
+            border: 0;
+            border-radius: 0 !important;
+        }
+
+        a, span{
+            padding: 1rem 1.8rem;
+            float: none;
+            color: @w;
             transition: all 0.2s ease-in-out;
+            box-shadow: @box-shadow;
+            background-color: @c3;
 
             &:hover, &:active, &:focus {
                 background-color: @primary;
-                border-color: @primary;
                 color: @w;
-                box-shadow: none;
             }
-
         }
-    }
 
-    .evo_post_feedback_feed_msg {
-        a {
-            font-size: 1.3rem;
-        }
-    }
+        &.active {
+            font-weight: 700;
 
-    // ======================================================================== /
-    // Message Nothing
-    // ======================================================================== /
-    .msg_nothing {
-        padding: 30px;
-        margin-bottom: 30px;
-        background-color: @w;
-        box-shadow: @box-shadow;
-    }
-
-
-    // ======================================================================== /
-    // Pagination
-    // ======================================================================== /
-    .pagination {
-        margin: -0.5rem 0 2rem;
-        font-size: 1.3rem;
-        font-family: @font_heading;
-        font-weight: 700;
-
-        li {
-            float: left;
-            margin: 0 2px;
-
-            & > a, & > span {
-                display: inline-block;
-                border: 0;
-                border-radius: 0 !important;
-            }
-
-            a, span{
-                padding: 1rem 1.8rem;
-                float: none;
-                color: @w;
-                transition: all 0.2s ease-in-out;
-                box-shadow: @box-shadow;
-                background-color: @c3;
+            a, span {
+                background-color: @primary;
 
                 &:hover, &:active, &:focus {
+                    border-color: @primary;
                     background-color: @primary;
-                    color: @w;
-                }
-            }
-
-            &.active {
-                font-weight: 700;
-
-                a, span {
-                    background-color: @primary;
-
-                    &:hover, &:active, &:focus {
-                        border-color: @primary;
-                        background-color: @primary;
-                    }
                 }
             }
         }
     }
+}

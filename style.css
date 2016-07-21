@@ -3417,6 +3417,7 @@ div.error_404 .fa-warning {
   text-transform: uppercase;
   border-radius: 2px;
   padding: 10px 15px;
+  margin-top: 5px;
   -webkit-transition: all 0.32s ease-in-out;
   transition: all 0.32s ease-in-out;
 }
@@ -4640,15 +4641,15 @@ div.error_404 .fa-warning {
 }
 .disp_single #main-content .evo_post .evo_container__item_single .widget_core_item_about_author h3,
 .disp_page #main-content .evo_post .evo_container__item_single .widget_core_item_about_author h3 {
-  font-size: 15px;
-  text-transform: uppercase;
   margin-top: 0;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
   border-radius: 2px;
 }
 .disp_single #main-content .evo_post .evo_container__item_single .widget_core_item_about_author .avatar,
 .disp_page #main-content .evo_post .evo_container__item_single .widget_core_item_about_author .avatar {
-  border-radius: 3px;
+  border-radius: 0;
+  border: 1px solid #eeeeee;
+  padding: 4px;
 }
 .disp_single #feedbacks,
 .disp_page #feedbacks {
@@ -4698,6 +4699,184 @@ div.error_404 .fa-warning {
   border-color: #1abc9c;
   color: #ffffff;
 }
+.disp_single .content_comment > .panel-default,
+.disp_page .content_comment > .panel-default {
+  border-color: #eeeeee;
+}
+.disp_single .content_comment > .panel-default .panel-heading,
+.disp_page .content_comment > .panel-default .panel-heading {
+  border-color: #eeeeee;
+}
+.disp_single .content_comment > .panel-default,
+.disp_page .content_comment > .panel-default,
+.disp_single .content_comment > .panel-danger,
+.disp_page .content_comment > .panel-danger {
+  border-radius: 0;
+  margin-top: 5px;
+}
+.disp_single .content_comment > .panel-default .panel-title,
+.disp_page .content_comment > .panel-default .panel-title,
+.disp_single .content_comment > .panel-danger .panel-title,
+.disp_page .content_comment > .panel-danger .panel-title {
+  color: #555555;
+  text-transform: uppercase;
+}
+.disp_single .content_comment > .panel-default .panel-title::before,
+.disp_page .content_comment > .panel-default .panel-title::before,
+.disp_single .content_comment > .panel-danger .panel-title::before,
+.disp_page .content_comment > .panel-danger .panel-title::before {
+  content: "\f0e6";
+  display: inline-block;
+  font: normal normal normal 14px/1 FontAwesome;
+  font-size: inherit;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  margin-right: 8px;
+}
+.disp_single .content_comment > .panel-default > .panel-body,
+.disp_page .content_comment > .panel-default > .panel-body,
+.disp_single .content_comment > .panel-danger > .panel-body,
+.disp_page .content_comment > .panel-danger > .panel-body {
+  padding: 3rem;
+}
+.disp_single .content_comment > .panel-default .evo_form label,
+.disp_page .content_comment > .panel-default .evo_form label,
+.disp_single .content_comment > .panel-danger .evo_form label,
+.disp_page .content_comment > .panel-danger .evo_form label {
+  font-family: "Montserrat", sans-serif;
+  color: #555555;
+}
+.disp_single .content_comment > .panel-default .evo_form .form_text_input,
+.disp_page .content_comment > .panel-default .evo_form .form_text_input,
+.disp_single .content_comment > .panel-danger .evo_form .form_text_input,
+.disp_page .content_comment > .panel-danger .evo_form .form_text_input,
+.disp_single .content_comment > .panel-default .evo_form .form_textarea_input,
+.disp_page .content_comment > .panel-default .evo_form .form_textarea_input,
+.disp_single .content_comment > .panel-danger .evo_form .form_textarea_input,
+.disp_page .content_comment > .panel-danger .evo_form .form_textarea_input {
+  padding: 8px 12px;
+  height: auto;
+  border-radius: 0;
+  border-color: #dddddd;
+  box-shadow: none;
+}
+.disp_single .content_comment > .panel-default .evo_form .form_text_input:focus,
+.disp_page .content_comment > .panel-default .evo_form .form_text_input:focus,
+.disp_single .content_comment > .panel-danger .evo_form .form_text_input:focus,
+.disp_page .content_comment > .panel-danger .evo_form .form_text_input:focus,
+.disp_single .content_comment > .panel-default .evo_form .form_textarea_input:focus,
+.disp_page .content_comment > .panel-default .evo_form .form_textarea_input:focus,
+.disp_single .content_comment > .panel-danger .evo_form .form_textarea_input:focus,
+.disp_page .content_comment > .panel-danger .evo_form .form_textarea_input:focus,
+.disp_single .content_comment > .panel-default .evo_form .form_text_input:focus,
+.disp_page .content_comment > .panel-default .evo_form .form_text_input:focus,
+.disp_single .content_comment > .panel-danger .evo_form .form_text_input:focus,
+.disp_page .content_comment > .panel-danger .evo_form .form_text_input:focus,
+.disp_single .content_comment > .panel-default .evo_form .form_textarea_input:focus,
+.disp_page .content_comment > .panel-default .evo_form .form_textarea_input:focus,
+.disp_single .content_comment > .panel-danger .evo_form .form_textarea_input:focus,
+.disp_page .content_comment > .panel-danger .evo_form .form_textarea_input:focus,
+.disp_single .content_comment > .panel-default .evo_form .form_text_input:active,
+.disp_page .content_comment > .panel-default .evo_form .form_text_input:active,
+.disp_single .content_comment > .panel-danger .evo_form .form_text_input:active,
+.disp_page .content_comment > .panel-danger .evo_form .form_text_input:active,
+.disp_single .content_comment > .panel-default .evo_form .form_textarea_input:active,
+.disp_page .content_comment > .panel-default .evo_form .form_textarea_input:active,
+.disp_single .content_comment > .panel-danger .evo_form .form_textarea_input:active,
+.disp_page .content_comment > .panel-danger .evo_form .form_textarea_input:active {
+  border-color: #1abc9c;
+  outline: none;
+}
+.disp_single .content_comment > .panel-default .evo_form .preview,
+.disp_page .content_comment > .panel-default .evo_form .preview,
+.disp_single .content_comment > .panel-danger .evo_form .preview,
+.disp_page .content_comment > .panel-danger .evo_form .preview,
+.disp_single .content_comment > .panel-default .evo_form .submit,
+.disp_page .content_comment > .panel-default .evo_form .submit,
+.disp_single .content_comment > .panel-danger .evo_form .submit,
+.disp_page .content_comment > .panel-danger .evo_form .submit {
+  border-radius: 2px;
+  font-family: "Montserrat", sans-serif;
+  text-transform: uppercase;
+  font-size: 1.2rem;
+  letter-spacing: 0.5px;
+  box-shadow: none;
+  padding: 12px 15px;
+  margin-bottom: 5px;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+.disp_single .content_comment > .panel-default .evo_form .preview:hover,
+.disp_page .content_comment > .panel-default .evo_form .preview:hover,
+.disp_single .content_comment > .panel-danger .evo_form .preview:hover,
+.disp_page .content_comment > .panel-danger .evo_form .preview:hover,
+.disp_single .content_comment > .panel-default .evo_form .submit:hover,
+.disp_page .content_comment > .panel-default .evo_form .submit:hover,
+.disp_single .content_comment > .panel-danger .evo_form .submit:hover,
+.disp_page .content_comment > .panel-danger .evo_form .submit:hover,
+.disp_single .content_comment > .panel-default .evo_form .preview:active,
+.disp_page .content_comment > .panel-default .evo_form .preview:active,
+.disp_single .content_comment > .panel-danger .evo_form .preview:active,
+.disp_page .content_comment > .panel-danger .evo_form .preview:active,
+.disp_single .content_comment > .panel-default .evo_form .submit:active,
+.disp_page .content_comment > .panel-default .evo_form .submit:active,
+.disp_single .content_comment > .panel-danger .evo_form .submit:active,
+.disp_page .content_comment > .panel-danger .evo_form .submit:active,
+.disp_single .content_comment > .panel-default .evo_form .preview:focus,
+.disp_page .content_comment > .panel-default .evo_form .preview:focus,
+.disp_single .content_comment > .panel-danger .evo_form .preview:focus,
+.disp_page .content_comment > .panel-danger .evo_form .preview:focus,
+.disp_single .content_comment > .panel-default .evo_form .submit:focus,
+.disp_page .content_comment > .panel-default .evo_form .submit:focus,
+.disp_single .content_comment > .panel-danger .evo_form .submit:focus,
+.disp_page .content_comment > .panel-danger .evo_form .submit:focus {
+  outline: none;
+}
+.disp_single .content_comment > .panel-default .evo_form .preview,
+.disp_page .content_comment > .panel-default .evo_form .preview,
+.disp_single .content_comment > .panel-danger .evo_form .preview,
+.disp_page .content_comment > .panel-danger .evo_form .preview {
+  background-color: #5BDCC3;
+  border-color: #5BDCC3;
+}
+.disp_single .content_comment > .panel-default .evo_form .preview:hover,
+.disp_page .content_comment > .panel-default .evo_form .preview:hover,
+.disp_single .content_comment > .panel-danger .evo_form .preview:hover,
+.disp_page .content_comment > .panel-danger .evo_form .preview:hover,
+.disp_single .content_comment > .panel-default .evo_form .preview:focus,
+.disp_page .content_comment > .panel-default .evo_form .preview:focus,
+.disp_single .content_comment > .panel-danger .evo_form .preview:focus,
+.disp_page .content_comment > .panel-danger .evo_form .preview:focus,
+.disp_single .content_comment > .panel-default .evo_form .preview:active,
+.disp_page .content_comment > .panel-default .evo_form .preview:active,
+.disp_single .content_comment > .panel-danger .evo_form .preview:active,
+.disp_page .content_comment > .panel-danger .evo_form .preview:active {
+  background-color: #1abc9c;
+  border-color: #1abc9c;
+}
+.disp_single .content_comment > .panel-default .evo_form .submit,
+.disp_page .content_comment > .panel-default .evo_form .submit,
+.disp_single .content_comment > .panel-danger .evo_form .submit,
+.disp_page .content_comment > .panel-danger .evo_form .submit {
+  background-color: #1abc9c;
+  border-color: #1abc9c;
+}
+.disp_single .content_comment > .panel-default .evo_form .submit:hover,
+.disp_page .content_comment > .panel-default .evo_form .submit:hover,
+.disp_single .content_comment > .panel-danger .evo_form .submit:hover,
+.disp_page .content_comment > .panel-danger .evo_form .submit:hover,
+.disp_single .content_comment > .panel-default .evo_form .submit:focus,
+.disp_page .content_comment > .panel-default .evo_form .submit:focus,
+.disp_single .content_comment > .panel-danger .evo_form .submit:focus,
+.disp_page .content_comment > .panel-danger .evo_form .submit:focus,
+.disp_single .content_comment > .panel-default .evo_form .submit:active,
+.disp_page .content_comment > .panel-default .evo_form .submit:active,
+.disp_single .content_comment > .panel-danger .evo_form .submit:active,
+.disp_page .content_comment > .panel-danger .evo_form .submit:active {
+  background-color: #333333;
+  border-color: #333333;
+}
 .disp_single .fieldset_wrapper,
 .disp_page .fieldset_wrapper {
   margin-top: 40px;
@@ -4711,19 +4890,19 @@ div.error_404 .fa-warning {
 .disp_page .fieldset_wrapper .panel .panel-heading {
   border-color: #eeeeee;
 }
-.disp_single .fieldset_wrapper .panel .panel-body,
-.disp_page .fieldset_wrapper .panel .panel-body {
+.disp_single .fieldset_wrapper .panel > .panel-body,
+.disp_page .fieldset_wrapper .panel > .panel-body {
   padding: 30px;
 }
-.disp_single .fieldset_wrapper .panel .panel-body .badge,
-.disp_page .fieldset_wrapper .panel .panel-body .badge {
+.disp_single .fieldset_wrapper .panel > .panel-body .badge,
+.disp_page .fieldset_wrapper .panel > .panel-body .badge {
   width: 20px;
   height: 20px;
   padding: 0;
   line-height: 20px;
 }
-.disp_single .fieldset_wrapper .panel .panel-body .evo_comment__meta,
-.disp_page .fieldset_wrapper .panel .panel-body .evo_comment__meta {
+.disp_single .fieldset_wrapper .panel > .panel-body .evo_comment__meta,
+.disp_page .fieldset_wrapper .panel > .panel-body .evo_comment__meta {
   border-top: 0;
   border-right: 0;
   border-left: 0;
@@ -5024,6 +5203,15 @@ div.error_404 .fa-warning {
   font-family: "Montserrat", sans-serif;
   font-size: 1.3rem;
   text-transform: uppercase;
+}
+@media screen and (max-width: 480px) {
+  .disp_profile #main-content .evo_form .btn,
+  .disp_avatar #main-content .evo_form .btn,
+  .disp_pwdchange #main-content .evo_form .btn,
+  .disp_userprefs #main-content .evo_form .btn,
+  .disp_subs #main-content .evo_form .btn {
+    margin-top: 5px;
+  }
 }
 .disp_profile #main-content .evo_form .panel,
 .disp_avatar #main-content .evo_form .panel,
