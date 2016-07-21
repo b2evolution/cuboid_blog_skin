@@ -242,7 +242,7 @@ if( $Item->can_see_comments( true ) )
 		// // Display the meta comments info ?
 		if( $params['disp_meta_comment_info'] 	// If we want it
 			&& ! $params['disp_meta_comments'] 	// If we're not displaying the full list of meta comments anyways
-			&& is_logged_in() 						// If we're lgged in
+			&& is_logged_in() 						// If we're logged in
 			&& $current_User->check_perm( 'meta_comment', 'view', false, $Item ) ) // If we have permission to edit this post
 		{	// Display the meta comments info:
 			global $admin_url;
@@ -277,12 +277,12 @@ if( $Item->can_see_comments( true ) )
 
 		// Filter list:
 		$CommentList->set_default_filters( array(
-			'types'    => $type_list,
-			'statuses' => get_inskin_statuses( $Blog->ID, 'comment' ),
-			'post_ID'  => $Item->ID,
-			'order'    => $params['disp_meta_comments'] ? 'DESC' : $Blog->get_setting( 'comments_orderdir' ),
-			'threaded_comments' => $params['disp_meta_comments'] ? false : $Blog->get_setting( 'threaded_comments' ),
-		) );
+				'types' => $type_list,
+				'statuses' => get_inskin_statuses( $Blog->ID, 'comment' ),
+				'post_ID' => $Item->ID,
+				'order' => $params['disp_meta_comments'] ? 'DESC' : $Blog->get_setting( 'comments_orderdir' ),
+				'threaded_comments' => $params['disp_meta_comments'] ? false : $Blog->get_setting( 'threaded_comments' ),
+			) );
 
 		$CommentList->load_from_Request();
 
@@ -300,17 +300,17 @@ if( $Item->can_see_comments( true ) )
 		if( $params['disp_nav_top'] && ( $Blog->get_setting( 'paged_comments' ) || $params['comments_per_page'] !== NULL ) )
 		{ // Prev/Next page navigation
 			$CommentList->page_links( array_merge( array(
-				'page_url'    => url_add_tail( $Item->get_permanent_url(), '#comments' ),
-				'block_start' => $params['nav_block_start'],
-				'block_end'   => $params['nav_block_end'],
-				'prev_text'   => $params['nav_prev_text'],
-				'next_text'   => $params['nav_next_text'],
-				'prev_class'  => $params['nav_prev_class'],
-				'next_class'  => $params['nav_next_class'],
-				'page_item_before'      => $params['nav_page_item_before'],
-				'page_item_after'       => $params['nav_page_item_after'],
-				'page_current_template' => $params['nav_page_current_template'],
-			), $params['pagination'] ) );
+					'page_url' => url_add_tail( $Item->get_permanent_url(), '#comments' ),
+					'block_start' => $params['nav_block_start'],
+					'block_end'   => $params['nav_block_end'],
+					'prev_text'   => $params['nav_prev_text'],
+					'next_text'   => $params['nav_next_text'],
+					'prev_class'  => $params['nav_prev_class'],
+					'next_class'  => $params['nav_next_class'],
+					'page_item_before'      => $params['nav_page_item_before'],
+					'page_item_after'       => $params['nav_page_item_after'],
+					'page_current_template' => $params['nav_page_current_template'],
+				), $params['pagination'] ) );
 		}
 
 
@@ -360,25 +360,25 @@ if( $Item->can_see_comments( true ) )
 
 			// ------------------ COMMENT INCLUDED HERE ------------------
 			skin_include( $params['comment_template'], array(
-				'Comment'               => & $Comment,
-				'comment_start'         => $params['comment_start'],
-				'comment_end'           => $params['comment_end'],
-				'comment_title_before'  => $params['comment_title_before'],
-				'comment_title_after'   => $params['comment_title_after'],
-				'comment_avatar_before' => $params['comment_avatar_before'],
-				'comment_avatar_after'  => $params['comment_avatar_after'],
-				'comment_rating_before' => $params['comment_rating_before'],
-				'comment_rating_after'  => $params['comment_rating_after'],
-				'comment_text_before'   => $params['comment_text_before'],
-				'comment_text_after'    => $params['comment_text_after'],
-				'comment_info_before'   => $params['comment_info_before'],
-				'comment_info_after'    => $params['comment_info_after'],
-				'author_link_text'      => $params['author_link_text'],
-				'link_to'               => $params['link_to'],		// 'userpage' or 'userurl' or 'userurl>userpage' or 'userpage>userurl'
-				'author_link_text'      => $params['author_link_text'],
-				'comment_number'        => $comment_number,
-				'image_size'            => $params['comment_image_size'],
-			) );
+					'Comment'               => & $Comment,
+					'comment_start'         => $params['comment_start'],
+					'comment_end'           => $params['comment_end'],
+					'comment_title_before'  => $params['comment_title_before'],
+					'comment_title_after'   => $params['comment_title_after'],
+					'comment_avatar_before' => $params['comment_avatar_before'],
+					'comment_avatar_after'  => $params['comment_avatar_after'],
+					'comment_rating_before' => $params['comment_rating_before'],
+					'comment_rating_after'  => $params['comment_rating_after'],
+					'comment_text_before'   => $params['comment_text_before'],
+					'comment_text_after'    => $params['comment_text_after'],
+					'comment_info_before'   => $params['comment_info_before'],
+					'comment_info_after'    => $params['comment_info_after'],
+					'author_link_text'      => $params['author_link_text'],
+					'link_to'               => $params['link_to'],		// 'userpage' or 'userurl' or 'userurl>userpage' or 'userpage>userurl'
+					'author_link_text'      => $params['author_link_text'],
+					'comment_number'        => $comment_number,
+					'image_size'            => $params['comment_image_size'],
+				) );
 			// Note: You can customize the default item comment by copying the generic
 			// /skins/_item_comment.inc.php file into the current skin folder.
 			// ---------------------- END OF COMMENT ---------------------
@@ -399,17 +399,17 @@ if( $Item->can_see_comments( true ) )
 		if( $params['disp_nav_bottom'] && ( $Blog->get_setting( 'paged_comments' ) || $params['comments_per_page'] !== NULL ) )
 		{ // Prev/Next page navigation
 			$CommentList->page_links( array_merge( array(
-				'page_url'    => url_add_tail( $Item->get_permanent_url(), '#comments' ),
-				'block_start' => $params['nav_block_start'],
-				'block_end'   => $params['nav_block_end'],
-				'prev_text'   => $params['nav_prev_text'],
-				'next_text'   => $params['nav_next_text'],
-				'prev_class'  => $params['nav_prev_class'],
-				'next_class'  => $params['nav_next_class'],
-				'page_item_before'      => $params['nav_page_item_before'],
-				'page_item_after'       => $params['nav_page_item_after'],
-				'page_current_template' => $params['nav_page_current_template'],
-			), $params['pagination'] ) );
+					'page_url'    => url_add_tail( $Item->get_permanent_url(), '#comments' ),
+					'block_start' => $params['nav_block_start'],
+					'block_end'   => $params['nav_block_end'],
+					'prev_text'   => $params['nav_prev_text'],
+					'next_text'   => $params['nav_next_text'],
+					'prev_class'  => $params['nav_prev_class'],
+					'next_class'  => $params['nav_next_class'],
+					'page_item_before'      => $params['nav_page_item_before'],
+					'page_item_after'       => $params['nav_page_item_after'],
+					'page_current_template' => $params['nav_page_current_template'],
+				), $params['pagination'] ) );
 		}
 
 		if( $params['nav_bottom_inside'] )
@@ -425,8 +425,8 @@ if( $Item->can_see_comments( true ) )
 			// _______________________________________________________________
 			// Display count of comments to be moderated:
 			$Item->feedback_moderation( 'feedbacks', '<p class="alert alert-info">', '</p>', '',
-				T_('This post has 1 feedback awaiting moderation... %s'),
-				T_('This post has %d feedbacks awaiting moderation... %s') );
+					T_('This post has 1 feedback awaiting moderation... %s'),
+					T_('This post has %d feedbacks awaiting moderation... %s') );
 			// _______________________________________________________________
 		}
 	}
@@ -465,7 +465,7 @@ if( is_logged_in() && $Item->can_comment( NULL ) )
 
 		echo $params['notification_before'];
 
-		global $DB, $htsrv_url;
+		global $DB;
 		global $UserSettings;
 
 		$notification_icon = get_icon( 'notification' );
@@ -473,7 +473,7 @@ if( is_logged_in() && $Item->can_comment( NULL ) )
 		$not_subscribed = true;
 		$creator_User = $Item->get_creator_User();
 
-		if( $Blog->get_setting( 'allow_subscriptions' ) )
+		if( $Blog->get_setting( 'allow_comment_subscriptions' ) )
 		{
 			$sql = 'SELECT count( sub_user_ID ) FROM T_subscriptions
 						WHERE sub_user_ID = '.$current_User->ID.' AND sub_coll_ID = '.$Blog->ID.' AND sub_comments <> 0';
@@ -496,11 +496,11 @@ if( is_logged_in() && $Item->can_comment( NULL ) )
 			if( get_user_isubscription( $current_User->ID, $Item->ID ) )
 			{
 				echo '<p class="text-center">'.$notification_icon.' <span>'.$params['notification_text2'];
-				echo ' <a href="'.$samedomain_htsrv_url.'action.php?mname=collections&action=isubs_update&p='.$Item->ID.'&amp;notify=0&amp;'.url_crumb( 'collections_isubs_update' ).'">'.T_( 'Click here to unsubscribe.' ).'</a></span></p>';
+				echo ' <a href="'.get_htsrv_url().'action.php?mname=collections&action=isubs_update&p='.$Item->ID.'&amp;notify=0&amp;'.url_crumb( 'collections_isubs_update' ).'">'.T_( 'Click here to unsubscribe.' ).'</a></span></p>';
 			}
 			else
 			{
-				echo '<p class="text-center"><a href="'.$samedomain_htsrv_url.'action.php?mname=collections&action=isubs_update&p='.$Item->ID.'&amp;notify=1&amp;'.url_crumb( 'collections_isubs_update' ).'" class="btn btn-default">'.$notification_icon.' '.$params['notification_text3'].'</a></p>';
+				echo '<p class="text-center"><a href="'.get_htsrv_url().'action.php?mname=collections&action=isubs_update&p='.$Item->ID.'&amp;notify=1&amp;'.url_crumb( 'collections_isubs_update' ).'" class="btn btn-default">'.$notification_icon.' '.$params['notification_text3'].'</a></p>';
 			}
 		}
 
