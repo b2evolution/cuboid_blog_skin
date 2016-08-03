@@ -27,6 +27,7 @@
     a {
         transition: all 0.2s ease;
         font-style: normal;
+        word-wrap: break-word;
 
         &:hover, &:active, &:focus {
             color: @primary;
@@ -347,13 +348,8 @@
         margin-bottom: 0;
         margin-top: 0;
 
-        @media screen and ( max-width: @L )
-        and ( min-width: @MM ) {
+        @media screen and ( max-width: @L ) {
             font-size: 78%;
-        }
-
-        @media screen and ( max-width: @XS ) {
-            font-size: 88%;
         }
 
         .bCalendarRow, thead, tfoot, tbody {

@@ -1910,6 +1910,7 @@ div.evo_container__sidebar2 div.widget_core_coll_post_list.evo_1pic__special.evo
   -webkit-transition: all 0.2s ease;
   transition: all 0.2s ease;
   font-style: normal;
+  word-wrap: break-word;
 }
 .evo_widget a:hover,
 .evo_widget a:active,
@@ -2207,14 +2208,9 @@ div.evo_container__sidebar2 div.widget_core_coll_post_list.evo_1pic__special.evo
   margin-bottom: 0;
   margin-top: 0;
 }
-@media screen and (max-width: 1170px) and (min-width: 991px) {
+@media screen and (max-width: 1170px) {
   .widget_plugin_evo_Calr .bCalendarTable {
     font-size: 78%;
-  }
-}
-@media screen and (max-width: 320px) {
-  .widget_plugin_evo_Calr .bCalendarTable {
-    font-size: 88%;
   }
 }
 .widget_plugin_evo_Calr .bCalendarTable .bCalendarRow,
@@ -3122,6 +3118,13 @@ textarea.message_text {
     font-size: 3.2rem;
   }
 }
+.disp_404 .error_404 .widget_core_coll_tag_cloud .tag_cloud {
+  clear: both;
+  margin: 0 auto;
+}
+.disp_404 .error_404 .widget_core_coll_tag_cloud .tag_cloud a {
+  float: none;
+}
 div.error_404 {
   padding: 40px;
   margin: 0;
@@ -3695,6 +3698,7 @@ div.error_404 .fa-warning {
 .disp_front #main-content .widget_core_coll_related_post_list li {
   padding: 10px 0;
   margin: 0;
+  word-break: break-all;
 }
 .disp_front #main-content .widget_core_coll_item_list .item_first_image,
 .disp_front #main-content .widget_core_coll_featured_posts .item_first_image,
