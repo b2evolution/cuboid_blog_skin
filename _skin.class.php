@@ -813,8 +813,8 @@ class cuboid_blog_Skin extends Skin
 
 		// Include Masonry Grind for MediaIdx
 		if ( $disp == 'mediaidx' || $disp == 'posts' ) {
-			require_js( $this->get_url() . 'assets/js/masonry.pkgd.min.js' );
-			require_js( $this->get_url() . 'assets/js/imagesloaded.pkgd.min.js' );
+			require_js( 'assets/js/masonry.pkgd.min.js', 'relative' );
+			require_js( 'assets/js/imagesloaded.pkgd.min.js', 'relative');
 		}
 
 		if( $disp == 'posts' ) {
@@ -845,7 +845,7 @@ class cuboid_blog_Skin extends Skin
 			");
 		}
 
-		require_js( $this->get_url().'assets/js/script.js' );
+		require_js( 'assets/js/script.js', 'relative' );
 		// Skin specific initializations:
 
 		// Limit images by max height:
