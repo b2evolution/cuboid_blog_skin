@@ -194,7 +194,8 @@ div.widget_core_coll_page_list.evo_1pic__special ul li,
 div.widget_core_coll_related_post_list.evo_1pic__special ul li {
   list-style: none;
   height: auto;
-  display: block;
+  display: inline-block;
+  width: 100%;
   clear: both;
   margin: 5px 0;
   padding: 0;
@@ -1652,6 +1653,14 @@ div.evo_container__sidebar2 div.widget_core_coll_post_list.evo_1pic__special.evo
 .evo_comment__preview .evo_comment_text img {
   border-radius: 0;
 }
+.evo_comment .evo_comment_text a:hover,
+.evo_comment__preview .evo_comment_text a:hover,
+.evo_comment .evo_comment_text a:active,
+.evo_comment__preview .evo_comment_text a:active,
+.evo_comment .evo_comment_text a:focus,
+.evo_comment__preview .evo_comment_text a:focus {
+  background-color: transparent;
+}
 #comment_form {
   border-radius: 0;
   border-color: #eeeeee;
@@ -2167,7 +2176,6 @@ div.evo_container__sidebar2 div.widget_core_coll_post_list.evo_1pic__special.evo
 }
 .widget_core_user_avatars .widget_flow_blocks div {
   display: -webkit-inline-box;
-  display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
   display: inline-flex;
 }
