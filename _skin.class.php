@@ -155,7 +155,7 @@ class cuboid_blog_Skin extends Skin
 		$r = array_merge( array(
             'general_settings_start' => array(
                'layout' => 'begin_fieldset',
-               'label'  => T_('General Settings (All disps)')
+               'label'  => T_('General Settings').' (All disps)',
             ),
 				// Layout
 				'layout' => array(
@@ -260,7 +260,7 @@ class cuboid_blog_Skin extends Skin
 			 * ========================================================================== */
 			'page_setting_start' => array(
 				'layout'	=> 'begin_fieldset',
-				'label'		=> T_( 'Page Settings (All disps)' ),
+				'label'		=> T_( 'Page Settings' ).' (All disps)',
 			),
 				'page_content_color' => array(
 				   'label'			=> T_('Page Content Color'),
@@ -305,7 +305,7 @@ class cuboid_blog_Skin extends Skin
              */
 			'header_settings_start' => array(
 				'layout' => 'begin_fieldset',
-				'label'  => T_('Header settings (All disps)')
+				'label'  => T_('Header settings').' (All disps)',
 			),
 				'head_center_mode' => array(
 					'label'        => T_('Max Width Header Center Mode'),
@@ -345,7 +345,7 @@ class cuboid_blog_Skin extends Skin
              */
             'posts_settings_start' => array(
                'layout' => 'begin_fieldset',
-               'label'  => T_('Posts Settings (disp=posts)')
+               'label'  => T_('Posts Settings').' (disp=posts)',
             ),
                'posts_layout' => array(
                   'label'        => T_('Posts Layout'),
@@ -402,7 +402,7 @@ class cuboid_blog_Skin extends Skin
              */
             'tags_settings_start' => array(
                'layout' => 'begin_fieldset',
-               'label'  => T_('Tags Layout Settings (All disps)')
+               'label'  => T_('Tags Layout Settings').' (All disps)',
             ),
                'tags_color' => array(
                   'label'        => T_('Tags Text Color'),
@@ -435,7 +435,7 @@ class cuboid_blog_Skin extends Skin
              */
             'single_settings_start' => array(
                'layout' => 'begin_fieldset',
-               'label'  => T_('Single and Page Disp Settings (disp=single and disp=page)')
+               'label'  => T_('Single and Page Disp Settings').' (disp=single and disp=page)',
             ),
                // Single Layout
                'single_layout' => array(
@@ -464,7 +464,7 @@ class cuboid_blog_Skin extends Skin
              */
             'sidebar_settings_start' => array(
                'layout' => 'begin_fieldset',
-               'label'  => T_('Sidebar Settings (All disps)')
+               'label'  => T_('Sidebar Settings').' (All disps)',
             ),
                'side_widget_title' => array(
                   'label'        => T_('Widget Title Color'),
@@ -500,7 +500,7 @@ class cuboid_blog_Skin extends Skin
 			 * ========================================================================== */
 			'uil_widget_settings_start' => array(
 				'layout'	=> 'begin_fieldset',
-				'label'		=> T_( 'Special Widget Settings (All Disps)' ),
+				'label'		=> T_( 'Special Widget Settings' ).' (All Disps)',
 			),
 				'uil_widget_readmore' => array(
 					'label'			=> T_( 'List-type Widgets "Read more" button' ),
@@ -519,7 +519,7 @@ class cuboid_blog_Skin extends Skin
              */
             'footer_settings_start' => array(
                'layout' => 'begin_fieldset',
-               'label'  => T_('Footer Settings (All disps)')
+               'label'  => T_('Footer Settings').' (All disps)',
             ),
                'footer_widget' => array(
                   'label'        => T_('Display Footer Widget'),
@@ -612,7 +612,7 @@ class cuboid_blog_Skin extends Skin
              */
             'section_media_start' => array(
                'layout'   => 'begin_fieldset',
-               'label'    => T_( 'Media Posts Settings (disp=mediaidx)' )
+               'label'    => T_( 'Media Posts Settings' ).' (disp=mediaidx)',
             ),
                // Single Layout
                'mediaidx_layout' => array(
@@ -649,7 +649,7 @@ class cuboid_blog_Skin extends Skin
 					),
                'padding_column' => array(
                   'label'          => T_('Padding Image Column'),
-                  'note'           => T_('px ( default padding 15px )'),
+                  'note'           => T_('px ( default padding').'15px'.T_(' )'),
                   'defaultvalue'   => '15',
                   'type'           => 'integer',
                   'allow_empty'    => true,
@@ -665,7 +665,7 @@ class cuboid_blog_Skin extends Skin
              */
             'user_settings_start' => array(
                'layout' => 'begin_fieldset',
-               'label'  => T_('User Disp Layout (All disps)')
+               'label'  => T_('User Disp Layout').' (All disps)',
             ),
                // Single Layout
                'user_layout' => array(
@@ -691,7 +691,7 @@ class cuboid_blog_Skin extends Skin
              */
 				'section_colorbox_start' => array(
 					'layout' => 'begin_fieldset',
-					'label'  => T_('Colorbox Image Zoom (All disps)')
+					'label'  => T_('Colorbox Image Zoom').' (All disps)',
 				),
 					'colorbox' => array(
 						'label'        => T_('Colorbox Image Zoom'),
@@ -742,7 +742,7 @@ class cuboid_blog_Skin extends Skin
 
 				'section_username_start' => array(
 					'layout' => 'begin_fieldset',
-					'label'  => T_('Username options (All disp)')
+					'label'  => T_('Username options').' (All disp)',
 				),
 					'gender_colored' => array(
 						'label'        => T_('Display gender'),
@@ -768,7 +768,7 @@ class cuboid_blog_Skin extends Skin
 
 				'section_access_start' => array(
 					'layout' => 'begin_fieldset',
-					'label'  => T_('When access is denied or requires login... (disp=access_denied and disp=access_requires_login)')
+					'label'  => T_('When access is denied or requires login').' (disp=access_denied and disp=access_requires_login)',
 				),
 					'access_login_containers' => array(
 						'label'   => T_('Display on login screen'),
