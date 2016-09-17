@@ -87,7 +87,7 @@ blockquote p {
   margin-bottom: 0;
 }
 img {
-  max-width: 100%;
+  max-width: none;
   height: auto;
 }
 .btn:hover,
@@ -4598,6 +4598,7 @@ div.error_404 .fa-warning {
 }
 .disp_single #main-content .cover_image .evo_image_block img,
 .disp_page #main-content .cover_image .evo_image_block img {
+  max-width: 100%;
   width: 100%;
 }
 .disp_single #main-content .col-md-12 .videoblock iframe,
