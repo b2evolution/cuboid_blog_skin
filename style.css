@@ -4663,6 +4663,11 @@ div.error_404 .fa-warning {
   padding: 20px;
   background-color: #f7f7f7;
 }
+.disp_single #main-content .evo_post .evo_container__item_single .widget_core_item_about_author .evo_avatar,
+.disp_page #main-content .evo_post .evo_container__item_single .widget_core_item_about_author .evo_avatar {
+  float: left;
+  margin: 0 10px 5px 0;
+}
 .disp_single #main-content .evo_post .evo_container__item_single .widget_core_item_about_author h3,
 .disp_page #main-content .evo_post .evo_container__item_single .widget_core_item_about_author h3 {
   margin-top: 0;
