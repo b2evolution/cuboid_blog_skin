@@ -243,7 +243,8 @@
     // ======================================================================== /
     .content_comment {
 
-        & > .panel-default {
+        & > .panel-default,
+        .section_requires_javascript .panel-default {
             border-color: @color_border;
 
             .panel-heading {
@@ -252,7 +253,8 @@
         }
 
         & > .panel-default,
-        & > .panel-danger {
+        & > .panel-danger,
+        .section_requires_javascript .panel-default {
             border-radius: 0;
             margin-top: 5px;
 

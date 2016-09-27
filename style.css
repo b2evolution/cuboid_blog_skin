@@ -87,8 +87,11 @@ blockquote p {
   margin-bottom: 0;
 }
 img {
-  max-width: none;
+  max-width: 100%;
   height: auto;
+}
+.cboxPhoto {
+  max-width: none;
 }
 .btn:hover,
 button:hover,
@@ -3160,6 +3163,7 @@ div.error_404 .fa-warning {
 }
 .disp_comments #main-content .evo_comment .evo_comment_title {
   margin-bottom: 0;
+  word-wrap: break-word;
 }
 .disp_comments #main-content .evo_comment .evo_comment_title.first {
   border-bottom: 1px solid #eeeeee;
@@ -3710,6 +3714,7 @@ div.error_404 .fa-warning {
   padding: 10px 0;
   margin: 0;
   word-break: break-all;
+  word-break: break-word;
 }
 .disp_front #main-content .widget_core_coll_item_list .item_first_image,
 .disp_front #main-content .widget_core_coll_featured_posts .item_first_image,
@@ -4168,6 +4173,7 @@ div.error_404 .fa-warning {
   color: #555555;
   background-color: #ffffff;
   padding: 10px 10px 15px;
+  word-wrap: break-word;
 }
 .disp_posts #main-content .well.evo_intro_post {
   margin-bottom: 30px;
@@ -4465,6 +4471,7 @@ div.error_404 .fa-warning {
   line-height: 2.4rem;
   font-weight: 700;
   color: #555555;
+  word-wrap: break-word;
 }
 .disp_search #main-content .search_result .search_content_wrap .search_title a {
   color: #555555;
@@ -4480,6 +4487,7 @@ div.error_404 .fa-warning {
   color: #6f6f6f;
   margin-top: 1rem;
   margin-bottom: 1.5rem;
+  word-wrap: break-word;
 }
 .disp_search #main-content .search_result .search_content_wrap .search_info {
   font-family: "Montserrat", sans-serif;
@@ -4716,31 +4724,41 @@ div.error_404 .fa-warning {
   color: #ffffff;
 }
 .disp_single .content_comment > .panel-default,
-.disp_page .content_comment > .panel-default {
+.disp_page .content_comment > .panel-default,
+.disp_single .content_comment .section_requires_javascript .panel-default,
+.disp_page .content_comment .section_requires_javascript .panel-default {
   border-color: #eeeeee;
 }
 .disp_single .content_comment > .panel-default .panel-heading,
-.disp_page .content_comment > .panel-default .panel-heading {
+.disp_page .content_comment > .panel-default .panel-heading,
+.disp_single .content_comment .section_requires_javascript .panel-default .panel-heading,
+.disp_page .content_comment .section_requires_javascript .panel-default .panel-heading {
   border-color: #eeeeee;
 }
 .disp_single .content_comment > .panel-default,
 .disp_page .content_comment > .panel-default,
 .disp_single .content_comment > .panel-danger,
-.disp_page .content_comment > .panel-danger {
+.disp_page .content_comment > .panel-danger,
+.disp_single .content_comment .section_requires_javascript .panel-default,
+.disp_page .content_comment .section_requires_javascript .panel-default {
   border-radius: 0;
   margin-top: 5px;
 }
 .disp_single .content_comment > .panel-default .panel-title,
 .disp_page .content_comment > .panel-default .panel-title,
 .disp_single .content_comment > .panel-danger .panel-title,
-.disp_page .content_comment > .panel-danger .panel-title {
+.disp_page .content_comment > .panel-danger .panel-title,
+.disp_single .content_comment .section_requires_javascript .panel-default .panel-title,
+.disp_page .content_comment .section_requires_javascript .panel-default .panel-title {
   color: #555555;
   text-transform: uppercase;
 }
 .disp_single .content_comment > .panel-default .panel-title::before,
 .disp_page .content_comment > .panel-default .panel-title::before,
 .disp_single .content_comment > .panel-danger .panel-title::before,
-.disp_page .content_comment > .panel-danger .panel-title::before {
+.disp_page .content_comment > .panel-danger .panel-title::before,
+.disp_single .content_comment .section_requires_javascript .panel-default .panel-title::before,
+.disp_page .content_comment .section_requires_javascript .panel-default .panel-title::before {
   content: "\f0e6";
   display: inline-block;
   font: normal normal normal 14px/1 FontAwesome;
@@ -4753,13 +4771,17 @@ div.error_404 .fa-warning {
 .disp_single .content_comment > .panel-default > .panel-body,
 .disp_page .content_comment > .panel-default > .panel-body,
 .disp_single .content_comment > .panel-danger > .panel-body,
-.disp_page .content_comment > .panel-danger > .panel-body {
+.disp_page .content_comment > .panel-danger > .panel-body,
+.disp_single .content_comment .section_requires_javascript .panel-default > .panel-body,
+.disp_page .content_comment .section_requires_javascript .panel-default > .panel-body {
   padding: 3rem;
 }
 .disp_single .content_comment > .panel-default .evo_form label,
 .disp_page .content_comment > .panel-default .evo_form label,
 .disp_single .content_comment > .panel-danger .evo_form label,
-.disp_page .content_comment > .panel-danger .evo_form label {
+.disp_page .content_comment > .panel-danger .evo_form label,
+.disp_single .content_comment .section_requires_javascript .panel-default .evo_form label,
+.disp_page .content_comment .section_requires_javascript .panel-default .evo_form label {
   font-family: "Montserrat", sans-serif;
   color: #555555;
 }
@@ -4767,10 +4789,14 @@ div.error_404 .fa-warning {
 .disp_page .content_comment > .panel-default .evo_form .form_text_input,
 .disp_single .content_comment > .panel-danger .evo_form .form_text_input,
 .disp_page .content_comment > .panel-danger .evo_form .form_text_input,
+.disp_single .content_comment .section_requires_javascript .panel-default .evo_form .form_text_input,
+.disp_page .content_comment .section_requires_javascript .panel-default .evo_form .form_text_input,
 .disp_single .content_comment > .panel-default .evo_form .form_textarea_input,
 .disp_page .content_comment > .panel-default .evo_form .form_textarea_input,
 .disp_single .content_comment > .panel-danger .evo_form .form_textarea_input,
-.disp_page .content_comment > .panel-danger .evo_form .form_textarea_input {
+.disp_page .content_comment > .panel-danger .evo_form .form_textarea_input,
+.disp_single .content_comment .section_requires_javascript .panel-default .evo_form .form_textarea_input,
+.disp_page .content_comment .section_requires_javascript .panel-default .evo_form .form_textarea_input {
   padding: 8px 12px;
   height: auto;
   border-radius: 0;
@@ -4781,26 +4807,38 @@ div.error_404 .fa-warning {
 .disp_page .content_comment > .panel-default .evo_form .form_text_input:focus,
 .disp_single .content_comment > .panel-danger .evo_form .form_text_input:focus,
 .disp_page .content_comment > .panel-danger .evo_form .form_text_input:focus,
+.disp_single .content_comment .section_requires_javascript .panel-default .evo_form .form_text_input:focus,
+.disp_page .content_comment .section_requires_javascript .panel-default .evo_form .form_text_input:focus,
 .disp_single .content_comment > .panel-default .evo_form .form_textarea_input:focus,
 .disp_page .content_comment > .panel-default .evo_form .form_textarea_input:focus,
 .disp_single .content_comment > .panel-danger .evo_form .form_textarea_input:focus,
 .disp_page .content_comment > .panel-danger .evo_form .form_textarea_input:focus,
+.disp_single .content_comment .section_requires_javascript .panel-default .evo_form .form_textarea_input:focus,
+.disp_page .content_comment .section_requires_javascript .panel-default .evo_form .form_textarea_input:focus,
 .disp_single .content_comment > .panel-default .evo_form .form_text_input:focus,
 .disp_page .content_comment > .panel-default .evo_form .form_text_input:focus,
 .disp_single .content_comment > .panel-danger .evo_form .form_text_input:focus,
 .disp_page .content_comment > .panel-danger .evo_form .form_text_input:focus,
+.disp_single .content_comment .section_requires_javascript .panel-default .evo_form .form_text_input:focus,
+.disp_page .content_comment .section_requires_javascript .panel-default .evo_form .form_text_input:focus,
 .disp_single .content_comment > .panel-default .evo_form .form_textarea_input:focus,
 .disp_page .content_comment > .panel-default .evo_form .form_textarea_input:focus,
 .disp_single .content_comment > .panel-danger .evo_form .form_textarea_input:focus,
 .disp_page .content_comment > .panel-danger .evo_form .form_textarea_input:focus,
+.disp_single .content_comment .section_requires_javascript .panel-default .evo_form .form_textarea_input:focus,
+.disp_page .content_comment .section_requires_javascript .panel-default .evo_form .form_textarea_input:focus,
 .disp_single .content_comment > .panel-default .evo_form .form_text_input:active,
 .disp_page .content_comment > .panel-default .evo_form .form_text_input:active,
 .disp_single .content_comment > .panel-danger .evo_form .form_text_input:active,
 .disp_page .content_comment > .panel-danger .evo_form .form_text_input:active,
+.disp_single .content_comment .section_requires_javascript .panel-default .evo_form .form_text_input:active,
+.disp_page .content_comment .section_requires_javascript .panel-default .evo_form .form_text_input:active,
 .disp_single .content_comment > .panel-default .evo_form .form_textarea_input:active,
 .disp_page .content_comment > .panel-default .evo_form .form_textarea_input:active,
 .disp_single .content_comment > .panel-danger .evo_form .form_textarea_input:active,
-.disp_page .content_comment > .panel-danger .evo_form .form_textarea_input:active {
+.disp_page .content_comment > .panel-danger .evo_form .form_textarea_input:active,
+.disp_single .content_comment .section_requires_javascript .panel-default .evo_form .form_textarea_input:active,
+.disp_page .content_comment .section_requires_javascript .panel-default .evo_form .form_textarea_input:active {
   border-color: #1abc9c;
   outline: none;
 }
@@ -4808,10 +4846,14 @@ div.error_404 .fa-warning {
 .disp_page .content_comment > .panel-default .evo_form .preview,
 .disp_single .content_comment > .panel-danger .evo_form .preview,
 .disp_page .content_comment > .panel-danger .evo_form .preview,
+.disp_single .content_comment .section_requires_javascript .panel-default .evo_form .preview,
+.disp_page .content_comment .section_requires_javascript .panel-default .evo_form .preview,
 .disp_single .content_comment > .panel-default .evo_form .submit,
 .disp_page .content_comment > .panel-default .evo_form .submit,
 .disp_single .content_comment > .panel-danger .evo_form .submit,
-.disp_page .content_comment > .panel-danger .evo_form .submit {
+.disp_page .content_comment > .panel-danger .evo_form .submit,
+.disp_single .content_comment .section_requires_javascript .panel-default .evo_form .submit,
+.disp_page .content_comment .section_requires_javascript .panel-default .evo_form .submit {
   border-radius: 2px;
   font-family: "Montserrat", sans-serif;
   text-transform: uppercase;
@@ -4827,32 +4869,46 @@ div.error_404 .fa-warning {
 .disp_page .content_comment > .panel-default .evo_form .preview:hover,
 .disp_single .content_comment > .panel-danger .evo_form .preview:hover,
 .disp_page .content_comment > .panel-danger .evo_form .preview:hover,
+.disp_single .content_comment .section_requires_javascript .panel-default .evo_form .preview:hover,
+.disp_page .content_comment .section_requires_javascript .panel-default .evo_form .preview:hover,
 .disp_single .content_comment > .panel-default .evo_form .submit:hover,
 .disp_page .content_comment > .panel-default .evo_form .submit:hover,
 .disp_single .content_comment > .panel-danger .evo_form .submit:hover,
 .disp_page .content_comment > .panel-danger .evo_form .submit:hover,
+.disp_single .content_comment .section_requires_javascript .panel-default .evo_form .submit:hover,
+.disp_page .content_comment .section_requires_javascript .panel-default .evo_form .submit:hover,
 .disp_single .content_comment > .panel-default .evo_form .preview:active,
 .disp_page .content_comment > .panel-default .evo_form .preview:active,
 .disp_single .content_comment > .panel-danger .evo_form .preview:active,
 .disp_page .content_comment > .panel-danger .evo_form .preview:active,
+.disp_single .content_comment .section_requires_javascript .panel-default .evo_form .preview:active,
+.disp_page .content_comment .section_requires_javascript .panel-default .evo_form .preview:active,
 .disp_single .content_comment > .panel-default .evo_form .submit:active,
 .disp_page .content_comment > .panel-default .evo_form .submit:active,
 .disp_single .content_comment > .panel-danger .evo_form .submit:active,
 .disp_page .content_comment > .panel-danger .evo_form .submit:active,
+.disp_single .content_comment .section_requires_javascript .panel-default .evo_form .submit:active,
+.disp_page .content_comment .section_requires_javascript .panel-default .evo_form .submit:active,
 .disp_single .content_comment > .panel-default .evo_form .preview:focus,
 .disp_page .content_comment > .panel-default .evo_form .preview:focus,
 .disp_single .content_comment > .panel-danger .evo_form .preview:focus,
 .disp_page .content_comment > .panel-danger .evo_form .preview:focus,
+.disp_single .content_comment .section_requires_javascript .panel-default .evo_form .preview:focus,
+.disp_page .content_comment .section_requires_javascript .panel-default .evo_form .preview:focus,
 .disp_single .content_comment > .panel-default .evo_form .submit:focus,
 .disp_page .content_comment > .panel-default .evo_form .submit:focus,
 .disp_single .content_comment > .panel-danger .evo_form .submit:focus,
-.disp_page .content_comment > .panel-danger .evo_form .submit:focus {
+.disp_page .content_comment > .panel-danger .evo_form .submit:focus,
+.disp_single .content_comment .section_requires_javascript .panel-default .evo_form .submit:focus,
+.disp_page .content_comment .section_requires_javascript .panel-default .evo_form .submit:focus {
   outline: none;
 }
 .disp_single .content_comment > .panel-default .evo_form .preview,
 .disp_page .content_comment > .panel-default .evo_form .preview,
 .disp_single .content_comment > .panel-danger .evo_form .preview,
-.disp_page .content_comment > .panel-danger .evo_form .preview {
+.disp_page .content_comment > .panel-danger .evo_form .preview,
+.disp_single .content_comment .section_requires_javascript .panel-default .evo_form .preview,
+.disp_page .content_comment .section_requires_javascript .panel-default .evo_form .preview {
   background-color: #5BDCC3;
   border-color: #5BDCC3;
 }
@@ -4860,21 +4916,29 @@ div.error_404 .fa-warning {
 .disp_page .content_comment > .panel-default .evo_form .preview:hover,
 .disp_single .content_comment > .panel-danger .evo_form .preview:hover,
 .disp_page .content_comment > .panel-danger .evo_form .preview:hover,
+.disp_single .content_comment .section_requires_javascript .panel-default .evo_form .preview:hover,
+.disp_page .content_comment .section_requires_javascript .panel-default .evo_form .preview:hover,
 .disp_single .content_comment > .panel-default .evo_form .preview:focus,
 .disp_page .content_comment > .panel-default .evo_form .preview:focus,
 .disp_single .content_comment > .panel-danger .evo_form .preview:focus,
 .disp_page .content_comment > .panel-danger .evo_form .preview:focus,
+.disp_single .content_comment .section_requires_javascript .panel-default .evo_form .preview:focus,
+.disp_page .content_comment .section_requires_javascript .panel-default .evo_form .preview:focus,
 .disp_single .content_comment > .panel-default .evo_form .preview:active,
 .disp_page .content_comment > .panel-default .evo_form .preview:active,
 .disp_single .content_comment > .panel-danger .evo_form .preview:active,
-.disp_page .content_comment > .panel-danger .evo_form .preview:active {
+.disp_page .content_comment > .panel-danger .evo_form .preview:active,
+.disp_single .content_comment .section_requires_javascript .panel-default .evo_form .preview:active,
+.disp_page .content_comment .section_requires_javascript .panel-default .evo_form .preview:active {
   background-color: #1abc9c;
   border-color: #1abc9c;
 }
 .disp_single .content_comment > .panel-default .evo_form .submit,
 .disp_page .content_comment > .panel-default .evo_form .submit,
 .disp_single .content_comment > .panel-danger .evo_form .submit,
-.disp_page .content_comment > .panel-danger .evo_form .submit {
+.disp_page .content_comment > .panel-danger .evo_form .submit,
+.disp_single .content_comment .section_requires_javascript .panel-default .evo_form .submit,
+.disp_page .content_comment .section_requires_javascript .panel-default .evo_form .submit {
   background-color: #1abc9c;
   border-color: #1abc9c;
 }
@@ -4882,14 +4946,20 @@ div.error_404 .fa-warning {
 .disp_page .content_comment > .panel-default .evo_form .submit:hover,
 .disp_single .content_comment > .panel-danger .evo_form .submit:hover,
 .disp_page .content_comment > .panel-danger .evo_form .submit:hover,
+.disp_single .content_comment .section_requires_javascript .panel-default .evo_form .submit:hover,
+.disp_page .content_comment .section_requires_javascript .panel-default .evo_form .submit:hover,
 .disp_single .content_comment > .panel-default .evo_form .submit:focus,
 .disp_page .content_comment > .panel-default .evo_form .submit:focus,
 .disp_single .content_comment > .panel-danger .evo_form .submit:focus,
 .disp_page .content_comment > .panel-danger .evo_form .submit:focus,
+.disp_single .content_comment .section_requires_javascript .panel-default .evo_form .submit:focus,
+.disp_page .content_comment .section_requires_javascript .panel-default .evo_form .submit:focus,
 .disp_single .content_comment > .panel-default .evo_form .submit:active,
 .disp_page .content_comment > .panel-default .evo_form .submit:active,
 .disp_single .content_comment > .panel-danger .evo_form .submit:active,
-.disp_page .content_comment > .panel-danger .evo_form .submit:active {
+.disp_page .content_comment > .panel-danger .evo_form .submit:active,
+.disp_single .content_comment .section_requires_javascript .panel-default .evo_form .submit:active,
+.disp_page .content_comment .section_requires_javascript .panel-default .evo_form .submit:active {
   background-color: #333333;
   border-color: #333333;
 }
