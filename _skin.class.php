@@ -963,15 +963,15 @@ class cuboid_blog_Skin extends Skin
 		// Site Background
 		if ( $this->get_setting( 'background_type' ) == 'color' ) {
 			$color = $this->get_setting( 'site_background_color' );
-			$custom_css .= 'body {background-color: '.$color.';}';
+			$custom_css .= '#skin_wrapper {background-color: '.$color.';}';
 		}
 
 		$bg_image = $this->get_setting( 'bg_image' );
 		if ( $this->get_setting( 'background_type' ) == 'images' && $bg_image ) {
 			if($bg_image == "none") {
-				$custom_css .= "body { background: transparent; }";
+				$custom_css .= "#skin_wrapper { background: transparent; }";
 			} else {
-				$custom_css .= "body { background-image: url('".$bg_image."');}";
+				$custom_css .= "#skin_wrapper { background-image: url('".$bg_image."');}";
 			}
 		}
 
@@ -980,29 +980,29 @@ class cuboid_blog_Skin extends Skin
 		if ( $this->get_setting( 'background_type' ) == 'custom_images' && $bg_image_custom ) {
 			if($bg_image_custom == "none")
 			{
-				$custom_css .= "body { background: transparent; }";
+				$custom_css .= "#skin_wrapper { background: transparent; }";
 			} else {
-				$custom_css .= "body { background-image: url('".$bg_image_custom."');}";
+				$custom_css .= "#skin_wrapper { background-image: url('".$bg_image_custom."');}";
 			}
 		}
 
 		$bg_image_custom_attach = $this->get_setting( 'bg_image_custom_attach' );
 		if ( $this->get_setting( 'background_type' ) == 'custom_images' && $bg_image_custom_attach ) {
 			if ( $bg_image_custom_attach == 'initial' ) {
-				$custom_css .= "body { background-attachment: initial; }";
+				$custom_css .= "#skin_wrapper { background-attachment: initial; }";
 			} else {
-				$custom_css .= "body { background-attachment: fixed; }";
+				$custom_css .= "#skin_wrapper { background-attachment: fixed; }";
 			}
 		}
 
 		$bg_image_custom_size = $this->get_setting( 'bg_image_custom_size' );
 		if ( $this->get_setting( 'background_type' ) == 'custom_images' && $bg_image_custom_size ) {
 			if ( $bg_image_custom_size == 'auto' ) {
-				$custom_css .= "body { background-size: auto; }";
+				$custom_css .= "#skin_wrapper { background-size: auto; }";
 			} else if ( $bg_image_custom_size == 'contain' ){
-				$custom_css .= "body { background-size: contain; }";
+				$custom_css .= "#skin_wrapper { background-size: contain; }";
 			} else {
-				$custom_css .= "body { background-size: cover; }";
+				$custom_css .= "#skin_wrapper { background-size: cover; }";
 			}
 		}
 
@@ -1018,7 +1018,7 @@ class cuboid_blog_Skin extends Skin
 		 * ============================================================================
 		 */
 		if( $font = $this->get_setting('page_font_size') ) {
-			$custom_css .= 'body{ font-size: '.$font.'px }';
+			$custom_css .= '#skin_wrapper { font-size: '.$font.'px }';
 		}
 
 		if ( $color = $this->get_setting( 'page_info_color' ) ) {
@@ -1030,7 +1030,7 @@ class cuboid_blog_Skin extends Skin
 		}
 
 		if ( $color = $this->get_setting( 'page_content_color' ) ) {
-			$custom_css .= 'html, body, .disp_single #feedbacks, .disp_page #feedbacks, #content .evo_widget, .disp_posts #main-content .evo_post__full_text, .disp_posts #main-content .evo_post__excerpt_text, .disp_page #main-content .evo_post__full_text, .disp_page #main-content .evo_post__excerpt_text, .disp_single #main-content .evo_post__full_text, .disp_single #main-content .evo_post__excerpt_text, .disp_comments #main-content .evo_comment .evo_comment_text, .disp_search #main-content .msg_nothing, .disp_search #main-content .search_result .search_content_wrap .result_content
+			$custom_css .= '#skin_wrapper, .disp_single #feedbacks, .disp_page #feedbacks, #content .evo_widget, .disp_posts #main-content .evo_post__full_text, .disp_posts #main-content .evo_post__excerpt_text, .disp_page #main-content .evo_post__full_text, .disp_page #main-content .evo_post__excerpt_text, .disp_single #main-content .evo_post__full_text, .disp_single #main-content .evo_post__excerpt_text, .disp_comments #main-content .evo_comment .evo_comment_text, .disp_search #main-content .msg_nothing, .disp_search #main-content .search_result .search_content_wrap .result_content
 			{ color: '.$color.' !important}';
 		}
 
