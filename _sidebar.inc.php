@@ -28,12 +28,14 @@ switch ( $disp ) {
 if( $Skin->is_visible_sidebar( $disp_status ) ) { // Display sidebar: ?>
 <aside id="main-sidebar" class="col-xs-12 col-sm-12 col-md-4<?php echo ( $Skin->get_setting( 'layout' ) == 'left_sidebar' ? ' pull-left' : '' ); ?>">
     <!-- =================================== START OF SIDEBAR =================================== -->
-    <div class="evo_container evo_container__sidebar">
         <?php
         // ------------------------- "Sidebar" CONTAINER EMBEDDED HERE --------------------------
         // Display container contents:
-        skin_container( NT_('Sidebar'), array(
+        widget_container( 'sidebar', array(
             // The following (optional) params will be used as defaults for widgets included in this container:
+            'container_display_if_empty' => false, // If no widget, don't display container at all
+            'container_start'      => '<div class="evo_container $wico_class$">',
+            'container_end'        => '</div>',
             // This will enclose each widget in a block:
             'block_start'          => '<div class="panel panel-default evo_widget $wi_class$">',
             'block_end'            => '</div>',
@@ -64,14 +66,15 @@ if( $Skin->is_visible_sidebar( $disp_status ) ) { // Display sidebar: ?>
         ) );
         // ----------------------------- END OF "Sidebar" CONTAINER -----------------------------
         ?>
-    </div><!-- .sidebar -->
 
-    <div class="evo_container evo_container__sidebar2">
         <?php
-        // ------------------------- "Sidebar" CONTAINER EMBEDDED HERE --------------------------
+        // ------------------------- "Sidebar 2" CONTAINER EMBEDDED HERE --------------------------
         // Display container contents:
-        skin_container( NT_('Sidebar 2'), array(
+        widget_container( 'sidebar_2', array(
             // The following (optional) params will be used as defaults for widgets included in this container:
+            'container_display_if_empty' => false, // If no widget, don't display container at all
+            'container_start'      => '<div class="evo_container $wico_class$">',
+            'container_end'        => '</div>',
             // This will enclose each widget in a block:
             'block_start'          => '<div class="panel panel-default evo_widget $wi_class$">',
             'block_end'            => '</div>',
@@ -100,8 +103,7 @@ if( $Skin->is_visible_sidebar( $disp_status ) ) { // Display sidebar: ?>
             'search_submit_before' => '<span class="input-group-btn">',
             'search_submit_after'  => '</span></div>',
         ) );
-        // ----------------------------- END OF "Sidebar" CONTAINER -----------------------------
+        // ----------------------------- END OF "Sidebar 2" CONTAINER -----------------------------
         ?>
-    </div><!-- .sidebar2 -->
 </aside><!-- #main-sidebar -->
 <?php } ?>

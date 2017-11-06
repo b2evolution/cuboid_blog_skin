@@ -60,14 +60,14 @@ $content_grid = $Skin->get_column_class( $column );
 <header id="main-header">
 	<div class="container">
 
-		<div class="col-xs-9 col-sm-12 col-md-4">
-			<div class="row">
-				<div class="evo_container evo_container__header">
 					<?php
 					// ------------------------- "Header" CONTAINER EMBEDDED HERE --------------------------
 					// Display container and contents:
-					skin_container( NT_('Header'), array(
+					widget_container( 'header', array(
 						// The following params will be used as defaults for widgets included in this container:
+						'container_display_if_empty' => false, // If no widget, don't display container at all
+						'container_start'   => '<div class="col-xs-9 col-sm-12 col-md-4"><div class="row"><div class="evo_container $wico_class$">',
+						'container_end'     => '</div></div></div>',
 						'block_start'       => '<div class="evo_widget $wi_class$">',
 						'block_end'         => '</div>',
 						'block_title_start' => '<h1>',
@@ -75,9 +75,6 @@ $content_grid = $Skin->get_column_class( $column );
 					) );
 					// ----------------------------- END OF "Header" CONTAINER -----------------------------
 					?>
-				</div>
-			</div><!-- .row -->
-		</div><!-- .col -->
 
 		<div id="hamburger-menu" class="col-xs-3 col-sm-4">
 			<div class="navbar-header">
@@ -90,16 +87,15 @@ $content_grid = $Skin->get_column_class( $column );
 			</div>
 		</div>
 
-		<div class="col-xs-12 col-sm-12 col-md-8">
-			<div class="row">
-				<nav class="collapse navbar-collapse" id="main-menu">
-					<ul class="nav nav-tabs evo_container evo_container__menu">
 						<?php
 						// ------------------------- "Menu" CONTAINER EMBEDDED HERE --------------------------
 						// Display container and contents:
 						// Note: this container is designed to be a single <ul> list
-						skin_container( NT_('Menu'), array(
+						widget_container( 'menu', array(
 							// The following params will be used as defaults for widgets included in this container:
+							'container_display_if_empty' => false, // If no widget, don't display container at all
+							'container_start'     => '<div class="col-xs-12 col-sm-12 col-md-8"><div class="row"><nav class="collapse navbar-collapse" id="main-menu"><ul class="nav nav-tabs evo_container $wico_class$">',
+							'container_end'       => '</ul></nav></div></div>',
 							'block_start'         => '',
 							'block_end'           => '',
 							'block_display_title' => false,
@@ -114,10 +110,6 @@ $content_grid = $Skin->get_column_class( $column );
 						) );
 						// ----------------------------- END OF "Menu" CONTAINER -----------------------------
 						?>
-					</ul>
-				</nav><!-- #main-menu -->
-			</div><!-- .row -->
-		</div><!-- .col -->
 
 	</div><!-- .container -->
 </header><!-- #main-header -->
@@ -280,14 +272,13 @@ $content_grid = $Skin->get_column_class( $column );
 <footer id="main-footer">
 	<?php if( $Skin->is_visible_container( 'footer' ) ) { ?>
 		<!-- =================================== START OF FOOTER =================================== -->
-		<?php if( $Skin->get_setting( 'footer_widget' ) == '1' ) : ?>
-		<div class="main_widget">
-			<div class="container">
-				<div class="row">
-					<?php
-					// Display container and contents:
-					skin_container( NT_("Footer"), array(
-						// The following params will be used as defaults for widgets included in this container:
+		<?php if( $Skin->get_setting( 'footer_widget' ) == '1' ) :
+				// ------------------------- "Footer" CONTAINER EMBEDDED HERE --------------------------
+				widget_container( 'footer', array(
+						// The following (optional) params will be used as defaults for widgets included in this container:
+						'container_display_if_empty' => false, // If no widget, don't display container at all
+						'container_start'      => '<div class="main_widget"><div class="container"><div class="row evo_container $wico_class$">',
+						'container_end'        => '</div></div></div>',
 						'block_start'          => '<div class="evo_widget $wi_class$ col-xs-12 col-sm-6 col-md-3 clearfix">',
 						'block_end'            => '</div>',
 						// This will enclose the title of each widget:
@@ -312,12 +303,8 @@ $content_grid = $Skin->get_column_class( $column );
 						'search_submit_before' => '<span class="input-group-btn">',
 						'search_submit_after'  => '</span></div>',
 					) );
-					// Note: Double quotes have been used around "Footer" only for test purposes.
-					?>
-				</div><!-- .row -->
-			</div><!-- end .container-->
-		</div><!-- .main_widger -->
-		<?php endif; ?>
+					// ----------------------------- END OF "Footer" CONTAINER -----------------------------
+		endif; ?>
 
 		<!-- Social Media -->
 		<?php if( $Skin->get_setting( 'footer_user_link' ) == 1 ) : ?>

@@ -15,13 +15,13 @@ if( !defined('EVO_MAIN_INIT') ) die( 'Please, do not access this page directly.'
 
 <footer id="main-footer">
     <!-- =================================== START OF FOOTER =================================== -->
-    <?php if( $Skin->get_setting( 'footer_widget' ) == '1' ) : ?>
-    <div class="main_widget">
-        <div class="container">
-            <div class="row">
-                <?php
-                // Display container and contents:
-                skin_container( NT_("Footer"), array(
+    <?php if( $Skin->get_setting( 'footer_widget' ) == '1' ) :
+                // ------------------------- "Footer" CONTAINER EMBEDDED HERE --------------------------
+                widget_container( 'footer', array(
+                    // The following (optional) params will be used as defaults for widgets included in this container:
+                    'container_display_if_empty' => false, // If no widget, don't display container at all
+                    'container_start'      => '<div class="main_widget"><div class="container"><div class="row evo_container $wico_class$">',
+                    'container_end'        => '</div></div></div>',
                     // The following params will be used as defaults for widgets included in this container:
                     'block_start'          => '<div class="evo_widget $wi_class$ col-xs-12 col-sm-6 col-md-3 clearfix">',
                     'block_end'            => '</div>',
@@ -47,12 +47,8 @@ if( !defined('EVO_MAIN_INIT') ) die( 'Please, do not access this page directly.'
                     'search_submit_before' => '<span class="input-group-btn">',
                     'search_submit_after'  => '</span></div>',
                 ) );
-                // Note: Double quotes have been used around "Footer" only for test purposes.
-                ?>
-            </div><!-- .row -->
-        </div><!-- end .container-->
-    </div><!-- .main_widger -->
-    <?php endif; ?>
+            // ----------------------------- END OF "Footer" CONTAINER -----------------------------
+    endif; ?>
 
     <!-- Social Media -->
     <?php if( $Skin->get_setting( 'footer_user_link' ) == 1 ) : ?>

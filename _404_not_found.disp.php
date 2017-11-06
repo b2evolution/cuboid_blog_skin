@@ -15,16 +15,15 @@ if( !defined('EVO_MAIN_INIT') ) die( 'Please, do not access this page directly.'
 
 global $disp_detail, $baseurl, $app_name;
 
-?>
-
-<div class="error_404">
-   <i class="fa fa-warning" aria-hidden="true"></i>
-   <?php
-       skin_container( /* TRANS: Widget container name */ NT_('404 Page'), array(
+       // ------------------------- "404 Page" CONTAINER EMBEDDED HERE --------------------------
+       widget_container( '404_page', array(
            'widget_context' 			 => 'item',	// Signal that we are displaying within an Item
            // The following (optional) params will be used as defaults for widgets included in this container:
+           'container_display_if_empty' => false, // If no widget, don't display container at all
+           'container_start' => '<div class="error_404 evo_container $wico_class$"><i class="fa fa-warning" aria-hidden="true"></i>',
+           'container_end'   => '</div>',
            // This will enclose each widget in a block:
-           'block_start' 				 => '<div class="$wi_class$">',
+           'block_start' 				 => '<div class="evo_widget $wi_class$">',
            'block_end' 				     => '</div>',
            // This will enclose the title of each widget:
            'block_title_start' 		     => '<h3>',
@@ -40,7 +39,5 @@ global $disp_detail, $baseurl, $app_name;
            'search_submit_before'  => '<span class="input-group-btn">',
            'search_submit_after'   => '</span></div>',
        ) );
-   ?>
-   <!-- <h2>404 Not Found</h2>
-   <p><a href="<?php echo $baseurl; ?>"><?php echo $app_name; ?></a> cannot resolve the requested URL.</p> -->
-</div>
+       // ----------------------------- END OF "404 Page" CONTAINER -----------------------------
+?>
