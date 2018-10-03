@@ -138,92 +138,160 @@ echo '<div class="'.$content_block.'">'; // Beginning of post display
 	<?php
 		$Item->locale_temp_switch(); // Temporarily switch to post locale (useful for multilingual blogs)
 
-		// ------- Title -------
-		if( $params['disp_title'] )
+		if( $disp == 'single' || $disp == 'page' )
 		{
-			echo $params['item_title_line_before'];
+			$title_before = $params['item_title_single_before'];
+			$title_after = $params['item_title_single_after'];
+		}
+		else
+		{
+			$title_before = $params['item_title_before'];
+			$title_after = $params['item_title_after'];
+		}
 
-			if( $disp == 'single' || $disp == 'page' )
+		if( $disp == 'page' )
+		{
+			// ------- Title -------
+			if( $params['disp_title'] )
 			{
-				$title_before = $params['item_title_single_before'];
-				$title_after = $params['item_title_single_after'];
-			}
-			else
-			{
-				$title_before = $params['item_title_before'];
-				$title_after = $params['item_title_after'];
-			}
+				echo $params['item_title_line_before'];
 
-			// POST TITLE:
-			$Item->title( array(
-				'before'    => $title_before,
-				'after'     => $title_after,
-				'link_type' => '#'
-			) );
-
-			// EDIT LINK:
-			if( $Item->is_intro() )
-			{ // Display edit link only for intro posts, because for all other posts the link is displayed on the info line.
-				$Item->edit_link( array(
-					'before' => '<div class="'.button_class( 'group' ).'">',
-					'after'  => '</div>',
-					'text'   => $Item->is_intro() ? get_icon( 'edit' ).' '.T_('Edit Intro') : '#',
-					'class'  => button_class( 'text' ),
+				// POST TITLE:
+				$Item->title( array(
+					'before'    => $title_before,
+					'after'     => $title_after,
+					'link_type' => '#'
 				) );
-			}
 
-			echo $params['item_title_line_after'];
+				// EDIT LINK:
+				if( $Item->is_intro() )
+				{	// Display edit link only for intro posts, because for all other posts the link is displayed on the info line.
+					$Item->edit_link( array(
+						'before' => '<div class="'.button_class( 'group' ).'">',
+						'after'  => '</div>',
+						'text'   => $Item->is_intro() ? get_icon( 'edit' ).' '.T_('Edit Intro') : '#',
+						'class'  => button_class( 'text' ),
+					) );
+				}
+
+				echo $params['item_title_line_after'];
+			}
 		}
 	?>
 
 	<?php
 	if( ! $Item->is_intro() )
-	{ // Don't display the following for intro posts
+	{	// Don't display the following for intro posts
 	?>
-	<div class="small text-muted">
-	<?php
-		if( $Item->status != 'published' )
+		<?php
+		if( $disp == 'posts' )
 		{
-			$Item->format_status( array(
-				'template' => '<div class="evo_status evo_status__$status$ badge pull-right">$status_title$</div>',
+			// ------------------------- "Item in List" CONTAINER EMBEDDED HERE --------------------------
+			// Display container contents:
+			widget_container( 'item_in_list', array(
+				'widget_context' => 'item',	// Signal that we are displaying within an Item
+				// The following (optional) params will be used as defaults for widgets included in this container:
+				'container_display_if_empty' => false, // If no widget, don't display container at all
+				// This will enclose each widget in a block:
+				'block_start' => '<div class="evo_widget $wi_class$">',
+				'block_end' => '</div>',
+				// This will enclose the title of each widget:
+				'block_title_start' => '<h3>',
+				'block_title_end' => '</h3>',
+
+				'author_link_text' => $params['author_link_text'],
+
+				// Controlling the title:
+				'widget_item_title_params'  => array(
+					'before' => '<div class="evo_post_title">'.$title_before,
+					'after' => $title_after.'</div>',
+				),
+				// Item Visibility Badge widge template
+				'widget_item_visibility_badge_display'  => ( ! $Item->is_intro() && $Item->status != 'published' ),
+				'widget_item_visibility_badge_template' => '<div class="small text-muted pull-right">
+						<div class="evo_status evo_status__$status$ badge" data-toggle="tooltip" data-placement="top" title="$tooltip_title$">$status_title$</div></div>',
 			) );
+			// ----------------------------- END OF "Item in List" CONTAINER -----------------------------
 		}
-		// Permalink:
-		$Item->permanent_link( array(
-			'text' => '',
-		) );
+		elseif( $disp != 'page' )
+		{
+			// ------------------------- "Item Single - Header" CONTAINER EMBEDDED HERE --------------------------
+			// Display container contents:
+			widget_container( 'item_single_header', array(
+				'widget_context' => 'item',	// Signal that we are displaying within an Item
+				// The following (optional) params will be used as defaults for widgets included in this container:
+				'container_display_if_empty' => false, // If no widget, don't display container at all
+				// This will enclose each widget in a block:
+				'block_start' => '<div class="evo_widget $wi_class$">',
+				'block_end' => '</div>',
+				// This will enclose the title of each widget:
+				'block_title_start' => '<h3>',
+				'block_title_end' => '</h3>',
 
-		// We want to display the post time:
-		$Item->issue_time( array(
-			'before'      => ' '.T_( 'Posted on <span>' ).' ',
-			'after'       => '</span>',
-			'time_format' => 'M j, Y',
-		) );
+				'author_link_text' => $params['author_link_text'],
 
-		// Author
-		$Item->author( array(
-			'before'    => ' '.T_('<span>/</span> By').' ',
-			'after'     => '',
-			'link_text' => $params['author_link_text'],
-		) );
+				// Controlling the title:
+				'widget_item_title_params'  => array(
+						'before' => '<div class="evo_post_title">'.$title_before,
+						'after' => $title_after.'</div>',
+					),
+				// Item Previous Next widget
+				'widget_item_next_previous_params' => array(
+						'block_start' => '<nav><ul class="pager">',
+						'block_end' => '</ul></nav>',
+						'prev_start' => '<li class="previous">',
+						'prev_end' => '</li>',
+						'next_start' => '<li class="next">',
+						'next_end' => '</li>',
+					),
+				// Item Visibility Badge widge template
+				'widget_item_visibility_badge_display'  => ( ! $Item->is_intro() && $Item->status != 'published' ),
+				'widget_item_visibility_badge_template' => '<div class="evo_status evo_status__$status$ badge pull-right small text-muted" data-toggle="tooltip" data-placement="top" title="$tooltip_title$">$status_title$</div>',
+			) );
+			// ----------------------------- END OF "Item Single - Header" CONTAINER -----------------------------
+		}
+		?>
+		<div class="small text-muted">
+		<?php
+			if( $disp != 'page' )
+			{
+				// Permalink:
+				$Item->permanent_link( array(
+					'text' => '',
+				) );
 
-		// Categories
-		$Item->categories( array(
-			'before'          => T_(' <span>/</span> in').' ',
-			'after'           => ' ',
-			'include_main'    => true,
-			'include_other'   => true,
-			'include_external'=> true,
-			'link_categories' => true,
-		) );
+				// We want to display the post time:
+				$Item->issue_time( array(
+					'before'      => ' '.T_( 'Posted on <span>' ).' ',
+					'after'       => '</span>',
+					'time_format' => 'M j, Y',
+				) );
 
-		// Link for editing
-		$Item->edit_link( array(
-			'before'    => ' &bull; ',
-			'after'     => '',
-		) );
-	?>
-	</div>
+				// Author
+				$Item->author( array(
+					'before'    => ' '.T_('<span>/</span> By').' ',
+					'after'     => '',
+					'link_text' => $params['author_link_text'],
+				) );
+
+				// Categories
+				$Item->categories( array(
+					'before'          => T_(' <span>/</span> in').' ',
+					'after'           => ' ',
+					'include_main'    => true,
+					'include_other'   => true,
+					'include_external'=> true,
+					'link_categories' => true,
+				) );
+
+				// Link for editing
+				$Item->edit_link( array(
+					'before'    => ' &bull; ',
+					'after'     => '',
+				) );
+			}
+		?>
+		</div>
 	<?php
 	}
 	?>
@@ -255,6 +323,31 @@ echo '<div class="'.$content_block.'">'; // Beginning of post display
 			) );
 		// ----------------------------- END OF "Item Single" CONTAINER -----------------------------
 	}
+	elseif( $disp == 'page' )
+	{
+		// ------------------------- "Item Page" CONTAINER EMBEDDED HERE --------------------------
+			// Display container contents:
+			widget_container( 'item_page', array(
+				'widget_context' 			 => 'item',	// Signal that we are displaying within an Item
+				// The following (optional) params will be used as defaults for widgets included in this container:
+				'container_display_if_empty' => false, // If no widget, don't display container at all
+				'container_start' => '<div class="evo_container $wico_class$">',
+				'container_end'   => '</div>',
+				// This will enclose each widget in a block:
+				'block_start' 				 => '<div class="evo_widget $wi_class$">',
+				'block_end' 				 => '</div>',
+				// This will enclose the title of each widget:
+				'block_title_start' 		 => '<h3>',
+				'block_title_end' 			 => '</h3>',
+				// Template params for "Item Tags" widget
+				'widget_item_tags_before'    => '<div class="post_tags"><h3>'.T_('Tags').'</h3>: ',
+				'widget_item_tags_after'     => '</div>',
+				'widget_item_tags_separator' => '',
+				// Params for skin file "_item_content.inc.php"
+				'widget_item_content_params' => $params,
+			) );
+		// ----------------------------- END OF "Item Page" CONTAINER -----------------------------
+	}
 	else
 	{
 	// this will create a <section>
@@ -271,7 +364,7 @@ echo '<div class="'.$content_block.'">'; // Beginning of post display
 
 		<?php
 			if( ! $Item->is_intro() && $disp == 'posts' )
-			{ // List all tags attached to this post:
+			{	// List all tags attached to this post:
 				$Item->tags( array(
 					'before'    => '<nav class="small post_tags"><h3>'. T_( 'Tags: ' ).'</h3>',
 					'after'     => '</nav>',
@@ -280,7 +373,7 @@ echo '<div class="'.$content_block.'">'; // Beginning of post display
 			}
 		?>
 
-      <?php if( ! $Item->is_intro() ) : ?>
+		<?php if( ! $Item->is_intro() ) : ?>
 		<nav class="post_comments_link">
 		<?php
 			// Link to comments, trackbacks, etc.:
@@ -308,7 +401,7 @@ echo '<div class="'.$content_block.'">'; // Beginning of post display
 			) );
 		?>
 		</nav>
-      <?php endif; ?>
+		<?php endif; ?>
 	</footer>
 
 	<div class="content_comment">
@@ -418,7 +511,7 @@ echo '<div class="'.$content_block.'">'; // Beginning of post display
 		   'preview_end'            => '</div>',
 		   'comment_error_start'    => '<div class="evo_comment evo_comment__error panel panel-default" id="comment_error">',
 		   'comment_error_end'      => '</div>',
-		   
+
 	    ) );
 		// ---------------------- END OF META COMMENTS ---------------------
    }

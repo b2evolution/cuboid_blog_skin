@@ -4056,6 +4056,13 @@ div.error_404 .fa-warning {
   padding: 10px 10px 15px;
   word-wrap: break-word;
 }
+.disp_posts #main-content .evo_widget {
+  padding: 0;
+  margin-bottom: 0;
+  color: initial;
+  background-color: initial;
+  box-shadow: initial;
+}
 .disp_posts #main-content .well.evo_intro_post {
   margin-bottom: 30px;
 }

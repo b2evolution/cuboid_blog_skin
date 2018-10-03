@@ -17,7 +17,7 @@ if( !defined('EVO_MAIN_INIT') ) die( 'Please, do not access this page directly.'
  */
 class cuboid_blog_Skin extends Skin
 {
-	var $version = '7.0.0';
+	var $version = '7.0.1';
 	/**
 	 * Do we want to use style.min.css instead of style.css ?
 	 */
