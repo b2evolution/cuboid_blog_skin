@@ -198,19 +198,37 @@ echo '<div class="'.$content_block.'">'; // Beginning of post display
 				// This will enclose the title of each widget:
 				'block_title_start' => '<h3>',
 				'block_title_end' => '</h3>',
-
 				'author_link_text' => $params['author_link_text'],
-
-				// Controlling the title:
+				// Template params for "Item Title" widget:
 				'widget_item_title_params'  => array(
-					'before' => '<div class="evo_post_title">'.$title_before,
-					'after' => $title_after.'</div>',
-				),
-				// Item Visibility Badge widge template
+						'before' => '<div class="evo_post_title">'.$title_before,
+						'after' => $title_after.'</div>',
+					),
+				// Template params for "Item Visibility Badge" widget:
 				'widget_item_visibility_badge_display'  => ( ! $Item->is_intro() && $Item->status != 'published' ),
 				'widget_item_visibility_badge_template' => '<div class="small text-muted pull-right">
-						<div class="evo_status evo_status__$status$ badge" data-toggle="tooltip" data-placement="top" title="$tooltip_title$">$status_title$</div></div>',
-			) );
+						<div class="evo_status evo_status__$status$ badge pull-right" data-toggle="tooltip" data-placement="top" title="$tooltip_title$">$status_title$</div></div>',
+				// Template params for "Item Info Line" widget:
+				'widget_item_info_line_params' => array(
+						'before_flag'         => '',
+						'after_flag'          => ' ',
+						'before_permalink'    => '',
+						'after_permalink'     => ' ',
+						'before_author'       => '<span>/</span> By <span>',
+						'after_author'        => '</span>',
+						'before_post_time'    => 'Posted on <span>',
+						'after_post_time'     => '</span>',
+						'before_categories'   => '<span>/</span> In <span>',
+						'after_categories'    => '</span>',
+						'before_last_touched' => '<span class="text-muted"> &ndash; '.T_('Last touched').': ',
+						'after_last_touched'  => '</span>',
+						'before_last_updated' => '<span class="text-muted"> &ndash; '.T_('Contents updated').': ',
+						'after_last_updated'  => '</span>',
+						'before_edit_link'    => ' &bull; ',
+						'after_edit_link'     => '',
+						'format'              => '$flag$ $permalink$ $post_time$ $author$ $categories$ $edit_link$',
+					),
+				) );
 			// ----------------------------- END OF "Item in List" CONTAINER -----------------------------
 		}
 		elseif( $disp != 'page' )
@@ -227,71 +245,54 @@ echo '<div class="'.$content_block.'">'; // Beginning of post display
 				// This will enclose the title of each widget:
 				'block_title_start' => '<h3>',
 				'block_title_end' => '</h3>',
-
 				'author_link_text' => $params['author_link_text'],
-
-				// Controlling the title:
+				// Template params for "Item Title" widget:
 				'widget_item_title_params'  => array(
 						'before' => '<div class="evo_post_title">'.$title_before,
 						'after' => $title_after.'</div>',
 					),
-				// Item Previous Next widget
+				// Template params for "Item Next/Previous" widget:
 				'widget_item_next_previous_params' => array(
-						'block_start' => '<nav><ul class="pager">',
-						'block_end' => '</ul></nav>',
-						'prev_start' => '<li class="previous">',
-						'prev_end' => '</li>',
-						'next_start' => '<li class="next">',
-						'next_end' => '</li>',
+						'block_start'     => '<nav><ul class="pager">',
+						'prev_start'      => '<li class="previous">',
+						'prev_text'       => '<i class="fa fa-long-arrow-left"></i> $title$',
+						'prev_end'        => '</li>',
+						'separator'       => ' ',
+						'next_start'      => '<li class="next">',
+						'next_text'       => '$title$ <i class="fa fa-long-arrow-right"></i>',
+						'next_end'        => '</li>',
+						'block_end'       => '</ul></nav>',
 					),
-				// Item Visibility Badge widge template
+				// Template params for "Item Visibility Badge" widget:
 				'widget_item_visibility_badge_display'  => ( ! $Item->is_intro() && $Item->status != 'published' ),
-				'widget_item_visibility_badge_template' => '<div class="evo_status evo_status__$status$ badge pull-right small text-muted" data-toggle="tooltip" data-placement="top" title="$tooltip_title$">$status_title$</div>',
+				'widget_item_visibility_badge_template' => '<div class="small text-muted pull-right">
+						<div class="evo_status evo_status__$status$ badge pull-right" data-toggle="tooltip" data-placement="top" title="$tooltip_title$">$status_title$</div></div>',
+
+				// Template params for "Item Info Line" widget:
+				'widget_item_info_line_params' => array(
+						'before_flag'         => '',
+						'after_flag'          => ' ',
+						'before_permalink'    => '',
+						'after_permalink'     => ' ',
+						'before_author'       => '<span>/</span> By <span>',
+						'after_author'        => '</span>',
+						'before_post_time'    => 'Posted on <span>',
+						'after_post_time'     => '</span>',
+						'before_categories'   => '<span>/</span> In <span>',
+						'after_categories'    => '</span>',
+						'before_last_touched' => '<span class="text-muted"> &ndash; '.T_('Last touched').': ',
+						'after_last_touched'  => '</span>',
+						'before_last_updated' => '<span class="text-muted"> &ndash; '.T_('Contents updated').': ',
+						'after_last_updated'  => '</span>',
+						'before_edit_link'    => ' &bull; ',
+						'after_edit_link'     => '',
+						'format'              => '$flag$ $permalink$ $post_time$ $author$ $categories$ $edit_link$',
+					),
 			) );
 			// ----------------------------- END OF "Item Single - Header" CONTAINER -----------------------------
 		}
 		?>
-		<div class="small text-muted">
-		<?php
-			if( $disp != 'page' )
-			{
-				// Permalink:
-				$Item->permanent_link( array(
-					'text' => '',
-				) );
 
-				// We want to display the post time:
-				$Item->issue_time( array(
-					'before'      => ' '.T_( 'Posted on <span>' ).' ',
-					'after'       => '</span>',
-					'time_format' => 'M j, Y',
-				) );
-
-				// Author
-				$Item->author( array(
-					'before'    => ' '.T_('<span>/</span> By').' ',
-					'after'     => '',
-					'link_text' => $params['author_link_text'],
-				) );
-
-				// Categories
-				$Item->categories( array(
-					'before'          => T_(' <span>/</span> in').' ',
-					'after'           => ' ',
-					'include_main'    => true,
-					'include_other'   => true,
-					'include_external'=> true,
-					'link_categories' => true,
-				) );
-
-				// Link for editing
-				$Item->edit_link( array(
-					'before'    => ' &bull; ',
-					'after'     => '',
-				) );
-			}
-		?>
-		</div>
 	<?php
 	}
 	?>
