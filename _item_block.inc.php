@@ -205,9 +205,11 @@ echo '<div class="'.$content_block.'">'; // Beginning of post display
 						'after' => $title_after.'</div>',
 					),
 				// Template params for "Item Visibility Badge" widget:
-				'widget_item_visibility_badge_display'  => ( ! $Item->is_intro() && $Item->status != 'published' ),
-				'widget_item_visibility_badge_template' => '<div class="small text-muted pull-right">
-						<div class="evo_status evo_status__$status$ badge pull-right" data-toggle="tooltip" data-placement="top" title="$tooltip_title$">$status_title$</div></div>',
+				'widget_item_visibility_badge_display' => ( ! $Item->is_intro() && $Item->status != 'published' ),
+				'widget_item_visibility_badge_params'  => array(
+						'template' => '<div class="small text-muted pull-right">
+								<div class="evo_status evo_status__$status$ badge pull-right" data-toggle="tooltip" data-placement="top" title="$tooltip_title$">$status_title$</div></div>',
+					),
 				// Template params for "Item Info Line" widget:
 				'widget_item_info_line_params' => array(
 						'before_flag'         => '',
@@ -264,9 +266,11 @@ echo '<div class="'.$content_block.'">'; // Beginning of post display
 						'block_end'       => '</ul></nav>',
 					),
 				// Template params for "Item Visibility Badge" widget:
-				'widget_item_visibility_badge_display'  => ( ! $Item->is_intro() && $Item->status != 'published' ),
-				'widget_item_visibility_badge_template' => '<div class="small text-muted pull-right">
-						<div class="evo_status evo_status__$status$ badge pull-right" data-toggle="tooltip" data-placement="top" title="$tooltip_title$">$status_title$</div></div>',
+				'widget_item_visibility_badge_display' => ( ! $Item->is_intro() && $Item->status != 'published' ),
+				'widget_item_visibility_badge_params'  => array(
+						'template' => '<div class="small text-muted pull-right">
+								<div class="evo_status evo_status__$status$ badge pull-right" data-toggle="tooltip" data-placement="top" title="$tooltip_title$">$status_title$</div></div>',
+					),
 
 				// Template params for "Item Info Line" widget:
 				'widget_item_info_line_params' => array(
